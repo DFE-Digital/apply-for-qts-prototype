@@ -1,0 +1,31 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Teacher workforce division - professional recognition
+        <span class="govuk-caption-xl">{{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+      <p>
+        Prototypes for Teacher workforce division - professional recognition her. 
+      </p>
+
+
+      <h2 class="govuk-heading-m">Prototypes</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/start">Test Prototype</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
