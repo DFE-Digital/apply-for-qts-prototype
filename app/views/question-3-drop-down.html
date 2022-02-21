@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Please select your choice</h1>
+      
+      <form class="form" action="/check-answers" method="post">
+
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "sort",
+          name: "sort",
+          label: {
+            text: "Sort by"
+          },
+          items: [
+            {
+              value: "Recently published",
+              text: "Recently published",
+              checked: checked("sort", "Recently published")
+            },
+            {
+              value: "Recently updated",
+              text: "Recently updated",
+              checked: checked("sort", "Recently updated")
+
+            },
+            {
+              value: "Most views",
+              text: "Most views",
+              checked: checked("sort", "Most views")
+
+            },
+            {
+              value: "Most comments",
+              text: "Most comments",
+              checked: checked("sort", "Most comments")
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

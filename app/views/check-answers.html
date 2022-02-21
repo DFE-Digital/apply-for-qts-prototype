@@ -17,6 +17,7 @@
       <h2 class="govuk-heading-m">Personal details</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Radio Button Question
@@ -31,6 +32,7 @@
             </a>
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Textarea Question
@@ -45,6 +47,22 @@
             </a>
           </dd>
         </div>
+        <!-- Here is the dropdown question -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            drop down question
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['sort'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/question-3-drop-down">
+              Change
+              <span class="govuk-visually-hidden"> Textarea answer</span>
+            </a>
+          </dd>
+        </div>
+
       </dl>
 
       <h2 class="govuk-heading-m">Now send your application</h2>
