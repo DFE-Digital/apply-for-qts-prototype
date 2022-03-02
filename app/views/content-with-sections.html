@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row guide">
+
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+       Content page with contents list
+      </h1>
+      <aside class="part-navigation-container" role="complementary">
+        <nav class="gem-c-contents-list" aria-label="Pages in this guide" role="navigation" data-module="gem-track-click"> <h2 class="gem-c-contents-list__title"> Contents</h2>
+          <ol class="gem-c-contents-list__list">
+              <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed"> <a class="gem-c-contents-list__link govuk-link"  href="#section1">Section 1</a></li> 
+              <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed"> <a class="gem-c-contents-list__link govuk-link"  href="#section2">Section 2</a></li>
+              <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed"> <a class="gem-c-contents-list__link govuk-link"  href="#section3">Section 3</a></li>
+          </ol>
+        </nav>
+      </aside>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l govuk-!-margin-top-3" id="section1">Section 1</h2>
+      <p>This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.</p>
+
+      <p>Read more <a href="/url/of/onward/page">about this topic</a>.</p>
+
+      <h2 class="govuk-heading-l" id="section2">Section 2</h2>
+      <p>This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.</p>
+
+      <p>Read more <a href="/url/of/onward/page">about this topic</a>.</p>
+
+      <h2 class="govuk-heading-l" id="section3">Section 3</h2>
+      <p>This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.</p>
+
+      <p>Read more <a href="/url/of/onward/page">about this topic</a>.</p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link" href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-link govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}
