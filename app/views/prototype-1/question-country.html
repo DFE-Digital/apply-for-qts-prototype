@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Please select the country that you trained in as a teacher</h1>
+      <h1 class="govuk-heading-xl">Please select the country that you trained in</h1>
       
       <form class="form" action="check-prepare-answers" method="post">
 
@@ -27,20 +27,20 @@
           },
           items: [
             {
+              value: "Canada",
+              text: "Canada",
+              checked: checked("sort", "Canada")
+            },
+            {
               value: "India",
               text: "India",
               checked: checked("sort", "India")
             },
             {
-              value: "Zimbabwe",
-              text: "Zimbabwe",
-              checked: checked("sort", "Zimbabwe")
-
-            },
-            {
               value: "Jamaica",
               text: "Jamaica",
               checked: checked("sort", "Jamaica")
+              
 
             },
             {
@@ -49,10 +49,13 @@
               checked: checked("sort", "Nigeria")
             },
             {
-              value: "Canada",
-              text: "Canada",
-              checked: checked("sort", "Canada")
+              value: "Zimbabwe",
+              text: "Zimbabwe",
+              checked: checked("sort", "Zimbabwe")
+
             }
+
+            
           ]
         }) }}
 
