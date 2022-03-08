@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Please select the country that you trained in as a teacher</h1>
+      
+      <form class="form" action="check-prepare-answers" method="post">
+
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: "sort",
+          name: "sort",
+          label: {
+            text: "Sort by"
+          },
+          items: [
+            {
+              value: "India",
+              text: "India",
+              checked: checked("sort", "India")
+            },
+            {
+              value: "Zimbabwe",
+              text: "Zimbabwe",
+              checked: checked("sort", "Zimbabwe")
+
+            },
+            {
+              value: "Jamaica",
+              text: "Jamaica",
+              checked: checked("sort", "Jamaica")
+
+            },
+            {
+              value: "Nigeria",
+              text: "Nigeria",
+              checked: checked("sort", "Nigeria")
+            },
+            {
+              value: "Canada",
+              text: "Canada",
+              checked: checked("sort", "Canada")
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

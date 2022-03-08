@@ -97,7 +97,7 @@ router.post('/degree-answer', function (req, res) {
         // Check whether the variable matches a condition
         if (fourteenSixteenYears == "Yes"){
           // Send user to next page
-          res.redirect('/prototype-1/check-eligibility-answers')
+          res.redirect('/prototype-1/eligible')
         } else {
           // Send user to ineligible page
           res.redirect('/prototype-1/ineligible')
