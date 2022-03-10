@@ -12,10 +12,10 @@ router.post('/degree-answer', function (req, res) {
     // Check whether the variable matches a condition
     if (haveDegree == "Yes"){
       // Send user to next page
-      res.redirect('/prototype-1/question-formal-training')
+      res.redirect('/prototype-1/check-eligibility/question-formal-training')
     } else {
       // Send user to ineligible page
-      res.redirect('/prototype-1/ineligible')
+      res.redirect('/prototype-1/check-eligibility/ineligible')
     }
   
   })
@@ -29,10 +29,10 @@ router.post('/degree-answer', function (req, res) {
       // Check whether the variable matches a condition
       if (formalTraining == "Yes"){
         // Send user to next page
-        res.redirect('/prototype-1/question-completed-year')
+        res.redirect('/prototype-1/check-eligibility/question-completed-year')
       } else {
         // Send user to ineligible page
-        res.redirect('/prototype-1/ineligible')
+        res.redirect('/prototype-1/check-eligibility/ineligible')
       }
     
     })
@@ -46,10 +46,10 @@ router.post('/degree-answer', function (req, res) {
         // Check whether the variable matches a condition
         if (completedYear == "Yes"){
           // Send user to next page
-          res.redirect('/prototype-1/question-recognised-teacher')
+          res.redirect('/prototype-1/check-eligibility/question-recognised-teacher')
         } else {
           // Send user to ineligible page
-          res.redirect('/prototype-1/ineligible')
+          res.redirect('/prototype-1/check-eligibility/ineligible')
         }
       
     })
@@ -63,10 +63,10 @@ router.post('/degree-answer', function (req, res) {
         // Check whether the variable matches a condition
         if (recognisedTeacher == "Yes"){
           // Send user to next page
-          res.redirect('/prototype-1/question-sen-only')
+          res.redirect('/prototype-1/check-eligibility/question-sen-only')
         } else {
           // Send user to ineligible page
-          res.redirect('/prototype-1/ineligible')
+          res.redirect('/prototype-1/check-eligibility/ineligible')
         }
       
     })
@@ -80,10 +80,10 @@ router.post('/degree-answer', function (req, res) {
         // Check whether the variable matches a condition
         if (senOnly == "No"){
           // Send user to next page
-          res.redirect('/prototype-1/question-14-16-years')
+          res.redirect('/prototype-1/check-eligibility/question-14-16-years')
         } else {
           // Send user to ineligible page
-          res.redirect('/prototype-1/ineligible')
+          res.redirect('/prototype-1/check-eligibility/ineligible')
         }
       
     })
@@ -97,10 +97,44 @@ router.post('/degree-answer', function (req, res) {
         // Check whether the variable matches a condition
         if (fourteenSixteenYears == "Yes"){
           // Send user to next page
-          res.redirect('/prototype-1/eligible')
+          res.redirect('/prototype-1/check-eligibility/eligible')
         } else {
           // Send user to ineligible page
-          res.redirect('/prototype-1/ineligible')
+          res.redirect('/prototype-1/check-eligibility/ineligible')
+        }
+      
+    })
+
+    // Run this code when a form is submitted to 'Country Trained in'
+    router.post('/country-trained-answer', function (req, res) {
+    
+        // Make a variable and give it the value from 'degree'
+        var countryTrained = req.session.data['country']
+      
+        // Check whether the variable matches a condition
+        if (countryTrained == "Canada"){
+          // Send user to Degree english
+          res.redirect('/prototype-1/get-prepared/question-degree-stem')
+        } else {
+          // Send user to STEM
+          res.redirect('/prototype-1/get-prepared/question-degree-english')
+        }
+      
+    })
+
+    // Run this code when a form is submitted to 'Degree in STEM'
+    router.post('/stem-answer', function (req, res) {
+    
+        // Make a variable and give it the value from 'degree'
+        var countryTrained = req.session.data['DegreeStem']
+      
+        // Check whether the variable matches a condition
+        if (countryTrained == "Yes"){
+          // Send user to check answers
+          res.redirect('/prototype-1/get-prepared/check-prepare-answers')
+        } else {
+          // Send user to Primary or secondary
+          res.redirect('/prototype-1/get-prepared/question-primary-secondary')
         }
       
     })

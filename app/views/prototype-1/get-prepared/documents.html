@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Documents you will need to apply</h1>
+
+      {% if data['nationality'] == "Canada"  %}
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Teacher reference number</h2>
+        <p>Description here of teacher refernce number and maybe where to find it.</p>
+        <hr class="govuk-!-margin-bottom-4">
+
+      {% elseif data['nationality'] == "India"  %}
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Teacher reference number</h2>
+        <p>Description her e of teacher refernce number and maybe where to find it.</p>
+        <hr class="govuk-!-margin-bottom-4">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">LOPS</h2>
+        <p>Description here of LOPS and maybe where to find it.</p>
+        <hr class="govuk-!-margin-bottom-4">
+
+      {% elseif data['nationality'] == "Nigereia"  %}
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">LOPS</h2>
+        <p>Description here of LOPS and maybe where to find it.</p>
+        <hr class="govuk-!-margin-bottom-4">
+      {% endif %}
+
+      {% if data['DegreeEnglish'] == "No"  %}
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">English proficiency evidence</h2>
+        <p>Description here of English proficiency evidence and maybe where to find it.</p>
+        <hr class="govuk-!-margin-bottom-4">
+      {% endif %}
+
+      {% if data['DegreeStem'] == "No"  %}
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Maths proficiency evidence</h2>
+        <p>Description here of Maths proficiency evidence and maybe where to find it.</p>
+        <hr class="govuk-!-margin-bottom-4">
+      {% endif %}
+
+      {% if data['PrimarySecondary'] == "Primary"  %}
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Science proficiency evidence</h2>
+        <p>Description here of Science proficiency evidence and maybe where to find it.</p>
+        <hr class="govuk-!-margin-bottom-4">
+      {% endif %}
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Other documents</h2>
+      <p>Such as copy of diploma / passport etc</p>
+      <hr class="govuk-!-margin-bottom-8">
+
+      <h2 class="govuk-heading-l">Do yo have these documents?</h2>
+
+      <p>When you have digital copies of these documents you can begin your application from the task list.</p>
+
+      <form action="/prototype-1/task-list-3" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue to task list
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
