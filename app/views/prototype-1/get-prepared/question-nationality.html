@@ -13,45 +13,47 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Please select the country that you trained in</h1>
-      
-      <form class="form" action="check-prepare-answers" method="post">
+      <h1 class="govuk-heading-xl">What is your nationality</h1>
+      <div id="" class="govuk-hint">
+        *May have second nationalities later on
+      </div>
+      <form class="form" action="question-country-trained" method="post">
 
         {% from "govuk/components/select/macro.njk" import govukSelect %}
 
         {{ govukSelect({
-          id: "sort",
-          name: "sort",
+          id: "nationality",
+          name: "nationality",
           label: {
-            text: "Sort by"
+            text: "Select nationality"
           },
           items: [
             {
               value: "Canada",
               text: "Canada",
-              checked: checked("sort", "Canada")
+              checked: checked("nationality", "Canada")
             },
             {
               value: "India",
               text: "India",
-              checked: checked("sort", "India")
+              checked: checked("nationality", "India")
             },
             {
               value: "Jamaica",
               text: "Jamaica",
-              checked: checked("sort", "Jamaica")
+              checked: checked("nationality", "Jamaica")
               
 
             },
             {
               value: "Nigeria",
               text: "Nigeria",
-              checked: checked("sort", "Nigeria")
+              checked: checked("nationality", "Nigeria")
             },
             {
               value: "Zimbabwe",
               text: "Zimbabwe",
-              checked: checked("sort", "Zimbabwe")
+              checked: checked("nationality", "Zimbabwe")
 
             }
 
