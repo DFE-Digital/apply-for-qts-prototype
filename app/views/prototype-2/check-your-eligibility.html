@@ -1,0 +1,250 @@
+{% extends "layout.html" %} {% block pageTitle %} Start page with step by step template – {{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }} {% endblock %} {% block pageScripts %}
+<script src="/public/javascripts/step-by-step-nav.js"></script>
+<script type="text/javascript">
+  var $element = $('#step-by-step-navigation')
+  var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+  stepByStepNavigation.start($element)
+</script>
+{% endblock %} {% block beforeContent %}
+<div class="app-step-nav-header">
+  <span class="app-step-nav-header__part-of">Part of</span>
+  <a class="app-step-nav-header__title" href="step-by-step-navigation.html">
+    Get qualified teacher status: step by step
+  </a>
+</div>
+{% endblock %} {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Check your eligibility
+    </h1>
+
+    <p>Use this service to:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>do something</li>
+    </ul>
+    <h2 class="govuk-heading-m">Degree
+      <p class="govuk-body">The requirement is for any undergraduate degree at the equivalent to a UK Bachelor's degree. This can be the teaching qualification itself, or another degree (e.g. they have a degree plus a teaching qual). There are no limitations on subjects as we are not awarding QTS for a specific subject</p>
+    </h2>
+
+    <h2 class="govuk-heading-m">Teacher training qualification
+        <p class="govuk-body">This requirement is to ensure that an individual is a trained teacher, and that that training is broadly comparable in rigour to training in England. </p>
+        
+        <p class="govuk-body"> we do not define an absolute minimum duration for a course of teacher training, we assess that it is reasonable to expect an individual to have completed training of comparable duration to the equivalent route, at that academic level, in England.</p>
+        
+        <p class="govuk-body">The academic level of qualifications can be measured using information rom UK ENIC (formerly UK NARIC), while duration can be measured in academic credits or evidence from the awarding body.</p>
+        
+    </h2>
+
+    <h2 class="govuk-heading-m">One year post training
+      <p class="govuk-body">Consist of time spent teaching full-time where the role is predominantly as a teacher (as opposed to other responsibilities in school).</p>
+        
+      <p>Involve being responsible for the learning of groups of a minimum of 4 children.Practical teaching experience for the purposes of QTS recognition is not restricted to taking place wholly or mainly in England. </p>
+        
+      <p>Have been gained with children aged 5 to 16 though experience gained with children aged 3-4 or 17-19 is suitable if the setting or group included children aged 5-16. 
+        Be gained in any subject in any type of mainstream school (for example, international schools, schools teaching the International Baccalaureate and state or private schools).</p>
+      
+        <p>Can also be gained in alternative schools or settings equivalent to English PRUs (Pupil Referral Units), alternative provision academies, or alternative provision free schools; or settings for children with special education needs or disabilities (SEND).</p>
+    </h2>
+
+    <h2 class="govuk-heading-m">Professional status as a teacher in your country of qualification
+      <p>Having professional standing gives a basic assurance that a teacher has met all the requirements of a given country to teach a class of children and is likely to have been quality assured in that process.</p>
+
+      <p>From UR, most school leaders think professional standing is essential though wide acknowledgement it is a complicated and challenging to be fully confident in due to divergent systems</p>
+    
+      <p>Overseas teachers see this requirement as a barrier and challenging to evidence as in some countries it requires a public examination to achieve this recognition but it is not needed to teach in schools</p>
+    </h2>
+    <h2 class="govuk-heading-m">Special Educational Needs
+      <p class="govuk-body">Some guidance here?</p>
+    </h2>
+
+    <h2 class="govuk-heading-m">Degree
+      <p class="govuk-body">The requirement is for any undergraduate degree at the equivalent to a UK Bachelor's degree. This can be the teaching qualification itself, or another degree (e.g. they have a degree plus a teaching qual). There are no limitations on subjects as we are not awarding QTS for a specific subject</p>
+    </h2>
+
+    <a href="documents-you-will-need.html" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+      Continue
+    </a>
+    
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="app-step-nav-related app-step-nav-related--singular">
+      <h2 class="app-step-nav-related__heading">
+        <span class="app-step-nav-related__pretitle">Part of</span>
+        <a href="step-by-step-navigation.html">
+          Get qualified teacher status: step by step
+        </a>
+      </h2>
+    </div>
+
+    <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
+      <ol class="app-step-nav__steps">
+        <li class="app-step-nav__step js-step" id="check-youre-allowed-to-drive" >
+          <div class="app-step-nav__header js-toggle-panel" data-position="1">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 1
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                Eligibility for QTS
+              </span>
+            </h2>
+          </div>
+
+          <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-check-youre-allowed-to-drive-1">
+            <p class="app-step-nav__paragraph">Some helpful text here</p>
+
+            <ol class="app-step-nav__list " data-length="3">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="1.1" class="app-step-nav__link js-link" href="check-your-eligibility.html">Check your eligibility </a>
+              </li>
+            </ol>
+          </div>
+
+        </li>
+
+        <li class="app-step-nav__step js-step" id="get-a-provisional-licence" >
+          <div class="app-step-nav__header js-toggle-panel" data-position="2">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 2
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                Prepare your documents
+              </span>
+            </h2>
+          </div>
+
+          <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-driving-lessons-and-practice-3">
+            <p class="app-step-nav__paragraph">Some helpful text here</p>
+
+          <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-get-a-provisional-licence-2">
+            <ol class="app-step-nav__list " data-length="1">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="2.1" class="app-step-nav__link js-link" href="documents-you-will-need.html">Documents you will need </a>
+              </li>
+            </ol>
+          </div>
+
+        </li>
+
+        <li class="app-step-nav__step js-step" id="driving-lessons-and-practice" >
+          <div class="app-step-nav__header js-toggle-panel" data-position="3">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 3
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                Make an application
+              </span>
+            </h2>
+          </div>
+
+          <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-driving-lessons-and-practice-3">
+            <p class="app-step-nav__paragraph">Some helpful text here</p>
+
+            <ol class="app-step-nav__list " data-length="4">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="3.1" class="app-step-nav__link js-link" href="apply-for-qts.html">Apply for QTS</a>
+              </li>
+            </ol>
+          </div>
+
+        </li>
+
+        <li class="app-step-nav__step js-step" id="driving-lessons-and-practice" >
+          <div class="app-step-nav__header js-toggle-panel" data-position="3">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 4
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                After applying for QTS
+              </span>
+            </h2>
+          </div>
+
+          <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-driving-lessons-and-practice-3">
+            <p class="app-step-nav__paragraph">Some helpful text here</p>
+
+          <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-prepare-for-your-theory-test-4">
+            <ol class="app-step-nav__list " data-length="3">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="4.1" class="app-step-nav__link js-link" href="#">?</a>
+              </li>
+            </ol>
+          </div>
+
+        </li>
+
+        <li class="app-step-nav__step js-step" id="book-and-manage-your-theory-test" >
+          <div class="app-step-nav__header js-toggle-panel" data-position="5">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 5
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                Help and support
+              </span>
+            </h2>
+          </div>
+
+          <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-book-and-manage-your-theory-test-5">
+            <p class="app-step-nav__paragraph">Some helpful text here </p>
+
+            <ol class="app-step-nav__list " data-length="5">
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="5.1" class="app-step-nav__link js-link" href="#">Help link </a>
+              </li>
+              <li class="app-step-nav__list-item js-list-item ">
+                <a data-position="5.1" class="app-step-nav__link js-link" href="#">Help link </a>
+              </li>
+            </ol>
+          </div>
+
+        </li>
+
+
+      </ol>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+</div>
+</div>
+{% endblock %}

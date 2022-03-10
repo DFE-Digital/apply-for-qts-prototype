@@ -1,0 +1,920 @@
+{% extends "layout.html" %} {% block pageTitle %} Start page with step by step template – {{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }} {% endblock %} {% block pageScripts %}
+<script src="/public/javascripts/step-by-step-nav.js"></script>
+<script type="text/javascript">
+  var $element = $('#step-by-step-navigation')
+  var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+  stepByStepNavigation.start($element)
+</script>
+{% endblock %} {% block beforeContent %}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+
+          
+  <main id="content" role="main" class="group full-width">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+
+  
+  <div class="gem-c-title govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+  
+    <h1 class="gem-c-title__text govuk-heading-xl">
+      Foreign travel advice
+    </h1>
+  </div>
+  
+        
+    <p class="gem-c-lead-paragraph">Get advice about travelling abroad, including the latest information on coronavirus, safety and security, entry requirements and travel warnings.</p>
+  
+      </div>
+    </div>
+  
+    <div class="travel-container js-travel-container">
+      <section class="govuk-grid-row">
+        <div id="country-filter" class="govuk-grid-column-one-half">
+          <form class="country-filter-form" _lpchecked="1">
+            <fieldset class="country-filter-form__form-group">
+              
+  <div class="govuk-form-group">
+  
+              
+    <label for="country" class="gem-c-label govuk-label">Search for a country or territory - you can sign up for email updates on its page</label>
+  
+  
+  
+  
+  
+  
+  
+      <span class="gem-c-input__search-icon"></span>
+      <input class="gem-c-input govuk-input govuk-input--width-20 gem-c-input--with-search-icon" id="country" name="country" type="text">
+  </div>
+            </fieldset>
+          </form>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible app-full-width-break">
+      </section>
+  
+      <section class="govuk-grid-row countries-wrapper js-countries-wrapper">
+        <div class="countries govuk-grid-column-one-third">
+          <h2 class="govuk-heading-m countries__heading">Countries or territories</h2>
+          <p class="country-count js-country-count" aria-live="polite">
+            <span class="filter-count js-filter-count">226</span>
+            <span class="govuk-visually-hidden">Countries or territories</span>
+          </p>
+        </div>
+  
+        <div class="govuk-grid-column-two-thirds">
+            <div id="A" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>A</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/afghanistan">Afghanistan</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/albania">Albania</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/algeria">Algeria</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/andorra">Andorra</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/angola">Angola</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/anguilla">Anguilla</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/antarctica-british-antarctic-territory">Antarctica/British Antarctic Territory</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/antigua-and-barbuda">Antigua and Barbuda</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/argentina">Argentina</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/armenia">Armenia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/aruba">Aruba</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/australia">Australia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/austria">Austria</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/azerbaijan">Azerbaijan</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="B" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>B</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/bahamas">Bahamas</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/bahrain">Bahrain</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/bangladesh">Bangladesh</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/barbados">Barbados</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/belarus">Belarus</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/belgium">Belgium</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/belize">Belize</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/benin">Benin</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/bermuda">Bermuda</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/bhutan">Bhutan</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/bolivia">Bolivia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/bonaire-st-eustatius-saba">Bonaire/St Eustatius/Saba</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/bosnia-and-herzegovina">Bosnia and Herzegovina</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/botswana">Botswana</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/brazil">Brazil</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/british-indian-ocean-territory">British Indian Ocean Territory</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/british-virgin-islands">British Virgin Islands</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Borneo">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/brunei">Brunei</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/bulgaria">Bulgaria</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/burkina-faso">Burkina Faso</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/burundi">Burundi</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="C" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>C</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/cambodia">Cambodia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/cameroon">Cameroon</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="arctic">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/canada">Canada</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/cape-verde">Cape Verde</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/cayman-islands">Cayman Islands</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/central-african-republic">Central African Republic</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/chad">Chad</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/chile">Chile</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/china">China</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/colombia">Colombia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/comoros">Comoros</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/congo">Congo</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/cook-islands-tokelau-and-niue">Cook Islands, Tokelau and Niue</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/costa-rica">Costa Rica</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Ivory Coast|Cote d'Ivoire|Cote dIvoire">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/cote-d-ivoire">Côte d'Ivoire</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/croatia">Croatia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/cuba">Cuba</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Curacao">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/curacao">Curaçao</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/cyprus">Cyprus</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/czech-republic">Czech Republic</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="D" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>D</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/democratic-republic-of-the-congo">Democratic Republic of the Congo</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="arctic|Faroe Islands|Faroes|Copenhagen|Greenland">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/denmark">Denmark</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/djibouti">Djibouti</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/dominica">Dominica</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/dominican-republic">Dominican Republic</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="E" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>E</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/ecuador">Ecuador</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/egypt">Egypt</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/el-salvador">El Salvador</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/equatorial-guinea">Equatorial Guinea</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/eritrea">Eritrea</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/estonia">Estonia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Swaziland">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/eswatini">Eswatini</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/ethiopia">Ethiopia</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="F" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>F</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/falkland-islands">Falkland Islands</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/fiji">Fiji</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="arctic">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/finland">Finland</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Paris|Corsica">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/france">France</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/french-guiana">French Guiana</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/french-polynesia">French Polynesia</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="G" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>G</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/gabon">Gabon</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/the-gambia">The Gambia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/georgia">Georgia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/germany">Germany</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/ghana">Ghana</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/gibraltar">Gibraltar</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Crete|Heraklion|Skiathos|Lesbos|Mykonos|Santorini|Rhodes|Kos">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/greece">Greece</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/grenada">Grenada</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/guadeloupe">Guadeloupe</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/guatemala">Guatemala</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/guinea">Guinea</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/guinea-bissau">Guinea-Bissau</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/guyana">Guyana</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="H" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>H</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/haiti">Haiti</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/honduras">Honduras</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/hong-kong">Hong Kong</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/hungary">Hungary</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="I" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>I</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="arctic">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/iceland">Iceland</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/india">India</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Borneo|Bali">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/indonesia">Indonesia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/iran">Iran</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/iraq">Iraq</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/ireland">Ireland</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/israel">Israel</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Rome|Venice|Milan|Sicily|Sardinia">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/italy">Italy</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="J" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>J</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/jamaica">Jamaica</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/japan">Japan</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/jordan">Jordan</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="K" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>K</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/kazakhstan">Kazakhstan</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/kenya">Kenya</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/kiribati">Kiribati</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/kosovo">Kosovo</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/kuwait">Kuwait</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/kyrgyzstan">Kyrgyzstan</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="L" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>L</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/laos">Laos</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/latvia">Latvia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/lebanon">Lebanon</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/lesotho">Lesotho</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/liberia">Liberia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/libya">Libya</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/liechtenstein">Liechtenstein</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/lithuania">Lithuania</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/luxembourg">Luxembourg</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="M" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>M</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/macao">Macao</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/madagascar">Madagascar</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/malawi">Malawi</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Borneo">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/malaysia">Malaysia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/maldives">Maldives</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/mali">Mali</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/malta">Malta</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/marshall-islands">Marshall Islands</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/martinique">Martinique</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/mauritania">Mauritania</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/mauritius">Mauritius</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/mayotte">Mayotte</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/mexico">Mexico</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/micronesia">Micronesia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/moldova">Moldova</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/monaco">Monaco</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/mongolia">Mongolia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/montenegro">Montenegro</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/montserrat">Montserrat</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/morocco">Morocco</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/mozambique">Mozambique</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Burma">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/myanmar">Myanmar (Burma)</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="N" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>N</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/namibia">Namibia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/nauru">Nauru</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/nepal">Nepal</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Holland|Amsterdam">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/netherlands">Netherlands</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/new-caledonia">New Caledonia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Cook Islands">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/new-zealand">New Zealand</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/nicaragua">Nicaragua</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/niger">Niger</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/nigeria">Nigeria</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/north-korea">North Korea</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/north-macedonia">North Macedonia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="arctic">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/norway">Norway</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="O" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>O</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/oman">Oman</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="P" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>P</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/pakistan">Pakistan</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/palau">Palau</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/the-occupied-palestinian-territories">The Occupied Palestinian Territories</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/panama">Panama</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="PNG">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/papua-new-guinea">Papua New Guinea</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/paraguay">Paraguay</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/peru">Peru</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/philippines">Philippines</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/pitcairn-island">Pitcairn Island</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/poland">Poland</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Madeira|Azores">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/portugal">Portugal</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="Q" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>Q</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/qatar">Qatar</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="R" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>R</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="Reunion">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/reunion">Réunion</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/romania">Romania</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="arctic">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/russia">Russia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/rwanda">Rwanda</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="S" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>S</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/samoa">Samoa</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/san-marino">San Marino</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sao Tome and Principe|Sao Tome &amp; Principe">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/sao-tome-and-principe">São Tomé and Principe</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/saudi-arabia">Saudi Arabia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/senegal">Senegal</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/serbia">Serbia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/seychelles">Seychelles</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/sierra-leone">Sierra Leone</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/singapore">Singapore</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/slovakia">Slovakia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/slovenia">Slovenia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/solomon-islands">Solomon Islands</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/somalia">Somalia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/south-africa">South Africa</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/south-georgia-and-south-sandwich-islands">South Georgia and the South Sandwich Islands</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/south-korea">South Korea</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/south-sudan">South Sudan</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Ibiza|Majorca|Mallorca|Menorca|Minorca|Lanzarote|Barcelona|Benidorm|Tenerife|Canary Islands|Canaries|Gran Canaria|Fuerteventura">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/spain">Spain</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/sri-lanka">Sri Lanka</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/st-helena-ascension-and-tristan-da-cunha">St Helena, Ascension and Tristan da Cunha</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/st-kitts-and-nevis">St Kitts and Nevis</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/st-lucia">St Lucia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sint Maarten|Saint Maarten">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/st-maarten">St Maarten</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="St Barts|St Barthelemy|Saint Martin|Saint Barts">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/st-martin-and-st-barthelemy">St Martin and St Barthélemy</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/st-pierre-and-miquelon">St Pierre &amp; Miquelon</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/st-vincent-and-the-grenadines">St Vincent and the Grenadines</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/sudan">Sudan</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/suriname">Suriname</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Arctic|Stockholm|Gothenburg">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/sweden">Sweden</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/switzerland">Switzerland</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/syria">Syria</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="T" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>T</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/taiwan">Taiwan</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/tajikistan">Tajikistan</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/tanzania">Tanzania</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/thailand">Thailand</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="East Timor">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/timor-leste">Timor-Leste</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/togo">Togo</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/tonga">Tonga</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/trinidad-and-tobago">Trinidad and Tobago</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/tunisia">Tunisia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/turkey">Turkey</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/turkmenistan">Turkmenistan</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/turks-and-caicos-islands">Turks and Caicos Islands</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/tuvalu">Tuvalu</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="U" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>U</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="United States|America|Arctic|Puerto Rico|US Virgin Islands|Florida|Orlando|American Samoa|Guam|Hawaii">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/usa">USA</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/uganda">Uganda</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/ukraine">Ukraine</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="UAE|Dubai|Abu Dhabi">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/united-arab-emirates">United Arab Emirates</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/uruguay">Uruguay</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/uzbekistan">Uzbekistan</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="V" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>V</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/vanuatu">Vanuatu</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/venezuela">Venezuela</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/vietnam">Vietnam</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="W" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>W</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/wallis-and-futuna">Wallis and Futuna</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="Sahel">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/western-sahara">Western Sahara</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="Y" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>Y</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/yemen">Yemen</a>
+                  </li>
+              </ul>
+            </div>
+            <div id="Z" class="list">
+              <h3 class="countries-initial-letter">
+  <span class="govuk-visually-hidden">Countries starting with </span>Z</h3>
+              <ul class="govuk-list govuk-clearfix countries-list js-countries-list">
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/zambia">Zambia</a>
+                  </li>
+                  <li class="countries-list__item" data-synonyms="">
+                    <a class="govuk-link countries-list__link" href="/foreign-travel-advice/zimbabwe">Zimbabwe</a>
+                  </li>
+              </ul>
+            </div>
+          <div class="subscriptions-wrapper">
+    
+     
+  
+  </section>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</main>
+</div>
+  
+  
+  
+            
+      </div>
+
+      {% endblock %}
