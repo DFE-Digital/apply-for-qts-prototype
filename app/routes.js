@@ -139,4 +139,30 @@ router.post('/degree-answer', function (req, res) {
       
     })
 
+        // Run this code when a form is submitted to 'Country Trained in'
+        router.post('/passive-country-answer', function (req, res) {
+    
+          // Make a variable and give it the value from 'degree'
+          var passiveCountry = req.session.data['passiveCountry']
+        
+          // Check whether the variable matches a condition
+          if (passiveCountry == "India"){
+            // Send user to India guidance page
+            res.redirect('/prototype-2/documents-you-will-need-india')
+            // Send user to Zimbabwe guidance page
+          } else if (passiveCountry == "Zimbabwe") {
+            res.redirect('/prototype-2/documents-you-will-need-zimbabwe')
+            // Send user to Nigeria guidance page
+          } else if (passiveCountry == "Nigeria") {
+            res.redirect('/prototype-2/documents-you-will-need-nigeria')
+            // Send user to Jamaica guidance page
+          } else if (passiveCountry == "Zimbabwe") {
+            res.redirect('/prototype-2/documents-you-will-need-jamaica')
+          } else {
+            // Send user to STEM
+            res.redirect('/prototype-1/get-prepared/question-degree-english')
+          }
+        
+      })
+
 module.exports = router
