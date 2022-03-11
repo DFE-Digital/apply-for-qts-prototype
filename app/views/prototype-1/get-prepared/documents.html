@@ -14,13 +14,50 @@
 
       <h1 class="govuk-heading-xl">Documents you will need to apply</h1>
 
+      <p>Based on your answers, we will require the following documents to support your application for QTS.</p>
+      <p>In the next stage of the application process, you will be asked to upload these documents.</p>
+      <p>Scanned copies are acceptable.</p>
+
       <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Degree certificate</h2>
-      <p>text here</p>
+      <p>Supply a copy of the Degree Certificate, as issued by the awarding body</p>
       <hr class="govuk-!-margin-bottom-4">
 
       <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Identification</h2>
-      <p>text here</p>
+      <p>Supply one of forms of ID from the list below.</p>
+      <p> </p>
+      <p> The supplied document must provide details of your date of birth and your nationalityDocuments should be currently valid and not expired..</p>
+      
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Passport</li> 
+        <li>Driving Licence (nationality not captured?)</li>
+        <li>Identity Card</li>
+        <li>Birth Certificate?</li> Certificate
+        </p>
+        </ul>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Change of name</h2>
+        <p>Supply evidence of any changes of name if different to that on the supplied qualification or identity documents.</p>
+        <p>Evidence to be a document from the list below.</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Change of name deed</li>
+          <li>Divorce certificate</li>
+          <li>Marriage certificate</li>
+          </p>
+          </ul>
       <hr class="govuk-!-margin-bottom-4">
+      
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Teacher Qualification Certificate</h2>
+      <p>Supply a copy of the Teacher Qualification Certificate, as issued by the awarding body.</p>
+      <hr class="govuk-!-margin-bottom-4">
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Translations</h2>
+      <p>Supply translations.</p>
+      <p>With the exclusion of ID and Change of Name, all supplied, supporting documents in a language other than English (or not bilingual) must be accompanied by a certified English translation.</p>
+      <p>You must not translate supporting documentation yourself.
+        Translation should be done by an independent certified official body or an accredited translator.</p>
+      <hr class="govuk-!-margin-bottom-4">
+
+
 
       {% if data['nationality'] == "Canada"  %}
         <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Teacher reference number</h2>
@@ -28,16 +65,37 @@
         <hr class="govuk-!-margin-bottom-4">
 
       {% elseif data['nationality'] == "India"  %}
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Teacher reference number</h2>
-        <p>Description her e of teacher refernce number and maybe where to find it.</p>
-        <hr class="govuk-!-margin-bottom-4">
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">LOPS</h2>
-        <p>Description here of LOPS and maybe where to find it.</p>
-        <hr class="govuk-!-margin-bottom-4">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Letter of professional standing</h2>
+      <p>Supply a letter of professional standing from the appropriate competent authority in the country where you are recognised as a fully qualified teacher.</p>
+      <p>This may also be known in some countries/territories as:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li> Statement of Professional Standing</li>
+        <li>Letter of Recognition</li>
+        <li>Letter of Confirmation</li>
+        <li>Letter of Reference</li>
+        <li>Confirmation of Tenure</li>
+        </p>
+      <hr class="govuk-!-margin-bottom-4">
 
       {% elseif data['nationality'] == "Nigereia"  %}
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">LOPS</h2>
-        <p>Description here of LOPS and maybe where to find it.</p>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Letter of professional standing</h2>
+        <p>Supply a letter of professional standing from the appropriate competent authority in the country where you are recognised as a fully qualified teacher.</p>
+        <p>This may also be known in some countries/territories as:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Statement of Professional Standing</li>
+          <li>Letter of Recognition</li>
+          <li>Letter of Confirmation</li>
+          <li>Letter of Reference</li>
+          <li>Confirmation of Tenure</li>
+          <p>The letter can be obtained from the licensing body, teaching or education department/ministry/authority of the country or territory where you completed your teacher training or are recognised as a fully qualified teacher.</p>
+          <p>This letter mustL</p>
+          <li>show that you are authorised to teach in that jurisdiction (country or territory)</li>
+          <li>show that you have completed a course of Initial Teacher Training (ITT) which is recognised by the competent authority in that country/territory.</li>
+          <li>show that you have successfully completed any period of professional experience comparable to an induction period.</li>
+          <li>show that your authorisation to teach in the country or territory has never been suspended, barred, cancelled, revoked or restricted and that you have no sanctions against you. </li>
+          <li>be issued by the competent education or teaching department/ministry/authority.</li>
+          <li>be no more than 3 months old when the TRA receives it</li>  
+        </p>
         <hr class="govuk-!-margin-bottom-4">
       {% endif %}
 
@@ -47,7 +105,12 @@
         <hr class="govuk-!-margin-bottom-4">
       {% endif %}
 
-      {% if data['DegreeStem'] == "No"  %}
+      {% if data['nationality'] == "Nigeria" and data['DegreeStem'] == "No" %}
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Maths proficiency evidence</h2>
+        <p>Description here of Maths proficiency evidence and maybe where to find it. Specific to Nigeria</p>
+        <hr class="govuk-!-margin-bottom-4">
+
+      {% elseif data['DegreeStem'] == "No"  %}
         <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Maths proficiency evidence</h2>
         <p>Description here of Maths proficiency evidence and maybe where to find it.</p>
         <hr class="govuk-!-margin-bottom-4">
