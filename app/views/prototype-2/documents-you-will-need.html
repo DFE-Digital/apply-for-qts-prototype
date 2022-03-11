@@ -22,45 +22,69 @@
       Documents you will need
     </h1>
 
-    <p>Use this service to:</p>
+    <p>Before you apply, you will need to prepare some evidence.</p> 
+    <p> When you apply, you will need to upload scans or photos of your original documents in XXX and XXX formats.</p>
 
+    <p class="govuk-!-font-weight-bold">If your documents are not in English you’ll also need to provide a certified translation of each.</p>
+    
+    <h2 class="govuk-heading-l">You will need</h2>
+
+    <h2 class="govuk-heading-m">Identity</h2>
+    <p>You must provide one of the following:</p>
     <ul class="govuk-list govuk-list--bullet">
-      <li>lots of content in here</li>
+      <li> A passport, national identity card or driving licence that shows your date of birth and nationality. This must be valid and have not expired. </li>
+      <li> If the name on your identity documents is different from that on your other documents, evidence of your name change (such as a divorce certificate or name change deed)</li>
     </ul>
 
-    <form class="form" action="/passive-country-answer" method="post">
-    {% from "govuk/components/select/macro.njk" import govukSelect %}
+      <h2 class="govuk-heading-m">Qualifications</h2>
+      <p>You must provide one of the following:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li> Degree certificate from the awarding university or institution</li>
+        <li>Official teacher training certificate from the awarding body. This is not required if your teacher training was completed as part of your degree</li>
+        <li>A transcript or diploma supplement of the qualification that led you to be a recognised teacher. This should be issued by the awarding body and show all the modules you studied and the marks you got for each. If your teacher training was completed as part of your degree, you should supply your degree transcript.</li>
+        </ul>
 
-    {{ govukSelect({
-      id: "passiveCountry",
-      name: "passiveCountry",
-      label: {
-        text: "Select country"
-      },
-      items: [
-        {
-          value: "Nigeria",
-          text: "Nigeria"
-        },
-        {
-          value: "India",
-          text: "India",
-          selected: true
-        },
-        {
-          value: "Zimbabwe",
-          text: "Zimbabwe"
-        },
-        {
-          value: "Jamaica",
-          text: "Jamaica"
-        }
-      ]
-    }) }}
+    <h2 class="govuk-heading-m">Professional standing as a teacher</h2>
+    <p>You will need to provide proof that you are recognised as a teacher by the competent education or teaching department, ministry or authority in the country or territory where you qualified. This must show that:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li> You have completed a course of initial teacher training (ITT) which is recognised by the competent authority in that country or territory.</li>
+          <li> You have successfully completed any period of professional experience comparable to an induction period.</li>
+          <li> Your authorisation to teach in the country or territory has never been suspended, barred, cancelled, revoked or restricted and that you have no sanctions against you. </li>
+        </ul>
+      <p>Ways to prove professional standing:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Online register: If your competent education department or authority has an online register of teachers, you will need to provide us with any reference numbers that we will need to check your record</li>
+        <li>A written statement: the competent authority or territory that recognises you as a teacher must confirm any of the details above that are not available online in writing. This written confirmation must be dated within three months of you applying for QTS.</li>
+        <p>this written statement may also be known as a letter of professional standing, a letter of confirmation, letter of reference, confirmation of tenure or a teaching licence.</p>
+      </ul>
 
-    <button class="govuk-button" data-module="govuk-button">Show documents for this country</button>
+      <h2 class="govuk-heading-m">Knowledge of English</h2>
+      <p>You will need to provide one of the following:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li> Proof that your degree was taught in English (for example a ENIC-UK Statement of Comparability for Degree - confirming English language content, or a medium of instruction letter)</li>
+          <li> Proof of undertaking a Secure English Language Test (SELT) at least level B2 on the Common European Framework of Reference for Languages (CEFR) scale. This test must be carried out by one of the Home Office approved test centres. Your test result can later be used if you need to seek the right to work in the UK.</li>
+          <p class="govuk-!-font-weight-bold">Exceptions</p>
+          <li> You will not need to provide proof of your knowledge of English if you are a citizen of of Antigua and Barbuda, Australia, The Bahamas, Barbados, Belize, Canada, Dominica, Grenada, Guyana, Jamaica, Ireland, Malta, New Zealand, St Kitts and Nevis, St Lucia, St Vincent and the Grenadines, Trinidad and Tobago or USA </li>
+          <li>You will not need to provide proof of your knowledge of English if your degree or teaching qualification was completed in one of the above countries</li>
+        </ul>
 
-  </form>
+      <h2 class="govuk-heading-m">Professional teaching experience since you qualified</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li> You should provide the name, role and current email address of senior staff at any schools or other settings who will be able to confirm that you have worked as a teacher for at least one school year since you qualified.</li>
+          <li> They should be expecting us to contact them to confirm the size, subject and age range of the classes you have taught, and the dates you worked there. They must be able to communicate in English</li>
+          <li>If you would like to be exempt from undertaking an induction year in England, you should provide details covering 2 years of teaching.</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">School level maths</h2>
+        <p>You must demonstrate that you have a level of maths proficiency that is equivalent to at least a GCSE in maths at level 4. For example, this could be your degree, or a school leaving certificate that shows the subjects you studied.</p>
+        <p>GCSEs are completed at the end of compulsory education in England (at age 16).</p>
+
+      <h2 class="govuk-heading-m">Primary teachers only - school level science</h2>
+      <p>You must demonstrate that you have a level of science knowledge that is equivalent to at least a GCSE in science at level 4. For example, this could be your degree, or a school leaving certificate that shows the subjects you studied.</p>
+
+      <a href="apply-for-qts" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Continue
+      </a>
 
   </div>
 

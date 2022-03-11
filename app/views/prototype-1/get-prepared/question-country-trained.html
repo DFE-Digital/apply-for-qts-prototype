@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Which country are you trained in as a teacher</h1>
+      <h1 class="govuk-heading-xl">In which country are you trained in as a teacher?</h1>
       <form class="form" action="/country-trained-answer" method="post">
 
         {% from "govuk/components/select/macro.njk" import govukSelect %}
@@ -25,11 +25,6 @@
             text: "Country trained in"
           },
           items: [
-            {
-              value: "Canada",
-              text: "Canada",
-              checked: checked("country", "Canada")
-            },
             {
               value: "India",
               text: "India",
