@@ -1,28 +1,10 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
-  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Section</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link">Subsection</a>
-      </li>
-    </ol>
-  </div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -33,9 +15,17 @@
         Check your eligibility to apply for QTS
       </h1>
 
-      <p>You will need to prove that you trained and qualified at a similar level to teachers that trained in England.</p> 
+      <p>You will need:</p> 
       <p>You can contact us if you need help with eligibility, by emailing x.</p>
       <p>It will take about 2 minutes to complete.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a bachelor’s degree</li>
+        <li>a teacher training qualification</li>
+        <li>1 year of teaching experience</li>
+        <li>professional status as a teacher where you qualified</li>
+        <li>good knowledge of English</li>
+        <li>some knowledge of maths and, to teach children aged 5 to 11, some knowledge of science</li>
+      </ul>
 
       <a href="question-degree" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
         Continue

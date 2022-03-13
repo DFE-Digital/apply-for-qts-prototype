@@ -4,25 +4,8 @@
   Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
-{% endblock %}
-
 {% block beforeContent %}
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Section</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link">Subsection</a>
-      </li>
-    </ol>
-  </div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -30,17 +13,25 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Prepare your QTS application
+        Documents you will need
       </h1>
-
-      <p>Use this questionnaire to check which documents you will need to supply to support your application for Qualified Teacher Status (QTS) in England.</p>
-      <p>The displayed results from the completed questionnaire, will inform you of the specific supporting documents we require and why we need these documents.</p>
-      <p>You will be asked to upload these documents later, as part of the Apply for QTS process which follows the completion of this questionnaire.</p>
-      <p>It is free to use.</p>
-      <p>It will take about 2 minutes to complete.</p>
+      <p>Based on your answers in the eligibility checker, you may be eligible to apply to get qualified teacher status (QTS).</p> 
+      <p>Before you apply, you will need to prepare documents that prove your</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>identity</li>
+        <li>qualifications</li>
+        <li>teaching experience </li>
+        <li>knowledge of English</li>
+      </ul>
+      <p>The documents you need to prepare will depend on your circumstances.</p>
+      <p>Use this checker to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li> Find out what documents you would need to make you application for QTS</li>
+      </ul>
+      <p>You do not have to pay us a fee for using this checker or for making an application for QTS. There may be some costs to pay for the evidence that you need to provide.</p>
 
       <a href="question-nationality" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
-        Continue
+        start now
       </a>
     </div>
   </div>
