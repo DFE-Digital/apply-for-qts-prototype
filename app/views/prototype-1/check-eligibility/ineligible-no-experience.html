@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        You are not eligible
+      </h1>
+      <p>You are not eligible to apply to get qualified teacher status (QTS) in England because you have not worked as a teacher for at least a year since you qualified.</p>
+      <p>The requirement for QTS is for a teacher to have been teaching for a minimum of 1 year, involving classes/groups of at least 4 children, on a full-time basis, in any type of mainstream school.</p>
+      <p>Find out how you can train to become a teacher in England <a href="https://getintoteaching.education.gov.uk/ways-to-train">here</a></p>
+    </div>
+  </div>
+
+{% endblock %}

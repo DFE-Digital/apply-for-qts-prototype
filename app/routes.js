@@ -15,7 +15,7 @@ router.post('/degree-answer', function (req, res) {
       res.redirect('/prototype-1/check-eligibility/question-formal-training')
     } else {
       // Send user to ineligible page
-      res.redirect('/prototype-1/check-eligibility/ineligible')
+      res.redirect('/prototype-1/check-eligibility/ineligible-degree')
     }
   
   })
@@ -32,7 +32,7 @@ router.post('/degree-answer', function (req, res) {
         res.redirect('/prototype-1/check-eligibility/question-completed-year')
       } else {
         // Send user to ineligible page
-        res.redirect('/prototype-1/check-eligibility/ineligible')
+        res.redirect('/prototype-1/check-eligibility/ineligible-formal-training')
       }
     
     })
@@ -49,7 +49,7 @@ router.post('/degree-answer', function (req, res) {
           res.redirect('/prototype-1/check-eligibility/question-recognised-teacher')
         } else {
           // Send user to ineligible page
-          res.redirect('/prototype-1/check-eligibility/ineligible')
+          res.redirect('/prototype-1/check-eligibility/ineligible-no-experience')
         }
       
     })
@@ -66,7 +66,7 @@ router.post('/degree-answer', function (req, res) {
           res.redirect('/prototype-1/check-eligibility/question-sen-only')
         } else {
           // Send user to ineligible page
-          res.redirect('/prototype-1/check-eligibility/ineligible')
+          res.redirect('/prototype-1/check-eligibility/ineligible-not-recognised')
         }
       
     })
@@ -83,12 +83,12 @@ router.post('/degree-answer', function (req, res) {
           res.redirect('/prototype-1/check-eligibility/question-14-16-years')
         } else {
           // Send user to ineligible page
-          res.redirect('/prototype-1/check-eligibility/ineligible')
+          res.redirect('/prototype-1/check-eligibility/ineligible-sen')
         }
       
     })
 
-    // Run this code when a form is submitted to '14-16-years'
+    // Run this code when a form is submitted to '4-16-years'
     router.post('/14-16-years-answer', function (req, res) {
     
         // Make a variable and give it the value from 'degree'
@@ -100,7 +100,7 @@ router.post('/degree-answer', function (req, res) {
           res.redirect('/prototype-1/check-eligibility/eligible')
         } else {
           // Send user to ineligible page
-          res.redirect('/prototype-1/check-eligibility/ineligible')
+          res.redirect('/prototype-1/check-eligibility/ineligible-4-16')
         }
       
     })

@@ -50,13 +50,14 @@
       <p>Supply a copy of the Teacher Qualification Certificate, as issued by the awarding body.</p>
       <hr class="govuk-!-margin-bottom-4">
 
+      {% if  data['nationality'] != "Jamaica"  %}
       <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Translations</h2>
       <p>Supply translations.</p>
       <p>With the exclusion of ID and Change of Name, all supplied, supporting documents in a language other than English (or not bilingual) must be accompanied by a certified English translation.</p>
       <p>You must not translate supporting documentation yourself.
         Translation should be done by an independent certified official body or an accredited translator.</p>
       <hr class="govuk-!-margin-bottom-4">
-
+      {% endif %}
 
 
       {% if data['nationality'] == "Canada"  %}
@@ -74,7 +75,7 @@
         <li>Letter of Confirmation</li>
         <li>Letter of Reference</li>
         <li>Confirmation of Tenure</li>
-        </p>
+      </ul>
       <hr class="govuk-!-margin-bottom-4">
 
       {% elseif data['nationality'] == "Nigereia"  %}
@@ -95,36 +96,45 @@
           <li>show that your authorisation to teach in the country or territory has never been suspended, barred, cancelled, revoked or restricted and that you have no sanctions against you. </li>
           <li>be issued by the competent education or teaching department/ministry/authority.</li>
           <li>be no more than 3 months old when the TRA receives it</li>  
-        </p>
+        </u>
         <hr class="govuk-!-margin-bottom-4">
       {% endif %}
 
-      {% if data['DegreeEnglish'] == "No"  %}
+      {% if data['DegreeEnglish'] == "No" and data['nationality'] != "Jamaica"  %}
         <h2 class="govuk-heading-m govuk-!-margin-bottom-1">English proficiency evidence</h2>
-        <p>Description here of English proficiency evidence and maybe where to find it.</p>
+        <p>As you:-</p>
+        <ul class="govuk-list govuk-list--bullet"> 
+          <li>Are not a citizen of a country that is exempt from proving your knowledge of English and</li>
+          <li>Were not taught in English for your undergraduate degree</li>
+        </ul>
+        <p>Then you must prove your knowledge of English by supplying proof of undertaking a Secure English Language Test (SELT). Your test result must prove that you can read, write, speak and understand English to at least level B2 on the Common European Framework of Reference for Languages (CEFR) scale.</p>
+
+      <p>The test must have been taken in the last 2 years prior to the date of application and also taken at the test centre of an approved SELT provider.</p>
+      <p>Approved SELT providers are:-</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Pearson</li>
+        <li>PSI Services (UK) Ltd</li>
+        <li>IELTS SELT Consortium</li>
+        <li>LanguageCert</li>
+      </ul>
+
+      <p>Supply a copy of the test certificate or a valid digital reference number of an approved SELT.</p>
         <hr class="govuk-!-margin-bottom-4">
       {% endif %}
 
-      {% if data['nationality'] == "Nigeria" and data['DegreeStem'] == "No" %}
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Maths proficiency evidence</h2>
-        <p>Description here of Maths proficiency evidence and maybe where to find it. Specific to Nigeria</p>
-        <hr class="govuk-!-margin-bottom-4">
-
-      {% elseif data['DegreeStem'] == "No"  %}
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Maths proficiency evidence</h2>
-        <p>Description here of Maths proficiency evidence and maybe where to find it.</p>
+      {% if data['DegreeStem'] == "No"  %}
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Maths Equivalency evidence</h2>
+        <p>Supply evidence of a qualification that demonstrates that you have achieved a level of Mathematics at least equivalent to a GCSE at grade 4 (grade 'C') in England.</p>
+        <p>For example, this could be your degree, or a school leaving certificate that shows the subjects you studied.</p>
         <hr class="govuk-!-margin-bottom-4">
       {% endif %}
 
       {% if data['PrimarySecondary'] == "Primary"  %}
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Science proficiency evidence</h2>
-        <p>Description here of Science proficiency evidence and maybe where to find it.</p>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Science Equivalency evidence</h2>
+        <p>Supply evidence of a qualification that demonstrates that you have achieved a level of Science at least equivalent to a GCSE at grade 4 (grade 'C') in England.</p>
+        <p>For example, this could be your degree, or a school leaving certificate that shows the subjects you studied</p>
         <hr class="govuk-!-margin-bottom-4">
       {% endif %}
-
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Other documents</h2>
-      <p>Such as copy of diploma / passport etc</p>
-      <hr class="govuk-!-margin-bottom-8">
 
       <h2 class="govuk-heading-l">Do yo have these documents?</h2>
 
