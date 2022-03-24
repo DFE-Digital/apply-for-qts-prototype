@@ -12,7 +12,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers</h1>
+      <h1 class="govuk-heading-xl">Please check your answers</h1>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -35,7 +35,7 @@
         <!-- Country Trained answer -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Contry Trained in
+            Country Trained in
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['country'] }}
@@ -101,16 +101,16 @@
         {% endif %}
       </dl>
 
-      <h2 class="govuk-heading-m">Now see what documents you will need</h2>
+      <h2 class="govuk-heading-m">Your supporting documents</h2>
 
-      <p>You will need these documents to complete your application</p>
+      <p>Thank you for the information you have given us. Select continue to view the list of documents you'll need to submit with your application.</p>
 
       <form action="documents" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
-          See required documents
+          Continue
         </button>
 
       </form>
