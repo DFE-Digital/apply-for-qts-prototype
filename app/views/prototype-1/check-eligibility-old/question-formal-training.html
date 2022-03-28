@@ -15,33 +15,33 @@
 
       <!-- <h1 class="govuk-heading-xl">Radio Button question</h1> -->
 
-      <form class="form" action="/stem-answer" method="post">
+      <form class="form" action="/formal-training-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "DegreeStem",
-          name: "DegreeStem",
+          idPrefix: "formal-training",
+          name: "formal-training",
           fieldset: {
             legend: {
-              text: "Did your degree contain Maths and Science content?",
+              text: "Do you have a teacher training qualification?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            text: "Similarly to teachers trained within the UK, you must demonstrate that you have a level of maths proficiency that is equivalent to at least a GCSE in maths at level 4."
+            text: "Your teacher training needs to be of a similar standard to teacher training in England. This usually means a 3-year undergraduate teaching degree, or a 1-year postgraduate teacher training course. Your training should include substantial practical experience in the classroom. You must be qualified to teach all children between 5 and 16 (not just those with special educational needs or disabilities). "
           },
           items: [
             {
               value: "Yes",
               text: "Yes",
-              checked: checked("DegreeStem", "Yes")
+              checked: checked("formal-training", "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: checked("DegreeStem", "No")
+              checked: checked("formal-training", "No")
             }
             
           ]

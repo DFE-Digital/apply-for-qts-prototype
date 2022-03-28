@@ -14,16 +14,26 @@
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Your supporting documents</h1>
 
-      <p>You will need to upload digital versions of the following documents before beginning your application.</p> 
+      <p>Before you apply, you will need to prepare some evidence.</p> 
+      <p> When you apply, you will need to upload scans or photos of your original documents in .pdf, .jpg and .jpeg formats.</p>
+  
+      <p class="govuk-!-font-weight-bold">If your documents are not in English you’ll also need to provide a certified translation of each.</p>
+      
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Qualifications</h2>
 
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Degree certificate</h2>
-      <p>Supply a copy of the Degree Certificate, as issued by the awarding body</p>
+      <p>You must provide one of the following:</p>
+      
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Degree certificate from the awarding university or institution</li> 
+        <li>Official teacher training certificate from the awarding body. This is not required if your teacher training was completed as part of your degree</li>
+        <li>A transcript or diploma supplement of the qualification that led you to be a recognised teacher. This should be issued by the awarding body and show all the modules you studied and the marks you got for each. If your teacher training was completed as part of your degree, you should supply your degree transcript.</li>
+        </ul>
       <hr class="govuk-!-margin-bottom-4">
 
       <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Identification</h2>
       <p>Supply one of forms of ID from the list below.</p>
       <p> </p>
-      <p> The supplied document must provide details of your date of birth and your nationalityDocuments should be currently valid and not expired..</p>
+      <p> The supplied document must provide details of your date of birth and your nationality. Documents should be currently valid and not expired.</p>
       
 
       <ul class="govuk-list govuk-list--bullet">
@@ -33,7 +43,7 @@
         <li>Birth Certificate?</li> Certificate
         </p>
         </ul>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Change of name</h2>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Change of name</h3>
         <p>Supply evidence of any changes of name if different to that on the supplied qualification or identity documents.</p>
         <p>Evidence to be a document from the list below.</p>
         <ul class="govuk-list govuk-list--bullet">
@@ -43,19 +53,18 @@
           </p>
           </ul>
       <hr class="govuk-!-margin-bottom-4">
-      
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Teacher Qualification Certificate</h2>
-      <p>Supply a copy of the Teacher Qualification Certificate, as issued by the awarding body.</p>
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Work experience reference</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>You should give the name, role and current email address of a senior staff member who can confirm that you have worked as a teacher for 1 year or more since you qualified.</li> 
+        <li>The staff member should be expecting us to contact them to confirm the size, subject and age range of the classes you have taught, and the dates you worked there</li>
+        </ul>
       <hr class="govuk-!-margin-bottom-4">
 
-      {% if  data['nationality'] != "Jamaica"  %}
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Translations</h2>
-      <p>Supply translations.</p>
-      <p>With the exclusion of ID and Change of Name, all supplied, supporting documents in a language other than English (or not bilingual) must be accompanied by a certified English translation.</p>
-      <p>You must not translate supporting documentation yourself.
-        Translation should be done by an independent certified official body or an accredited translator.</p>
-      <hr class="govuk-!-margin-bottom-4">
-      {% endif %}
+      
+
 
 
       {% if data['nationality'] == "Canada"  %}
@@ -121,20 +130,20 @@
       {% endif %}
 
       {% if data['DegreeStem'] == "No"  %}
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Maths Equivalency evidence</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Maths equivalency evidence</h2>
         <p>Supply evidence of a qualification that demonstrates that you have achieved a level of Mathematics at least equivalent to a GCSE at grade 4 (grade 'C') in England.</p>
         <p>For example, this could be your degree, or a school leaving certificate that shows the subjects you studied.</p>
         <hr class="govuk-!-margin-bottom-4">
       {% endif %}
 
       {% if data['PrimarySecondary'] == "Primary"  %}
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Science Equivalency evidence</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Science equivalency evidence</h2>
         <p>Supply evidence of a qualification that demonstrates that you have achieved a level of Science at least equivalent to a GCSE at grade 4 (grade 'C') in England.</p>
         <p>For example, this could be your degree, or a school leaving certificate that shows the subjects you studied</p>
         <hr class="govuk-!-margin-bottom-4">
       {% endif %}
 
-      <h2 class="govuk-heading-l">What to do if you can't provide these documents
+      <h2 class="govuk-heading-m">What to do if you cannot provide these documents
  </h2>
 
       <p>We will need to see all of these documents to process your application. Email us at email@digital.education.gov.uk for help with paperwork.</p>
@@ -144,7 +153,7 @@
         <input type="hidden" name="answers-checked" value="true">
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
-          Continue to task list
+          Return to task list
         </button>
 
       </form>
