@@ -15,34 +15,33 @@
 
       <!-- <h1 class="govuk-heading-xl">Radio Button question</h1> -->
 
-      <form class="form" action="/stem-answer" method="post">
+      <form class="form" action="/registered-teacher-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "DegreeStem",
-          name: "DegreeStem",
+          idPrefix: "registered-teacher",
+          name: "registered-teacher",
           fieldset: {
             legend: {
-              text: "Did your degree contain Maths and Science content?",
+              text: "Are you registered as a teacher in the country where you trained?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            text: "Similarly to teachers trained within the UK, you must demonstrate that you have a level of maths proficiency that is equivalent to at least a GCSE in maths at level 4."
-
+            text: ""
           },
           items: [
             {
               value: "Yes",
               text: "Yes",
-              checked: checked("DegreeStem", "Yes")
+              checked: checked("registered-teacher", "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: checked("DegreeStem", "No")
+              checked: checked("registered-teacher", "No")
             }
             
           ]

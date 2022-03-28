@@ -14,26 +14,27 @@
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Your supporting documents</h1>
 
-<p>When you apply, you will need to upload scans or photos of your original documents in .pdf, .jpg and .jpeg formats.</p>
 
-<p class="govuk-!-font-weight-bold">If your documents are not in English you’ll also need to provide a certified translation of each.</p>
-
-
-<p class="govuk-heading-l govuk-!-margin-bottom-4"> You will need </P>
-
+      <p>Before you apply, you will need to prepare some evidence.</p> 
+      <p> When you apply, you will need to upload scans or photos of your original documents in .pdf, .jpg and .jpeg formats.</p>
+  
+      <p class="govuk-!-font-weight-bold">If your documents are not in English you’ll also need to provide a certified translation of each.</p>
+      
       <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Qualifications</h2>
+
+      <p>You must provide one of the following:</p>
+      
       <ul class="govuk-list govuk-list--bullet">
         <li>Degree certificate from the awarding university or institution</li> 
         <li>Official teacher training certificate from the awarding body. This is not required if your teacher training was completed as part of your degree</li>
         <li>A transcript or diploma supplement of the qualification that led you to be a recognised teacher. This should be issued by the awarding body and show all the modules you studied and the marks you got for each. If your teacher training was completed as part of your degree, you should supply your degree transcript.</li>
         </ul>
-        <hr class="govuk-!-margin-bottom-4">
-
+      <hr class="govuk-!-margin-bottom-4">
 
       <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Identification</h2>
-      <p>Supply one form of ID from the list below.</p>
-      <p> The supplied document must provide details of your date of birth and your nationalityDocuments should be currently valid and not expired.</p>
-      
+      <p>Supply one of forms of ID from the list below.</p>
+      <p> </p>
+      <p> The supplied document must provide details of your date of birth and your nationality. Documents should be currently valid and not expired.</p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>Passport</li> 
@@ -42,7 +43,7 @@
         <li>Birth Certificate</li>
         </p>
         </ul>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Change of name</h2>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Change of name</h3>
         <p>Supply evidence of any changes of name if different to that on the supplied qualification or identity documents.</p>
         <p>Evidence to be a document from the list below.</p>
         <ul class="govuk-list govuk-list--bullet">
@@ -53,16 +54,15 @@
           </ul>
       <hr class="govuk-!-margin-bottom-4">
 
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Evidence of professional teaching experience since you qualified</h2>
-        <p>We will need to confirm your teaching experience since you became a qualified teacher. To do this, we will need you to provide references.</p>
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Work experience reference</h2>
+
       <ul class="govuk-list govuk-list--bullet">
-        <li>You should provide the name, role and current email address of senior staff at any schools or other settings who will be able to confirm that you have worked as a teacher for at least one school year since you qualified</li> 
-        <li>They should be expecting us to contact them to confirm the size, subject and age range of the classes you have taught, and the dates you worked there. They must be able to communicate in English</li>
-        <li>If you would like to be exempt from undertaking an induction year in England, you should provide details covering 2 years of teaching.</li>
+        <li>You should give the name, role and current email address of a senior staff member who can confirm that you have worked as a teacher for 1 year or more since you qualified.</li> 
+        <li>The staff member should be expecting us to contact them to confirm the size, subject and age range of the classes you have taught, and the dates you worked there</li>
         </ul>
-        <hr class="govuk-!-margin-bottom-4">
-
-
+      <hr class="govuk-!-margin-bottom-4">
 
       {% if data['nationality'] == "Canada"  %}
         <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Teacher reference number</h2>
@@ -125,20 +125,21 @@
       {% endif %}
 
       {% if data['DegreeStem'] == "No"  %}
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Maths Equivalency evidence</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Maths equivalency evidence</h2>
         <p>Supply evidence of a qualification that demonstrates that you have achieved a level of Mathematics at least equivalent to a GCSE at grade 4 (grade 'C') in England.</p>
         <p>For example, this could be your degree, or a school leaving certificate that shows the subjects you studied.</p>
         <hr class="govuk-!-margin-bottom-4">
       {% endif %}
 
       {% if data['PrimarySecondary'] == "Primary"  %}
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Science Equivalency evidence</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Science equivalency evidence</h2>
         <p>Supply evidence of a qualification that demonstrates that you have achieved a level of Science at least equivalent to a GCSE at grade 4 (grade 'C') in England.</p>
         <p>For example, this could be your degree, or a school leaving certificate that shows the subjects you studied</p>
         <hr class="govuk-!-margin-bottom-4">
       {% endif %}
 
-      <h2 class="govuk-heading-l govuk-!-margin-bottom-4">What to do if you can't provide these documents
+      <h2 class="govuk-heading-m">What to do if you cannot provide these documents
+
  </h2>
 
       <p>We will need to see all of these documents to process your application. Email us at email@digital.education.gov.uk for help with paperwork.</p>
@@ -148,7 +149,7 @@
         <input type="hidden" name="answers-checked" value="true">
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
-          Continue
+          Return to task list
         </button>
 
       </form>

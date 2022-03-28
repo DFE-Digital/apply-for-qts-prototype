@@ -15,34 +15,30 @@
 
       <!-- <h1 class="govuk-heading-xl">Radio Button question</h1> -->
 
-      <form class="form" action="/stem-answer" method="post">
+      <form class="form" action="/special-educational-needs-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "DegreeStem",
-          name: "DegreeStem",
+          idPrefix: "special-educational-needs",
+          name: "special-educational-needs",
           fieldset: {
             legend: {
-              text: "Did your degree contain Maths and Science content?",
+              text: "Is your qualification to teach children aged anywhere from 5 years up to 16 years?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
-          },
-          hint: {
-            text: "Similarly to teachers trained within the UK, you must demonstrate that you have a level of maths proficiency that is equivalent to at least a GCSE in maths at level 4."
-
           },
           items: [
             {
               value: "Yes",
               text: "Yes",
-              checked: checked("DegreeStem", "Yes")
+              checked: checked("special-educational-needs", "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: checked("DegreeStem", "No")
+              checked: checked("special-educational-needs", "No")
             }
             
           ]

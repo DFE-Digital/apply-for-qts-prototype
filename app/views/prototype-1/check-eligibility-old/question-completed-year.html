@@ -15,34 +15,33 @@
 
       <!-- <h1 class="govuk-heading-xl">Radio Button question</h1> -->
 
-      <form class="form" action="/stem-answer" method="post">
+      <form class="form" action="/completed-year-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "DegreeStem",
-          name: "DegreeStem",
+          idPrefix: "completed-year",
+          name: "completed-year",
           fieldset: {
             legend: {
-              text: "Did your degree contain Maths and Science content?",
+              text: "Do you have experience working as a qualified teacher?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            text: "Similarly to teachers trained within the UK, you must demonstrate that you have a level of maths proficiency that is equivalent to at least a GCSE in maths at level 4."
-
+            text: "You will need a minimum of 1 year working in a classroom, teaching groups of at least 4 children between the ages of 5 and 16. Your experience can be gained in any type of school (for example, international, state, private or specialist provision)."
           },
           items: [
             {
               value: "Yes",
               text: "Yes",
-              checked: checked("DegreeStem", "Yes")
+              checked: checked("completed-year", "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: checked("DegreeStem", "No")
+              checked: checked("completed-year", "No")
             }
             
           ]
