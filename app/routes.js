@@ -186,4 +186,21 @@ router.post('/misconduct-answer', function (req, res) {
         
       })
 
+       // Run this code when a form is submitted to 'together-separate'
+      router.post('/together-separate-answer', function (req, res) {
+    
+        // Make a variable and give it the value from 'togetherSeparate'
+        var togetherSeparate = req.session.data['together-separate']
+      
+        // Check whether the variable matches a condition
+        if (togetherSeparate == "Together"){
+          // Send user to next page
+          res.redirect('/prototype-3/qualifications/question-qualification-title')
+        } else {
+          // Send user to ineligible page
+          res.redirect('/prototype-3/qualifications/question-degree-title')
+        }
+      
+    })
+
 module.exports = router
