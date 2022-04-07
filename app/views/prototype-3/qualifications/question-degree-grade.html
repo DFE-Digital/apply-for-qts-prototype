@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <form class="form" action="question-degree-subjects" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "what-grade-degree",
+          name: "what-grade-degree",
+          fieldset: {
+            legend: {
+              text: "What grade is your degree?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "First-class honours",
+              text: "First-class honours",
+              checked: checked("what-grade-degree", "First-class honours")
+            },
+            {
+              value: "Upper second-class honours (2:1)",
+              text: "Upper second-class honours (2:1)",
+              checked: checked("what-grade-degree", "Upper second-class honours (2:1)")
+            },
+            {
+              value: "Lower second-class honours (2:2)",
+              text: "Lower second-class honours (2:2)",
+              checked: checked("what-grade-degree", "Lower second-class honours (2:2)")
+            },
+            {
+              value: "Third-class honours",
+              text: "Third-class honours",
+              checked: checked("what-grade-degree", "Third-class honours")
+            },
+            {
+              value: "Pass",
+              text: "Pass",
+              checked: checked("what-grade-degree", "Pass")
+            },
+            {
+              value: "Other",
+              text: "Other",
+              checked: checked("what-grade-degree", "Other")
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+    
+  </div>
+
+{% endblock %}
