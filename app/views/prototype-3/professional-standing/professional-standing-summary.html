@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers professional standing</h1>
+      
+      <h2 class="govuk-heading-m">Degree details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+        <!-- Teacher training qualification subjects trained to teach -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Summary example
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['example'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="question-degree-title">
+                Change
+                  <span class="govuk-visually-hidden">Example</span>
+              </a>
+            </dd>
+          </div>
+
+
+
+      </dl>
+
+      <form action="#" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/evidence-professional-standing-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "evidence-professional-standing",
+          name: "evidence-professional-standing",
+          fieldset: {
+            legend: {
+              text: "How would you like to evidence your professional status?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Online Portal",
+              text: "My country has an online portal",
+              checked: checked("evidence-professional-status", "Online Portal")
+            },
+            {
+              value: "LOPS CA",
+              text: "I have a Letter of Professional Standing from the competent authority in my country",
+              checked: checked("evidence-professional-status", "LOPS CA")
+            },
+            {
+              value: "Cannot Evidence",
+              text: "I cannot evidence this as my country doesn't have a competent authority",
+              checked: checked("wevidence-professional-status", "Cannot Evidence")
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
