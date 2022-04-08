@@ -18,8 +18,8 @@
         {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
         {{ govukDateInput({
-          id: "passport-issued",
-          namePrefix: "passport-issued",
+          id: "degreeAwardDate",
+          namePrefix: "degreeAwardDate",
           fieldset: {
             legend: { 
               text: "What date were you awarded your degree?",
@@ -29,7 +29,8 @@
           },
           hint: {
             text: "some example hint text"
-          }
+          },
+          value: data['degreeAwardDate']
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
