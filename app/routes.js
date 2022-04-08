@@ -257,4 +257,21 @@ router.post('/misconduct-answer', function (req, res) {
     
   })
 
+      // Run this code when a form is submitted to '/upload-teacher-degree-certificate-answer'
+      router.post('/upload-teacher-degree-certificate-answer', function (req, res) {
+
+        // Make a variable and give it the value from 'togetherSeparate'
+        var togetherSeparate = req.session.data['together-separate']
+      
+        // Check whether the variable matches a condition
+        if (togetherSeparate == "Together"){
+          // Send user to next page
+          res.redirect('/prototype-3/qualifications/upload-teacher-degree-certificate')
+        } else {
+          // Send user to ineligible page
+          res.redirect('/prototype-3/qualifications/qualifications-summary')
+        }
+      
+    })
+
 module.exports = router
