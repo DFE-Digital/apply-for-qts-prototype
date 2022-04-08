@@ -16,8 +16,10 @@
         About your teacher training qualification
       </span>
       <h1 class="govuk-heading-l">Upload your teacher qualification transcript</h1>
-
-      <form class="form" action="upload-teacher-degree-certificate" method="post">
+      <div id="" class="govuk-hint">
+        You can upload a screenshot, a photo, or a scanned copy. File must be in jpeg or PDF format and file size must be 250 MB or less.
+      </div>
+      <form class="form" action="/upload-teacher-degree-certificate-answer" method="post">
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="file-upload-1">
@@ -26,7 +28,6 @@
           <a href="upload-teacher-qualification-transcript-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="degreeCertificate" value="teacher-qualification-transcript.pdf">Choose file</a>
           <span class="govuk-body" style="position:relative;top:7px">teacher-qualification-transcript.pdf</span>
         </div>
-
 
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button" name="qualificationTranscript" value="teacher-qualification-transcript.pdf">
