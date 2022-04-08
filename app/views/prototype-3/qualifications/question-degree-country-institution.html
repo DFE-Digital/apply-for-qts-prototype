@@ -13,19 +13,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-
-      <form class="form" action="question-degree-study-period-start" method="post">
+      <span class="govuk-caption-l">
+        About your degree
+      </span>
+      <form class="form" action="question-degree-study-period" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "What country is your institution in",
+            text: "In which country is the institution where you completed your degree?",
             classes: "govuk-label--l",
             isPageHeading: true
-          },
-          hint: {
-            text: "some hint text goes here."
           },
           id: "degreeInstitutionCountry",
           name: "degreeInstitutionCountry",
@@ -34,12 +33,13 @@
           value: data['degreeInstitutionCountry']
         }) }}
 
+
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
 
     </div>
-    
+  
   </div>
-
+  <script src="/public/javascripts/autocomplete.min.js"></script>
 {% endblock %}

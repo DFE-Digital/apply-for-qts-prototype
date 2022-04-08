@@ -24,24 +24,21 @@
           name: "together-separate",
           fieldset: {
             legend: {
-              text: "Is your degree seperate to your teacher qualification?",
+              text: "Did you complete your degree separately from your teacher training qualification?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
-          hint: {
-            text: "hint text goes here"
-          },
           items: [
             {
-              value: "Together",
-              text: "Together",
-              checked: checked("together-separate", "Together")
+              value: "Separate",
+              text: "Yes - I completed my degree separately from my teacher training qualification",
+              checked: checked("together-separate", "Separate")
             },
             {
-              value: "Separate",
-              text: "Separate",
-              checked: checked("together-separate", "Separate")
+              value: "Together",
+              text: "No - my degree was part of my teacher training qualification",
+              checked: checked("together-separate", "Together")
             }
             
           ]

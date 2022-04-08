@@ -12,7 +12,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      <span class="govuk-caption-l">
+        About your teacher training qualification
+      </span>
       <h1 class="govuk-heading-l">Upload your teacher qualification transcript</h1>
 
       <form class="form" action="upload-teacher-degree-certificate" method="post">
@@ -21,17 +23,17 @@
           <label class="govuk-label" for="file-upload-1">
             Select a file to upload
           </label>
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Choose file</button>
+          <a href="upload-teacher-qualification-transcript-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="degreeCertificate" value="teacher-qualification-transcript.pdf">Choose file</a>
           <span class="govuk-body" style="position:relative;top:7px">teacher-qualification-transcript.pdf</span>
         </div>
 
 
         <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button">
+          <button class="govuk-button" data-module="govuk-button" name="qualificationTranscript" value="teacher-qualification-transcript.pdf">
             Upload and continue
           </button>
         
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="qualificationTranscript" value="">
             Add this later
           </button>
         </div>

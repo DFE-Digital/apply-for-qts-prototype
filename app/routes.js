@@ -201,43 +201,60 @@ router.post('/misconduct-answer', function (req, res) {
           res.redirect('/prototype-3/qualifications/question-degree-title')
         }
       
+      })
+
+      // Run this code when a form is submitted to 'evidence-professional-standing-answer'
+      router.post('/evidence-professional-standing-answer', function (req, res) {
+
+        // Make a variable and give it the value from 'professionalStandingAnswer'
+        var professionalStandingAnswer = req.session.data['evidence-professional-standing']
+      
+        // Check whether the variable matches a condition
+        if (professionalStandingAnswer== "Online Portal"){
+          // Send user to online portal page
+          res.redirect('/prototype-3/professional-standing/question-reference-number')
+      // Send user to upload LOPS
+      } else if (professionalStandingAnswer == "LOPS CA") {
+        res.redirect('/prototype-3/professional-standing/upload-lops')
+          } else {
+            // Send users who cannot evidence to summary
+            res.redirect('/prototype-3/professional-standing/professional-standing-summary')
+          }
+        
+      })
+
+      // Run this code when a form is submitted to 'reference-number-answer'
+      router.post('/reference-number-answer', function (req, res) {
+
+        // Make a variable and give it the value from 'professionalStandingAnswer'
+        var referenceNumberAnswer = req.session.data['reference-number']
+      
+        // Check whether the variable matches a condition
+        if (referenceNumberAnswer== "Yes Reference Number"){
+          // Send user to next page
+          res.redirect('/prototype-3/professional-standing/enter-reference-number')
+        } else {
+          // Send user to ineligible page
+          res.redirect('/prototype-3/professional-standing/professional-standing-summary')
+        }
+      
     })
 
-            // Run this code when a form is submitted to 'evidence-professional-standing-answer'
-            router.post('/evidence-professional-standing-answer', function (req, res) {
-    
-              // Make a variable and give it the value from 'professionalStandingAnswer'
-              var professionalStandingAnswer = req.session.data['evidence-professional-standing']
-            
-              // Check whether the variable matches a condition
-              if (professionalStandingAnswer== "Online Portal"){
-                // Send user to online portal page
-                res.redirect('/prototype-3/professional-standing/question-reference-number')
-            // Send user to upload LOPS
-          } else if (professionalStandingAnswer == "LOPS CA") {
-            res.redirect('/prototype-3/professional-standing/upload-lops')
-              } else {
-                // Send users who cannot evidence to summary
-                res.redirect('/prototype-3/professional-standing/professional-standing-summary')
-              }
-            
-          })
+    // Run this code when a form is submitted to 'upload-teacher-ceritficate-seperate'
+    router.post('/upload-certificate-answer', function (req, res) {
 
-                      // Run this code when a form is submitted to 'reference-number-answer'
-                      router.post('/reference-number-answer', function (req, res) {
+      // Make a variable and give it the value from 'professionalStandingAnswer'
+      var uploadCertAnswer = req.session.data['degreeCertificate']
     
-                        // Make a variable and give it the value from 'professionalStandingAnswer'
-                        var referenceNumberAnswer = req.session.data['reference-number']
-                      
-                        // Check whether the variable matches a condition
-                        if (referenceNumberAnswer== "Yes Reference Number"){
-                          // Send user to next page
-                          res.redirect('/prototype-3/professional-standing/enter-reference-number')
-                        } else {
-                          // Send user to ineligible page
-                          res.redirect('/prototype-3/professional-standing/professional-standing-summary')
-                        }
-                      
-                    })
+      // Check whether the variable matches a condition
+      if (uploadCertAnswer== "degree-certificate01.jpeg"){
+        // Send user to next page
+        res.redirect('/prototype-3/qualifications/upload-teacher-degree-certificate-separate-2')
+      } else {
+        // Send user to ineligible page
+        res.redirect('/prototype-3/qualifications/question-qualification-title')
+      }
+    
+  })
 
 module.exports = router

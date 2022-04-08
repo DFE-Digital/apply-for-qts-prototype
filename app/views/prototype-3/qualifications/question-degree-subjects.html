@@ -12,7 +12,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      <span class="govuk-caption-l">
+        About your degree
+      </span>
 
       <form class="form" action="upload-teacher-degree-certificate-separate" method="post">
 
@@ -22,12 +24,9 @@
           name: "degreeSubjects",
           id: "degreeSubjects",
           label: {
-            text: "What were the main subjects you studied?",
+            text: "What subjects did you study as part of your degree?",
             classes: "govuk-label--l",
             isPageHeading: true
-          },
-          hint: {
-            text: "some helpful hint text here."
           },
           value: data['degreeSubjects']
         }) }}
