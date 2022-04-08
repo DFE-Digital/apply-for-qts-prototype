@@ -12,26 +12,25 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">
+        About your teacher training qualification
+      </span>
 
-
-      <form class="form" action="question-qualification-study-period-start" method="post">
+      <form class="form" action="question-qualification-study-period" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "What country is your institution in?",
+            text: "In which country is the institution where you completed your teacher training qualification?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
-          hint: {
-            text: "some hint text goes here."
-          },
-          id: "qualification-institution-name",
-          name: "qualification-institution-name",
+          id: "qualification-institution-country",
+          name: "qualification-institution-country",
           type: "text",
           spellcheck: false,
-          value: data['qualification-institution-name']
+          value: data['qualification-institution-country']
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>

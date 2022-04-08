@@ -9,11 +9,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Service name goes here
+        Apply for Qualified teacher status
       </h1>
 
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 3 sections.</p>
 
       <ol class="app-task-list">
         <li>
@@ -27,7 +25,13 @@
                   Personal information
                 </a>
               </span>
+              {% if  data['completed-personal-details'] == "yes"  %}
               <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif  data['completed-personal-details'] == "no"  %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
             </li>
           </ul>
         </li>
@@ -43,7 +47,13 @@
                   Education and qualifications
                 </a>
               </span>
+              {% if  data['completed-qualifications'] == "yes"  %}
               <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif  data['completed-qualifications'] == "no"  %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
             </li>
           </ul>
         </li>
@@ -55,14 +65,25 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="professional-standing/question-evidence-professional-standing.html" aria-describedby="list-convictions-status">
+                <a href="#" aria-describedby="list-convictions-status">
                 Professional standing 
               </a>
               </span>
+              {% if  data['completed-professional-standing'] == "yes"  %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif  data['completed-professional-standing'] == "no"  %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">In progress</strong>
+              {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
             </li>
           </ul>
         </li>
+
+        <li>
+          <a class="govuk-button" href="success">Submit your application</a>
+        </li>
+
       </ol>
     </div>
   </div>

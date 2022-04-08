@@ -13,19 +13,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-
+      <span class="govuk-caption-l">
+        About your degree
+      </span>
       <form class="form" action="question-degree-country-institution" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "What is the name of your institution",
+            text: "What is the name of the institution where you completed your degree?",
             classes: "govuk-label--l",
             isPageHeading: true
-          },
-          hint: {
-            text: "some hint text goes here."
           },
           id: "degreeInstitutionName",
           name: "degreeInstitutionName",

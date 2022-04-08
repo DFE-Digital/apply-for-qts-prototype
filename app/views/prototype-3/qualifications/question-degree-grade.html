@@ -9,7 +9,9 @@
 {% endblock %}
 
 {% block content %}
-
+<span class="govuk-caption-l">
+  About your degree
+</span>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       
@@ -22,7 +24,7 @@
           name: "degreeGrade",
           fieldset: {
             legend: {
-              text: "What grade is your degree?",
+              text: "What is your degree classification?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -31,32 +33,32 @@
             {
               value: "First-class honours",
               text: "First-class honours",
-              checked: checked("what-grade-degree", "First-class honours")
+              checked: checked("degreeGrade", "First-class honours")
             },
             {
               value: "Upper second-class honours (2:1)",
               text: "Upper second-class honours (2:1)",
-              checked: checked("what-grade-degree", "Upper second-class honours (2:1)")
+              checked: checked("degreeGrade", "Upper second-class honours (2:1)")
             },
             {
               value: "Lower second-class honours (2:2)",
               text: "Lower second-class honours (2:2)",
-              checked: checked("what-grade-degree", "Lower second-class honours (2:2)")
+              checked: checked("degreeGrade", "Lower second-class honours (2:2)")
             },
             {
               value: "Third-class honours",
               text: "Third-class honours",
-              checked: checked("what-grade-degree", "Third-class honours")
+              checked: checked("degreeGrade", "Third-class honours")
             },
             {
               value: "Pass",
               text: "Pass",
-              checked: checked("what-grade-degree", "Pass")
+              checked: checked("degreeGrade", "Pass")
             },
             {
               value: "Other",
               text: "Other",
-              checked: checked("what-grade-degree", "Other")
+              checked: checked("degreeGrade", "Other")
             }
           ]
         }) }}

@@ -13,8 +13,8 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">Check your answers</h1>
-      
-      <h2 class="govuk-heading-m">Degree details</h2>
+      {% if  data['together-separate'] == "Separate"  %}
+      <h2 class="govuk-heading-m">About your degree</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -78,7 +78,7 @@
               <span>{{ data['degreeStartDate-year'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="question-degree-study-period-start">
+              <a href="question-degree-study-period">
                 Change
                   <span class="govuk-visually-hidden">Degree start date</span>
               </a>
@@ -91,10 +91,12 @@
             Degree end date
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['degreeEndDate'] }}
+              <span>{{ data['degreeEndDate-day'] }} </span>
+              <span>{{ data['degreeEndDate-month'] }} </span>
+              <span>{{ data['degreeEndDate-year'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="question-degree-study-period-end">
+              <a href="question-degree-study-period">
                 Change
                   <span class="govuk-visually-hidden">Degree end date</span>
               </a>
@@ -107,10 +109,12 @@
             Degree award date
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['degreeAwardDate'] }}
+              <span>{{ data['degreeAwardDate-day'] }} </span>
+              <span>{{ data['degreeAwardDate-month'] }} </span>
+              <span>{{ data['degreeAwardDate-year'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="question-degree-date-awarded">
+              <a href="question-degree-study-period">
                 Change
                   <span class="govuk-visually-hidden">Degree award date</span>
               </a>
@@ -149,45 +153,25 @@
               </dd>
            </div>
 
-            <!-- Degree file -->
+            <!-- Degree certificate -->
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Degree certificate
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['degreeCertificate'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a href="upload-teacher-degree-certificate">
-                    Change
-                      <span class="govuk-visually-hidden">Degree certificate</span>
-                  </a>
-                </dd>
-              </div>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['degreeCertificate'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="upload-teacher-degree-certificate-separate">
+                  Change
+                    <span class="govuk-visually-hidden">Degree certificate</span>
+                </a>
+              </dd>
+            </div>
         </dl>
+        {% endif %}
 
-        <h2 class="govuk-heading-m">Teacher training qualification details</h2>
-
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-        <!-- Teacher training qualification subjects trained to teach -->
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Degree subjects
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['DegreeSubjects'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="question-degree-subjects">
-                Change
-                  <span class="govuk-visually-hidden">Degree subjects</span>
-              </a>
-            </dd>
-          </div>
-</dl>
-
-<h2 class="govuk-heading-m">Teacher training qualification details</h2>
+<h2 class="govuk-heading-m">About your teacher training qualification</h2>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -198,7 +182,7 @@
             Teacher training qualification title
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['TeacherTrainingQualificationTitle'] }}
+            {{ data['qualification-title'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="question-qualification-title">
@@ -214,7 +198,7 @@
             Teacher training institution name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['TeacherTrainingInstitutionName'] }}
+            {{ data['qualificationInstitutionName'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="question-name-qualification-institution">
@@ -230,7 +214,7 @@
             Teacher training country of institution
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['TeacherTrainingCountry'] }}
+              {{ data['qualification-institution-country'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="question-qualification-country-institution">
@@ -246,7 +230,9 @@
             Teacher training qualification start date
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['TeacherTrainingStartDate'] }}
+              <span>{{ data['quaificationStartDate-day'] }} </span>
+              <span>{{ data['quaificationStartDate-month'] }} </span>
+              <span>{{ data['quaificationStartDate-year'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="question-qualification-study-period-start">
@@ -262,7 +248,9 @@
             Teacher training qualification end date
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['TeacherTrainingEndDate'] }}
+              <span>{{ data['quaificationEndDate-day'] }} </span>
+              <span>{{ data['quaificationEndDate-month'] }} </span>
+              <span>{{ data['quaificationEndDate-year'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="question-qualification-study-period-end">
@@ -278,7 +266,9 @@
             Teacher training qualification award date
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['TeacherTrainingAwardDate'] }}
+              <span>{{ data['quaificationAwardDate-day'] }} </span>
+              <span>{{ data['quaificationAwardDate-month'] }} </span>
+              <span>{{ data['quaificationAwardDate-year'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="question-qualification-date-awarded">
@@ -294,7 +284,7 @@
             Age range qualified to teach
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['TeacherTrainingAgeRange'] }}
+              {{ data['qualification-age-range'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="question-qualification-age-range">
@@ -310,7 +300,7 @@
             Subjects trained to teach
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['SubjectsTrainedToTeach'] }}
+              {{ data['qualification-subjects'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="question-qualification-age-range">
@@ -320,37 +310,102 @@
             </dd>
           </div>
 
-
-<!-- old page -->
-
-        {% if  data['DegreeEnglish']  %}
-        <!-- Degree taught in english answer -->
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Degree taught in english
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['DegreeEnglish'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="question-degree-english">
-              Change
-              <span class="govuk-visually-hidden"> if degree was studied in english</span>
-            </a>
-          </dd>
-        </div>
-        {% endif %}
-
+          
+           <!-- teacher qualification certificate -->
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Teacher qualification certificate
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['qualificationCertificate'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="upload-teacher-qualification">
+                Change
+                  <span class="govuk-visually-hidden">Degree certificate</span>
+              </a>
+            </dd>
+          </div>
+           <!-- teacher qualification transcript -->
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Teacher qualification transcript
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['qualificationTranscript'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="upload-teacher-qualification-transcript">
+                Change
+                  <span class="govuk-visually-hidden">Degree certificate</span>
+              </a>
+            </dd>
+          </div>
+          {% if  data['together-separate'] == "Together"  %}
+           <!-- degree qualification certificate -->
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Degree certificate
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['degreeCertificateTogether'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="upload-teacher-degree-certificate">
+                Change
+                  <span class="govuk-visually-hidden">Degree certificate</span>
+              </a>
+            </dd>
+          </div>
+           <!-- degree certificate transcript -->
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Degree certificate transcript
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['degreeTranscript'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="upload-teacher-degree-certificate-transcript">
+                Change
+                  <span class="govuk-visually-hidden">Degree certificate</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
 
       </dl>
 
-      <form action="documents" method="post" novalidate>
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-        <input type="hidden" name="answers-checked" value="true">
+      <form action="/prototype-3/task-list" method="post" novalidate>
 
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+        {{ govukRadios({
+          idPrefix: "completed-qualifications",
+          name: "completed-qualifications",
+          fieldset: {
+            legend: {
+              text: "Have you completed this section?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, I’ve completed this section"
+            },
+            {
+              value: "no",
+              text: "No, I’ll come back to it later"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
 
       </form>
 

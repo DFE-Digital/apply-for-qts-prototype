@@ -13,28 +13,29 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">
-        About your degree
+        About your teacher training qualification
       </span>
       <h1 class="govuk-heading-l">Upload your degree qualification certificate</h1>
       <div id="" class="govuk-hint">
         You can upload a screenshot, a photo, or a scanned copy. File must be in jpeg or PDF format and file size must be 250 MB or less.
       </div>
-
       <form class="form" action="upload-teacher-degree-certificate-transcript" method="post">
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error">
           <label class="govuk-label" for="file-upload-1">
             Select a file to upload
           </label>
+          <p id="file-upload-1-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> No file selected
+          </p>
           <a href="upload-teacher-degree-certificate-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="degreeCertificate" value="degree-certificate01.jpeg">Choose file</a>
-          <span class="govuk-body" style="position:relative;top:7px">degree-certificate01.jpeg</span>
         </div>
 
 
         <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button" name="degreeCertificateTogether" value="degree-certificate01.jpeg">
+          <a class="govuk-button" style="text-decoration: none;" href="upload-teacher-degree-certificate-error">
             Upload and continue
-          </button>
+          </a>
         
           <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="degreeCertificateTogether" value="">
             Add this later

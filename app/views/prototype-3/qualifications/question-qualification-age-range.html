@@ -12,37 +12,70 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
-      <h1 class="govuk-heading-l">What age range are you qualified to teach?</h1>
-
+      <span class="govuk-caption-l">
+        About your teacher training qualification
+      </span>
+    
       <form class="form" action="question-qualification-subjects" method="post">
 
         <div class="govuk-date-input" id="passport-issued">
     
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                From
-              </label>
-            
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
-            
-            </div>
-          </div>
-        
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                To
-              </label>
-            
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
-            
-            </div>
-          </div>
-        
-        
-        </div>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            idPrefix: "qualification-age-range",
+            name: "qualification-age-range",
+            fieldset: {
+              legend: {
+                text: "What age of schoolchildren are you qualified to teach?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "3-7",
+                text: "3-7",
+                checked: checked("qualification-age-range", "3-7")
+              },
+              {
+                value: "5-11",
+                text: "5-11",
+                checked: checked("qualification-age-range", "5-11")
+              },
+              {
+                value: "7-11",
+                text: "7-11",
+                checked: checked("qualification-age-range", "7-11")
+              },
+              {
+                value: "7-14 (middle years)",
+                text: "7-14 (middle years)",
+                checked: checked("qualification-age-range", "7-14 (middle years)")
+              },
+              {
+                value: "11-16",
+                text: "11-16",
+                checked: checked("qualification-age-range", "11-16")
+              },
+              {
+                value: "11-18",
+                text: "11-18",
+                checked: checked("qualification-age-range", "11-18")
+              },
+              {
+                value: "14-19",
+                text: "14-19",
+                checked: checked("qualification-age-range", "14-19")
+              },
+              {
+                value: "Other",
+                text: "Other",
+                checked: checked("qualification-age-range", "Other")
+              }
+              
+            ]
+          }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

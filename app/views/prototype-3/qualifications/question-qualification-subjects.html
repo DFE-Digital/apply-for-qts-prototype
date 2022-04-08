@@ -13,7 +13,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-
+      <span class="govuk-caption-l">
+        About your teacher training qualification
+      </span>
       <form class="form" action="upload-teacher-qualification" method="post">
 
         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
@@ -22,12 +24,9 @@
           name: "qualification-subjects",
           id: "qualification-subjects",
           label: {
-            text: "What subjects are you trained to teach?",
+            text: "What subjects are you qualified to teach?",
             classes: "govuk-label--l",
             isPageHeading: true
-          },
-          hint: {
-            text: "some helpful hint text here."
           },
           value: data['qualification-subjects']
         }) }}

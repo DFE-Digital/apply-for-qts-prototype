@@ -12,7 +12,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      <span class="govuk-caption-l">
+        About your teacher training qualification
+      </span>
 
       <form class="form" action="question-name-qualification-institution" method="post">
 
@@ -20,12 +22,9 @@
 
         {{ govukInput({
           label: {
-            text: "What is your teacher qualification title?",
+            text: "What is the title of your teacher training qualification?",
             classes: "govuk-label--l",
             isPageHeading: true
-          },
-          hint: {
-            text: "some hint text goes here."
           },
           id: "qualification-title",
           name: "qualification-title",
