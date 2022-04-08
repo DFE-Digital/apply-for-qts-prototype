@@ -25,7 +25,7 @@
             Degree title
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['DegreeTitle'] }}
+              {{ data['degreeTitle'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="question-degree-title">
@@ -41,7 +41,7 @@
             Name of institution
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['DegreeNameInstitution'] }}
+              {{ data['degreeInstitutionName'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="question-name-degree-institution">
@@ -57,7 +57,7 @@
             Country of institution 
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['DegreeCountryInstitution'] }}
+              {{ data['degreeInstitutionCountry'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="question-degree-country-institution">
@@ -73,7 +73,9 @@
             Degree start date
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['DegreeStartDate'] }}
+              <span>{{ data['degreeStartDate-day'] }} </span>
+              <span>{{ data['degreeStartDate-month'] }} </span>
+              <span>{{ data['degreeStartDate-year'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="question-degree-study-period-start">
@@ -89,7 +91,7 @@
             Degree end date
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['DegreeEndDate'] }}
+              {{ data['degreeEndDate'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="question-degree-study-period-end">
@@ -105,7 +107,7 @@
             Degree award date
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['DegreeAwardDate'] }}
+              {{ data['degreeAwardDate'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="question-degree-date-awarded">
@@ -121,7 +123,7 @@
             Degree grade
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['DegreeGrade'] }}
+              {{ data['degreeGrade'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="question-degree-grade">
@@ -130,6 +132,43 @@
               </a>
             </dd>
           </div>
+
+          <!-- Teacher training qualification subjects trained to teach -->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Degree subjects
+             </dt>
+             <dd class="govuk-summary-list__value">
+                {{ data['degreeSubjects'] }}
+             </dd>
+             <dd class="govuk-summary-list__actions">
+                <a href="question-degree-subjects">
+                  Change
+                    <span class="govuk-visually-hidden">Degree subjects</span>
+                </a>
+              </dd>
+           </div>
+
+            <!-- Degree file -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Degree certificate
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['degreeCertificate'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a href="upload-teacher-degree-certificate">
+                    Change
+                      <span class="govuk-visually-hidden">Degree certificate</span>
+                  </a>
+                </dd>
+              </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Teacher training qualification details</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
         <!-- Teacher training qualification subjects trained to teach -->
         <div class="govuk-summary-list__row">
@@ -151,6 +190,7 @@
 <h2 class="govuk-heading-m">Teacher training qualification details</h2>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
 
         <!-- Teacher training qualification -->
         <div class="govuk-summary-list__row">

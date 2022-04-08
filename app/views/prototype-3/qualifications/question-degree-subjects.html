@@ -19,8 +19,8 @@
         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
         {{ govukTextarea({
-          name: "qualification-subjects",
-          id: "qualification-subjects",
+          name: "degreeSubjects",
+          id: "degreeSubjects",
           label: {
             text: "What were the main subjects you studied?",
             classes: "govuk-label--l",
@@ -29,7 +29,7 @@
           hint: {
             text: "some helpful hint text here."
           },
-          value: data['qualification-subjects']
+          value: data['degreeSubjects']
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
