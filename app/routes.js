@@ -240,4 +240,23 @@ router.post('/misconduct-answer', function (req, res) {
                       
                     })
 
+                      // Run this code when a form is submitted to 'current-legal-name'
+                      router.post('/current-legal-name-answer', function (req, res) {
+    
+                        // Make a variable and give it the value from 'currentLegalNameAnswer'
+                        var currentLegalNameAnswer = req.session.data['current-legal-name']
+                      
+                        // Check whether the variable matches a condition
+                        if (currentLegalNameAnswer== "Yes"){
+                          // Send user to next page
+                          res.redirect('/prototype-3/personal-information/question-nationality')
+                        } else {
+                          // Send user to ineligible page
+                          res.redirect('/prototype-3/personal-information/upload-name-change-evidence')
+                        }
+                      
+                    })
+
+
+
 module.exports = router
