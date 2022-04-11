@@ -19,33 +19,114 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
 
-        <!-- Teacher training qualification subjects trained to teach -->
+        <!-- Professional standing evidence method -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Summary example
+            Professional standing evidence method
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['example'] }}
+              {{ data['evidence-professional-standing'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="question-degree-title">
+              <a href="question-evidence-professional-standing.html">
                 Change
-                  <span class="govuk-visually-hidden">Example</span>
+                  <span class="govuk-visually-hidden">Professional standing evidence</span>
               </a>
             </dd>
           </div>
 
+      {% if  data['evidence-professional-standing'] == "Online Portal"  %}
+
+        <!-- Teacher training qualification subjects trained to teach -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do you have a reference number?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['question-reference-number'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="question-reference-number.html">
+                Change
+                  <span class="govuk-visually-hidden">Do you have a reference number</span>
+              </a>
+            </dd>
+          </div>
+
+          {% if  data['question-reference-number'] == "Yes"  %}
+
+                  <!-- Teacher training qualification subjects trained to teach -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reference Number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['reference-number'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="enter-reference-number.html">
+                Change
+                  <span class="govuk-visually-hidden">Reference number</span>
+              </a>
+            </dd>
+          </div>
+
+          {% endif %}
+
+      {% elseif  data['evidence-professional-standing'] == "Letter of professional standing"  %}
+
+            <!-- Degree certificate -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Professional standing certificate
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['lopsFile'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="upload-lops-2.html">
+                  Change
+                    <span class="govuk-visually-hidden">Professional standing certificate</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+        </dl>
+
+        
 
 
-      </dl>
 
-      <form action="#" method="post" novalidate>
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-        <input type="hidden" name="answers-checked" value="true">
+      <form action="/prototype-3/task-list" method="post" novalidate>
 
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+        {{ govukRadios({
+          idPrefix: "completed-professional-standing",
+          name: "completed-professional-standing",
+          fieldset: {
+            legend: {
+              text: "Have you completed this section?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, I’ve completed this section"
+            },
+            {
+              value: "no",
+              text: "No, I’ll come back to it later"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
 
       </form>
 

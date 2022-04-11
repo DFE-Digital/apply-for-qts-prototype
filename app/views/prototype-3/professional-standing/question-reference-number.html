@@ -13,13 +13,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/reference-number-answer" method="post">
+      <form class="form" action="/question-reference-number-answer" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "reference-number",
-          name: "reference-number",
+          idPrefix: "question-reference-number",
+          name: "question-reference-number",
           fieldset: {
             legend: {
               text: "Do you have a teacher reference number?",
@@ -29,14 +29,14 @@
           },
           items: [
             {
-              value: "Yes Reference Number",
+              value: "Yes",
               text: "Yes, I have a teacher reference number",
-              checked: checked("reference-number", "Yes Reference Number")
+              checked: checked("reference-number", "Yes")
             },
             {
-              value: "No Reference Number",
+              value: "No",
               text: "No, I don't have a teacher reference number, you can find me using my name",
-              checked: checked("reference-number", "No Reference Number")
+              checked: checked("reference-number", "No")
             }
           ]
         }) }}

@@ -39,13 +39,36 @@
 
       </dl>
 
-      <form action="#" method="post" novalidate>
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-        <input type="hidden" name="answers-checked" value="true">
+      <form action="/prototype-3/task-list" method="post" novalidate>
 
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+        {{ govukRadios({
+          idPrefix: "completed-personal-details",
+          name: "completed-personal-details",
+          fieldset: {
+            legend: {
+              text: "Have you completed this section?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, I’ve completed this section"
+            },
+            {
+              value: "no",
+              text: "No, I’ll come back to it later"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
 
       </form>
 
