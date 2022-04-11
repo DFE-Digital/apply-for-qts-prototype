@@ -15,27 +15,33 @@
 
       <h1 class="govuk-heading-l">Upload your letter of profesisonal standing</h1>
 
-      <form class="form" action="upload-lops-2" method="post">
+      <div id="" class="govuk-hint">
+        You can upload a screenshot, a photo, or a scanned copy. File must be in jpeg or PDF format and file size must be 5 MB or less.
+      </div>
+
+      <form class="form" action="professional-standing-summary" method="post">
+
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="file-upload-1">
             Select a file to upload
           </label>
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Choose file</button>
-          <span class="govuk-body" style="position:relative;top:7px">no file selected</span>
+          <a href="upload-lops-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
+          <span class="govuk-body" style="position:relative;top:7px">No file uploaded</span>
         </div>
 
 
         <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button">
+          <a class="govuk-button" style="text-decoration: none;" href="upload-lops-error">
             Upload and continue
-          </button>
+          </a>
         
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="">
             Add this later
           </button>
-        </div>
 
+        </div>
+        
       </form>
 
     </div>

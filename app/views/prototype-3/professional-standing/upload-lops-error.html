@@ -22,25 +22,29 @@
       <form class="form" action="professional-standing-summary" method="post">
 
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error">
           <label class="govuk-label" for="file-upload-1">
             Select a file to upload
           </label>
-          <a href="upload-lops-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="Fillopse" value="letterofprofessionalstanding.jpg">Choose file</a>
-          <span class="govuk-body" style="position:relative;top:7px">letterofprofessionalstanding.jpg</span>
+          <p id="file-upload-1-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> No file selected
+          </p>
+          <a href="upload-lops-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
+          <span class="govuk-body" style="position:relative;top:7px">No file uploaded</span>
         </div>
 
 
         <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">
+          <a class="govuk-button" style="text-decoration: none;" href="upload-lops-error">
             Upload and continue
-          </button>
+          </a>
         
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="">
             Add this later
           </button>
-        </div>
 
+        </div>
+        
       </form>
 
     </div>

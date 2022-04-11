@@ -214,7 +214,7 @@ router.post('/misconduct-answer', function (req, res) {
           // Send user to online portal page
           res.redirect('/prototype-3/professional-standing/question-reference-number')
       // Send user to upload LOPS
-      } else if (professionalStandingAnswer == "LOPS CA") {
+      } else if (professionalStandingAnswer == "Letter of professional standing") {
         res.redirect('/prototype-3/professional-standing/upload-lops')
           } else {
             // Send users who cannot evidence to summary
@@ -224,13 +224,13 @@ router.post('/misconduct-answer', function (req, res) {
       })
 
       // Run this code when a form is submitted to 'reference-number-answer'
-      router.post('/reference-number-answer', function (req, res) {
+      router.post('/question-reference-number-answer', function (req, res) {
 
-        // Make a variable and give it the value from 'professionalStandingAnswer'
-        var referenceNumberAnswer = req.session.data['reference-number']
+        // Make a variable and give it the value from '-'
+        var questionReferenceNumberAnswer = req.session.data['question-reference-number']
       
         // Check whether the variable matches a condition
-        if (referenceNumberAnswer== "Yes Reference Number"){
+        if (questionReferenceNumberAnswer== "Yes"){
           // Send user to next page
           res.redirect('/prototype-3/professional-standing/enter-reference-number')
         } else {
