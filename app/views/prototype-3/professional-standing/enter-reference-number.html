@@ -16,18 +16,16 @@
 
       <form class="form" action="professional-standing-summary" method="post">
 
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-
-        {{ govukTextarea({
-          name: "reference-number",
-          id: "reference-number",
-          label: {
-            text: "What is your teacher reference number??",
-            classes: "govuk-label--l",
-            isPageHeading: true
-          },
-          value: data['reference-number']
-        }) }}
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
+            Enter your teacher registration number
+            </label>
+          </h1>
+          <div id="event-name-hint" class="govuk-hint">
+            For example, 1234567890
+          </div>
+          <input class="govuk-input" id="reference-number" name="reference-number" type="text" aria-describedby="event-name-hint">
+        </div>
 
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">
