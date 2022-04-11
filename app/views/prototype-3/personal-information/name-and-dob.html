@@ -15,71 +15,73 @@
 
       <form class="form" action="upload-personal-information" method="post">
 
-      <h1 class="govuk-heading-xl">
+      <h1 class="govuk-heading-l">
         Personal information
       </h1>
 
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
-            First name
-          </label>
-        </h1>
-        <div id="event-name-hint" class="govuk-hint">
-        Or given names
-        </div>
-        <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
-      </div>
+      {% from "govuk/components/input/macro.njk" import govukInput %}
 
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
-            Last name
-          </label>
-        </h1>
-        <div id="event-name-hint" class="govuk-hint">
-          Or family name
-        </div>
-        <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
-      </div>
+      {{ govukInput({
+        label: {
+          text: "First name",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "Or given names"
+        }, 
+        id: "first-name",
+        name: "first-name",
+        value: data['first-name']
+      }) }}
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h1 class="govuk-fieldset__heading">
-              Date of birth
-            </h1>
-          </legend>
-          <div id="passport-issued-hint" class="govuk-hint">
-            For example, 27 3 1980
-          </div>
-          <div class="govuk-date-input" id="passport-issued">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                  Day
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                  Month
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                  Year
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
-              </div>
-            </div>
-          </div>
-      
-        </fieldset>
-      </div>
+      {{ govukInput({
+        label: {
+          text: "Last name",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "Or family name"
+        }, 
+        id: "last-name",
+        name: "last-name",
+        value: data['last-name']
+      }) }}
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+      {{ govukDateInput({
+        id: "dob",
+        namePrefix: "dob",
+        fieldset: {
+          legend: {
+            text: "Date of birth",
+            isPageHeading: false,
+            classes: "govuk-label govuk-label--m"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 1980"
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["dob-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["dob-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["dob-year"]
+          }
+        ]
+      }) }}
 
       <button class="govuk-button" data-module="govuk-button">Continue</button>
 

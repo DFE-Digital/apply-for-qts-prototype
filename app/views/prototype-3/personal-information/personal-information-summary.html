@@ -14,28 +14,125 @@
 
       <h1 class="govuk-heading-xl">Check your answers for personal information</h1>
       
-      <h2 class="govuk-heading-m">Degree details</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
 
-        <!-- Teacher training qualification subjects trained to teach -->
+        <!-- First name -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Summary example
+            First name
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['example'] }}
+              {{ data['first-name'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="question-degree-title">
+              <a href="name-and-dob">
                 Change
-                  <span class="govuk-visually-hidden">Example</span>
+                  <span class="govuk-visually-hidden">First name</span>
               </a>
             </dd>
           </div>
 
+        <!-- Last name -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['last-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="name-and-dob">
+              Change
+                <span class="govuk-visually-hidden">Last name</span>
+            </a>
+          </dd>
+        </div>
 
+        <!-- Date of birth -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <span>{{ data['dob-day'] }} </span>
+            <span>{{ data['dob-month'] }} </span>
+            <span>{{ data['dob-year'] }}</span>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="name-and-dob">
+              Change
+                <span class="govuk-visually-hidden">Date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+        <!-- Identification document -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Identification document
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['personalinformationfile'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="upload-personal-information">
+              Change
+                <span class="govuk-visually-hidden">Identification document</span>
+            </a>
+          </dd>
+        </div>
+
+        <!-- Legal name same as identity document? -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Legal name same as identity document?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['current-legal-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question-current-legal-name">
+              Change
+                <span class="govuk-visually-hidden">Legal name same as identity document</span>
+            </a>
+          </dd>
+        </div>
+
+        {% if  data['current-legal-name'] == "No"  %}
+        <!-- Evidence of your name change -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Evidence of your name change
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['nameChangeFile'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="upload-name-change-evidence">
+              Change
+                <span class="govuk-visually-hidden">Evidence of your name change</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+        <!-- Nationality -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Nationality
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['nationality'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href=question-nationality">
+              Change
+                <span class="govuk-visually-hidden">Nationalitye</span>
+            </a>
+          </dd>
+        </div>
 
       </dl>
 
@@ -69,8 +166,6 @@
         {{ govukButton({
           text: "Continue"
         }) }}
-
-      </form>
 
     </div>
   </div>
