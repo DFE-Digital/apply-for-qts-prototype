@@ -329,6 +329,23 @@ router.post('/misconduct-answer', function (req, res) {
   
 })
 
+                          // Run this code when a form is submitted to 'create-account-sign-in'
+                          router.post('/create-account-sign-in-answer', function (req, res) {
+    
+                            // Make a variable and give it the value from 'createAccountSignInAnswer'
+                            var createAccountSignInAnswer = req.session.data['create-account-sign-in']
+                          
+                            // Check whether the variable matches a condition
+                            if (createAccountSignInAnswer== "No"){
+                              // Send user to next page
+                              res.redirect('/prototype-3/create-an-account')
+                            } else {
+                              // Send user to ineligible page
+                              res.redirect('/prototype-3/task-list')
+                            }
+                          
+                        })
+
 
 
 module.exports = router

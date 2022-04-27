@@ -12,28 +12,25 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">
+        About your teacher training qualification
+      </span>
 
-
-      <form class="form" action="task-list" method="post">
+      <form class="form" action="question-qualification-country-institution" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "Email address",
+            text: "What is the name of the institution where you completed your teacher training qualification?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
-          hint: {
-            text: "We'll use your email address to create a secure link to your account.
-            This will allow you to come back to your application in order to complete it."
-          },
-          id: "email",
-          name: "email",
-          type: "email",
-          autocomplete: "email",
+          id: "qualificationInstitutionName",
+          name: "qualificationInstitutionName",
+          type: "text",
           spellcheck: false,
-          value: data['email']
+          value: data['qualificationInstitutionName']
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
