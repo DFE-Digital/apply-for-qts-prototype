@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="teacher-training-qualification-summary" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "was-teacher-training-a-degree",
+          name: "was-teacher-training-a-degree",
+          fieldset: {
+            legend: {
+              text: "Was this teacher training qualification a degree?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("was-teacher-training-a-degree", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("was-teacher-training-a-degree", "No")
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

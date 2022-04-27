@@ -43,11 +43,11 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="qualifications/question-together-separate.html" aria-describedby="list-convictions-status">
-                  Education and qualifications
+                <a href="qualifications/teacher-training-qualification/question-qualification-title" aria-describedby="list-convictions-status">
+                  Teacher training qualification
                 </a>
               </span>
-              {% if  data['completed-qualifications'] == "yes"  %}
+              {% if  data['completed-qualification-details'] == "yes"  %}
               <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
               {% elseif  data['completed-qualifications'] == "no"  %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">In progress</strong>
@@ -55,7 +55,51 @@
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
               {% endif %}
             </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="qualifications/teacher-training-qualification-documents" aria-describedby="list-convictions-status">
+                  Teacher training qualification documents
+                </a>
+              </span>
+              {% if  data['completed-qualification-documents'] == "yes"  %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif  data['completed-qualifications'] == "no"  %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="qualifications/undergraduate-degree/question-degree-title" aria-describedby="list-convictions-status">
+                  Undergraduate degree
+                </a>
+              </span>
+              {% if  data['was-teacher-training-a-degree'] == "Yes"  %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not needed</strong>
+              {% elseif  data['was-teacher-training-a-degree'] == "No"  %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% else  %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Cannot start yet</strong>
+              {% endif %}
+              
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="qualifications/undergraduate-degree-documents" aria-describedby="list-convictions-status">
+                  Undergraduate degree documents
+                </a>
+              </span>
+              {% if  data['was-teacher-training-a-degree'] == "Yes"  %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not needed</strong>
+              {% elseif  data['was-teacher-training-a-degree'] == "No"  %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% else  %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Cannot start yet</strong>
+              {% endif %}
+            </li>
           </ul>
+          
         </li>
 
         <li>
