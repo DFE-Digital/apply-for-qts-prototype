@@ -12,86 +12,113 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers professional standing</h1>
+      <h1 class="govuk-heading-xl">Check your answers</h1>
       
-      <h2 class="govuk-heading-m">Degree details</h2>
+      <h2 class="govuk-heading-m">About your teaching status</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
 
-        <!-- Professional standing evidence method -->
+        <!-- Country recognised asa teacher -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Professional standing evidence method
+            Country recognised asa teacher
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['evidence-professional-standing'] }}
+              {{ data['country-recognised'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="question-evidence-professional-standing.html">
+              <a href="question-country-recognised">
                 Change
-                  <span class="govuk-visually-hidden">Professional standing evidence</span>
+                  <span class="govuk-visually-hidden">Country recognised asa teacher</span>
               </a>
             </dd>
           </div>
 
-      {% if  data['evidence-professional-standing'] == "Online Portal"  %}
+        {% if  data['country-recognised'] == "Australia"  %}
 
-        <!-- Teacher training qualification subjects trained to teach -->
+        <!-- reference number -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Do you have a reference number?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['question-reference-number'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="question-reference-number.html">
-                Change
-                  <span class="govuk-visually-hidden">Do you have a reference number</span>
-              </a>
-            </dd>
-          </div>
-
-          {% if  data['question-reference-number'] == "Yes"  %}
-
-                  <!-- Teacher training qualification subjects trained to teach -->
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Reference Number
+           Reference number
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['reference-number'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="enter-reference-number.html">
+              <a href="question-reference-number.html">
                 Change
                   <span class="govuk-visually-hidden">Reference number</span>
               </a>
             </dd>
           </div>
 
-          {% endif %}
 
-      {% elseif  data['evidence-professional-standing'] == "Letter of professional standing"  %}
+        {% elseif  data['country-recognised'] == "Nigeria"  %}
 
-            <!-- Degree certificate -->
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Professional standing certificate
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['lopsFile'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="upload-lops-2.html">
-                  Change
-                    <span class="govuk-visually-hidden">Professional standing certificate</span>
-                </a>
-              </dd>
-            </div>
+        <!-- LOPS -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Letter of professional standing
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['lopsFile'] }}
+            {% if  data['lopsFile2']  %}
+              <br>
+              {{ data['lopsFile2'] }}
             {% endif %}
-        </dl>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="upload-lops">
+              Change
+                <span class="govuk-visually-hidden">Letter of professional standing</span>
+            </a>
+            {% if  data['lopsFile2']  %}
+            <br>
+            <a href="upload-lops">
+              Change
+                <span class="govuk-visually-hidden">Letter of professional standing</span>
+            </a>
+          {% endif %}
+          </dd>
+        </div>
+
+        {% else %}
+
+        <!-- Are you currently a certified teacher? -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Are you currently a certified teacher?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['question-certified-teacher'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question-certified-teacher">
+              Change
+                <span class="govuk-visually-hidden">Are you currently a certified teacher?</span>
+            </a>
+          </dd>
+        </div>
+
+        <!-- Do you have any sanctions against you? -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do you have any sanctions against you?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['question-sanctions'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question-sanctions">
+              Change
+                <span class="govuk-visually-hidden">Do you have any sanctions against you</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+      </dl>
 
         
 

@@ -274,22 +274,60 @@ router.post('/misconduct-answer', function (req, res) {
       
     })
 
-                      // Run this code when a form is submitted to 'current-legal-name'
-                      router.post('/current-legal-name-answer', function (req, res) {
+    // Run this code when a form is submitted to 'current-legal-name'
+    router.post('/current-legal-name-answer', function (req, res) {
+
+      // Make a variable and give it the value from 'currentLegalNameAnswer'
+      var currentLegalNameAnswer = req.session.data['current-legal-name']
     
-                        // Make a variable and give it the value from 'currentLegalNameAnswer'
-                        var currentLegalNameAnswer = req.session.data['current-legal-name']
-                      
-                        // Check whether the variable matches a condition
-                        if (currentLegalNameAnswer== "Yes"){
-                          // Send user to next page
-                          res.redirect('/prototype-3/personal-information/question-nationality')
-                        } else {
-                          // Send user to ineligible page
-                          res.redirect('/prototype-3/personal-information/upload-name-change-evidence')
-                        }
-                      
-                    })
+      // Check whether the variable matches a condition
+      if (currentLegalNameAnswer== "Yes"){
+        // Send user to next page
+        res.redirect('/prototype-3/personal-information/question-nationality')
+      } else {
+        // Send user to ineligible page
+        res.redirect('/prototype-3/personal-information/upload-name-change-evidence')
+      }
+    
+  })
+
+  // Run this code when a form is submitted to 'question-country-recognised-answer'
+  router.post('/question-country-recognised-answer', function (req, res) {
+
+    // Make a variable and give it the value from 'currentLegalNameAnswer'
+    var countryRecognised = req.session.data['country-recognised']
+  
+    // Check whether the variable matches a condition
+    if (countryRecognised == "Australia" || countryRecognised == "Canada" || countryRecognised == "USA"){
+
+      res.redirect('/prototype-3/professional-standing/question-reference-number')
+    } else if (countryRecognised == "Nigeria" || countryRecognised == "China" || countryRecognised == "India" || countryRecognised == "Jamaica" || countryRecognised == "Mexico" || countryRecognised == "South Africa" || countryRecognised == "Zimbabwe" || countryRecognised == "Argentina" ) {
+    
+      res.redirect('/prototype-3/professional-standing/upload-lops')
+    } else {
+
+      res.redirect('/prototype-3/professional-standing/question-certified-teacher')
+    }
+  
+  })
+
+  // Run this code when a form is submitted to 'upload-lops-answer'
+  router.post('/upload-lops-answer', function (req, res) {
+
+    // Make a variable and give it the value from 'currentLegalNameAnswer'
+    var anotherLops = req.session.data['another-lops']
+  
+    // Check whether the variable matches a condition
+    if (anotherLops == "Yes"){
+
+      res.redirect('/prototype-3/professional-standing/upload-lopsb')
+
+    } else {
+
+      res.redirect('/prototype-3/professional-standing/professional-standing-summary')
+    }
+  
+})
 
 
 

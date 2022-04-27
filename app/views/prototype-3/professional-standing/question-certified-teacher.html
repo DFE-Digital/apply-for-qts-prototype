@@ -13,30 +13,30 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/reference-number-answer" method="post">
+      <form class="form" action="question-sanctions" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "reference-number",
-          name: "reference-number",
+          idPrefix: "question-certified-teacher",
+          name: "question-certified-teacher",
           fieldset: {
             legend: {
-              text: "Do you have a teacher reference number?",
+              text: "Are you currently a certified teacher?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
             {
-              value: "Yes Reference Number",
-              text: "I have a teacher reference number",
-              checked: checked("reference-number", "Yes Reference Number")
+              value: "Yes",
+              text: "Yes",
+              checked: checked("rquestion-certified-teacher", "Yes")
             },
             {
-              value: "No Reference Number",
-              text: "No, I don't a teacher reference number, you can find me using my name",
-              checked: checked("reference-number", "No Reference Number)
+              value: "No",
+              text: "No",
+              checked: checked("question-certified-teacher", "No")
             }
           ]
         }) }}
