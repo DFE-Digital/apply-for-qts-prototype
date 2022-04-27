@@ -13,11 +13,73 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Upload your letter of profesisonal standing</h1>
+      <h1 class="govuk-heading-l">Upload a letter of profesisonal standing (and translation if not in English)</h1>
 
       <div id="" class="govuk-hint">
-        You can upload a screenshot, a photo, or a scanned copy. File must be in jpeg or PDF format and file size must be 5 MB or less.
+        A letter of professional standing will confirm qualification of teacher, level of teaching, teaching subjects and any misconduct or convictions. The letter must be written in English. If it is not written in English, you will need a translation and upload both versions.
       </div>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Where to get this
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          You can request a letter of prefessional standing from:
+          <br><br>
+          {% if  data['country-recognised'] == "Nigeria"  %}
+
+            Teachers Registration Council of Nigeria (TRCN), 12 Oda Crescent, Off Aminu Kano Crescent, Wuse 2, PMB 526, Garki, Abuja, Nigeria
+            Email Dr Jacinta Ogboso-Omotepe on jacyunn@yahoo.com
+
+          {% elseif  data['country-recognised'] == "China"  %}
+
+            It is understood that Letters of Professional Standing are not issued in China.<br>
+            Instead, you must arrange for the head of the last school where you taught in China to send you a letter of reference. The letter must be current. It must list the dates and length of your employment and say that you were never suspended for any disciplinary reason and that your conduct was satisfactory.
+            The Letter of Professional Standing must be signed by one of the Principal, Director, Headmaster or Headmistress of the school.
+            <br><br>
+            You may also write to:<br>
+            Ministry of Education, 35 Damucang hutong, Xidan, Beijing 100816, China.<br>
+
+          {% elseif  data['country-recognised'] == "India"  %}
+
+            It is understood that Letters of Professional Standing are not issued in India.<br>
+            Instead, you must arrange for the head of the last school where you taught in an elementary or secondary school in India to send you a letter of reference. The letter must be current. It must list the dates and length of your employment as a teacher and say that you were never suspended for any disciplinary reason and that your conduct was satisfactory.<br>
+            The Letter of Professional Standing must be signed by one of the Principal, Director, Headmaster or Headmistress of the school.<br>
+
+          {% elseif  data['country-recognised'] == "Jamaica"  %}
+
+            Ministry of Education<br>
+            2 National Heroes Circle<br>
+            Kingston 4<br>
+            Jamaica<br>
+
+          {% elseif  data['country-recognised'] == "Mexico"  %}
+
+            Secretariat for Public Education (Secretaria de Educación Pública), Republic of Argentina No. 28, Centro Historico, Delgación Cuauhtémoc, 06029 México, D.F., Mexico
+            <br><br>
+            Secretaria de Educación Pública, Avenida Insurgentes Sur No. 2387, Delegación Alvaro Obregó, Col San Angel 01000, Mexico
+            <br><br>
+            Subsecretaria de Educación Básica, Viaducto Río de la Piedad N 507, Col. Granjas México, C.P. 08400, D.F., Mexico
+            <br><br>
+            Subsecretaria de Educación Superior, Direccion General de Profesiones y Registro Profesional, Departamento de autorizaciones, Avenida Revolución 1425, Colonia Campestre, Delegacion Alvaro, Obregón, C.P. 01049 Ciudad de Mexico 
+          
+          {% elseif  data['country-recognised'] == "South Africa"  %}
+
+            The South African Council for Educators (SACE), Private Bag X127, Centurion 0046, South Africa.
+
+          {% elseif  data['country-recognised'] == "Zimbabwe"  %}
+
+            Ministry of Education, Sports and Culture, Union Avenue, P. O. Box CY 121, Causeway, HARARE, Zimbabwe
+
+          {% elseif  data['country-recognised'] == "Argentina"  %}
+
+            Ministerio de Educación, Ciencia y Tecnología, Pizzurno 935, Capital Federal 1020 Buenos Aires, Argentina; OR see the contact information for the province in Argentina where you last taught.
+
+          {% endif %}
+        </div>
+      </details>
 
       <form class="form" action="professional-standing-summary" method="post">
 
