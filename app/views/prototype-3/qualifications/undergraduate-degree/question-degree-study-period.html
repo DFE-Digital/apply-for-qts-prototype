@@ -16,7 +16,7 @@
         About your degree
       </span>
       <h1 class="govuk-heading-l">What dates you studied</h1>
-      <form class="form" action="question-degree-subjects" method="post">
+      <form class="form" action="degree-summary" method="post">
         {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
         {{ govukDateInput({
@@ -29,6 +29,9 @@
               classes: "govuk-label govuk-label--m"
             }
           },
+          hint: {
+            text: " For example, 9 2007"
+          }, 
           items: [
             {
               name: "month",
@@ -53,6 +56,9 @@
               classes: "govuk-label govuk-label--m"
             }
           },
+          hint: {
+            text: " For example, 7 2010"
+          }, 
           items: [
             {
               name: "month",
@@ -77,6 +83,9 @@
               classes: "govuk-label govuk-label--m"
             }
           },
+          hint: {
+            text: " For example, 8 2010"
+          }, 
           items: [
             {
               name: "month",

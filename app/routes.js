@@ -346,6 +346,40 @@ router.post('/misconduct-answer', function (req, res) {
                           
                         })
 
+  // Run this code when a form is submitted to 'upload-ttq-answer'
+  router.post('/upload-ttq-answer', function (req, res) {
 
+    // Make a variable and give it the value from 'anotherTtq'
+    var anotherTtq = req.session.data['another-ttq']
+  
+    // Check whether the variable matches a condition
+    if (anotherTtq == "Yes"){
+
+      res.redirect('/prototype-3/qualifications/teacher-training-qualification-documents/upload-ttqb')
+
+    } else {
+
+      res.redirect('/prototype-3/task-list')
+    }
+  
+})
+
+  // Run this code when a form is submitted to 'another-degree-answer'
+  router.post('/upload-degree-answer', function (req, res) {
+
+    // Make a variable and give it the value from 'anotherTtq'
+    var anotherDegree = req.session.data['another-degree']
+  
+    // Check whether the variable matches a condition
+    if (anotherDegree == "Yes"){
+
+      res.redirect('/prototype-3/qualifications/undergraduate-degree-documents/upload-degree-b')
+
+    } else {
+
+      res.redirect('/prototype-3/task-list')
+    }
+  
+})
 
 module.exports = router

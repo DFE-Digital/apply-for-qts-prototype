@@ -114,21 +114,7 @@
             </dd>
           </div>
 
-          <!-- Teacher training qualification subjects trained to teach -->
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Degree subjects
-             </dt>
-             <dd class="govuk-summary-list__value">
-                {{ data['degreeSubjects'] }}
-             </dd>
-             <dd class="govuk-summary-list__actions">
-                <a href="question-degree-subjects">
-                  Change
-                    <span class="govuk-visually-hidden">Degree subjects</span>
-                </a>
-              </dd>
-           </div>
+
 
       </dl>
 
@@ -138,8 +124,8 @@
       <form action="/prototype-3/task-list" method="post" novalidate>
 
         {{ govukRadios({
-          idPrefix: "completed-qualifications",
-          name: "completed-qualifications",
+          idPrefix: "completed-degree",
+          name: "completed-degree",
           fieldset: {
             legend: {
               text: "Have you completed this section?",
@@ -149,11 +135,11 @@
           },
           items: [
             {
-              value: "yes",
+              value: "Yes",
               text: "Yes, I’ve completed this section"
             },
             {
-              value: "no",
+              value: "No",
               text: "No, I’ll come back to it later"
             }
           ]

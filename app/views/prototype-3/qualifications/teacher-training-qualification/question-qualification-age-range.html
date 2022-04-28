@@ -15,6 +15,7 @@
       <span class="govuk-caption-l">
         About your teacher training qualification
       </span>
+      
     
       <form class="form" action="question-qualification-subjects" method="post">
 
@@ -26,10 +27,13 @@
             namePrefix: "qualificationAgeRange",
             fieldset: {
               legend: {
-                text: "What age of schoolchildren are you qualified to teach?",
+                text: "What age range are you qualified to teach?",
                 isPageHeading: false,
-                classes: "govuk-label govuk-label--m"
+                classes: "govuk-label govuk-label--l"
               }
+            },
+            hint: {
+              text: " For example, from 5 to 11"
             },
             items: [
               {

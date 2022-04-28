@@ -23,10 +23,13 @@
 
         {{ govukInput({
           label: {
-            text: "What is the type and subject of your teacher training qualification?",
+            text: "What is the title of your teacher training qualification?",
             classes: "govuk-label--l",
             isPageHeading: true
           },
+          hint: {
+            text: " For example, Undergraduate Bachelor of Education, or Postgraduate Diploma in Education"
+          }, 
           id: "qualification-title",
           name: "qualification-title",
           type: "text",

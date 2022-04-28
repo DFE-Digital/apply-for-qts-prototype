@@ -68,6 +68,21 @@
           </dd>
         </div>
 
+        <!-- Identification document -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Identification document
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['personalinformationfile'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="upload-personal-information">
+              Change
+                <span class="govuk-visually-hidden">Identification document</span>
+            </a>
+          </dd>
+        </div>
 
         <!-- Legal name same as identity document? -->
         <div class="govuk-summary-list__row">
@@ -85,6 +100,39 @@
           </dd>
         </div>
 
+        {% if  data['current-legal-name'] == "No"  %}
+        <!-- Evidence of your name change -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Evidence of your name change
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['nameChangeFile'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="upload-name-change-evidence">
+              Change
+                <span class="govuk-visually-hidden">Evidence of your name change</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+        <!-- Nationality -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country you are from
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['Country you are from'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href=question-nationality">
+              Change
+                <span class="govuk-visually-hidden">Country you are from</span>
+            </a>
+          </dd>
+        </div>
 
       </dl>
 
