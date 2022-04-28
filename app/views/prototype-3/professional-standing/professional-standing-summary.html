@@ -35,7 +35,7 @@
             </dd>
           </div>
 
-        {% if  data['country-recognised'] == "Australia"  %}
+        {% if  (data['country-recognised'] == "Australia") or (data['country-recognised'] == "USA") or (data['country-recognised'] == "Canada")  %}
 
         <!-- reference number -->
         <div class="govuk-summary-list__row">
@@ -53,8 +53,7 @@
             </dd>
           </div>
 
-
-        {% elseif  data['country-recognised'] == "Nigeria"  %}
+        {% elseif  (data['country-recognised'] == "Nigeria") or (data['country-recognised'] == "China") or (data['country-recognised'] == "India") or (data['country-recognised'] == "Jamaica") or (data['country-recognised'] == "Mexico") or (data['country-recognised'] == "South Africa") or (data['country-recognised'] == "Zimbabwe") or (data['country-recognised'] == "Argentina") or (data['country-recognised'] == "Philippines") or (data['country-recognised'] == "Ghana") %}
 
         <!-- LOPS -->
         <div class="govuk-summary-list__row">
