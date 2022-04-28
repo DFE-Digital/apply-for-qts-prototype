@@ -9,14 +9,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Apply for Qualified teacher status (QTS)
+        Apply for qualified teacher status (QTS)
       </h1>
 
 
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Personal details 
+          Personal details 
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -33,12 +33,26 @@
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
               {% endif %}
             </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="personal-documents" aria-describedby="eligibility-status">
+                  Personal documents
+                </a>
+              </span>
+              {% if  data['completed-personal-documents'] == "yes"  %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif  data['completed-personal-documents'] == "no"  %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% endif %}
+            </li>
           </ul>
         </li>
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Education and qualifications
+            Education and qualifications
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -49,7 +63,7 @@
               </span>
               {% if  data['completed-qualification-details'] == "yes"  %}
               <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-              {% elseif  data['completed-qualifications'] == "no"  %}
+              {% elseif  data['completed-qualification-details'] == "no"  %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">In progress</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
@@ -57,14 +71,16 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="qualifications/teacher-training-qualification-documents" aria-describedby="list-convictions-status">
+                <a href="qualifications/teacher-training-qualification-documents/upload-ttq" aria-describedby="list-convictions-status">
                   Teacher training qualification documents
                 </a>
               </span>
-              {% if  data['completed-qualification-documents'] == "yes"  %}
+              {% if  data['another-ttq'] == "No" %}
               <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-              {% elseif  data['completed-qualifications'] == "no"  %}
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">In progress</strong>
+              {% elseif  data['another-ttq'] == "Yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif  data['another-ttq'] == "progress" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progresss</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
               {% endif %}
@@ -79,23 +95,34 @@
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not needed</strong>
               {% elseif  data['was-teacher-training-a-degree'] == "No"  %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              {% elseif  data['completed-degree'] == "Yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif  data['completed-degree'] == "No" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progresss</strong>
               {% else  %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Cannot start yet</strong>
               {% endif %}
               
+              
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="qualifications/undergraduate-degree-documents" aria-describedby="list-convictions-status">
+                <a href="qualifications/undergraduate-degree-documents/upload-degree" aria-describedby="list-convictions-status">
                   Undergraduate degree documents
                 </a>
               </span>
-              {% if  data['was-teacher-training-a-degree'] == "Yes"  %}
+              {% if  data['another-degree'] == "No" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif  data['was-teacher-training-a-degree'] == "Yes"  %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not needed</strong>
               {% elseif  data['was-teacher-training-a-degree'] == "No"  %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
-              {% else  %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Cannot start yet</strong>
+              {% elseif  data['another-degree'] == "Yes" %}
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% elseif  data['another-degree'] == "progress" %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progresss</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
               {% endif %}
             </li>
           </ul>
@@ -104,7 +131,7 @@
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Profesional Standing
+            Professional standing
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
