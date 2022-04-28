@@ -301,7 +301,7 @@ router.post('/misconduct-answer', function (req, res) {
     if (countryRecognised == "Australia" || countryRecognised == "Canada" || countryRecognised == "USA"){
 
       res.redirect('/prototype-3/professional-standing/question-reference-number')
-    } else if (countryRecognised == "Nigeria" || countryRecognised == "China" || countryRecognised == "India" || countryRecognised == "Jamaica" || countryRecognised == "Mexico" || countryRecognised == "South Africa" || countryRecognised == "Zimbabwe" || countryRecognised == "Argentina" ) {
+    } else if (countryRecognised == "Nigeria" || countryRecognised == "China" || countryRecognised == "India" || countryRecognised == "Jamaica" || countryRecognised == "Mexico" || countryRecognised == "South Africa" || countryRecognised == "Zimbabwe" || countryRecognised == "Argentina" || countryRecognised == "Philippines" || countryRecognised == "Ghana" ) {
     
       res.redirect('/prototype-3/professional-standing/upload-lops')
     } else {
