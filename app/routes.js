@@ -382,4 +382,24 @@ router.post('/misconduct-answer', function (req, res) {
   
 })
 
+
+
+  // Run this code when a form is submitted to 'another-degree-answer'
+  router.post('/upload-identification-answer', function (req, res) {
+
+    // Make a variable and give it the value from 'anotherTtq'
+    var anotherIdentification = req.session.data['another-identification']
+  
+    // Check whether the variable matches a condition
+    if (anotherIdentification == "Yes"){
+
+      res.redirect('/prototype-3/personal-documents/upload-identification-b')
+
+    } else {
+
+      res.redirect('/prototype-3/task-list')
+    }
+  
+})
+
 module.exports = router

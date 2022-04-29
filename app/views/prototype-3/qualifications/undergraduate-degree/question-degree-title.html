@@ -14,7 +14,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">
-        About your degree
+        Teacher training and qualifications
       </span>
       <form class="form" action="question-name-degree-institution" method="post">
 
@@ -22,9 +22,12 @@
 
         {{ govukInput({
           label: {
-            text: "What is the title of your degree?",
+            text: "What is the type and subject of your undergraduate degree?",
             classes: "govuk-label--l",
             isPageHeading: true
+          },
+          hint: {
+            text: " This should be relevant to your teaching. For example, as a Maths teacher you may have a Bachelor of Arts in Mathematics."
           },
           id: "degreeTitle",
           name: "degreeTitle",
