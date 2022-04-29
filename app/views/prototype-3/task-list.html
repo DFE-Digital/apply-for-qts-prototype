@@ -151,6 +151,15 @@
                 </a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not needed</strong>
+              {% elseif  data['was-teacher-training-a-degree'] == "No"  %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="qualifications/undergraduate-degree/question-degree-title" aria-describedby="list-convictions-status">
+                  Undergraduate degree
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
             {% elseif  data['completed-degree'] == "Yes" %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
