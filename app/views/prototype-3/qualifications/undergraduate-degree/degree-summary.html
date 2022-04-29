@@ -12,16 +12,19 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers</h1>
-      <h2 class="govuk-heading-m">About your degree</h2>
+      <span class="govuk-caption-l">
+        Teacher training and qualifications
+      </span>
 
+      <h1 class="govuk-heading-xl">Check your answers</h1>
+      
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
 
         <!-- Teacher training qualification subjects trained to teach -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Degree title
+            Type and subject
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['degreeTitle'] }}
@@ -29,7 +32,7 @@
             <dd class="govuk-summary-list__actions">
               <a href="question-degree-title">
                 Change
-                  <span class="govuk-visually-hidden">Degree Title</span>
+                  <span class="govuk-visually-hidden">Type and subject</span>
               </a>
             </dd>
           </div>
@@ -69,7 +72,7 @@
         <!-- Teacher training qualification subjects trained to teach -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Degree start date
+            Start date
             </dt>
             <dd class="govuk-summary-list__value">
               <span>{{ data['degreeStartDate-month'] }} </span> / <span>{{ data['degreeStartDate-year'] }}</span>
@@ -85,7 +88,7 @@
         <!-- Teacher training qualification subjects trained to teach -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Degree end date
+            Completion date
             </dt>
             <dd class="govuk-summary-list__value">
               <span>{{ data['degreeEndDate-month'] }} </span> / <span>{{ data['degreeEndDate-year'] }}</span>
@@ -101,7 +104,7 @@
         <!-- Teacher training qualification subjects trained to teach -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Degree award date
+            Certificate date
             </dt>
             <dd class="govuk-summary-list__value">
               <span>{{ data['degreeAwardDate-month'] }} </span> / <span>{{ data['degreeAwardDate-year'] }}</span>
@@ -136,11 +139,11 @@
           items: [
             {
               value: "Yes",
-              text: "Yes, I’ve completed this section"
+              text: "Yes"
             },
             {
               value: "No",
-              text: "No, I’ll come back to it later"
+              text: "No, I will come back to it later"
             }
           ]
         }) }}

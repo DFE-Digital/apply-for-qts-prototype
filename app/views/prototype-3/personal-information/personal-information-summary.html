@@ -12,7 +12,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers for personal information</h1>
+      <h1 class="govuk-heading-xl">Check your answers</h1>
       
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -56,9 +56,7 @@
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            <span>{{ data['dob-day'] }} </span>
-            <span>{{ data['dob-month'] }} </span>
-            <span>{{ data['dob-year'] }}</span>
+            <span>{{ data['dob-day'] }} </span> / <span>{{ data['dob-month'] }} </span> / <span>{{ data['dob-year'] }}</span>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="name-and-dob">
@@ -106,11 +104,11 @@
           items: [
             {
               value: "yes",
-              text: "Yes, I’ve completed this section"
+              text: "Yes"
             },
             {
               value: "no",
-              text: "No, I’ll come back to it later"
+              text: "No, I will come back to it later"
             }
           ]
         }) }}

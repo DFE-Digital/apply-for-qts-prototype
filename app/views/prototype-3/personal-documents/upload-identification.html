@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Upload your identification documents</h1>
+
+      <p>Upload a document to prove your identity</p>
+      <p>This could be a copy of:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Passport
+        <li>National identity card</li>
+        <li>Birth certificate</li>
+          </li>
+      </ul>
+
+      <div id="" class="govuk-hint">
+         If your legal name different to the identification document you uploaded, you will need to submit evidence of your name change too.
+      </div>
+
+
+      <form class="form" action="/prototype-3/task-list" method="post">
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="file-upload-1">
+            Select a file to upload
+          </label>
+          <a href="upload-identification-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
+          <span class="govuk-body" style="position:relative;top:7px">No file uploaded</span>
+        </div>
+
+
+        <div class="govuk-button-group">
+          <a class="govuk-button" style="text-decoration: none;" href="upload-identification-error">
+            Upload and continue
+          </a>
+        
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="another-identification" value="progress">
+            Add this later
+          </button>
+
+        </div>
+        
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

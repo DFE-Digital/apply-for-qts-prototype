@@ -15,6 +15,10 @@
 
       <form class="form" action="personal-information-summary" method="post">
 
+        <span class="govuk-caption-l">
+          About you
+        </span>
+
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
@@ -22,7 +26,7 @@
           name: "current-legal-name",
           fieldset: {
             legend: {
-              text: "Is your legal name the same as on the identification document you uploaded?",
+              text: "Is your legal name the same as on the identification document you plan to use?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }

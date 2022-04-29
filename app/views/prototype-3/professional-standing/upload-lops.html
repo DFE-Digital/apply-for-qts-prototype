@@ -13,11 +13,24 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Upload a letter of profesisonal standing (and translation if not in English)</h1>
+      <span class="govuk-caption-l">
+        Professional standing
+      </span>
 
-      <div id="" class="govuk-hint">
-        A letter of professional standing will confirm qualification of teacher, level of teaching, teaching subjects and any misconduct or convictions. The letter must be written in English. If it is not written in English, you will need a translation and upload both versions.
-      </div>
+      <h1 class="govuk-heading-l">Upload a letter of professional standing (and translation if not in English)</h1>
+
+
+      <p>This will be a letter to confirm:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your teaching qualification 
+        <li>your level of teaching</li>
+        <li>the subjects you teach</li>
+        <li>any misconduct or convictions</li>
+          </li>
+      </ul>
+      <p>The letter must be written in English. If it is not written in English, you will need to upload a certified translation.
+      </p>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
@@ -26,7 +39,7 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          You can request a letter of prefessional standing from:
+          You can request a letter of professional  standing from:
           <br><br>
           {% if  data['country-recognised'] == "Nigeria"  %}
 
@@ -35,9 +48,14 @@
 
           {% elseif  data['country-recognised'] == "China"  %}
 
-            It is understood that Letters of Professional Standing are not issued in China.<br>
-            Instead, you must arrange for the head of the last school where you taught in China to send you a letter of reference. The letter must be current. It must list the dates and length of your employment and say that you were never suspended for any disciplinary reason and that your conduct was satisfactory.
-            The Letter of Professional Standing must be signed by one of the Principal, Director, Headmaster or Headmistress of the school.
+           It is understood that Letters of Professional Standing are not issued in China.<br><br>
+           You must arrange for the Principal, Director, or Head of the last school where you taught in China to send you a signed letter of reference that confirms:<br><br>
+           <ul class="govuk-list govuk-list--bullet">
+            <li>the dates and length of your employment</li>
+            <li>that you were not suspended for any disciplinary reason</li>
+            <li>that your conduct was satisfactory</li>
+          </ul>
+          The letter must be dated within the last 3 months.
             <br><br>
             You may also write to:<br>
             Ministry of Education, 35 Damucang hutong, Xidan, Beijing 100816, China.<br>
@@ -75,7 +93,8 @@
 
           {% elseif  data['country-recognised'] == "Argentina"  %}
 
-            Ministerio de Educación, Ciencia y Tecnología, Pizzurno 935, Capital Federal 1020 Buenos Aires, Argentina; OR see the contact information for the province in Argentina where you last taught.
+            <p>Ministerio de Educación, Ciencia y Tecnología, Pizzurno 935, Capital Federal 1020 Buenos Aires, Argentina</p>
+            <p>Or you can use the contact information for the province in Argentina where you last taught.</p>
           
           {% elseif  data['country-recognised'] == "Ghana"  %}
 

@@ -12,9 +12,11 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers</h1>
+      <span class="govuk-caption-l">
+        Teacher training and qualifications
+      </span>
 
-<h2 class="govuk-heading-m">About your teacher training qualification</h2>
+      <h1 class="govuk-heading-xl">Check your answers</h1>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -22,7 +24,7 @@
         <!-- Teacher training qualification -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Teacher training qualification title
+            Title
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['qualification-title'] }}
@@ -38,7 +40,7 @@
         <!-- Teacher training qualification institution -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Teacher training institution name
+            Institution name
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['qualificationInstitutionName'] }}
@@ -54,7 +56,7 @@
         <!-- Teacher training qualification country -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Teacher training country of institution
+            Country of institution
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['qualification-institution-country'] }}
@@ -70,13 +72,13 @@
         <!-- Teacher training qualification start date -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Teacher training qualification start date
+            Start date
             </dt>
             <dd class="govuk-summary-list__value">
               <span>{{ data['quaificationStartDate-month'] }} </span> / <span>{{ data['quaificationStartDate-year'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="question-qualification-study-period-start">
+              <a href="question-qualification-study-period">
                 Change
                   <span class="govuk-visually-hidden">Teacher training qualification start date</span>
               </a>
@@ -86,13 +88,13 @@
         <!-- Teacher training qualification end date -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Teacher training qualification end date
+            Completion date
             </dt>
             <dd class="govuk-summary-list__value">
               <span>{{ data['quaificationEndDate-month'] }} </span> / <span>{{ data['quaificationEndDate-year'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="question-qualification-study-period-end">
+              <a href="question-qualification-study-period">
                 Change
                   <span class="govuk-visually-hidden">Teacher training qualification end date</span>
               </a>
@@ -102,13 +104,13 @@
         <!-- Teacher training qualification award date -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Teacher training qualification award date
+            Certificate date
             </dt>
             <dd class="govuk-summary-list__value">
               <span>{{ data['quaificationAwardDate-month'] }} </span> / <span>{{ data['quaificationAwardDate-year'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="question-qualification-date-awarded">
+              <a href="question-qualification-study-period">
                 Change
                   <span class="govuk-visually-hidden">Teacher training qualification award date</span>
               </a>
@@ -121,7 +123,7 @@
             Age range qualified to teach
             </dt>
             <dd class="govuk-summary-list__value">
-              <span>{{ data['qualificationAgeRange-from'] }} </span> - <span>{{ data['qualificationAgeRange-to'] }}</span>
+              <span>{{ data['qualificationAgeRange-from'] }} </span> to <span>{{ data['qualificationAgeRange-to'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="question-qualification-age-range">
@@ -185,11 +187,11 @@
           items: [
             {
               value: "yes",
-              text: "Yes, I’ve completed this section"
+              text: "Yes"
             },
             {
               value: "no",
-              text: "No, I’ll come back to it later"
+              text: "No, I will come back to it later"
             }
           ]
         }) }}
