@@ -21,7 +21,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="personal-information/name-and-dob" aria-describedby="eligibility-status">
+                <a href="personal-information/name-and-dob" aria-describedby="personal-information">
                   Personal information
                 </a>
               </span>
@@ -35,7 +35,7 @@
             </li> 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="personal-documents/upload-identification" aria-describedby="eligibility-status">
+                <a href="personal-documents/upload-identification" aria-describedby="personal-details">
                   Personal documents
                 </a>
               </span>
@@ -59,7 +59,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="qualifications/teacher-training-qualification/question-qualification-title" aria-describedby="list-convictions-status">
+                <a href="qualifications/teacher-training-qualification/question-qualification-title" aria-describedby="teacher-training-qualification">
                   Teacher training qualification
                 </a>
               </span>
@@ -73,7 +73,7 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="qualifications/teacher-training-qualification-documents/upload-ttq" aria-describedby="list-convictions-status">
+                <a href="qualifications/teacher-training-qualification-documents/upload-ttq" aria-describedby="teacher-training-qualification-documents">
                   Teacher training qualification documents
                 </a>
               </span>
@@ -100,7 +100,7 @@
               {% if  data['completed-degree'] == "Yes" %}
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
-                  <a href="qualifications/undergraduate-degree/question-degree-title" aria-describedby="list-convictions-status">
+                  <a href="qualifications/undergraduate-degree/question-degree-title" aria-describedby="undergraduate-degree">
                     Undergraduate degree
                   </a>
                 </span>
@@ -109,7 +109,7 @@
               {% elseif  data['completed-degree'] == "No" %}
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
-                  <a href="qualifications/undergraduate-degree/question-degree-title" aria-describedby="list-convictions-status">
+                  <a href="qualifications/undergraduate-degree/question-degree-title" aria-describedby="undergraduate-degree">
                     Undergraduate degree
                   </a>
                 </span>
@@ -118,7 +118,7 @@
               {% else  %}
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
-                  <a href="qualifications/undergraduate-degree/question-degree-title" aria-describedby="list-convictions-status">
+                  <a href="qualifications/undergraduate-degree/question-degree-title" aria-describedby="undergraduate-degree">
                     Undergraduate degree
                   </a>
                 </span>
@@ -137,7 +137,7 @@
             {% if  data['another-degree'] == "No"  %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="qualifications/undergraduate-degree-documents/upload-degree" aria-describedby="list-convictions-status">
+                <a href="qualifications/undergraduate-degree-documents/upload-degree" aria-describedby="undergraduate-degree-documents">
                   Undergraduate degree documents
                 </a>
               </span>
@@ -152,7 +152,7 @@
               {% elseif  data['was-teacher-training-a-degree'] == "No"  %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="qualifications/undergraduate-degree-documents/upload-degree" aria-describedby="list-convictions-status">
+                <a href="qualifications/undergraduate-degree-documents/upload-degree" aria-describedby="undergraduate-degree-documents">
                   Undergraduate degree documents
                 </a>
               </span>
@@ -161,7 +161,7 @@
             {% elseif  data['completed-degree'] == "Yes" %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="qualifications/undergraduate-degree-documents/upload-degree" aria-describedby="list-convictions-status">
+                <a href="qualifications/undergraduate-degree-documents/upload-degree" aria-describedby="undergraduate-degree-documents">
                   Undergraduate degree documents
                 </a>
               </span>
@@ -171,7 +171,7 @@
             {% elseif  data['another-degree'] == "Yes" %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="qualifications/undergraduate-degree-documents/upload-degree" aria-describedby="list-convictions-status">
+                <a href="qualifications/undergraduate-degree-documents/upload-degree" aria-describedby="undergraduate-degree-documents">
                   Undergraduate degree documents
                 </a>
               </span>
@@ -180,7 +180,7 @@
             {% elseif  data['another-degree'] == "progress" %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="qualifications/undergraduate-degree-documents/upload-degree" aria-describedby="list-convictions-status">
+                <a href="qualifications/undergraduate-degree-documents/upload-degree" aria-describedby="undergraduate-degree-documents">
                   Undergraduate degree documents
                 </a>
               </span>
@@ -206,7 +206,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="professional-standing/question-country-recognised" aria-describedby="list-convictions-status">
+                <a href="professional-standing/question-country-recognised" aria-describedby="professional-standing">
                 Professional standing 
               </a>
               </span>
