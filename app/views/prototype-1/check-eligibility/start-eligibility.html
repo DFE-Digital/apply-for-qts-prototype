@@ -3,26 +3,17 @@
   Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
-{% endblock %}
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Check your eligibility to apply for QTS
+        Check your eligibility to apply for qualified teacher status (QTS) in England
       </h1>
 
-      <p>We will ask questions around your qualifications and experience as a teacher. </p> 
-      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+      <p>Teacher training in England leads to qualified teacher status (QTS). QTS is a legal requirement to teach in many English schools.</p>
 
-    {{ govukInsetText({
-  text: "To be eligible, your training must be of a similar standard to teacher training in England"
-    }) }}
-    <p>It should take about 5 minutes to complete the questions.</p>
-    <p>If you are eligible, you can check what documents and evidence you will need and continue to apply. </p>
+      <p>We ask some questions to check your eligibility to apply for QTS in England. This should take about 5 minutes.</p>
 
       <a href="question-degree" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
         Continue
