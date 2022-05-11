@@ -1,11 +1,7 @@
-{% extends "layout.html" %}
+{% extends "wizard.html" %}
 
 {% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  You're not eligible – {{ serviceName }} prototype
 {% endblock %}
 
 {% block content %}
@@ -14,16 +10,10 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        You are not eligible to apply to get qualified teacher status (QTS) in England
+        You're not eligible to apply for qualified teacher status (QTS) in England
       </h1>
-      <p>This is because you are not registered as a school teacher in the country where you trained, or you have restrictions on your practice. </p>
-      <p>You must be a teacher with:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>professional status</li>
-        <li>professional status</li>
-        <li>no restrictions on your practice</li>
-        <li>no misconduct warnings or proceedings brought against you</li>
-      </ul>
+      <p>This is because you are not recognised as a school teacher in the country where you trained.</p>
+
       <p>You can find out <a href="https://getintoteaching.education.gov.uk/ways-to-train">how to train to become a teacher in England</a></p>
     </div>
   </div>

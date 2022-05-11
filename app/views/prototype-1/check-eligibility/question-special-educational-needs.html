@@ -1,11 +1,7 @@
-{% extends "layout.html" %}
+{% extends "wizard.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  Are you qualified to teach children who are aged somewhere between 5 and 16 years? – {{ serviceName }} prototype
 {% endblock %}
 
 {% block content %}
@@ -24,10 +20,13 @@
           name: "special-educational-needs",
           fieldset: {
             legend: {
-              text: "Is your qualification to teach children aged anywhere from 5 years up to 16 years?",
+              text: "Are you qualified to teach children who are aged somewhere between 5 and 16 years?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
+          },
+          hint: {
+            text: "You do not need to be qualified to teach this full age range. For example, you might be qualified to teach children aged 5 to 11, or 14 to 16."
           },
           items: [
             {
@@ -40,7 +39,7 @@
               text: "No",
               checked: checked("special-educational-needs", "No")
             }
-            
+
           ]
         }) }}
 

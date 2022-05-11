@@ -1,11 +1,7 @@
-{% extends "layout.html" %}
+{% extends "wizard.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  Are you recognised as a teacher in the country where you trained? – {{ serviceName }} prototype
 {% endblock %}
 
 {% block content %}
@@ -24,13 +20,13 @@
           name: "registered-teacher",
           fieldset: {
             legend: {
-              text: "Are you registered as a teacher in the country where you trained?",
+              text: "Are you recognised as a teacher in the country where you trained?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            text: ""
+            text: "You need to have met all conditions for being fully recognised."
           },
           items: [
             {
@@ -43,7 +39,7 @@
               text: "No",
               checked: checked("registered-teacher", "No")
             }
-            
+
           ]
         }) }}
 
