@@ -1,3 +1,4 @@
+const fs = require('fs')
 const express = require('express')
 const router = express.Router()
 
@@ -20,6 +21,23 @@ router.post('/degree-answer', function (req, res) {
 
   })
 
+router.all('/prototype-1/check-eligibility/question-country', (req, res, next) => {
+  res.locals.countries = [{ text: '', value: '' }].concat(JSON.parse(fs.readFileSync('public/govuk-country-and-territory-autocomplete/location-autocomplete-canonical-list.json', 'utf8'))
+    .map(country => {
+      return { text: country[0], value: country[0] }
+    }))
+
+  next()
+})
+
+// Run this code when a form is submitted to 'country-answer'
+router.post('/country-answer', function (req, res) {
+  if (req.session.data['country'] == 'Spain') {
+    res.redirect('/prototype-1/check-eligibility/question-degree')
+  } else {
+    res.redirect('/prototype-1/check-eligibility/ineligible-country')
+  }
+})
 
       // Run this code when a form is submitted to 'formal-training-answer'
   router.post('/formal-training-answer', function (req, res) {
