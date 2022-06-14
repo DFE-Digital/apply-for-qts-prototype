@@ -65,7 +65,7 @@ router.post('/country-answer', function (req, res) {
           // Check whether the variable matches a condition
           if (specialeducationalNeeds == "Yes"){
             // Send user to next page
-            res.redirect('/prototype-1/check-eligibility/question-registered-teacher')
+            res.redirect('/prototype-1/check-eligibility/question-misconduct')
           } else {
             // Send user to ineligible page
             res.redirect('/prototype-1/check-eligibility/ineligible-special-educational-needs')
@@ -90,23 +90,6 @@ router.post('/country-answer', function (req, res) {
           }
 
       })
-
-    // Run this code when a form is submitted to 'registered-teacher-answer'
-    router.post('/registered-teacher-answer', function (req, res) {
-
-        // Make a variable and give it the value from 'registeredTeacher'
-        var registeredTeacher = req.session.data['registered-teacher']
-
-        // Check whether the variable matches a condition
-        if (registeredTeacher == "Yes"){
-          // Send user to next page
-          res.redirect('/prototype-1/check-eligibility/question-misconduct')
-        } else {
-          // Send user to ineligible page
-          res.redirect('/prototype-1/check-eligibility/ineligible-not-registered')
-        }
-
-    })
 
 
 // Run this code when a form is submitted to 'misconduct-answer'
