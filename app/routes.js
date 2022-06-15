@@ -2,24 +2,9 @@ const fs = require('fs')
 const express = require('express')
 const router = express.Router()
 
-// Add your routes here - above the module.exports line
-
-// Run this code when a form is submitted to 'degree-answer'
 router.post('/degree-answer', function (req, res) {
-
-    // Make a variable and give it the value from 'degree'
-    var haveDegree = req.session.data['Degree']
-
-    // Check whether the variable matches a condition
-    if (haveDegree == "Yes"){
-      // Send user to next page
-      res.redirect('/prototype-1/check-eligibility/question-formal-training')
-    } else {
-      // Send user to ineligible page
-      res.redirect('/prototype-1/check-eligibility/ineligible-degree')
-    }
-
-  })
+  res.redirect('/prototype-1/check-eligibility/question-formal-training')
+})
 
 router.all('/prototype-1/check-eligibility/question-country', (req, res, next) => {
   res.locals.countries = [{ text: '', value: '' }].concat(JSON.parse(fs.readFileSync('public/govuk-country-and-territory-autocomplete/location-autocomplete-canonical-list.json', 'utf8'))
@@ -30,7 +15,6 @@ router.all('/prototype-1/check-eligibility/question-country', (req, res, next) =
   next()
 })
 
-// Run this code when a form is submitted to 'country-answer'
 router.post('/country-answer', function (req, res) {
   if (req.session.data['country'] == 'Spain') {
     res.redirect('/prototype-1/check-eligibility/question-degree')
@@ -39,39 +23,13 @@ router.post('/country-answer', function (req, res) {
   }
 })
 
-      // Run this code when a form is submitted to 'formal-training-answer'
-  router.post('/formal-training-answer', function (req, res) {
+router.post('/formal-training-answer', function (req, res) {
+  res.redirect('/prototype-1/check-eligibility/question-special-educational-needs')
+})
 
-    // Make a variable and give it the value from 'formalTraining'
-    var formalTraining = req.session.data['formal-training']
-
-    // Check whether the variable matches a condition
-    if (formalTraining == "Yes"){
-      // Send user to next page
-      res.redirect('/prototype-1/check-eligibility/question-special-educational-needs')
-    } else {
-      // Send user to ineligible page
-      res.redirect('/prototype-1/check-eligibility/ineligible-formal-training')
-    }
-
-  })
-
-        // Run this code when a form is submitted to 'special-educational-needs-answer'
-        router.post('/special-educational-needs-answer', function (req, res) {
-
-          // Make a variable and give it the value from 'specialEducationalNeeds'
-          var specialeducationalNeeds = req.session.data['special-educational-needs']
-
-          // Check whether the variable matches a condition
-          if (specialeducationalNeeds == "Yes"){
-            // Send user to next page
-            res.redirect('/prototype-1/check-eligibility/question-registered-teacher')
-          } else {
-            // Send user to ineligible page
-            res.redirect('/prototype-1/check-eligibility/ineligible-special-educational-needs')
-          }
-
-      })
+router.post('/special-educational-needs-answer', function (req, res) {
+  res.redirect('/prototype-1/check-eligibility/question-misconduct')
+})
 
 
         // Run this code when a form is submitted to 'completed-year-answer'
@@ -91,41 +49,19 @@ router.post('/country-answer', function (req, res) {
 
       })
 
-    // Run this code when a form is submitted to 'registered-teacher-answer'
-    router.post('/registered-teacher-answer', function (req, res) {
 
-        // Make a variable and give it the value from 'registeredTeacher'
-        var registeredTeacher = req.session.data['registered-teacher']
-
-        // Check whether the variable matches a condition
-        if (registeredTeacher == "Yes"){
-          // Send user to next page
-          res.redirect('/prototype-1/check-eligibility/question-misconduct')
-        } else {
-          // Send user to ineligible page
-          res.redirect('/prototype-1/check-eligibility/ineligible-not-registered')
-        }
-
-    })
-
-
-// Run this code when a form is submitted to 'misconduct-answer'
 router.post('/misconduct-answer', function (req, res) {
-
-  // Make a variable and give it the value from 'haveMisconduct'
+  var haveDegree = req.session.data['Degree']
+  var formalTraining = req.session.data['formal-training']
+  var specialeducationalNeeds = req.session.data['special-educational-needs']
   var haveMisconduct = req.session.data['misconduct']
 
-  // Check whether the variable matches a condition
-  if (haveMisconduct == "Yes"){
-    // Send user to next page
+  if (haveDegree == "Yes" && formalTraining == "Yes" && specialeducationalNeeds == "Yes" && haveMisconduct == "Yes") {
     res.redirect('/prototype-1/check-eligibility/eligible')
   } else {
-    // Send user to ineligible page
-    res.redirect('/prototype-1/check-eligibility/ineligible-misconduct')
+    res.redirect('/prototype-1/check-eligibility/ineligible')
   }
-
 })
-
 
         // Run this code when a form is submitted to 'restrictions'
         router.post('/restrictions-answer', function (req, res) {

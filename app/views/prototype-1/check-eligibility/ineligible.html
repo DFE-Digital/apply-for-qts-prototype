@@ -14,12 +14,32 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        You are not eligible
+        You’re not eligible to apply for qualified teacher status (QTS) in England
       </h1>
 
-      <p>Based on your answers, you are not eligible to apply to get qualified teacher status (QTS) in England.</p>
-      <p>Find out what other options you have for working as teacher in England <a href="https://getintoteaching.education.gov.uk/ways-to-train">here</a>.</p>
-      
+      <p>This is because:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        {% if data['Degree'] != 'Yes' %}
+          <li>You do not have a degree. As teaching in England is a graduate profession, you must have an undergraduate degree.</li>
+        {% endif %}
+
+        {% if data['formal-training'] != 'Yes' %}
+          <li>You have not completed a formal teacher training course, for example, an undergraduate teaching degree or postgraduate teacher training course.</li>
+        {% endif %}
+
+        {% if data['special-educational-needs'] != 'Yes' %}
+          <li>You are not qualified to teach children who are aged somewhere between 5 and 16 years.</li>
+        {% endif %}
+
+        {% if data['misconduct'] != 'Yes' %}
+          <li>To teach in England, you must not have any findings of misconduct or restrictions on your practice.</li>
+        {% endif %}
+      </ul>
+
+      {% if data['misconduct'] == 'Yes' %}
+        <p class="govuk-body">You can find out <a href="https://getintoteaching.education.gov.uk/non-uk-teachers">how to train to become a teacher in England</a></p>
+      {% endif %}
     </div>
   </div>
 
