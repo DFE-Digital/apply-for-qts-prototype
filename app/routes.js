@@ -1,374 +1,436 @@
-const fs = require('fs')
-const express = require('express')
-const router = express.Router()
+const fs = require("fs");
+const express = require("express");
+const { endsWith } = require("lodash");
+const router = express.Router();
 
-router.post('/degree-answer', function (req, res) {
-  res.redirect('/prototype-1/check-eligibility/question-formal-training')
-})
+router.post("/degree-answer", function (req, res) {
+  res.redirect("/prototype-1/check-eligibility/question-formal-training");
+});
 
-router.all('/prototype-1/check-eligibility/question-country', (req, res, next) => {
-  res.locals.countries = [{ text: '', value: '' }].concat(JSON.parse(fs.readFileSync('public/govuk-country-and-territory-autocomplete/location-autocomplete-canonical-list.json', 'utf8'))
-    .map(country => {
-      return { text: country[0], value: country[0] }
-    }))
-
-  next()
-})
-
-const BUCKET_3_COUNTRIES = ['United States', 'Australia']
-const BUCKET_4_COUNTRIES = ['Hong Kong', 'China', 'Spain', 'Slovakia', 'Slovenia', 'Lithuania', 'Netherlands', 'Italy', 'Iceland', 'Hungary', 'Germany', 'Greece', 'Finland', 'Denmark', 'Czech Republic', 'Austria']
-const BUCKET_6_COUNTRIES = ['India', 'China', 'Luxembourg', 'Liechtenstein', 'Germany', 'Cyprus', 'Belgium']
-
-const COUNTRIES = BUCKET_3_COUNTRIES.concat(BUCKET_4_COUNTRIES).concat(BUCKET_6_COUNTRIES)
-
-router.post('/country-answer', function (req, res) {
-  if (COUNTRIES.includes(req.session.data['country'])) {
-    res.redirect('/prototype-1/check-eligibility/question-degree')
-  } else {
-    res.redirect('/prototype-1/check-eligibility/ineligible-country')
-  }
-})
-
-router.post('/formal-training-answer', function (req, res) {
-  res.redirect('/prototype-1/check-eligibility/question-special-educational-needs')
-})
-
-router.post('/special-educational-needs-answer', function (req, res) {
-  res.redirect('/prototype-1/check-eligibility/question-misconduct')
-})
-
-
-        // Run this code when a form is submitted to 'completed-year-answer'
-        router.post('/completed-year-answer', function (req, res) {
-
-          // Make a variable and give it the value from 'completedYear'
-          var completedYear = req.session.data['completed-year']
-
-          // Check whether the variable matches a condition
-          if (completedYear == "Yes"){
-            // Send user to next page
-            res.redirect('/prototype-1/check-eligibility/question-registered-teacher')
-          } else {
-            // Send user to ineligible page
-            res.redirect('/prototype-1/check-eligibility/ineligible-no-experience')
-          }
-
+router.all(
+  "/prototype-1/check-eligibility/question-country",
+  (req, res, next) => {
+    res.locals.countries = [{ text: "", value: "" }].concat(
+      JSON.parse(
+        fs.readFileSync(
+          "public/govuk-country-and-territory-autocomplete/location-autocomplete-canonical-list.json",
+          "utf8"
+        )
+      ).map((country) => {
+        return { text: country[0], value: country[0] };
       })
+    );
 
+    next();
+  }
+);
 
-router.post('/misconduct-answer', function (req, res) {
-  var country = req.session.data['country']
-  var haveDegree = req.session.data['Degree']
-  var formalTraining = req.session.data['formal-training']
-  var specialeducationalNeeds = req.session.data['special-educational-needs']
-  var haveMisconduct = req.session.data['misconduct']
+const BUCKET_3_COUNTRIES = ["United States", "Australia"];
+const BUCKET_4_COUNTRIES = [
+  "Hong Kong",
+  "China",
+  "Spain",
+  "Slovakia",
+  "Slovenia",
+  "Lithuania",
+  "Netherlands",
+  "Italy",
+  "Iceland",
+  "Hungary",
+  "Germany",
+  "Greece",
+  "Finland",
+  "Denmark",
+  "Czech Republic",
+  "Austria",
+];
+const BUCKET_6_COUNTRIES = [
+  "India",
+  "China",
+  "Luxembourg",
+  "Liechtenstein",
+  "Germany",
+  "Cyprus",
+  "Belgium",
+];
 
-  if (haveDegree == "Yes" && formalTraining == "Yes" && specialeducationalNeeds == "Yes" && haveMisconduct == "Yes") {
+const BUCKET_4_REGIONS = [
+  "4",
+  "Lower Saxony",
+  "Mecklenburg-Vorpommern",
+  "Rhineland-Palatinate",
+  "Saarland",
+];
+
+const COUNTRIES =
+  BUCKET_3_COUNTRIES.concat(BUCKET_4_COUNTRIES).concat(BUCKET_6_COUNTRIES);
+
+router.post("/country-answer", function (req, res) {
+  if (COUNTRIES.includes(req.session.data["country"])) {
+    var country = req.session.data["country"];
+    var region_countries = {
+      Belgium: "/prototype-1/check-eligibility/country-belgium",
+      Germany: "/prototype-1/check-eligibility/country-germany",
+      "United States": "/prototype-1/check-eligibility/country-usa",
+      China: "/prototype-1/check-eligibility/country-china",
+      Australia: "/prototype-1/check-eligibility/country-australia",
+    };
+
+    if (region_countries[country]) {
+      res.redirect(region_countries[country]);
+    } else {
+      res.redirect("/prototype-1/check-eligibility/question-degree");
+    }
+  } else {
+    res.redirect("/prototype-1/check-eligibility/ineligible-country");
+  }
+});
+
+router.post("/region-answer", function (req, res) {
+  var region = req.session.data["region"];
+  if (region) {
+    res.redirect("/prototype-1/check-eligibility/question-degree");
+  } else {
+    res.redirect("/prototype-1/check-eligibility/ineligible-country");
+  }
+});
+
+router.post("/formal-training-answer", function (req, res) {
+  res.redirect(
+    "/prototype-1/check-eligibility/question-special-educational-needs"
+  );
+});
+
+router.post("/special-educational-needs-answer", function (req, res) {
+  res.redirect("/prototype-1/check-eligibility/question-misconduct");
+});
+
+// Run this code when a form is submitted to 'completed-year-answer'
+router.post("/completed-year-answer", function (req, res) {
+  // Make a variable and give it the value from 'completedYear'
+  var completedYear = req.session.data["completed-year"];
+
+  // Check whether the variable matches a condition
+  if (completedYear == "Yes") {
+    // Send user to next page
+    res.redirect("/prototype-1/check-eligibility/question-registered-teacher");
+  } else {
+    // Send user to ineligible page
+    res.redirect("/prototype-1/check-eligibility/ineligible-no-experience");
+  }
+});
+
+router.post("/misconduct-answer", function (req, res) {
+  var country = req.session.data["country"];
+  var haveDegree = req.session.data["Degree"];
+  var region = req.session.data["region"];
+  var formalTraining = req.session.data["formal-training"];
+  var specialeducationalNeeds = req.session.data["special-educational-needs"];
+  var haveMisconduct = req.session.data["misconduct"];
+
+  if (
+    haveDegree == "Yes" &&
+    formalTraining == "Yes" &&
+    specialeducationalNeeds == "Yes" &&
+    haveMisconduct == "Yes"
+  ) {
     if (BUCKET_3_COUNTRIES.includes(country)) {
-      res.redirect('/prototype-1/check-eligibility/eligible-bucket-3')
-    } else if (BUCKET_4_COUNTRIES.includes(country)) {
-      res.redirect('/prototype-1/check-eligibility/eligible-bucket-3')
+      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
+    } else if (BUCKET_4_REGIONS.includes(region)) {
+      res.redirect("/prototype-1/check-eligibility/eligible-bucket-4");
     } else if (BUCKET_6_COUNTRIES.includes(country)) {
-      res.redirect('/prototype-1/check-eligibility/eligible-bucket-6')
+      res.redirect("/prototype-1/check-eligibility/eligible-bucket-6");
+    } else if (BUCKET_4_COUNTRIES.includes(country)) {
+      res.redirect("/prototype-1/check-eligibility/eligible-bucket-4");
     } else {
-      res.redirect('/prototype-1/check-eligibility/eligible')
+      res.redirect("/prototype-1/check-eligibility/eligible");
     }
   } else {
-    res.redirect('/prototype-1/check-eligibility/ineligible')
+    res.redirect("/prototype-1/check-eligibility/ineligible");
   }
-})
-
-        // Run this code when a form is submitted to 'restrictions'
-        router.post('/restrictions-answer', function (req, res) {
-
-          // Make a variable and give it the value from 'haveRestrictions'
-          var haveRestrictions = req.session.data['restrictions']
-
-          // Check whether the variable matches a condition
-          if (haveRestrictions == "Yes"){
-            // Send user to next page
-            res.redirect('/prototype-1/check-eligibility/ineligible-restrictions')
-          } else {
-            // Send user to ineligible page
-            res.redirect('/prototype-1/check-eligibility/eligible')
-          }
-
-      })
-
-    // Run this code when a form is submitted to 'Country Trained in'
-    router.post('/country-trained-answer', function (req, res) {
-
-      // Make a variable and give it the value from 'degree'
-      var countryTrained = req.session.data['country']
-
-      // Check whether the variable matches a condition
-      if (countryTrained == "Canada"){
-        // Send user to Degree english
-        res.redirect('/prototype-1/get-prepared/question-degree-stem')
-      } else {
-        // Send user to STEM
-        res.redirect('/prototype-1/get-prepared/question-degree-english')
-      }
-
-  })
-
-  // Run this code when a form is submitted to 'Degree in STEM'
-  router.post('/stem-answer', function (req, res) {
-
-      // Make a variable and give it the value from 'degree'
-      var countryTrained = req.session.data['DegreeStem']
-
-      // Check whether the variable matches a condition
-      if (countryTrained == "Yes"){
-        // Send user to check answers
-        res.redirect('/prototype-1/get-prepared/check-prepare-answers')
-      } else {
-        // Send user to Primary or secondary
-        res.redirect('/prototype-1/get-prepared/question-primary-secondary')
-      }
-
-  })
-
-        // Run this code when a form is submitted to 'Country Trained in'
-        router.post('/passive-country-answer', function (req, res) {
-
-          // Make a variable and give it the value from 'degree'
-          var passiveCountry = req.session.data['passiveCountry']
-
-          // Check whether the variable matches a condition
-          if (passiveCountry == "India"){
-            // Send user to India guidance page
-            res.redirect('/prototype-2/documents-you-will-need-india')
-            // Send user to Zimbabwe guidance page
-          } else if (passiveCountry == "Zimbabwe") {
-            res.redirect('/prototype-2/documents-you-will-need-zimbabwe')
-            // Send user to Nigeria guidance page
-          } else if (passiveCountry == "Nigeria") {
-            res.redirect('/prototype-2/documents-you-will-need-nigeria')
-            // Send user to Jamaica guidance page
-          } else if (passiveCountry == "Zimbabwe") {
-            res.redirect('/prototype-2/documents-you-will-need-jamaica')
-          } else {
-            // Send user to STEM
-            res.redirect('/prototype-1/get-prepared/question-degree-english')
-          }
-
-      })
-
-       // Run this code when a form is submitted to 'together-separate'
-      router.post('/together-separate-answer', function (req, res) {
-
-        // Make a variable and give it the value from 'togetherSeparate'
-        var togetherSeparate = req.session.data['together-separate']
-
-        // Check whether the variable matches a condition
-        if (togetherSeparate == "Together"){
-          // Send user to next page
-          res.redirect('/prototype-3/qualifications/question-qualification-title')
-        } else {
-          // Send user to ineligible page
-          res.redirect('/prototype-3/qualifications/question-degree-title')
-        }
-
-      })
-
-      // Run this code when a form is submitted to 'evidence-professional-standing-answer'
-      router.post('/evidence-professional-standing-answer', function (req, res) {
-
-        // Make a variable and give it the value from 'professionalStandingAnswer'
-        var professionalStandingAnswer = req.session.data['evidence-professional-standing']
-
-        // Check whether the variable matches a condition
-        if (professionalStandingAnswer== "Online Portal"){
-          // Send user to online portal page
-          res.redirect('/prototype-3/professional-standing/question-reference-number')
-      // Send user to upload LOPS
-      } else if (professionalStandingAnswer == "Letter of professional standing") {
-        res.redirect('/prototype-3/professional-standing/upload-lops')
-          } else {
-            // Send users who cannot evidence to summary
-            res.redirect('/prototype-3/professional-standing/professional-standing-summary')
-          }
-
-      })
-
-      // Run this code when a form is submitted to 'reference-number-answer'
-      router.post('/question-reference-number-answer', function (req, res) {
-
-        // Make a variable and give it the value from '-'
-        var questionReferenceNumberAnswer = req.session.data['question-reference-number']
-
-        // Check whether the variable matches a condition
-        if (questionReferenceNumberAnswer== "Yes"){
-          // Send user to next page
-          res.redirect('/prototype-3/professional-standing/enter-reference-number')
-        } else {
-          // Send user to ineligible page
-          res.redirect('/prototype-3/professional-standing/professional-standing-summary')
-        }
-
-    })
-
-    // Run this code when a form is submitted to 'upload-teacher-ceritficate-seperate'
-    router.post('/upload-certificate-answer', function (req, res) {
-
-      // Make a variable and give it the value from 'professionalStandingAnswer'
-      var uploadCertAnswer = req.session.data['degreeCertificate']
-
-      // Check whether the variable matches a condition
-      if (uploadCertAnswer== "degree-certificate01.jpeg"){
-        // Send user to next page
-        res.redirect('/prototype-3/qualifications/upload-teacher-degree-certificate-separate-2')
-      } else {
-        // Send user to ineligible page
-        res.redirect('/prototype-3/qualifications/question-qualification-title')
-      }
-
-  })
-
-      // Run this code when a form is submitted to '/upload-teacher-degree-certificate-answer'
-      router.post('/upload-teacher-degree-certificate-answer', function (req, res) {
-
-        // Make a variable and give it the value from 'togetherSeparate'
-        var togetherSeparate = req.session.data['together-separate']
-
-        // Check whether the variable matches a condition
-        if (togetherSeparate == "Together"){
-          // Send user to next page
-          res.redirect('/prototype-3/qualifications/upload-teacher-degree-certificate')
-        } else {
-          // Send user to ineligible page
-          res.redirect('/prototype-3/qualifications/qualifications-summary')
-        }
-
-    })
-
-    // Run this code when a form is submitted to 'current-legal-name'
-    router.post('/current-legal-name-answer', function (req, res) {
-
-      // Make a variable and give it the value from 'currentLegalNameAnswer'
-      var currentLegalNameAnswer = req.session.data['current-legal-name']
-
-      // Check whether the variable matches a condition
-      if (currentLegalNameAnswer== "Yes"){
-        // Send user to next page
-        res.redirect('/prototype-3/personal-information/question-nationality')
-      } else {
-        // Send user to ineligible page
-        res.redirect('/prototype-3/personal-information/upload-name-change-evidence')
-      }
-
-  })
-
-  // Run this code when a form is submitted to 'question-country-recognised-answer'
-  router.post('/question-country-recognised-answer', function (req, res) {
-
-    // Make a variable and give it the value from 'currentLegalNameAnswer'
-    var countryRecognised = req.session.data['country-recognised']
-
-    // Check whether the variable matches a condition
-    if (countryRecognised == "Australia" || countryRecognised == "Canada" || countryRecognised == "USA"){
-
-      res.redirect('/prototype-3/professional-standing/question-reference-number')
-    } else if (countryRecognised == "Nigeria" || countryRecognised == "China" || countryRecognised == "India" || countryRecognised == "Jamaica" || countryRecognised == "Mexico" || countryRecognised == "South Africa" || countryRecognised == "Zimbabwe" || countryRecognised == "Argentina" || countryRecognised == "Philippines" || countryRecognised == "Ghana" ) {
-
-      res.redirect('/prototype-3/professional-standing/upload-lops')
-    } else {
-
-      res.redirect('/prototype-3/professional-standing/question-certified-teacher')
-    }
-
-  })
-
-  // Run this code when a form is submitted to 'upload-lops-answer'
-  router.post('/upload-lops-answer', function (req, res) {
-
-    // Make a variable and give it the value from 'currentLegalNameAnswer'
-    var anotherLops = req.session.data['another-lops']
-
-    // Check whether the variable matches a condition
-    if (anotherLops == "Yes"){
-
-      res.redirect('/prototype-3/professional-standing/upload-lopsb')
-
-    } else {
-
-      res.redirect('/prototype-3/professional-standing/professional-standing-summary')
-    }
-
-})
-
-                          // Run this code when a form is submitted to 'create-account-sign-in'
-                          router.post('/create-account-sign-in-answer', function (req, res) {
-
-                            // Make a variable and give it the value from 'createAccountSignInAnswer'
-                            var createAccountSignInAnswer = req.session.data['create-account-sign-in']
-
-                            // Check whether the variable matches a condition
-                            if (createAccountSignInAnswer== "No"){
-                              // Send user to next page
-                              res.redirect('/prototype-3/create-an-account')
-                            } else {
-                              // Send user to ineligible page
-                              res.redirect('/prototype-3/task-list')
-                            }
-
-                        })
-
-  // Run this code when a form is submitted to 'upload-ttq-answer'
-  router.post('/upload-ttq-answer', function (req, res) {
-
-    // Make a variable and give it the value from 'anotherTtq'
-    var anotherTtq = req.session.data['another-ttq']
-
-    // Check whether the variable matches a condition
-    if (anotherTtq == "Yes"){
-
-      res.redirect('/prototype-3/qualifications/teacher-training-qualification-documents/upload-ttqb')
-
-    } else {
-
-      res.redirect('/prototype-3/task-list')
-    }
-
-})
-
-  // Run this code when a form is submitted to 'another-degree-answer'
-  router.post('/upload-degree-answer', function (req, res) {
-
-    // Make a variable and give it the value from 'anotherTtq'
-    var anotherDegree = req.session.data['another-degree']
-
-    // Check whether the variable matches a condition
-    if (anotherDegree == "Yes"){
-
-      res.redirect('/prototype-3/qualifications/undergraduate-degree-documents/upload-degree-b')
-
-    } else {
-
-      res.redirect('/prototype-3/task-list')
-    }
-
-})
-
-
-
-  // Run this code when a form is submitted to 'another-degree-answer'
-  router.post('/upload-identification-answer', function (req, res) {
-
-    // Make a variable and give it the value from 'anotherTtq'
-    var anotherIdentification = req.session.data['another-identification']
-
-    // Check whether the variable matches a condition
-    if (anotherIdentification == "Yes"){
-
-      res.redirect('/prototype-3/personal-documents/upload-identification-b')
-
-    } else {
-
-      res.redirect('/prototype-3/task-list')
-    }
-
-})
-
-module.exports = router
+});
+
+// Run this code when a form is submitted to 'restrictions'
+router.post("/restrictions-answer", function (req, res) {
+  // Make a variable and give it the value from 'haveRestrictions'
+  var haveRestrictions = req.session.data["restrictions"];
+
+  // Check whether the variable matches a condition
+  if (haveRestrictions == "Yes") {
+    // Send user to next page
+    res.redirect("/prototype-1/check-eligibility/ineligible-restrictions");
+  } else {
+    // Send user to ineligible page
+    res.redirect("/prototype-1/check-eligibility/eligible");
+  }
+});
+
+// Run this code when a form is submitted to 'Country Trained in'
+router.post("/country-trained-answer", function (req, res) {
+  // Make a variable and give it the value from 'degree'
+  var countryTrained = req.session.data["country"];
+
+  // Check whether the variable matches a condition
+  if (countryTrained == "Canada") {
+    // Send user to Degree english
+    res.redirect("/prototype-1/get-prepared/question-degree-stem");
+  } else {
+    // Send user to STEM
+    res.redirect("/prototype-1/get-prepared/question-degree-english");
+  }
+});
+
+// Run this code when a form is submitted to 'Degree in STEM'
+router.post("/stem-answer", function (req, res) {
+  // Make a variable and give it the value from 'degree'
+  var countryTrained = req.session.data["DegreeStem"];
+
+  // Check whether the variable matches a condition
+  if (countryTrained == "Yes") {
+    // Send user to check answers
+    res.redirect("/prototype-1/get-prepared/check-prepare-answers");
+  } else {
+    // Send user to Primary or secondary
+    res.redirect("/prototype-1/get-prepared/question-primary-secondary");
+  }
+});
+
+// Run this code when a form is submitted to 'Country Trained in'
+router.post("/passive-country-answer", function (req, res) {
+  // Make a variable and give it the value from 'degree'
+  var passiveCountry = req.session.data["passiveCountry"];
+
+  // Check whether the variable matches a condition
+  if (passiveCountry == "India") {
+    // Send user to India guidance page
+    res.redirect("/prototype-2/documents-you-will-need-india");
+    // Send user to Zimbabwe guidance page
+  } else if (passiveCountry == "Zimbabwe") {
+    res.redirect("/prototype-2/documents-you-will-need-zimbabwe");
+    // Send user to Nigeria guidance page
+  } else if (passiveCountry == "Nigeria") {
+    res.redirect("/prototype-2/documents-you-will-need-nigeria");
+    // Send user to Jamaica guidance page
+  } else if (passiveCountry == "Zimbabwe") {
+    res.redirect("/prototype-2/documents-you-will-need-jamaica");
+  } else {
+    // Send user to STEM
+    res.redirect("/prototype-1/get-prepared/question-degree-english");
+  }
+});
+
+// Run this code when a form is submitted to 'together-separate'
+router.post("/together-separate-answer", function (req, res) {
+  // Make a variable and give it the value from 'togetherSeparate'
+  var togetherSeparate = req.session.data["together-separate"];
+
+  // Check whether the variable matches a condition
+  if (togetherSeparate == "Together") {
+    // Send user to next page
+    res.redirect("/prototype-3/qualifications/question-qualification-title");
+  } else {
+    // Send user to ineligible page
+    res.redirect("/prototype-3/qualifications/question-degree-title");
+  }
+});
+
+// Run this code when a form is submitted to 'evidence-professional-standing-answer'
+router.post("/evidence-professional-standing-answer", function (req, res) {
+  // Make a variable and give it the value from 'professionalStandingAnswer'
+  var professionalStandingAnswer =
+    req.session.data["evidence-professional-standing"];
+
+  // Check whether the variable matches a condition
+  if (professionalStandingAnswer == "Online Portal") {
+    // Send user to online portal page
+    res.redirect(
+      "/prototype-3/professional-standing/question-reference-number"
+    );
+    // Send user to upload LOPS
+  } else if (professionalStandingAnswer == "Letter of professional standing") {
+    res.redirect("/prototype-3/professional-standing/upload-lops");
+  } else {
+    // Send users who cannot evidence to summary
+    res.redirect(
+      "/prototype-3/professional-standing/professional-standing-summary"
+    );
+  }
+});
+
+// Run this code when a form is submitted to 'reference-number-answer'
+router.post("/question-reference-number-answer", function (req, res) {
+  // Make a variable and give it the value from '-'
+  var questionReferenceNumberAnswer =
+    req.session.data["question-reference-number"];
+
+  // Check whether the variable matches a condition
+  if (questionReferenceNumberAnswer == "Yes") {
+    // Send user to next page
+    res.redirect("/prototype-3/professional-standing/enter-reference-number");
+  } else {
+    // Send user to ineligible page
+    res.redirect(
+      "/prototype-3/professional-standing/professional-standing-summary"
+    );
+  }
+});
+
+// Run this code when a form is submitted to 'upload-teacher-ceritficate-seperate'
+router.post("/upload-certificate-answer", function (req, res) {
+  // Make a variable and give it the value from 'professionalStandingAnswer'
+  var uploadCertAnswer = req.session.data["degreeCertificate"];
+
+  // Check whether the variable matches a condition
+  if (uploadCertAnswer == "degree-certificate01.jpeg") {
+    // Send user to next page
+    res.redirect(
+      "/prototype-3/qualifications/upload-teacher-degree-certificate-separate-2"
+    );
+  } else {
+    // Send user to ineligible page
+    res.redirect("/prototype-3/qualifications/question-qualification-title");
+  }
+});
+
+// Run this code when a form is submitted to '/upload-teacher-degree-certificate-answer'
+router.post("/upload-teacher-degree-certificate-answer", function (req, res) {
+  // Make a variable and give it the value from 'togetherSeparate'
+  var togetherSeparate = req.session.data["together-separate"];
+
+  // Check whether the variable matches a condition
+  if (togetherSeparate == "Together") {
+    // Send user to next page
+    res.redirect(
+      "/prototype-3/qualifications/upload-teacher-degree-certificate"
+    );
+  } else {
+    // Send user to ineligible page
+    res.redirect("/prototype-3/qualifications/qualifications-summary");
+  }
+});
+
+// Run this code when a form is submitted to 'current-legal-name'
+router.post("/current-legal-name-answer", function (req, res) {
+  // Make a variable and give it the value from 'currentLegalNameAnswer'
+  var currentLegalNameAnswer = req.session.data["current-legal-name"];
+
+  // Check whether the variable matches a condition
+  if (currentLegalNameAnswer == "Yes") {
+    // Send user to next page
+    res.redirect("/prototype-3/personal-information/question-nationality");
+  } else {
+    // Send user to ineligible page
+    res.redirect(
+      "/prototype-3/personal-information/upload-name-change-evidence"
+    );
+  }
+});
+
+// Run this code when a form is submitted to 'question-country-recognised-answer'
+router.post("/question-country-recognised-answer", function (req, res) {
+  // Make a variable and give it the value from 'currentLegalNameAnswer'
+  var countryRecognised = req.session.data["country-recognised"];
+
+  // Check whether the variable matches a condition
+  if (
+    countryRecognised == "Australia" ||
+    countryRecognised == "Canada" ||
+    countryRecognised == "USA"
+  ) {
+    res.redirect(
+      "/prototype-3/professional-standing/question-reference-number"
+    );
+  } else if (
+    countryRecognised == "Nigeria" ||
+    countryRecognised == "China" ||
+    countryRecognised == "India" ||
+    countryRecognised == "Jamaica" ||
+    countryRecognised == "Mexico" ||
+    countryRecognised == "South Africa" ||
+    countryRecognised == "Zimbabwe" ||
+    countryRecognised == "Argentina" ||
+    countryRecognised == "Philippines" ||
+    countryRecognised == "Ghana"
+  ) {
+    res.redirect("/prototype-3/professional-standing/upload-lops");
+  } else {
+    res.redirect(
+      "/prototype-3/professional-standing/question-certified-teacher"
+    );
+  }
+});
+
+// Run this code when a form is submitted to 'upload-lops-answer'
+router.post("/upload-lops-answer", function (req, res) {
+  // Make a variable and give it the value from 'currentLegalNameAnswer'
+  var anotherLops = req.session.data["another-lops"];
+
+  // Check whether the variable matches a condition
+  if (anotherLops == "Yes") {
+    res.redirect("/prototype-3/professional-standing/upload-lopsb");
+  } else {
+    res.redirect(
+      "/prototype-3/professional-standing/professional-standing-summary"
+    );
+  }
+});
+
+// Run this code when a form is submitted to 'create-account-sign-in'
+router.post("/create-account-sign-in-answer", function (req, res) {
+  // Make a variable and give it the value from 'createAccountSignInAnswer'
+  var createAccountSignInAnswer = req.session.data["create-account-sign-in"];
+
+  // Check whether the variable matches a condition
+  if (createAccountSignInAnswer == "No") {
+    // Send user to next page
+    res.redirect("/prototype-3/create-an-account");
+  } else {
+    // Send user to ineligible page
+    res.redirect("/prototype-3/task-list");
+  }
+});
+
+// Run this code when a form is submitted to 'upload-ttq-answer'
+router.post("/upload-ttq-answer", function (req, res) {
+  // Make a variable and give it the value from 'anotherTtq'
+  var anotherTtq = req.session.data["another-ttq"];
+
+  // Check whether the variable matches a condition
+  if (anotherTtq == "Yes") {
+    res.redirect(
+      "/prototype-3/qualifications/teacher-training-qualification-documents/upload-ttqb"
+    );
+  } else {
+    res.redirect("/prototype-3/task-list");
+  }
+});
+
+// Run this code when a form is submitted to 'another-degree-answer'
+router.post("/upload-degree-answer", function (req, res) {
+  // Make a variable and give it the value from 'anotherTtq'
+  var anotherDegree = req.session.data["another-degree"];
+
+  // Check whether the variable matches a condition
+  if (anotherDegree == "Yes") {
+    res.redirect(
+      "/prototype-3/qualifications/undergraduate-degree-documents/upload-degree-b"
+    );
+  } else {
+    res.redirect("/prototype-3/task-list");
+  }
+});
+
+// Run this code when a form is submitted to 'another-degree-answer'
+router.post("/upload-identification-answer", function (req, res) {
+  // Make a variable and give it the value from 'anotherTtq'
+  var anotherIdentification = req.session.data["another-identification"];
+
+  // Check whether the variable matches a condition
+  if (anotherIdentification == "Yes") {
+    res.redirect("/prototype-3/personal-documents/upload-identification-b");
+  } else {
+    res.redirect("/prototype-3/task-list");
+  }
+});
+
+module.exports = router;
