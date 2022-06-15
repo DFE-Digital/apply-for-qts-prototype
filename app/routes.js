@@ -15,8 +15,14 @@ router.all('/prototype-1/check-eligibility/question-country', (req, res, next) =
   next()
 })
 
+const BUCKET_3_COUNTRIES = ['United States', 'Australia']
+const BUCKET_4_COUNTRIES = ['Hong Kong', 'China', 'Spain', 'Slovakia', 'Slovenia', 'Lithuania', 'Netherlands', 'Italy', 'Iceland', 'Hungary', 'Germany', 'Greece', 'Finland', 'Denmark', 'Czech Republic', 'Austria']
+const BUCKET_6_COUNTRIES = ['India', 'China', 'Luxembourg', 'Liechtenstein', 'Germany', 'Cyprus', 'Belgium']
+
+const COUNTRIES = BUCKET_3_COUNTRIES.concat(BUCKET_4_COUNTRIES).concat(BUCKET_6_COUNTRIES)
+
 router.post('/country-answer', function (req, res) {
-  if (req.session.data['country'] == 'Spain') {
+  if (COUNTRIES.includes(req.session.data['country'])) {
     res.redirect('/prototype-1/check-eligibility/question-degree')
   } else {
     res.redirect('/prototype-1/check-eligibility/ineligible-country')
@@ -51,13 +57,22 @@ router.post('/special-educational-needs-answer', function (req, res) {
 
 
 router.post('/misconduct-answer', function (req, res) {
+  var country = req.session.data['country']
   var haveDegree = req.session.data['Degree']
   var formalTraining = req.session.data['formal-training']
   var specialeducationalNeeds = req.session.data['special-educational-needs']
   var haveMisconduct = req.session.data['misconduct']
 
   if (haveDegree == "Yes" && formalTraining == "Yes" && specialeducationalNeeds == "Yes" && haveMisconduct == "Yes") {
-    res.redirect('/prototype-1/check-eligibility/eligible')
+    if (BUCKET_3_COUNTRIES.includes(country)) {
+      res.redirect('/prototype-1/check-eligibility/eligible-bucket-3')
+    } else if (BUCKET_4_COUNTRIES.includes(country)) {
+      res.redirect('/prototype-1/check-eligibility/eligible-bucket-3')
+    } else if (BUCKET_6_COUNTRIES.includes(country)) {
+      res.redirect('/prototype-1/check-eligibility/eligible-bucket-6')
+    } else {
+      res.redirect('/prototype-1/check-eligibility/eligible')
+    }
   } else {
     res.redirect('/prototype-1/check-eligibility/ineligible')
   }
