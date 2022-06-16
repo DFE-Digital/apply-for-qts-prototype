@@ -25,7 +25,9 @@ router.all(
   }
 );
 
-const BUCKET_3_COUNTRIES = [];
+const BUCKET_1_COUNTRIES = ["South Africa"]
+const BUCKET_2_COUNTRIES = []
+const BUCKET_3_COUNTRIES = []
 const BUCKET_4_COUNTRIES = [
   "Hong Kong",
   "Spain",
@@ -41,16 +43,11 @@ const BUCKET_4_COUNTRIES = [
   "Denmark",
   "Czech Republic",
   "Austria",
-];
+]
 const BUCKET_6_COUNTRIES = ["India", "Luxembourg", "Liechtenstein", "Cyprus"];
 
-const BUCKET_4_REGIONS = [
-  "China-4",
-  "Lower Saxony",
-  "Mecklenburg-Vorpommern",
-  "Rhineland-Palatinate",
-  "Saarland",
-];
+const BUCKET_1_REGIONS = ["Florida"]
+const BUCKET_2_REGIONS = ["North Rhine-Westphalia"]
 const BUCKET_3_REGIONS = [
   "Kansas",
   "Minnesota",
@@ -59,6 +56,14 @@ const BUCKET_3_REGIONS = [
   "Virginia",
   "Wisconsin",
   "South Australia",
+];
+const BUCKET_4_REGIONS = [
+  "China-4",
+  "Lower Saxony",
+  "Mecklenburg-Vorpommern",
+  "Rhineland-Palatinate",
+  "Baden-Wurttemberg",
+  "Saarland",
 ];
 const BUCKET_6_REGIONS = [
   "China-6",
@@ -81,10 +86,16 @@ const REGION_COUNTRIES = [
   "Germany",
 ];
 
-const REGIONS =
-  BUCKET_3_REGIONS.concat(BUCKET_4_REGIONS).concat(BUCKET_6_REGIONS);
+const REGIONS = BUCKET_1_REGIONS
+  .concat(BUCKET_2_REGIONS)
+  .concat(BUCKET_3_REGIONS)
+  .concat(BUCKET_4_REGIONS)
+  .concat(BUCKET_6_REGIONS);
 
-const COUNTRIES = BUCKET_3_COUNTRIES.concat(BUCKET_4_COUNTRIES)
+const COUNTRIES = BUCKET_1_COUNTRIES
+  .concat(BUCKET_2_COUNTRIES)
+  .concat(BUCKET_3_COUNTRIES)
+  .concat(BUCKET_4_COUNTRIES)
   .concat(BUCKET_6_COUNTRIES)
   .concat(REGION_COUNTRIES);
 
@@ -111,8 +122,7 @@ router.post("/country-answer", function (req, res) {
 
 router.post("/region-answer", function (req, res) {
   var region = req.session.data["region"];
-  var regions = REGIONS;
-  if (regions.includes(region)) {
+  if (REGIONS.includes(region)) {
     res.redirect("/prototype-1/check-eligibility/question-degree");
   } else {
     res.redirect("/prototype-1/check-eligibility/ineligible-country");
@@ -158,17 +168,15 @@ router.post("/misconduct-answer", function (req, res) {
     specialeducationalNeeds == "Yes" &&
     haveMisconduct == "No"
   ) {
-    if (BUCKET_3_COUNTRIES.includes(country)) {
+    if (BUCKET_1_REGIONS.includes(region) || BUCKET_1_COUNTRIES.includes(country)) {
+      res.redirect("/prototype-1/check-eligibility/eligible-bucket-1");
+    } else if (BUCKET_2_REGIONS.includes(region) || BUCKET_2_COUNTRIES.includes(country)) {
+      res.redirect("/prototype-1/check-eligibility/eligible-bucket-2");
+    } else if (BUCKET_3_REGIONS.includes(region) || BUCKET_3_COUNTRIES.includes(country)) {
       res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
-    } else if (BUCKET_4_COUNTRIES.includes(country)) {
+    } else if (BUCKET_4_REGIONS.includes(region) || BUCKET_4_COUNTRIES.includes(country)) {
       res.redirect("/prototype-1/check-eligibility/eligible-bucket-4");
-    } else if (BUCKET_6_COUNTRIES.includes(country)) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-6");
-    } else if (BUCKET_4_REGIONS.includes(region)) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-4");
-    } else if (BUCKET_3_REGIONS.includes(region)) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
-    } else if (BUCKET_6_REGIONS.includes(region)) {
+    } else if (BUCKET_6_REGIONS.includes(region) || BUCKET_6_COUNTRIES.includes(country)) {
       res.redirect("/prototype-1/check-eligibility/eligible-bucket-6");
     } else {
       res.redirect("/prototype-1/check-eligibility/eligible");
