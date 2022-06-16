@@ -3,7 +3,24 @@
 {% block pageTitle %}
 In which state/territory are you currently recognised as a teacher? – {{ serviceName }} prototype
 {% endblock %}
-
+{% set states = [
+"Baden-Wurttemberg",
+"Bavaria",
+"Berlin",
+"Brandenburg",
+"Bremen",
+"Hamburg",
+"Hessen",
+"Lower Saxony",
+"Mecklenburg-Vorpommern",
+"Saxony-Anhalt",
+"Schleswig-Holstein",
+"Thuringia",
+"North Rhine-Westphalia",
+"Saxony",
+"Rhineland-Palatinate",
+"Saarland" ]
+%}
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -26,73 +43,7 @@ In which state/territory are you currently recognised as a teacher? – {{ servi
             hint: {
             text: "Select a state/territory where you are currently recognised as a teacher"
             },
-            items: [
-            {
-            value: "Baden-Wurttemberg",
-            text: "Baden-Wurttemberg",
-            checked: checked("region-answer", "Baden-Wurttemberg")
-            },
-            {
-            value: "Bavaria",
-            text: "Bavaria",
-            checked: checked("region-answer", "Bavaria")
-            },
-            {
-            value: "Brandenburg",
-            text: "Brandenburg",
-            checked: checked("region-answer", "Brandenburg")
-            },
-            {
-            value: "Bremen",
-            text: "Bremen",
-            checked: checked("region-answer", "Bremen")
-            },
-            {
-            value: "Hamburg",
-            text: "Hamburg",
-            checked: checked("region-answer", "Hamburg")
-            },
-            {
-            value: "Hessen",
-            text: "Hessen",
-            checked: checked("region-answer", "Hessen")
-            },
-            {
-            value: "Lower Saxony",
-            text: "Lower Saxony",
-            checked: checked("region-answer", "Lower Saxony")
-            },
-            {
-            value: "Mecklenburg-Vorpommern",
-            text: "Mecklenburg-Vorpommern",
-            checked: checked("region-answer", "Mecklenburg-Vorpommern")
-            },
-            {
-            value: "Saxony-Anhalt",
-            text: "Saxony-Anhalt",
-            checked: checked("region-answer", "Saxony-Anhalt")
-            },
-            {
-            value: "Rhineland-Palatinate",
-            text: "Rhineland-Palatinate",
-            checked: checked("region-answer", "Rhineland-Palatinate")
-            },
-            {
-            value: "Saxony",
-            text: "Saxony",
-            checked: checked("region-answer", "Saxony")
-            },
-            {
-            value: "Saarland",
-            text: "Saarland",
-            checked: checked("region-answer", "Thuringia")
-            },
-            {
-            value: "Thuringia",
-            text: "Thuringia",
-            checked: checked("region-answer", "Thuringia")
-            }
-            ]
+            items: states | regionsRadio
             }) }}
 
 

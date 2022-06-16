@@ -3,7 +3,10 @@
 {% block pageTitle %}
 In which state/territory are you currently recognised as a teacher? – {{ serviceName }} prototype
 {% endblock %}
-
+{% set states = [
+"Flemish Region", "French Region", "German Region"
+]
+%}
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -26,13 +29,7 @@ In which state/territory are you currently recognised as a teacher? – {{ servi
             hint: {
             text: "Select a state/territory where you are currently recognised as a teacher"
             },
-            items: [
-            {
-            value: "German Region",
-            text: "German Region",
-            checked: checked("region-answer", "German Region")
-            }
-            ]
+            items: states | regionsRadio
             }) }}
 
 
