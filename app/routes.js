@@ -156,7 +156,7 @@ router.post("/misconduct-answer", function (req, res) {
     haveDegree == "Yes" &&
     formalTraining == "Yes" &&
     specialeducationalNeeds == "Yes" &&
-    haveMisconduct == "Yes"
+    haveMisconduct == "No"
   ) {
     if (BUCKET_3_COUNTRIES.includes(country)) {
       res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
