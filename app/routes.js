@@ -26,7 +26,7 @@ router.all(
 );
 
 const BUCKET_1_COUNTRIES = ["South Africa"]
-const BUCKET_2_COUNTRIES = []
+const BUCKET_2_COUNTRIES = ["Poland"]
 const BUCKET_3_COUNTRIES = []
 const BUCKET_4_COUNTRIES = [
   "Hong Kong",
