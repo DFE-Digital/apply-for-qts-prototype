@@ -32,12 +32,12 @@
           <li>You are not qualified to teach children who are aged somewhere between 5 and 16 years.</li>
         {% endif %}
 
-        {% if data['misconduct'] != 'Yes' %}
+        {% if data['misconduct'] != 'No' %}
           <li>To teach in England, you must not have any findings of misconduct or restrictions on your practice.</li>
         {% endif %}
       </ul>
 
-      {% if data['misconduct'] == 'Yes' %}
+      {% if data['misconduct'] == 'No' %}
         <p class="govuk-body">You can find out <a href="https://getintoteaching.education.gov.uk/non-uk-teachers">how to train to become a teacher in England</a></p>
       {% endif %}
     </div>
