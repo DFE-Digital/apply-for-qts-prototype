@@ -62,7 +62,6 @@ const BUCKET_4_REGIONS = [
   "Lower Saxony",
   "Mecklenburg-Vorpommern",
   "Rhineland-Palatinate",
-  "Baden-Wurttemberg",
   "Saarland",
 ];
 const BUCKET_6_REGIONS = [
