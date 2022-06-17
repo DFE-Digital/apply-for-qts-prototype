@@ -44,7 +44,7 @@ const BUCKET_4_COUNTRIES = [
   "Czech Republic",
   "Austria",
 ]
-const BUCKET_6_COUNTRIES = ["India", "Luxembourg", "Liechtenstein", "Cyprus"];
+const BUCKET_6_COUNTRIES = ["India", "Luxembourg", "Liechtenstein", "Cyprus", "Ukraine"];
 
 const BUCKET_1_REGIONS = ["Florida"]
 const BUCKET_2_REGIONS = ["North Rhine-Westphalia"]
