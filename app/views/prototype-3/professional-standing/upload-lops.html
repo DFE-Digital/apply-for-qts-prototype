@@ -14,32 +14,38 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">
-        Professional standing
+        Proof that you're recognised as a teacher
       </span>
 
-      <h1 class="govuk-heading-l">Upload a letter of professional standing (and translation if not in English)</h1>
+      <h1 class="govuk-heading-l">Upload your written statement</h1>
+
+      <p class="govuk-body">You need to provide a written statement from <span style="color: #d4351c">[Your authority]</span></p>
+
+      <p class="govuk-body">This is called a <span style="color: #d4351c">[Letter of Professional Standing]</span></p>
+
+      <div class="govuk-inset-text">
+        If this document is not written in English, you'll also need to upload a translation.
+      </div>
 
 
-      <p>This will be a letter to confirm:
-      </p>
+      <p class="govuk-body">It must confirm:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>your teaching qualification 
-        <li>your level of teaching</li>
-        <li>the subjects you teach</li>
-        <li>any misconduct or convictions</li>
+        <li>that you've completed a course of initial teacher training (ITT)</li>
+        <li>that you've successfully completed any period of professional experience comparable to an induction period (if required)</li>
+        <li>the age ranges and subjects you're qualified to teach</li>
           </li>
       </ul>
-      <p>The letter must be written in English. If it is not written in English, you will need to upload a certified translation.
-      </p>
+      <p class="govuk-body">This written confirmation must be dated within 3 months of you applying for QTS.</p>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Where to get this
+            I do not have this yet
           </span>
         </summary>
         <div class="govuk-details__text">
-          You can request a letter of professional  standing from:
+          If you do not have this yet, you can obtain it by contacting:
+
           <br><br>
           {% if  data['country-recognised'] == "Nigeria"  %}
 
@@ -81,8 +87,8 @@
             <br><br>
             Subsecretaria de Educación Básica, Viaducto Río de la Piedad N 507, Col. Granjas México, C.P. 08400, D.F., Mexico
             <br><br>
-            Subsecretaria de Educación Superior, Direccion General de Profesiones y Registro Profesional, Departamento de autorizaciones, Avenida Revolución 1425, Colonia Campestre, Delegacion Alvaro, Obregón, C.P. 01049 Ciudad de Mexico 
-          
+            Subsecretaria de Educación Superior, Direccion General de Profesiones y Registro Profesional, Departamento de autorizaciones, Avenida Revolución 1425, Colonia Campestre, Delegacion Alvaro, Obregón, C.P. 01049 Ciudad de Mexico
+
           {% elseif  data['country-recognised'] == "South Africa"  %}
 
             The South African Council for Educators (SACE), Private Bag X127, Centurion 0046, South Africa.
@@ -95,7 +101,7 @@
 
             <p>Ministerio de Educación, Ciencia y Tecnología, Pizzurno 935, Capital Federal 1020 Buenos Aires, Argentina</p>
             <p>Or you can use the contact information for the province in Argentina where you last taught.</p>
-          
+
           {% elseif  data['country-recognised'] == "Ghana"  %}
 
             National Teaching Council (NTC), Education Close Street, Opposite University of Ghana City Campus, Adabraka, Ministry Branch Post Office, P.O. Box MB 247, Accra, Ghana
@@ -108,33 +114,74 @@
           P.O. Box 2038<br>
           Manila, Republic of the Philippines
 
+          {% elseif  data['country-recognised'] == null  %}
+          <span style="color: #d4351c">[Your authority,<br>
+          Building,<br>
+          Street,<br>
+          County,<br>
+          Post code,<br>
+          Country.<br>
+          <br>
+          sudv@minedu.sk]
+          </span>
+
           {% endif %}
         </div>
       </details>
 
-      <form class="form" action="professional-standing-summary" method="post">
+      <form class="form" action="upload-lops-english-a" method="post">
 
+        <h2 class="govuk-heading-m">
+          About your document
+        </h2>
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h3 class="govuk-fieldset__heading govuk-!-font-weight-regular">
+              Is your document written in English?
+            </h3>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="written-in-english" name="written-in-english" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="written-in-english">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="written-in-english-2" name="written-in-english" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="written-in-english-2">
+                No, I'll upload a translation as well
+              </label>
+            </div>
+          </div>
 
+        </fieldset>
+      </div>
+<!--      </form>-->
+
+<!--      <form class="form" action="professional-standing-summary" method="post">-->
+        <h2 class="govuk-heading-m">
+          Upload your document
+        </h2>
         <div class="govuk-form-group">
           <label class="govuk-label" for="file-upload-1">
             Select a file to upload
           </label>
-          <a href="upload-lops-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
+          <!-- Fake submit button to confirm translation routing -->
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Choose file
+          </button>
           <span class="govuk-body" style="position:relative;top:7px">No file uploaded</span>
         </div>
 
-
         <div class="govuk-button-group">
-          <a class="govuk-button" style="text-decoration: none;" href="upload-lops-error">
-            Upload and continue
+          <a class="govuk-button" style="text-decoration: none;" href="upload-lops-error.html">
+            Continue
           </a>
-        
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="">
-            Add this later
-          </button>
 
         </div>
-        
+
       </form>
 
     </div>

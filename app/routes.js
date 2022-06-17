@@ -468,4 +468,19 @@ router.post("/upload-identification-answer", function (req, res) {
   }
 });
 
+// Check to see if translation required for Uploading LOPS
+router.post("/upload-lops-english-a", function (req, res) {
+  // Make a variable and give it the value from 'createAccountSignInAnswer'
+  var writtenInEnglish = req.session.data["written-in-english"];
+
+  // Check whether the variable matches a condition
+  if (writtenInEnglish == "no") {
+    // Send user to upload translation page
+    res.redirect("/prototype-3/professional-standing/upload-lops-non-english-a");
+  } else {
+    // Send user to no translation page
+    res.redirect("/prototype-3/professional-standing/upload-lops-english-a");
+  }
+});
+
 module.exports = router;

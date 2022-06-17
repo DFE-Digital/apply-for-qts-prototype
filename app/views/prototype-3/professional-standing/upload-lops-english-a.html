@@ -129,7 +129,7 @@
         </div>
       </details>
 
-      <form class="form" action="#" method="post">
+      <form class="form" action="../task-list.html" method="post">
 
         <h2 class="govuk-heading-m">
           About your document
@@ -143,7 +143,7 @@
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="written-in-english" name="written-in-english" type="radio" value="yes">
+              <input class="govuk-radios__input" id="written-in-english" name="written-in-english" type="radio" value="yes" checked>
               <label class="govuk-label govuk-radios__label" for="written-in-english">
                 Yes
               </label>
@@ -160,23 +160,63 @@
       </div>
       </form>
 
-      <form class="form" action="professional-standing-summary" method="post">
+      <form class="form" action="../task-list.html" method="post">
         <h2 class="govuk-heading-m">
           Upload your document
         </h2>
-        <div class="govuk-form-group govuk-form-group--error">
+        <div class="govuk-form-group govuk-!-margin-bottom-1">
           <label class="govuk-label" for="file-upload-1">
             Select a file to upload
           </label>
-          <p id="file-upload-1-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> No file selected
-          </p>
-          <a href="upload-lops-english-a.html" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
-          <span class="govuk-body" style="position:relative;top:7px">No file uploaded</span>
+          <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
+<!--          <span class="govuk-body" style="position:relative;top:7px">No file uploaded</span>-->
         </div>
 
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
+          Uploaded files
+        </h4>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              File 1
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a download href="#" class="govuk-link">written-statement.pdf</a>
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link" href="#">
+                Delete<span class="govuk-visually-hidden"> file 1</span>
+              </a>
+
+            </dd>
+
+          </div>
+
+          <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              File 2
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a download href="/" class="govuk-link">receipt2.jpg</a>, 5MB
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+
+              <a class="govuk-link" href="#">
+                Delete<span class="govuk-visually-hidden"> file 2</span>
+              </a>
+
+            </dd>
+
+          </div> -->
+
+        </dl>
+
         <div class="govuk-button-group">
-          <a class="govuk-button" style="text-decoration: none;" href="upload-lops-error">
+          <a class="govuk-button" style="text-decoration: none;" href="../task-list.html">
             Continue
           </a>
 

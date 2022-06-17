@@ -194,20 +194,40 @@
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
             </li>
             {% endif %}
-
           </ul>
-          
         </li>
 
         <li>
           <h2 class="app-task-list__section">
-            Professional standing
+            Work history
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="professional-standing/question-country-recognised" aria-describedby="professional-standing">
-                Professional standing 
+                <a href="work-history/work-history-in-education-1" aria-describedby="work-history">
+                Work history
+              </a>
+              </span>
+              {% if  data['completed-work-history-status'] == "yes"  %}
+              <strong class="govuk-tag app-task-list__tag" id="work-history-status">Completed</strong>
+              {% elseif  data['completed-work-history-status'] == "no"  %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="work-history-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="work-history-status">Not started</strong>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            Proof that you’re recognised as a teacher
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="professional-standing/upload-lops" aria-describedby="professional-standing">
+                Upload your written statement
               </a>
               </span>
               {% if  data['completed-professional-standing'] == "yes"  %}
