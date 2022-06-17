@@ -19,7 +19,7 @@
 
       <form class="form" action="work-history-in-education-summary-2" method="post">
 
-        <h2 class="govuk-heading-m">Your current or most recent role</h2>
+        <h2 class="govuk-heading-m">Enter the details of a previous role</h2>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="school-name-2">
@@ -82,55 +82,30 @@
         </div>
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="still-at-school-hint">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="end-date-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h1 class="govuk-fieldset__heading">
-                Are you still employed at this school?
+                Your end date
               </h1>
             </legend>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="still-at-school" name="still-at-school" type="radio" value="still-at-school-yes" data-aria-controls="conditional-still-at-school">
-                <label class="govuk-label govuk-radios__label" for="still-at-school">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="still-at-school-2" name="still-at-school" type="radio" value="still-at-school-no" data-aria-controls="conditional-still-at-school-2">
-                <label class="govuk-label govuk-radios__label" for="still-at-school-2">
-                  No
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-still-at-school-2">
+            <div id="end-date-hint" class="govuk-hint">
+              For example, 3 2020
+            </div>
+            <div class="govuk-date-input" id="end-date">
+              <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
-                  <fieldset class="govuk-fieldset" role="group" aria-describedby="end-date-hint">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                      <h1 class="govuk-fieldset__heading">
-                        Your end date
-                      </h1>
-                    </legend>
-                    <div id="end-date-hint" class="govuk-hint">
-                      For example, 3 2020
-                    </div>
-                    <div class="govuk-date-input" id="end-date">
-                      <div class="govuk-date-input__item">
-                        <div class="govuk-form-group">
-                          <label class="govuk-label govuk-date-input__label" for="end-date-month-2">
-                            Month
-                          </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end-date-month-2" name="end-date-month-2" type="text" inputmode="numeric">
-                        </div>
-                      </div>
-                      <div class="govuk-date-input__item">
-                        <div class="govuk-form-group">
-                          <label class="govuk-label govuk-date-input__label" for="end-date-year-2">
-                            Year
-                          </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="end-date-year-2" name="end-date-year-2" type="text" inputmode="numeric">
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
+                  <label class="govuk-label govuk-date-input__label" for="end-date-month-2">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end-date-month-2" name="end-date-month-2" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="end-date-year-2">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="end-date-year-2" name="end-date-year-2" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
