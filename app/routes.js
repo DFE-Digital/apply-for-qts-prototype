@@ -421,7 +421,7 @@ router.post("/create-account-sign-in-answer", function (req, res) {
     res.redirect("/prototype-3/create-an-account");
   } else {
     // Send user to ineligible page
-    res.redirect("/prototype-3/task-list");
+    res.redirect("/prototype-3/country-check/question-country");
   }
 });
 
