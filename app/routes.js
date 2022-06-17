@@ -480,4 +480,16 @@ router.post('/prototype-3/professional-standing/upload-lops-english-a', function
   }
 })
 
+// Add a second work history example
+router.post('/prototype-3/work-history/task-list-history-completed', function (req, res) {
+
+  let addAnotherWorkplace = req.session.data['add-another-workplace']
+
+  if (addAnotherWorkplace === 'yes') {
+    res.redirect('/prototype-3/work-history/work-history-in-education-2')
+  } else {
+    res.redirect('/prototype-3/work-history/task-list-history-completed')
+  }
+})
+
 module.exports = router;
