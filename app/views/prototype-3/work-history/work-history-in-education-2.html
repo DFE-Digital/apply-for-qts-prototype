@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Proof that you're recognised as a teacher</span>
+      <h1 class="govuk-heading-l">Your work history in education</h1>
+      <p class="govuk-body">We need to see your work history in education, beginning with your current or most recent employer.</p>
+      <p class="govuk-body">You can add previous employers and roles dating back to a maximum of 10 years.</p>
+
+      <form class="form" action="work-history-in-education-summary-2" method="post">
+
+        <h2 class="govuk-heading-m">Your current or most recent role</h2>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="school-name-2">
+            School name
+          </label>
+          <input class="govuk-input" id="school-name-2" name="school-name-2" type="text" >
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="school-city-2">
+            City
+          </label>
+          <input class="govuk-input" id="school-city-2" name="school-city-2" type="text" >
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="school-country-2">
+            Country
+          </label>
+          <input class="govuk-input" id="school-country-2" name="school-country-2" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="job-role-2">
+            Your job role
+          </label>
+          <input class="govuk-input" id="job-role-2" name="job-role-2" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="reference-email-2">
+            Contact email address for your reference
+          </label>
+          <input class="govuk-input" id="reference-email-2" name="reference-email-2" type="text">
+        </div>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+             Why we ask for this
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            We need a contact for your current or most recent employer in case we need to get in touch with them as part of your application. This must be a work email address – it cannot be a web-based email address such as @gmail.com.
+          </div>
+        </details>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Your start date
+              </h1>
+            </legend>
+            <div id="start-date-hint" class="govuk-hint">
+              For example, 3 2020
+            </div>
+            <div class="govuk-date-input" id="start-date">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="start-date-month-2">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month-2" name="start-date-month-2" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="start-date-year-2">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year-2" name="start-date-year-2" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="still-at-school-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Are you still employed at this school?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="still-at-school" name="still-at-school" type="radio" value="still-at-school-yes" data-aria-controls="conditional-still-at-school">
+                <label class="govuk-label govuk-radios__label" for="still-at-school">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="still-at-school-2" name="still-at-school" type="radio" value="still-at-school-no" data-aria-controls="conditional-still-at-school-2">
+                <label class="govuk-label govuk-radios__label" for="still-at-school-2">
+                  No
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-still-at-school-2">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" role="group" aria-describedby="end-date-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      <h1 class="govuk-fieldset__heading">
+                        Your end date
+                      </h1>
+                    </legend>
+                    <div id="end-date-hint" class="govuk-hint">
+                      For example, 3 2020
+                    </div>
+                    <div class="govuk-date-input" id="end-date">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="end-date-month-2">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end-date-month-2" name="end-date-month-2" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="end-date-year-2">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="end-date-year-2" name="end-date-year-2" type="text" inputmode="numeric">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third"></div>
+  </div>
+
+{% endblock %}
