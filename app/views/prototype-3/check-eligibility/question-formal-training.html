@@ -1,0 +1,55 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+  Do you have a teacher training qualification? – {{ serviceName }} prototype
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- <h1 class="govuk-heading-xl">Radio Button question</h1> -->
+
+      <form class="form" action="/formal-training-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "formal-training",
+          name: "formal-training",
+          fieldset: {
+            legend: {
+              text: "Do you have a teacher training qualification?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "For example, this could be from an undergraduate degree, or a postgraduate teacher training course."
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("formal-training", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("formal-training", "No")
+            }
+
+          ]
+        }) }}
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
