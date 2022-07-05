@@ -199,6 +199,42 @@
 
         <li>
           <h2 class="app-task-list__section">
+            Who you can teach
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="work-history/#" aria-describedby="age-range">
+                Age range
+              </a>
+              </span>
+              {% if  data['completed-age-range-status'] == "yes"  %}
+              <strong class="govuk-tag app-task-list__tag" id="age-range-status">Completed</strong>
+              {% elseif  data['completed-age-range-status'] == "no"  %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="age-range-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="age-range-status">Not started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="work-history/#" aria-describedby="subjects">
+                Subjects
+              </a>
+              </span>
+              {% if  data['completed-subjects-status'] == "yes"  %}
+              <strong class="govuk-tag app-task-list__tag" id="subjects-status">Completed</strong>
+              {% elseif  data['completed-work-history-status'] == "no"  %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="subjects-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="subjects-status">Not started</strong>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
             Work history
           </h2>
           <ul class="app-task-list__items">
