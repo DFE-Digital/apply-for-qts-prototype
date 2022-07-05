@@ -260,6 +260,20 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="reference-number">
+                Enter your reference number
+              </a>
+              </span>
+              {% if  data['completed-reference-number'] == "yes"  %}
+              <strong class="govuk-tag app-task-list__tag" id="reference-number-status">Completed</strong>
+              {% elseif  data['completed-reference-number'] == "no"  %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="reference-number-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="reference-number-status">Not started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
                 <a href="professional-standing/upload-lops" aria-describedby="professional-standing">
                 Upload your written statement
               </a>
