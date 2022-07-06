@@ -233,16 +233,14 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="work-history/#" aria-describedby="subjects">
+                <a href="who-you-can-teach/subjects" aria-describedby="teachable-subjects">
                 Subjects
               </a>
               </span>
-              {% if  data['completed-subjects-status'] == "yes"  %}
-              <strong class="govuk-tag app-task-list__tag" id="subjects-status">Completed</strong>
-              {% elseif  data['completed-work-history-status'] == "no"  %}
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="subjects-status">In progress</strong>
+              {% if  data['completed-teachable-subjects'] %}
+              <strong class="govuk-tag app-task-list__tag" id="teachable-subjects-status">Completed</strong>
               {% else %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="subjects-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="teachable-subjects-status">Not started</strong>
               {% endif %}
             </li>
           </ul>
