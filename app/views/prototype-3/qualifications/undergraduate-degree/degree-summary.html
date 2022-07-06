@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+  Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,148 +12,140 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <span class="govuk-caption-l">
-        Teacher training and qualifications
-      </span>
+      <span class="govuk-caption-l">Your qualifications</span>
+      <h1 class="govuk-heading-l">Check your answers</h1>
 
-      <h1 class="govuk-heading-xl">Check your answers</h1>
-      
+
+      <h2 class="govuk-heading-m">About your university degree</h2>
+
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-
-        <!-- Teacher training qualification subjects trained to teach -->
+        <!-- University degree title -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Type and subject
+            University degree title
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['degreeTitle'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="question-degree-title">
+              <a href="degree-details">
                 Change
-                  <span class="govuk-visually-hidden">Type and subject</span>
+                  <span class="govuk-visually-hidden">university degree title</span>
               </a>
             </dd>
           </div>
 
-        <!-- Teacher training qualification subjects trained to teach -->
+        <!-- University name -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Name of institution
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['degreeInstitutionName'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="question-name-degree-institution">
-                Change
-                  <span class="govuk-visually-hidden">Name of institution</span>
-              </a>
-            </dd>
-          </div>
+            Institution name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['degreeInstitutionName'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="degree-details">
+              Change
+                <span class="govuk-visually-hidden">institution name</span>
+            </a>
+          </dd>
+        </div>
 
-        <!-- Teacher training qualification subjects trained to teach -->
+        <!-- Institution country -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Country of institution 
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['degreeInstitutionCountry'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="question-degree-country-institution">
-                Change
-                  <span class="govuk-visually-hidden">Country of institution</span>
-              </a>
-            </dd>
-          </div>
+            Country of institution
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['degreeInstitutionCountry'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="degree-details">
+              Change
+              <span class="govuk-visually-hidden">country of institution</span>
+            </a>
+          </dd>
+        </div>
 
-        <!-- Teacher training qualification subjects trained to teach -->
+        <!-- Degree start date -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Start date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <span>{{ data['degreeStartDate-month'] }} </span> / <span>{{ data['degreeStartDate-year'] }}</span>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="question-degree-study-period">
-                Change
-                  <span class="govuk-visually-hidden">Degree start date</span>
-              </a>
-            </dd>
-          </div>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <span>{{ data['degreeStartDate-month'] }} </span> / <span>{{ data['degreeStartDate-year'] }}</span>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="degree-details">
+              Change
+                <span class="govuk-visually-hidden">start date</span>
+            </a>
+          </dd>
+        </div>
 
-        <!-- Teacher training qualification subjects trained to teach -->
+        <!-- Degree completion date -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Completion date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <span>{{ data['degreeEndDate-month'] }} </span> / <span>{{ data['degreeEndDate-year'] }}</span>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="question-degree-study-period">
-                Change
-                  <span class="govuk-visually-hidden">Degree end date</span>
-              </a>
-            </dd>
-          </div>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <span>{{ data['degreeEndDate-month'] }} </span> / <span>{{ data['degreeEndDate-year'] }}</span>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="degree-details">
+              Change
+              <span class="govuk-visually-hidden">completion date</span>
+            </a>
+          </dd>
+        </div>
 
-        <!-- Teacher training qualification subjects trained to teach -->
+        <!-- Certificate date -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Certificate date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <span>{{ data['degreeAwardDate-month'] }} </span> / <span>{{ data['degreeAwardDate-year'] }}</span>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="question-degree-study-period">
-                Change
-                  <span class="govuk-visually-hidden">Degree award date</span>
-              </a>
-            </dd>
-          </div>
-
-
-
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <span>{{ data['certificateDate-month'] }} </span> / <span>{{ data['certificateDate-year'] }}</span>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="degree-details">
+              Change
+              <span class="govuk-visually-hidden">certificate date</span>
+            </a>
+          </dd>
+        </div>
       </dl>
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      <form action="../../task-list" method="post" novalidate>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Have you completed this section?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="degree-completed" name="degree-completed" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="degree-completed">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="degree-completed-2" name="degree-completed" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="degree-completed-2">
+                  No, I will come back to it later
+                </label>
+              </div>
+            </div>
 
-      <form action="/prototype-3/task-list" method="post" novalidate>
-
-        {{ govukRadios({
-          idPrefix: "completed-degree",
-          name: "completed-degree",
-          fieldset: {
-            legend: {
-              text: "Have you completed this section?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "Yes",
-              text: "Yes"
-            },
-            {
-              value: "No",
-              text: "No, I will come back to it later"
-            }
-          ]
-        }) }}
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-
+          </fieldset>
+        </div>
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
       </form>
-
     </div>
   </div>
 {% endblock %}
