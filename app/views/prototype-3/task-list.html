@@ -221,14 +221,12 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="work-history/#" aria-describedby="age-range">
-                Age range
-              </a>
+                <a href="who-you-can-teach/age-range" aria-describedby="age-range">
+                  Age range
+                </a>
               </span>
-              {% if  data['completed-age-range-status'] == "yes"  %}
+              {% if  data['completed-age-range'] %}
               <strong class="govuk-tag app-task-list__tag" id="age-range-status">Completed</strong>
-              {% elseif  data['completed-age-range-status'] == "no"  %}
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="age-range-status">In progress</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="age-range-status">Not started</strong>
               {% endif %}
