@@ -14,17 +14,14 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">
-        Teacher training and qualifications
+        Your qualifications
       </span>
 
-      <h1 class="govuk-heading-l">Upload your undergraduate degree documents</h1>
-
-<p>Your documents must be written in English. If they are not written in English, you will need to upload a certified translation of each.</p>
-
+      <h1 class="govuk-heading-l">Upload your university degree documents</h1>
+      <p>Your documents must be written in English. If they are not written in English, you will need to upload a certified translation of each.</p>
 
       <form class="form" action="/prototype-3/task-list" method="post">
-
-
+        <h2 class="govuk-heading-m">Upload your {{degreeTitle}} degree documents</h2>
         <div class="govuk-form-group">
           <label class="govuk-label" for="file-upload-1">
             Select a file to upload
@@ -38,13 +35,13 @@
           <a class="govuk-button" style="text-decoration: none;" href="upload-degree-error">
             Upload and continue
           </a>
-        
+
           <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="another-degree" value="progress">
             Add this later
           </button>
 
         </div>
-        
+
       </form>
 
     </div>
