@@ -187,10 +187,20 @@
             {% else  %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                Upload your university degree documents
+                <a href="qualifications/undergraduate-degree-documents/upload-degree" aria-describedby="undergraduate-degree-documents">
+                  Upload your university degree documents
+                </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
             </li>
+
+            <!-- Commented out while testing -->
+<!--            <li class="app-task-list__item">-->
+<!--              <span class="app-task-list__task-name">-->
+<!--                Upload your university degree documents-->
+<!--              </span>-->
+<!--              <strong class="govuk-tag govuk-tag&#45;&#45;grey app-task-list__tag" id="list-convictions-status">Cannot start yet</strong>-->
+<!--            </li>-->
             {% endif %}
           </ul>
         </li>
