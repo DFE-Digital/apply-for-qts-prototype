@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Upload teacher training certificate – {{ serviceName }} – GOV.UK Prototype Kit
+  Upload undergraduate degree documents – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,37 +13,30 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="../teacher-training-qualification-documents/upload-teacher-training-transcript-error" method="post">
-        <span class="govuk-caption-l">
-          Your qualifications
-        </span>
-        <h1 class="govuk-heading-l">Upload your {{ qualificationInstitutionName }} teacher training transcript</h1>
-        <p>Upload a transcript of your teacher training qualification, issued by the awarding body. If your teacher training was completed as part of your degree, you should supply your degree transcript.</p>
-        <h2 class="govuk-heading-m">Upload your transcript</h2>
-        <div class="govuk-form-group">
+      <span class="govuk-caption-l">
+        Your qualifications
+      </span>
+
+      <h1 class="govuk-heading-l">Upload your university degree documents</h1>
+      <p>Your documents must be written in English. If they are not written in English, you will need to upload a certified translation of each.</p>
+
+      <form class="form" action="#" method="post">
+        <h2 class="govuk-heading-m">Upload your {{ degreeTitle }} degree certificate</h2>
+        <div class="govuk-form-group govuk-form-group--error">
           <label class="govuk-label" for="file-upload-1">
             Select a file to upload
           </label>
-          <div id="training-certificate-hint" class="govuk-hint">
-            You can upload your files in PDF, JPG or DOC format. Each file must be no larger than 20MB.
-          </div>
-          <a href="upload-teacher-training-transcript-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="training-certificate" value="teacher_training_certificate.pdf">Choose file</a>
+          <p id="file-upload-1-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> You must choose a file before you can upload and continue
+          </p>
+          <a href="upload-degree-certificate-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
           <span class="govuk-body" style="position:relative;top:7px">No file chosen</span>
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              What is a transcript?
-            </span>
-            </summary>
-            <div class="govuk-details__text">
-              A transcript (or diploma supplement) is a document from the institution where you studied for your degree. It lists all the modules or subjects you studied in each year, and the marks or grades you were awarded.
-            </div>
-          </details>
         </div>
 
         <h2 class="govuk-heading-m">
           About your document
         </h2>
+
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="written-in-english-hint">
@@ -68,12 +61,12 @@
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-written-in-english-2">
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="file-upload-2">
-                    Upload your qualification certificate translation
+                    Upload your degree certificate translation
                   </label>
                   <div id="event-name-hint" class="govuk-hint">
                     Select a file to upload
                   </div>
-                  <a href="upload-teacher-training-transcript-error" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="certificate_translation.pdf">Choose file</a>
+                  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="certificate_translation.pdf">Choose file</a>
                   <span class="govuk-body" style="position:relative;top:7px">No file chosen</span>
                 </div>
               </div>
@@ -81,11 +74,16 @@
           </fieldset>
         </div>
         <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button" name="teacher-transcript-added" value="progress" type="submit">
+<!--          <a class="govuk-button" style="text-decoration: none;" href="upload-degree-transcript">-->
+<!--            Continue-->
+<!--          </a>-->
+          <button class="govuk-button" data-module="govuk-button" name="another-degree" value="progress" type="submit">
             Continue
           </button>
+
         </div>
       </form>
+
     </div>
   </div>
 
