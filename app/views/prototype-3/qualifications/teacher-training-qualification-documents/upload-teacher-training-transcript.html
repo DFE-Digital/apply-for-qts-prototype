@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Upload undergraduate degree documents – {{ serviceName }} – GOV.UK Prototype Kit
+  Upload teacher training certificate – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,27 +13,25 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">
-        Your qualifications
-      </span>
-
-      <h1 class="govuk-heading-l">Upload your university degree documents</h1>
-      <p>Your documents must be written in English. If they are not written in English, you will need to upload a certified translation of each.</p>
-
-      <form class="form" action="upload-teacher-training-qualification-add-another" method="post">
-        <h2 class="govuk-heading-m">Upload your {{degreeTitle}} degree transcript</h2>
+      <form class="form" action="upload-teacher-training-transcript" method="post">
+        <span class="govuk-caption-l">
+          Your qualifications
+        </span>
+        <h1 class="govuk-heading-l">Upload your {{ qualificationInstitutionName }} teacher training qualification</h1>
         <div class="govuk-form-group">
           <label class="govuk-label" for="file-upload-1">
             Select a file to upload
           </label>
-          <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
+          <div id="training-certificate-hint" class="govuk-hint">
+            You can upload your files in PDF, JPG or DOC format. Each file must be no larger than 20MB.
+          </div>
+          <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="training-certificate" value="teacher_training_certificate.pdf">Choose file</a>
           <span class="govuk-body" style="position:relative;top:7px">No file chosen</span>
         </div>
 
         <h2 class="govuk-heading-m">
           About your document
         </h2>
-
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="written-in-english-hint">
@@ -71,16 +69,11 @@
           </fieldset>
         </div>
         <div class="govuk-button-group">
-          <a class="govuk-button" style="text-decoration: none;" href="#">
+          <button class="govuk-button" data-module="govuk-button" name="training-certificate-added" value="progress">
             Continue
-          </a>
-<!--          <button class="govuk-button govuk-button&#45;&#45;secondary" data-module="govuk-button" name="another-degree" value="progress">-->
-<!--            Add this later-->
-<!--          </button>-->
-
+          </button>
         </div>
       </form>
-
     </div>
   </div>
 
