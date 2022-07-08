@@ -8,6 +8,21 @@
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
+{% block pageStyles %}
+<link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen" rel="stylesheet">
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
+<script>
+  openregisterLocationPicker({
+    selectElement: document.getElementById('degreeInstitutionCountry'),
+    url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
+    defaultValue: '{{ data["degreeInstitutionCountry"] }}'
+  })
+</script>
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -34,12 +49,19 @@
           <input class="govuk-input" id="degreeInstitutionName" name="degreeInstitutionName" type="text" >
         </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="degreeInstitutionCountry">
-            Country of institution
-          </label>
-          <input class="govuk-input" id="degreeInstitutionCountry" name="degreeInstitutionCountry" type="text">
-        </div>
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+        id: "degreeInstitutionCountry",
+        name: "degreeInstitutionCountry",
+        classes: "govuk-input--width-10",
+        label: {
+        classes: "govuk-label--s, govuk-!-font-weight-regular",
+        isPageHeading: true,
+        text: "Country of institution"
+        },
+        items: countries
+        }) }}
 
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
