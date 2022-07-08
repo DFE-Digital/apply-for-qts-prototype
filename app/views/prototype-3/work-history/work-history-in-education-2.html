@@ -4,6 +4,21 @@
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block pageStyles %}
+<link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen" rel="stylesheet">
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
+<script>
+  openregisterLocationPicker({
+    selectElement: document.getElementById('school-country-2'),
+    url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
+    defaultValue: '{{ data["school-country-2"] }}'
+  })
+</script>
+{% endblock %}
+
 {% block beforeContent %}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
@@ -35,12 +50,19 @@
           <input class="govuk-input" id="school-city-2" name="school-city-2" type="text" >
         </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="school-country-2">
-            Country
-          </label>
-          <input class="govuk-input" id="school-country-2" name="school-country-2" type="text">
-        </div>
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+        id: "school-country-2",
+        name: "school-country-2",
+        classes: "govuk-input--width-10",
+        label: {
+        classes: "govuk-label--s, govuk-!-font-weight-regular",
+        isPageHeading: true,
+        text: "Country"
+        },
+        items: countries
+        }) }}
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="job-role-2">

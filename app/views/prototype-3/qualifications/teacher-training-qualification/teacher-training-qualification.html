@@ -4,6 +4,21 @@
   University degree – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block pageStyles %}
+<link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen" rel="stylesheet">
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
+<script>
+  openregisterLocationPicker({
+    selectElement: document.getElementById('qualification-institution-country'),
+    url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
+    defaultValue: '{{ data["qualification-institution-country"] }}'
+  })
+</script>
+{% endblock %}
+
 {% block beforeContent %}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
@@ -34,12 +49,19 @@
           <input class="govuk-input" id="qualificationInstitutionName" name="qualificationInstitutionName" type="text" >
         </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="qualification-institution-country">
-            Country of institution
-          </label>
-          <input class="govuk-input" id="qualification-institution-country" name="qualification-institution-country" type="text">
-        </div>
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+        id: "qualification-institution-country",
+        name: "qualification-institution-country",
+        classes: "govuk-input--width-10",
+        label: {
+        classes: "govuk-label--s, govuk-!-font-weight-regular",
+        isPageHeading: true,
+        text: "Country of institution"
+        },
+        items: countries
+        }) }}
 
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
