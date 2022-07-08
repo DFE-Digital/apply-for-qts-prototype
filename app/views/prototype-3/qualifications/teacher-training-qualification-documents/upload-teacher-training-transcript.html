@@ -13,11 +13,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="upload-teacher-training-transcript" method="post">
+      <form class="form" action="../teacher-training-qualification/teacher-training-qualification-summary" method="post">
         <span class="govuk-caption-l">
           Your qualifications
         </span>
-        <h1 class="govuk-heading-l">Upload your {{ qualificationInstitutionName }} teacher training qualification</h1>
+        <h1 class="govuk-heading-l">Upload your {{ qualificationInstitutionName }} teacher training transcript</h1>
+        <p>Upload a transcript of your teacher training qualification, issued by the awarding body. If your teacher training was completed as part of your degree, you should supply your degree transcript.</p>
+        <h2 class="govuk-heading-m">Upload your transcript</h2>
         <div class="govuk-form-group">
           <label class="govuk-label" for="file-upload-1">
             Select a file to upload
@@ -27,6 +29,16 @@
           </div>
           <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="training-certificate" value="teacher_training_certificate.pdf">Choose file</a>
           <span class="govuk-body" style="position:relative;top:7px">No file chosen</span>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What is a transcript?
+            </span>
+            </summary>
+            <div class="govuk-details__text">
+              A transcript (or diploma supplement) is a document from the institution where you studied for your degree. It lists all the modules or subjects you studied in each year, and the marks or grades you were awarded.
+            </div>
+          </details>
         </div>
 
         <h2 class="govuk-heading-m">
@@ -69,7 +81,7 @@
           </fieldset>
         </div>
         <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button" name="training-certificate-added" value="progress">
+          <button class="govuk-button" data-module="govuk-button" name="teacher-transcript-added" value="progress" type="submit">
             Continue
           </button>
         </div>
