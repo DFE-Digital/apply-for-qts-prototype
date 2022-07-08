@@ -20,12 +20,15 @@
       <h1 class="govuk-heading-l">Upload your university degree documents</h1>
       <p>Your documents must be written in English. If they are not written in English, you will need to upload a certified translation of each.</p>
 
-      <form class="form" action="upload-degree-transcript-error" method="post">
+      <form class="form" action="../undergraduate-degree/degree-summary" method="post">
         <h2 class="govuk-heading-m">Upload your {{degreeTitle}} degree transcript</h2>
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error"">
           <label class="govuk-label" for="file-upload-1">
             Select a file to upload
           </label>
+          <p id="file-upload-1-error" class="govuk-error-message">
+           <span class="govuk-visually-hidden">Error:</span> You must choose a file before you can upload and continue
+          </p>
           <a href="upload-degree-transcript-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
           <span class="govuk-body" style="position:relative;top:7px">No file chosen</span>
         </div>
