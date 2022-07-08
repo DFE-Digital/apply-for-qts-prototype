@@ -20,7 +20,7 @@
       <h1 class="govuk-heading-l">Upload your university degree documents</h1>
       <p>Your documents must be written in English. If they are not written in English, you will need to upload a certified translation of each.</p>
 
-      <form class="form" action="/prototype-3/task-list" method="post">
+      <form class="form" action="upload-degree-transcript" method="post">
         <h2 class="govuk-heading-m">Upload your {{ degreeTitle }} degree certificate</h2>
         <div class="govuk-form-group">
           <label class="govuk-label" for="file-upload-1">
@@ -71,12 +71,12 @@
           </fieldset>
         </div>
         <div class="govuk-button-group">
-          <a class="govuk-button" style="text-decoration: none;" href="upload-degree-transcript">
+<!--          <a class="govuk-button" style="text-decoration: none;" href="upload-degree-transcript">-->
+<!--            Continue-->
+<!--          </a>-->
+          <button class="govuk-button" data-module="govuk-button" name="another-degree" value="progress" type="submit">
             Continue
-          </a>
-<!--          <button class="govuk-button govuk-button&#45;&#45;secondary" data-module="govuk-button" name="another-degree" value="progress">-->
-<!--            Add this later-->
-<!--          </button>-->
+          </button>
 
         </div>
       </form>
