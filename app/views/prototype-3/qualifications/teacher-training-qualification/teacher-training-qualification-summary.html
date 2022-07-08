@@ -132,40 +132,44 @@
               </a>
             </dd>
           </div>
+
+  <!-- Teacher training certificate? -->
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Qualification certificate
+    </dt>
+    <dd class="govuk-summary-list__value">
+      teacher_training_certificate.pdf
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="teacher-training-qualification">
+        Change
+        <span class="govuk-visually-hidden">teacher training qualification certificate</span>
+      </a>
+    </dd>
+  </div>
+
+  <!-- Teacher training transcript -->
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Qualification transcript
+    </dt>
+    <dd class="govuk-summary-list__value">
+      teacher_training_transcript.pdf
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="teacher-training-qualification">
+        Change
+        <span class="govuk-visually-hidden">Teacher training qualification transcript</span>
+      </a>
+    </dd>
+  </div>
       </dl>
 
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-      <form action="/prototype-3/task-list" method="post" novalidate>
-
-        {{ govukRadios({
-          idPrefix: "completed-qualification-details",
-          name: "completed-qualification-details",
-          fieldset: {
-            legend: {
-              text: "Have you completed this section?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No, I will come back to it later"
-            }
-          ]
-        }) }}
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-
+      <form action="../teacher-training-qualification-documents/upload-teacher-training-qualification-add-another" method="post" novalidate>
+        <button class="govuk-button" data-module="govuk-button" name="completed-qualification-details">
+          Continue
+        </button>
       </form>
 
     </div>
