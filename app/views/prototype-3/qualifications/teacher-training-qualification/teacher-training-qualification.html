@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  University degree – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Your qualifications</span>
+      <h1 class="govuk-heading-l">Your teacher training qualification</h1>
+      <p class="govuk-body-l">This is the qualification that led to you being recognised as a teacher. It might be part of your university degree course, or it could be a separate qualification. You can tell us about additional qualifications later if you want to.</p>
+
+      <form class="form" action="../teacher-training-qualification-documents/upload-teacher-training-qualification" method="post">
+
+        <h2 class="govuk-heading-m">Enter the details of your teacher training qualification</h2>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="qualification-title">
+            Qualification title
+          </label>
+          <input class="govuk-input" id="qualification-title" name="qualification-title" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="qualificationInstitutionName">
+            Name of institution
+          </label>
+          <input class="govuk-input" id="qualificationInstitutionName" name="qualificationInstitutionName" type="text" >
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="qualification-institution-country">
+            Country of institution
+          </label>
+          <input class="govuk-input" id="qualification-institution-country" name="qualification-institution-country" type="text">
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                When did you start your teacher training qualification?
+              </h1>
+            </legend>
+            <div id="start-date-hint" class="govuk-hint">
+              For example, 3 2020
+            </div>
+            <div class="govuk-date-input" id="start-date">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="degreeStartDate-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="degreeStartDate-month" name="degreeStartDate-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="degreeStartDate-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="degreeStartDate-year" name="degreeStartDate-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                When did you complete your teacher training qualification?
+              </h1>
+            </legend>
+            <div id="start-date-hint" class="govuk-hint">
+              For example, 3 2020
+            </div>
+            <div class="govuk-date-input" id="start-date">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="degreeEndDate-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="degreeEndDate-month" name="degreeEndDate-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="degreeEndDate-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="degreeEndDate-year" name="degreeEndDate-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                What is the date on your teacher training qualification?
+              </h1>
+            </legend>
+            <div id="start-date-hint" class="govuk-hint">
+              For example, 3 2020
+            </div>
+            <div class="govuk-date-input" id="start-date">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="certificateDate-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="certificateDate-month" name="certificateDate-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="certificateDate-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="certificateDate-year" name="certificateDate-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="was-teacher-training-a-degree-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Was this qualification part of your university degree?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="was-teacher-training-a-degree" name="was-teacher-training-a-degree" type="radio" value="yes" data-aria-controls="conditional-was-teacher-training-a-degree">
+                <label class="govuk-label govuk-radios__label" for="was-teacher-training-a-degree">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="was-teacher-training-a-degree-2" name="was-teacher-training-a-degree" type="radio" value="no" data-aria-controls="conditional-was-teacher-training-a-degree-2">
+                <label class="govuk-label govuk-radios__label" for="was-teacher-training-a-degree-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third"></div>
+  </div>
+
+{% endblock %}

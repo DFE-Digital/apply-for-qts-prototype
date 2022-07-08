@@ -20,8 +20,8 @@
         {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
         {{ govukDateInput({
-          id: "quaificationStartDate",
-          namePrefix: "quaificationStartDate",
+          id: "qualificationStartDate",
+          namePrefix: "qualificationStartDate",
           fieldset: {
             legend: {
               text: "When did you start your teacher training qualification?",
@@ -36,24 +36,24 @@
             {
               name: "day",
               classes: "govuk-input--width-2",
-              value: data["quaificationStartDate-day"]
+              value: data["qualificationStartDate-day"]
             },
             {
               name: "month",
               classes: "govuk-input--width-2",
-              value: data["quaificationStartDate-month"]
+              value: data["qualificationStartDate-month"]
             },
             {
               name: "year",
               classes: "govuk-input--width-4",
-              value: data["quaificationStartDate-year"]
+              value: data["qualificationStartDate-year"]
             }
           ]
         }) }}
 
         {{ govukDateInput({
-          id: "quaificationEndDate",
-          namePrefix: "quaificationEndDate",
+          id: "qualificationEndDate",
+          namePrefix: "qualificationEndDate",
           fieldset: {
             legend: {
               text: "When did you finish your teacher training qualification?",
@@ -68,24 +68,24 @@
             {
               name: "day",
               classes: "govuk-input--width-2",
-              value: data["quaificationEndDate-day"]
+              value: data["qualificationEndDate-day"]
             },
             {
               name: "month",
               classes: "govuk-input--width-2",
-              value: data["quaificationEndDate-month"]
+              value: data["qualificationEndDate-month"]
             },
             {
               name: "year",
               classes: "govuk-input--width-4",
-              value: data["quaificationEndDate-year"]
+              value: data["qualificationEndDate-year"]
             }
           ]
         }) }}
 
         {{ govukDateInput({
-          id: "quaificationAwardDate",
-          namePrefix: "quaificationAwardDate",
+          id: "qualificationAwardDate",
+          namePrefix: "qualificationAwardDate",
           fieldset: {
             legend: {
               text: "What date were you awarded your teacher training qualification?",
@@ -100,28 +100,28 @@
             {
               name: "day",
               classes: "govuk-input--width-2",
-              value: data["quaificationAwardDate-day"]
+              value: data["qualificationAwardDate-day"]
             },
             {
               name: "month",
               classes: "govuk-input--width-2",
-              value: data["quaificationAwardDate-month"]
+              value: data["qualificationAwardDate-month"]
             },
             {
               name: "year",
               classes: "govuk-input--width-4",
-              value: data["quaificationAwardDate-year"]
+              value: data["qualificationAwardDate-year"]
             }
           ]
         }) }}
-      
+
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
 
     </div>
-    
+
   </div>
 
 {% endblock %}

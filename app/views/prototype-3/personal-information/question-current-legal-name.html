@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Current legal name – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,31 +19,41 @@
           About you
         </span>
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-        {{ govukRadios({
-          idPrefix: "current-legal-name",
-          name: "current-legal-name",
-          fieldset: {
-            legend: {
-              text: "Is your legal name the same as the identification document that you will upload?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "Yes",
-              text: "Yes",
-              checked: checked("current-legal-name", "Yes")
-            },
-            {
-              value: "No",
-              text: "No, it is now different - I will upload another document to prove this",
-              checked: checked("current-legal-name", "No")
-            }
-          ]
-        }) }}
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="current-legal-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Does your name appear differently on your ID documents or qualifications?
+              </h1>
+            </legend>
+            <div id="current-legal-name-hint" class="govuk-hint">
+              If your name appears differently on your ID documents or qualification certificates, we’ll need to see evidence of your name change.
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="current-legal-name" name="current-legal-name" type="radio" value="Yes" data-aria-controls="conditional-current-legal-name">
+                <label class="govuk-label govuk-radios__label" for="current-legal-name">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="current-legal-name-2" name="current-legal-name" type="radio" value="No" data-aria-controls="conditional-current-legal-name-2">
+                <label class="govuk-label govuk-radios__label" for="current-legal-name-2">
+                  No – I'II upload another document to prove this
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-current-legal-name-2">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="file-upload-2">
+                    Select a file to upload
+                  </label>
+                  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="idDocument" value="identity-document.pdf">Choose file</a>
+                  <span class="govuk-body" style="position:relative;top:7px">No file chosen</span>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
