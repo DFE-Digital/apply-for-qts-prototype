@@ -63,7 +63,7 @@
                   Your teacher training qualification
                 </a>
               </span>
-              {% if  data['completed-qualification-details'] == "yes"  %}
+              {% if  data['completed-qualification-details']  %}
               <strong class="govuk-tag app-task-list__tag" id="qualification-status">Completed</strong>
               {% elseif  data['completed-qualification-details'] == "no"  %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="qualification-status">In progress</strong>
