@@ -20,14 +20,14 @@
       <h1 class="govuk-heading-l">Upload your university degree documents</h1>
       <p>Your documents must be written in English. If they are not written in English, you will need to upload a certified translation of each.</p>
 
-      <form class="form" action="upload-degree-certificate-error" method="post">
-        <h2 class="govuk-heading-m">Upload your {{ data['degreeTitle'] }} degree certificate</h2>
+      <form class="form" action="../undergraduate-degree/degree-summary" method="post">
+        <h2 class="govuk-heading-m">Upload your {{ data['degreeTitle'] }} degree transcript</h2>
         <div class="govuk-form-group">
           <label class="govuk-label" for="file-upload-1">
             Select a file to upload
           </label>
-          <a href="upload-degree-certificate-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
-          <span class="govuk-body" style="position:relative;top:7px">No file chosen</span>
+          <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
+          <span class="govuk-body" style="position:relative;top:7px">degree_transcript.pdf</span>
         </div>
 
         <h2 class="govuk-heading-m">
@@ -50,7 +50,7 @@
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="written-in-english-2" name="written-in-english" type="radio" value="phone" data-aria-controls="conditional-written-in-english-2">
+                <input class="govuk-radios__input" id="written-in-english-2" name="written-in-english" type="radio" value="phone" data-aria-controls="conditional-written-in-english-2" checked>
                 <label class="govuk-label govuk-radios__label" for="written-in-english-2">
                   No, I'll upload a translation as well
                 </label>
@@ -63,21 +63,20 @@
                   <div id="event-name-hint" class="govuk-hint">
                     Select a file to upload
                   </div>
-                  <a href="upload-degree-certificate-error" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="certificate_translation.pdf">Choose file</a>
-                  <span class="govuk-body" style="position:relative;top:7px">No file chosen</span>
+                  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="certificate_translation.pdf">Choose file</a>
+                  <span class="govuk-body" style="position:relative;top:7px">degree_transcript_translation.pdf</span>
                 </div>
               </div>
             </div>
           </fieldset>
         </div>
         <div class="govuk-button-group">
-<!--          <a class="govuk-button" style="text-decoration: none;" href="upload-degree-transcript">-->
+<!--          <a class="govuk-button" style="text-decoration: none;" href="#">-->
 <!--            Continue-->
 <!--          </a>-->
           <button class="govuk-button" data-module="govuk-button" name="another-degree" value="progress" type="submit">
             Continue
           </button>
-
         </div>
       </form>
 

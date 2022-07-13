@@ -13,17 +13,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="../teacher-training-qualification-documents/upload-teacher-training-transcript-error" method="post">
+      <form class="form" action="../teacher-training-qualification/teacher-training-qualification-summary" method="post">
         <span class="govuk-caption-l">
           Your qualifications
         </span>
         <h1 class="govuk-heading-l">Upload your {{ data['qualificationInstitutionName'] }} teacher training transcript</h1>
         <p>Upload a transcript of your teacher training qualification, issued by the awarding body. If your teacher training was completed as part of your degree, you should supply your degree transcript.</p>
         <h2 class="govuk-heading-m">Upload your transcript</h2>
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error">
           <label class="govuk-label" for="file-upload-1">
             Select a file to upload
           </label>
+          <p id="file-upload-1-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> You must choose a file before you can upload and continue
+          </p>
           <div id="training-certificate-hint" class="govuk-hint">
             You can upload your files in PDF, JPG or DOC format. Each file must be no larger than 20MB.
           </div>
@@ -73,7 +76,7 @@
                   <div id="event-name-hint" class="govuk-hint">
                     Select a file to upload
                   </div>
-                  <a href="upload-teacher-training-transcript-error" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="certificate_translation.pdf">Choose file</a>
+                  <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="certificate_translation.pdf">Choose file</a>
                   <span class="govuk-body" style="position:relative;top:7px">No file chosen</span>
                 </div>
               </div>
