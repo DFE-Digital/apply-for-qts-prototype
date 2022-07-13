@@ -153,7 +153,7 @@
                 Work history
               </a>
               </span>
-              {% if  data['completed-work-history'] == "yes"  %}
+              {% if  data['completed-work-history'] %}
               <strong class="govuk-tag app-task-list__tag" id="work-history-status">Completed</strong>
               {% elseif  data['completed-work-history'] == "no"  %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="work-history-status">In progress</strong>
