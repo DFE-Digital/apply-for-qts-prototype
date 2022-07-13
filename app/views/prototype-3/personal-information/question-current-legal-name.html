@@ -33,16 +33,40 @@
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="current-legal-name" name="current-legal-name" type="radio" value="Yes" data-aria-controls="conditional-current-legal-name">
                 <label class="govuk-label govuk-radios__label" for="current-legal-name">
-                  Yes
+                  Yes – I'II upload another document to prove this
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="current-legal-name-2" name="current-legal-name" type="radio" value="No" data-aria-controls="conditional-current-legal-name-2">
-                <label class="govuk-label govuk-radios__label" for="current-legal-name-2">
-                  No – I'II upload another document to prove this
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-current-legal-name-2">
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-current-legal-name">
+                {% from "govuk/components/input/macro.njk" import govukInput %}
+
+                {{ govukInput({
+                label: {
+                text: "First name",
+                classes: "govuk-label--s, govuk-!-font-weight-regular",
+                isPageHeading: false
+                },
+                hint: {
+                text: "Or given names"
+                },
+                id: "alternate-first-name",
+                name: "alternate-first-name",
+                value: data['alternate-first-name']
+                }) }}
+
+                {{ govukInput({
+                label: {
+                text: "Last name",
+                classes: "govuk-label--s, govuk-!-font-weight-regular",
+                isPageHeading: false
+                },
+                hint: {
+                text: "Or family name"
+                },
+                id: "alternate-last-name",
+                name: "alternate-last-name",
+                value: data['alternate-last-name']
+                }) }}
+
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="file-upload-2">
                     Select a file to upload
@@ -50,6 +74,12 @@
                   <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="idDocument" value="identity-document.pdf">Choose file</a>
                   <span class="govuk-body" style="position:relative;top:7px">No file chosen</span>
                 </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="current-legal-name-2" name="current-legal-name" type="radio" value="No" data-aria-controls="conditional-current-legal-name-2">
+                <label class="govuk-label govuk-radios__label" for="current-legal-name-2">
+                  No
+                </label>
               </div>
             </div>
           </fieldset>
