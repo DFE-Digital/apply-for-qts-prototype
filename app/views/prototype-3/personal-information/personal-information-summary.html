@@ -70,7 +70,7 @@
         <!-- Legal name same as identity document? -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Legal name same as identity document?
+            Legal name different to identity document?
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['current-legal-name'] }}
@@ -83,6 +83,37 @@
           </dd>
         </div>
 
+        <!-- Alternate First name -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Alternate first name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['alternate-first-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question-current-legal-name">
+              Change
+              <span class="govuk-visually-hidden">Alternate first name</span>
+            </a>
+          </dd>
+        </div>
+
+        <!-- Alternate Last name -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Alternate last name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['alternate-last-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question-current-legal-name">
+              Change
+              <span class="govuk-visually-hidden">Alternate last name</span>
+            </a>
+          </dd>
+        </div>
 
       </dl>
 
