@@ -65,7 +65,7 @@
               </span>
               {% if  data['completed-qualification-details']  %}
               <strong class="govuk-tag app-task-list__tag" id="qualification-status">Completed</strong>
-              {% elseif  data['completed-qualification-details'] == "no"  %}
+              {% elseif  data['progress-qualification-details'] %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="qualification-status">In progress</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="qualification-status">Not started</strong>
