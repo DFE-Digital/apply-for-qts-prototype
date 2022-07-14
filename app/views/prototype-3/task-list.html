@@ -65,7 +65,7 @@
               </span>
               {% if  data['completed-qualification-details']  %}
               <strong class="govuk-tag app-task-list__tag" id="qualification-status">Completed</strong>
-              {% elseif  data['completed-qualification-details'] == "no"  %}
+              {% elseif  data['progress-qualification-details'] %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="qualification-status">In progress</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="qualification-status">Not started</strong>
@@ -73,11 +73,11 @@
             </li>
             {% if  data['was-teacher-training-a-degree'] == "yes"  %}
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="qualifications/undergraduate-degree/degree-details" aria-describedby="undergraduate-degree">
-                  Your university degree
-                </a>
-              </span>
+                <span class="app-task-list__task-name">
+                  <a href="qualifications/undergraduate-degree/degree-details" aria-describedby="undergraduate-degree">
+                    Your university degree
+                  </a>
+                </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="undergraduate-degree-status">Not needed</strong>
             </li>
             {% elseif  data['was-teacher-training-a-degree'] == "no"  %}
@@ -155,9 +155,9 @@
                 Work history
               </a>
               </span>
-              {% if  data['completed-work-history'] %}
+              {% if  data['completed-work-history'] == "yes"  %}
               <strong class="govuk-tag app-task-list__tag" id="work-history-status">Completed</strong>
-              {% elseif  data['progress-work-history'] %}
+              {% elseif  data['completed-work-history'] == "no"  %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="work-history-status">In progress</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="work-history-status">Not started</strong>
