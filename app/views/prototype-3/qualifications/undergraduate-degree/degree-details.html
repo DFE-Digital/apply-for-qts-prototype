@@ -39,14 +39,14 @@
           <label class="govuk-label" for="degreeTitle">
             University degree title
           </label>
-          <input class="govuk-input" id="degreeTitle" name="degreeTitle" type="text">
+          <input class="govuk-input" id="degreeTitle" name="degreeTitle" value="{{ data['degreeTitle'] }}" type="text">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="degreeInstitutionName">
             Name of institution
           </label>
-          <input class="govuk-input" id="degreeInstitutionName" name="degreeInstitutionName" type="text" >
+          <input class="govuk-input" id="degreeInstitutionName" name="degreeInstitutionName" value="{{ data['degreeInstitutionName'] }}" type="text" >
         </div>
 
         {% from "govuk/components/select/macro.njk" import govukSelect %}
@@ -81,7 +81,7 @@
                   <label class="govuk-label govuk-date-input__label" for="degreeStartDate-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="degreeStartDate-month" name="degreeStartDate-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="degreeStartDate-month" name="degreeStartDate-month" value="{{ data['degreeStartDate-month'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -89,7 +89,7 @@
                   <label class="govuk-label govuk-date-input__label" for="degreeStartDate-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="degreeStartDate-year" name="degreeStartDate-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="degreeStartDate-year" name="degreeStartDate-year" value="{{ data['degreeStartDate-year'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -112,7 +112,7 @@
                   <label class="govuk-label govuk-date-input__label" for="degreeEndDate-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="degreeEndDate-month" name="degreeEndDate-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="degreeEndDate-month" name="degreeEndDate-month" value="{{ data['degreeEndDate-month'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -120,7 +120,7 @@
                   <label class="govuk-label govuk-date-input__label" for="degreeEndDate-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="degreeEndDate-year" name="degreeEndDate-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="degreeEndDate-year" name="degreeEndDate-year" value="{{ data['degreeEndDate-year'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@
                   <label class="govuk-label govuk-date-input__label" for="certificateDate-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="certificateDate-month" name="certificateDate-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="certificateDate-month" name="certificateDate-month" value="{{ data['certificateDate-month'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -151,7 +151,7 @@
                   <label class="govuk-label govuk-date-input__label" for="certificateDate-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="certificateDate-year" name="certificateDate-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="certificateDate-year" name="certificateDate-year" value="{{ data['certificateDate-month'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
