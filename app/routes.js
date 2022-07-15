@@ -480,6 +480,22 @@ router.post('/prototype-3/professional-standing/upload-lops-english-a', function
   }
 })
 
+// Do you need to add another qualification
+router.post('/prototype-3/qualifications/undergraduate-degree/degree-details', function (req, res) {
+
+  let wasTeacherTrainingADegree = req.session.data['was-teacher-training-a-degree']
+  let addAnotherQualification = req.session.data['add-another-qualification']
+
+  if ((wasTeacherTrainingADegree === 'no') || (addAnotherQualification === 'yes')) {
+    res.redirect('/prototype-3/qualifications/undergraduate-degree/degree-details')
+  }
+  if (wasTeacherTrainingADegree === 'yes') {
+    res.redirect('/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another')
+  } else {
+    res.redirect('/prototype-3/task-list')
+  }
+})
+
 // Add a second work history example
 router.post('/prototype-3/work-history/work-history-in-education-2', function (req, res) {
 
