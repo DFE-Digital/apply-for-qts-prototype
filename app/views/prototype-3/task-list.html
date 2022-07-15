@@ -71,52 +71,6 @@
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="qualification-status">Not started</strong>
               {% endif %}
             </li>
-            {% if  data['was-teacher-training-a-degree'] == "yes"  %}
-            <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                  <a href="qualifications/undergraduate-degree/degree-details" aria-describedby="undergraduate-degree">
-                    Your university degree
-                  </a>
-                </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="undergraduate-degree-status">Not needed</strong>
-            </li>
-            {% elseif  data['was-teacher-training-a-degree'] == "no"  %}
-            {% if  data['completed-degree'] == "yes" %}
-            <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                  <a href="qualifications/undergraduate-degree/degree-details" aria-describedby="undergraduate-degree">
-                    Your university degree
-                  </a>
-                </span>
-              <strong class="govuk-tag app-task-list__tag" id="undergraduate-degree-status">Completed</strong>
-            </li>
-            {% elseif  data['completed-degree'] == "no" %}
-            <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                  <a href="qualifications/undergraduate-degree/degree-details" aria-describedby="undergraduate-degree">
-                    Your university degree
-                  </a>
-                </span>
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="undergraduate-degree-status">In progress</strong>
-            </li>
-            {% else  %}
-            <li class="app-task-list__item">
-                <span class="app-task-list__task-name">
-                  <a href="qualifications/undergraduate-degree/degree-details" aria-describedby="undergraduate-degree">
-                    Your university degree
-                  </a>
-                </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="undergraduate-degree-status">Not started</strong>
-            </li>
-            {% endif %}
-            {% else  %}
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                Your university degree
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="undergraduate-degree-documents-status">Cannot start yet</strong>
-            </li>
-            {% endif %}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="who-you-can-teach/age-range" aria-describedby="age-range">
