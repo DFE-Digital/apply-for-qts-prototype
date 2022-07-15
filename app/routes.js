@@ -481,16 +481,23 @@ router.post('/prototype-3/professional-standing/upload-lops-english-a', function
 })
 
 // Do you need to add another qualification
-router.post('/prototype-3/qualifications/undergraduate-degree/degree-details', function (req, res) {
+router.post('/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another', function (req, res) {
 
   let wasTeacherTrainingADegree = req.session.data['was-teacher-training-a-degree']
+
+  if (wasTeacherTrainingADegree === 'no') {
+    res.redirect('/prototype-3/qualifications/undergraduate-degree/degree-details')
+  } else {
+    res.redirect('/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another')
+  }
+})
+
+// Would you like to add another qualification
+router.post('/prototype-3/qualifications/undergraduate-degree/degree-details', function (req, res) {
   let addAnotherQualification = req.session.data['add-another-qualification']
 
-  if ((wasTeacherTrainingADegree === 'no') || (addAnotherQualification === 'yes')) {
+  if (addAnotherQualification === 'yes') {
     res.redirect('/prototype-3/qualifications/undergraduate-degree/degree-details')
-  }
-  if (wasTeacherTrainingADegree === 'yes') {
-    res.redirect('/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another')
   } else {
     res.redirect('/prototype-3/task-list')
   }
