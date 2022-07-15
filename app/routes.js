@@ -481,7 +481,7 @@ router.post('/prototype-3/professional-standing/upload-lops-english-a', function
 })
 
 // Add a second work history example
-router.post('/prototype-3/task-list', function (req, res) {
+router.post('/prototype-3/work-history/work-history-in-education-2', function (req, res) {
 
   let addAnotherWorkplace = req.session.data['add-another-workplace']
 
