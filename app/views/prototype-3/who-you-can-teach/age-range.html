@@ -31,7 +31,7 @@
                   <label class="govuk-label govuk-date-input__label" for="age-range-min">
                     From
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="age-range-min" name="age-range-min" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="age-range-min" name="age-range-min" value="{{ data['age-range-min'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -50,7 +50,7 @@
                   <label class="govuk-label govuk-date-input__label" for="age-range-max">
                     To
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="age-range-max" name="age-range-max" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="age-range-max" name="age-range-max" value="{{ data['age-range-max'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
