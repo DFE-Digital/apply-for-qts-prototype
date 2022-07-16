@@ -39,14 +39,14 @@
           <label class="govuk-label" for="qualification-title">
             Qualification title
           </label>
-          <input class="govuk-input" id="qualification-title" name="qualification-title" type="text">
+          <input class="govuk-input" id="qualification-title" name="qualification-title" value="{{ data['qualification-title'] }}" type="text">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="qualificationInstitutionName">
             Name of institution
           </label>
-          <input class="govuk-input" id="qualificationInstitutionName" name="qualificationInstitutionName" type="text" >
+          <input class="govuk-input" id="qualificationInstitutionName" name="qualificationInstitutionName" value="{{ data['qualificationInstitutionName'] }}" type="text" >
         </div>
 
         {% from "govuk/components/select/macro.njk" import govukSelect %}
@@ -81,7 +81,7 @@
                   <label class="govuk-label govuk-date-input__label" for="qualificationStartDate-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="qualificationStartDate-month" name="qualificationStartDate-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="qualificationStartDate-month" name="qualificationStartDate-month" value="{{ data['qualificationStartDate-month'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -89,7 +89,7 @@
                   <label class="govuk-label govuk-date-input__label" for="qualificationStartDate-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="qualificationStartDate-year" name="qualificationStartDate-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="qualificationStartDate-year" name="qualificationStartDate-year" value="{{ data['qualificationStartDate-year'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -112,7 +112,7 @@
                   <label class="govuk-label govuk-date-input__label" for="qualificationEndDate-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="qualificationEndDate-month" name="qualificationEndDate-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="qualificationEndDate-month" name="qualificationEndDate-month" value="{{ data['qualificationEndDate-month'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -120,7 +120,7 @@
                   <label class="govuk-label govuk-date-input__label" for="qualificationEndDate-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="qualificationEndDate-year" name="qualificationEndDate-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="qualificationEndDate-year" name="qualificationEndDate-year" value="{{ data['qualificationEndDate-year'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@
                   <label class="govuk-label govuk-date-input__label" for="qualificationAwardDate-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="qualificationAwardDate-month" name="qualificationAwardDate-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="qualificationAwardDate-month" name="qualificationAwardDate-month" value="{{ data['qualificationAwardDate-month'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -151,32 +151,8 @@
                   <label class="govuk-label govuk-date-input__label" for="qualificationAwardDate-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="qualificationAwardDate-year" name="qualificationAwardDate-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="qualificationAwardDate-year" name="qualificationAwardDate-year" value="{{ data['qualificationAwardDate-year'] }}" type="text" inputmode="numeric">
                 </div>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="was-teacher-training-a-degree-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h1 class="govuk-fieldset__heading">
-                Was this qualification part of your university degree?
-              </h1>
-            </legend>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="was-teacher-training-a-degree" name="was-teacher-training-a-degree" type="radio" value="yes" data-aria-controls="conditional-was-teacher-training-a-degree">
-                <label class="govuk-label govuk-radios__label" for="was-teacher-training-a-degree">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="was-teacher-training-a-degree-2" name="was-teacher-training-a-degree" type="radio" value="no" data-aria-controls="conditional-was-teacher-training-a-degree-2">
-                <label class="govuk-label govuk-radios__label" for="was-teacher-training-a-degree-2">
-                  No
-                </label>
               </div>
             </div>
           </fieldset>

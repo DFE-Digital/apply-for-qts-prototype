@@ -40,14 +40,14 @@
           <label class="govuk-label" for="school-name">
             School name
           </label>
-          <input class="govuk-input" id="school-name" name="school-name" type="text" >
+          <input class="govuk-input" id="school-name" name="school-name" value="{{ data['school-name'] }}" type="text">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="school-city">
             City
           </label>
-          <input class="govuk-input" id="school-city" name="school-city" type="text" ['school-city']>
+          <input class="govuk-input" id="school-city" name="school-city" value="{{ data['school-city'] }}" type="text">
         </div>
 
         {% from "govuk/components/select/macro.njk" import govukSelect %}
@@ -68,14 +68,14 @@
           <label class="govuk-label" for="job-role">
             Your job role
           </label>
-          <input class="govuk-input" id="job-role" name="job-role" type="text">
+          <input class="govuk-input" id="job-role" name="job-role" value="{{ data['job-role'] }}" type="text">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="reference-email">
             Contact email address for this organisation
           </label>
-          <input class="govuk-input" id="reference-email" name="reference-email" type="text">
+          <input class="govuk-input" id="reference-email" name="reference-email" value="{{ data['reference-email'] }}" type="text">
         </div>
 
         <details class="govuk-details" data-module="govuk-details">
@@ -105,7 +105,7 @@
                   <label class="govuk-label govuk-date-input__label" for="start-date-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month" name="start-date-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month" name="start-date-month" value="{{ data['start-date-month'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -113,7 +113,7 @@
                   <label class="govuk-label govuk-date-input__label" for="start-date-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year" name="start-date-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year" name="start-date-year" value="{{ data['start-date-year'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -158,7 +158,7 @@
                           <label class="govuk-label govuk-date-input__label" for="end-date-month">
                             Month
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end-date-month" name="end-date-month" type="text" inputmode="numeric">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end-date-month" name="end-date-month" value="{{ data['end-date-month'] }}" type="text" inputmode="numeric">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -166,7 +166,7 @@
                           <label class="govuk-label govuk-date-input__label" for="end-date-year">
                             Year
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="end-date-year" name="end-date-year" type="text" inputmode="numeric">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="end-date-year" name="end-date-year" value="{{ data['end-date-year'] }}" type="text" inputmode="numeric">
                         </div>
                       </div>
                     </div>
