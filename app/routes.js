@@ -503,6 +503,18 @@ router.post('/prototype-3/qualifications/undergraduate-degree/degree-details', f
   }
 })
 
+// Do you need to add another qualification? (loop 2)
+// This takes the user to a second version of the degree details page but the document uploads and summary page are the same as loop one
+router.post('/prototype-3/qualifications/undergraduate-degree/degree-details-2', function (req, res) {
+  let addAnotherQualification2 = req.session.data['add-another-qualification-2']
+
+  if (addAnotherQualification2 === 'yes') {
+    res.redirect('/prototype-3/qualifications/undergraduate-degree/degree-details-2')
+  } else {
+    res.redirect('/prototype-3/task-list')
+  }
+})
+
 // Add a second work history example
 router.post('/prototype-3/work-history/work-history-in-education-2', function (req, res) {
 
