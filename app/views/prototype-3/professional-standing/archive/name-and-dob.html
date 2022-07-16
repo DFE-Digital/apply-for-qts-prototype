@@ -23,13 +23,13 @@
 
       {{ govukInput({
         label: {
-          text: "First name",
+          text: "Given names",
           classes: "govuk-label--m",
           isPageHeading: false
         },
         hint: {
-          text: "Or given names"
-        }, 
+          text: "Enter your full name apart from your family name"
+        },
         id: "first-name",
         name: "first-name",
         value: data['first-name']
@@ -37,13 +37,13 @@
 
       {{ govukInput({
         label: {
-          text: "Last name",
+          text: "Family name",
           classes: "govuk-label--m",
           isPageHeading: false
         },
         hint: {
-          text: "Or family name"
-        }, 
+          text: "Enter just your family name"
+        },
         id: "last-name",
         name: "last-name",
         value: data['last-name']

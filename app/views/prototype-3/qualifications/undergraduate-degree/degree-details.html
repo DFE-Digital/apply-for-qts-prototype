@@ -39,14 +39,14 @@
           <label class="govuk-label" for="degreeTitle">
             University degree title
           </label>
-          <input class="govuk-input" id="degreeTitle" name="degreeTitle" type="text">
+          <input class="govuk-input" id="degreeTitle" name="degreeTitle" value="{{ data['degreeTitle'] }}" type="text">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="degreeInstitutionName">
             Name of institution
           </label>
-          <input class="govuk-input" id="degreeInstitutionName" name="degreeInstitutionName" type="text" >
+          <input class="govuk-input" id="degreeInstitutionName" name="degreeInstitutionName" value="{{ data['degreeInstitutionName'] }}" type="text" >
         </div>
 
         {% from "govuk/components/select/macro.njk" import govukSelect %}
@@ -81,7 +81,7 @@
                   <label class="govuk-label govuk-date-input__label" for="degreeStartDate-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="degreeStartDate-month" name="degreeStartDate-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="degreeStartDate-month" name="degreeStartDate-month" value="{{ data['degreeStartDate-month'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -89,7 +89,7 @@
                   <label class="govuk-label govuk-date-input__label" for="degreeStartDate-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="degreeStartDate-year" name="degreeStartDate-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="degreeStartDate-year" name="degreeStartDate-year" value="{{ data['degreeStartDate-year'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -112,7 +112,7 @@
                   <label class="govuk-label govuk-date-input__label" for="degreeEndDate-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="degreeEndDate-month" name="degreeEndDate-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="degreeEndDate-month" name="degreeEndDate-month" value="{{ data['degreeEndDate-month'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -120,7 +120,7 @@
                   <label class="govuk-label govuk-date-input__label" for="degreeEndDate-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="degreeEndDate-year" name="degreeEndDate-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="degreeEndDate-year" name="degreeEndDate-year" value="{{ data['degreeEndDate-year'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@
                   <label class="govuk-label govuk-date-input__label" for="certificateDate-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="certificateDate-month" name="certificateDate-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="certificateDate-month" name="certificateDate-month" value="{{ data['certificateDate-month'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -151,69 +151,12 @@
                   <label class="govuk-label govuk-date-input__label" for="certificateDate-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="certificateDate-year" name="certificateDate-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="certificateDate-year" name="certificateDate-year" value="{{ data['certificateDate-month'] }}" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
           </fieldset>
         </div>
-        <!-- Think this is incorrect on the designs - we don't need it -->
-<!--        <hr class="govuk-section-break govuk-section-break&#45;&#45;xl govuk-section-break&#45;&#45;visible">-->
-<!--        <div class="govuk-form-group">-->
-<!--          <fieldset class="govuk-fieldset" aria-describedby="still-at-school-hint">-->
-<!--            <legend class="govuk-fieldset__legend govuk-fieldset__legend&#45;&#45;m">-->
-<!--              <h1 class="govuk-fieldset__heading">-->
-<!--                Did this university degree include your teacher training qualification??-->
-<!--              </h1>-->
-<!--            </legend>-->
-<!--            <div class="govuk-radios" data-module="govuk-radios">-->
-<!--              <div class="govuk-radios__item">-->
-<!--                <input class="govuk-radios__input" id="still-at-school" name="still-at-school" type="radio" value="still-at-school-yes" data-aria-controls="conditional-still-at-school">-->
-<!--                <label class="govuk-label govuk-radios__label" for="still-at-school">-->
-<!--                  Yes-->
-<!--                </label>-->
-<!--              </div>-->
-<!--              <div class="govuk-radios__item">-->
-<!--                <input class="govuk-radios__input" id="still-at-school-2" name="still-at-school" type="radio" value="still-at-school-no" data-aria-controls="conditional-still-at-school-2">-->
-<!--                <label class="govuk-label govuk-radios__label" for="still-at-school-2">-->
-<!--                  No-->
-<!--                </label>-->
-<!--              </div>-->
-<!--              <div class="govuk-radios__conditional govuk-radios__conditional&#45;&#45;hidden" id="conditional-still-at-school-2">-->
-<!--                <div class="govuk-form-group">-->
-<!--                  <fieldset class="govuk-fieldset" role="group" aria-describedby="end-date-hint">-->
-<!--                    <legend class="govuk-fieldset__legend govuk-fieldset__legend&#45;&#45;m">-->
-<!--                      <h1 class="govuk-fieldset__heading">-->
-<!--                        Your end date-->
-<!--                      </h1>-->
-<!--                    </legend>-->
-<!--                    <div id="end-date-hint" class="govuk-hint">-->
-<!--                      For example, 3 2020-->
-<!--                    </div>-->
-<!--                    <div class="govuk-date-input" id="end-date">-->
-<!--                      <div class="govuk-date-input__item">-->
-<!--                        <div class="govuk-form-group">-->
-<!--                          <label class="govuk-label govuk-date-input__label" for="end-date-month">-->
-<!--                            Month-->
-<!--                          </label>-->
-<!--                          <input class="govuk-input govuk-date-input__input govuk-input&#45;&#45;width-2" id="end-date-month" name="end-date-month" type="text" inputmode="numeric">-->
-<!--                        </div>-->
-<!--                      </div>-->
-<!--                      <div class="govuk-date-input__item">-->
-<!--                        <div class="govuk-form-group">-->
-<!--                          <label class="govuk-label govuk-date-input__label" for="end-date-year">-->
-<!--                            Year-->
-<!--                          </label>-->
-<!--                          <input class="govuk-input govuk-date-input__input govuk-input&#45;&#45;width-4" id="end-date-year" name="end-date-year" type="text" inputmode="numeric">-->
-<!--                        </div>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </fieldset>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </fieldset>-->
-<!--        </div>-->
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
