@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Reference number – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,7 +14,7 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="professional-standing-summary" method="post">
+      <form class="form" action="../task-list" method="post">
 
         <div class="govuk-form-group">
 
@@ -27,16 +27,27 @@
               isPageHeading: true
             },
             hint: {
-              text: " This is so we can find and confirm your details with the organisation that regulates teachers in your country"
-            }, 
+              text: "Your country has an online register of teachers. We need to know your reference number so that we can find you on the register."
+            },
             id: "reference-number",
             name: "reference-number",
             value: data['reference-number']
           }) }}
         </div>
 
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      When we might need more information
+    </span>
+          </summary>
+          <div class="govuk-details__text">
+            If we’re unable to find you using your reference number, we may need to contact you for more information as part of your application.
+          </div>
+        </details>
+
         <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button">
+          <button class="govuk-button" data-module="govuk-button" name="completed-reference-number" value="completed-reference-number">
             Continue
           </button>
         </div>
