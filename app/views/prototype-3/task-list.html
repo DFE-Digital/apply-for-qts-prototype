@@ -109,7 +109,8 @@
                 Work history
               </a>
               </span>
-              {% if  data['completed-work-history'] == "yes"  %}
+              <!-- Changed to just check if value exists  -->
+              {% if  data['completed-work-history'] %}
               <strong class="govuk-tag app-task-list__tag" id="work-history-status">Completed</strong>
               {% elseif  data['completed-work-history'] == "no"  %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="work-history-status">In progress</strong>
@@ -143,12 +144,12 @@
                 Upload your written statement
               </a>
               </span>
-              {% if  data['completed-professional-standing'] == "yes"  %}
-              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              {% if  data['completed-professional-standing']  %}
+              <strong class="govuk-tag app-task-list__tag" id="written-statement-status">Completed</strong>
               {% elseif  data['completed-professional-standing'] == "no"  %}
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">In progress</strong>
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="written-statement-status">In progress</strong>
               {% else %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="written-statement-status">Not started</strong>
               {% endif %}
             </li>
           </ul>
