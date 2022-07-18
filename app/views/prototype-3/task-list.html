@@ -1,5 +1,20 @@
 {% extends "layout.html" %}
 
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Apply for qualified teacher status (QTS) in England",
+serviceUrl: "start.html",
+navigation: [
+{
+href: "create-account-sign-in",
+text: "Sign out",
+active: false
+}
+]
+}) }}
+{% endblock %}
+
 {% block pageTitle %}
   Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
