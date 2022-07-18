@@ -14,6 +14,42 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 
         <h1 class="govuk-heading-xl">Check your answers</h1>
 
+        <h2 class="govuk-heading-m">Eligibility</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+            <!-- Country you're recognised as a teacher -->
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Country you're recognised as a teacher
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['country'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href=country-check/question-country>
+                        Change
+                        <span class="govuk-visually-hidden">country you're recognised as a teacher</span>
+                    </a>
+                </dd>
+            </div>
+
+            <!-- Region you're recognised as a teacher -->
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    State/territory you're currently recognised as a teacher
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['region'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href=country-check/question-country>
+                        Change
+                        <span class="govuk-visually-hidden">region you're recognised as a teacher</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+
         <h2 class="govuk-heading-m">About you</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
