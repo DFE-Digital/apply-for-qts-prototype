@@ -1,5 +1,20 @@
 {% extends "layout.html" %}
 
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Apply for qualified teacher status (QTS) in England",
+serviceUrl: "start.html",
+navigation: [
+{
+href: "create-account-sign-in",
+text: "Sign out",
+active: false
+}
+]
+}) }}
+{% endblock %}
+
 {% block pageTitle %}
   Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -60,7 +75,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="qualifications/teacher-training-qualification/teacher-training-qualification" aria-describedby="teacher-training-qualification">
-                  Your teacher training qualification
+                  Your teaching qualifications
                 </a>
               </span>
               {% if  data['completed-qualification-details']  %}

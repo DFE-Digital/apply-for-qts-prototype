@@ -15,7 +15,7 @@
 
       <h1 class="govuk-heading-l">Upload a valid identification document</h1>
 
-      <p>The document must show your date of birth and your nationality. You can upload a scan or screenshot in PDF or jpeg format, 5MB or less. </p>
+      <p>The document must show your date of birth and your nationality. If your ID document has several pages, you can add them on the next screen. </p>
       <p>Acceptable documents include</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>passport
@@ -24,11 +24,7 @@
         <li>birth certificate</li>
           </li>
       </ul>
-
-      <div id="" class="govuk-hint">
-         If your legal name different to the identification document you uploaded, you will need to submit evidence of your name change too.
-      </div>
-
+      <p>If your legal name is different to the identification document you uploaded, you will need to submit evidence of your name change too.</p>
 
       <form class="form" action="/prototype-3/task-list" method="post">
 
@@ -37,6 +33,9 @@
           <label class="govuk-label" for="file-upload-1">
             Select a file to upload
           </label>
+          <div class="govuk-hint">
+            You can upload your files in PDF, JPG or DOC format. Each file must be no larger than 20MB.
+          </div>
           <a href="upload-degree-2" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
           <span class="govuk-body" style="position:relative;top:7px">passportcopy.jpg</span>
         </div>

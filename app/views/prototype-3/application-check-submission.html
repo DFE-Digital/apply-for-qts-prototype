@@ -12,7 +12,43 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-        <h1 class="govuk-heading-xl">Check your answers</h1>
+        <h1 class="govuk-heading-xl">Check your answers before submitting your application</h1>
+
+        <h2 class="govuk-heading-m">Eligibility</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+            <!-- Country you're recognised as a teacher -->
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Country you're recognised as a teacher
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['country'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href=country-check/question-country>
+                        Change
+                        <span class="govuk-visually-hidden">country you're recognised as a teacher</span>
+                    </a>
+                </dd>
+            </div>
+
+            <!-- Region you're recognised as a teacher -->
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    State/territory you're currently recognised as a teacher
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['region'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a href=country-check/question-country>
+                        Change
+                        <span class="govuk-visually-hidden">region you're recognised as a teacher</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
 
         <h2 class="govuk-heading-m">About you</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -84,7 +120,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
             <!-- Alternate Given names -->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                    Alternate first name
+                    Alternate given name
                 </dt>
                 <dd class="govuk-summary-list__value">
                     {{ data['alternate-first-name'] }}
@@ -92,7 +128,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
                 <dd class="govuk-summary-list__actions">
                     <a href="personal-information/question-current-legal-name">
                         Change
-                        <span class="govuk-visually-hidden">Alternate first name</span>
+                        <span class="govuk-visually-hidden">Alternate given name</span>
                     </a>
                 </dd>
             </div>
@@ -100,7 +136,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
             <!-- Alternate Family name -->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                    Alternate last name
+                    Alternate family name
                 </dt>
                 <dd class="govuk-summary-list__value">
                     {{ data['alternate-last-name'] }}
@@ -108,7 +144,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
                 <dd class="govuk-summary-list__actions">
                     <a href="personal-information/question-current-legal-name">
                         Change
-                        <span class="govuk-visually-hidden">Alternate last name</span>
+                        <span class="govuk-visually-hidden">Alternate family name</span>
                     </a>
                 </dd>
             </div>
@@ -116,7 +152,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
             <!-- Personal ID Documents -->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                    File 1
+                    Identity document
                 </dt>
                 <dd class="govuk-summary-list__value">
                     <a download href="/" class="govuk-link">passportcopy.jpg</a>
@@ -615,6 +651,8 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
         </dl>
 
+        <h3 class="govuk-heading-m">Submitting your application</h3>
+        <p class="govuk-body">By selecting the ‘Submit application button’ you confirm that, to the best of your knowledge, the details you’ve provided are correct.</p>
         <a class="govuk-button" href="application-complete">Submit your application</a>
     </div>
     {% endblock %}
