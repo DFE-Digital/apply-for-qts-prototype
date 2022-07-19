@@ -29,11 +29,11 @@
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">Your qualifications</span>
       <h1 class="govuk-heading-l">Your teaching qualification</h1>
-      <p class="govuk-body-l">This is the qualification that led to you being recognised as a teacher. It might be part of your university degree course, or it could be a separate qualification. You can tell us about additional qualifications later if you want to.</p>
+      <p class="govuk-body">This is the qualification that led to you being recognised as a teacher. It might be part of your university degree course, or it could be a separate qualification.</p>
 
       <form class="form" action="../teacher-training-qualification-documents/upload-teacher-training-qualification" method="post">
 
-        <h2 class="govuk-heading-m">Enter the details of your teacher training qualification</h2>
+        <h2 class="govuk-heading-m">Enter the details of your teaching qualification</h2>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="qualification-title">
@@ -63,13 +63,24 @@
         items: countries
         }) }}
 
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Is this the same as my university degree?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">Some applicants have a university degree qualification that includes their teaching qualification.</p>
+            <p class="govuk-body">Others have a teaching qualification that’s separate from their degree.</p>
+            <p class="govuk-body">If your qualifications are separate, you’ll need to add your university degree in the next section.</p>
+          </div>
+        </details>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h1 class="govuk-fieldset__heading">
-                When did you start your teacher training qualification?
+                When did you start your teaching qualification?
               </h1>
             </legend>
             <div id="start-date-hint" class="govuk-hint">
@@ -100,7 +111,7 @@
           <fieldset class="govuk-fieldset" role="group" aria-describedby="qualification-end-date-date-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h1 class="govuk-fieldset__heading">
-                When did you complete your teacher training qualification?
+                When did you complete your teaching qualification?
               </h1>
             </legend>
             <div id="start-date-hint" class="govuk-hint">
@@ -131,7 +142,7 @@
           <fieldset class="govuk-fieldset" role="group" aria-describedby="qualificationAwardDate-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h1 class="govuk-fieldset__heading">
-                What is the date on your teacher training qualification certificate?
+                What is the date on your teaching qualification certificate?
               </h1>
             </legend>
             <div id="start-date-hint" class="govuk-hint">
