@@ -14,6 +14,10 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/step-by-step-related";
 @import "patterns/task-list";
 @import "patterns/related-items";
+
+// Import Summary card style from https://deploy-preview-2251--govuk-design-system-preview.netlify.app/components/summary-list/#showing-multiple-summary-lists
+@import "patterns/summary-list-card";
+
 @import "patterns/contents-list";
 
 .autocomplete__menu {

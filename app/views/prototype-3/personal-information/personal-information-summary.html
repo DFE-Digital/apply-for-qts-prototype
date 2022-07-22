@@ -14,8 +14,24 @@
 
       <h1 class="govuk-heading-xl">Check your answers</h1>
 
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__card">
+      <div class="govuk-summary-list__card-title-wrapper">
+        <h2 class="govuk-summary-list__card-title">Personal information</h2>
+        <div class="govuk-summary-list__card-actions">
+          <!--            <ul class="govuk-summary-list__card-actions-list">-->
+          <!--              <li class="govuk-summary-list__card-actions-list-item"> <a class="govuk-link" href="#">-->
+          <!--                Delete choice<span class="govuk-visually-hidden"> of University of Bristol</span>-->
+          <!--              </a>-->
+          <!--              </li>-->
+          <!--              <li class="govuk-summary-list__card-actions-list-item"> <a class="govuk-link" href="#">-->
+          <!--                Withdraw<span class="govuk-visually-hidden"> from University of Bristol</span>-->
+          <!--              </a>-->
+          <!--              </li>-->
+          <!--            </ul>-->
+        </div>
+      </div>
+      <div class="govuk-summary-list__card-content">
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
 
         <!-- Given names -->
@@ -116,7 +132,8 @@
         </div>
 
       </dl>
-
+      </div>
+      </div>
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
