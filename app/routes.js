@@ -515,6 +515,18 @@ router.post('/prototype-3/qualifications/undergraduate-degree/degree-details-2',
   }
 })
 
+// Do you have any work history
+router.post('/prototype-3/work-history/work-history-in-education-1', function (req, res) {
+
+  let haveWorkHistory = req.session.data['have-work-history']
+
+  if (haveWorkHistory === 'yes') {
+    res.redirect('/prototype-3/work-history/work-history-in-education-1')
+  } else {
+    res.redirect('/prototype-3/task-list')
+  }
+})
+
 // Add a second work history example
 router.post('/prototype-3/work-history/work-history-in-education-2', function (req, res) {
 
