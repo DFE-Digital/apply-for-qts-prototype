@@ -119,41 +119,10 @@
         {% endif %}
       </dl>
 
-        
-
-
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
       <form action="/prototype-3/task-list" method="post" novalidate>
-
-        {{ govukRadios({
-          idPrefix: "completed-professional-standing",
-          name: "completed-professional-standing",
-          fieldset: {
-            legend: {
-              text: "Have you completed this section?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes, I’ve completed this section"
-            },
-            {
-              value: "no",
-              text: "No, I’ll come back to it later"
-            }
-          ]
-        }) }}
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-
+        <button class="govuk-button" name="completed-professional-standing" value="completed-professional-standing" data-module="govuk-button">
+          Continue
+        </button>
       </form>
 
     </div>

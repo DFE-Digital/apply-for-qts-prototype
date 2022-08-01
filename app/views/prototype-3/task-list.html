@@ -40,28 +40,28 @@ active: false
                   Enter your personal information
                 </a>
               </span>
-              {% if  data['completed-personal-details'] == "yes"  %}
-              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-              {% elseif  data['progress-personal-details'] == "no"  %}
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">In progress</strong>
+              {% if  data['completed-personal-details'] %}
+              <strong class="govuk-tag app-task-list__tag" id="personal-details-status">Completed</strong>
+              {% elseif  data['progress-personal-details'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="personal-details-status">In progress</strong>
               {% else %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="personal-details-status">Not started</strong>
               {% endif %}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="personal-documents/upload-identification" aria-describedby="personal-details">
-                  Upload your identity documents
+                  Upload your identity document
                 </a>
               </span>
               {% if  data['another-identification'] == "No" %}
-              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              <strong class="govuk-tag app-task-list__tag" id="another-identification-status">Completed</strong>
               {% elseif  data['another-identification'] == "Yes" %}
-              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+              <strong class="govuk-tag app-task-list__tag" id="another-identification-status">Completed</strong>
               {% elseif  data['another-identification'] == "progress" %}
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="eligibility-status">In progress</strong>
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="another-identification-status">In progress</strong>
               {% else %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="another-identification-status">Not started</strong>
               {% endif %}
             </li>
           </ul>
