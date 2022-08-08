@@ -83,6 +83,7 @@
           </dd>
         </div>
 
+          {% if  data['current-legal-name'] == "Yes" %}
         <!-- Alternate Given names -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -114,7 +115,7 @@
             </a>
           </dd>
         </div>
-
+          {% endif %}
       </dl>
       </div>
       </div>

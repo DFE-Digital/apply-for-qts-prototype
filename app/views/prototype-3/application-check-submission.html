@@ -145,6 +145,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
                 </dd>
             </div>
 
+            {% if  data['current-legal-name'] == "Yes" %}
             <!-- Alternate Given names -->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -193,6 +194,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
                 </dd>
 
             </div>
+            {% endif %}
         </dl>
             </div>
         </div>
