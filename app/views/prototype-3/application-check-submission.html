@@ -605,10 +605,10 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
             <!-- Subjects -->
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                    Subjects
+                    Subject
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    {{ data['teachable-subjects'] }}
+                    {{ data['teachable-subject-1'] }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a href="who-you-can-teach/subjects">
@@ -617,6 +617,38 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
                     </a>
                 </dd>
             </div>
+                    {% if  data['teachable-subject-2'] %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Subject
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['teachable-subject-2'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="who-you-can-teach/subjects">
+                                Change
+                                <span class="govuk-visually-hidden">subjects</span>
+                            </a>
+                        </dd>
+                    </div>
+                    {% endif %}
+                    {% if  data['teachable-subject-3'] %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Subject
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['teachable-subject-3'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="who-you-can-teach/subjects">
+                                Change
+                                <span class="govuk-visually-hidden">subjects</span>
+                            </a>
+                        </dd>
+                    </div>
+                    {% endif %}
         </dl>
             </div>
         </div>
