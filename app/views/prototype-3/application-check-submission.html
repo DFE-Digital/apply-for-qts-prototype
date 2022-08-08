@@ -28,40 +28,40 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
             <div class="govuk-summary-list__card-content">
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-            <!-- Country you're recognised as a teacher -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Country you're currently recognised as a teacher
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['country'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-<!--                    <a href=country-check/question-country>-->
-<!--                        Change-->
-<!--                        <span class="govuk-visually-hidden">country you're recognised as a teacher</span>-->
-<!--                    </a>-->
-                </dd>
-            </div>
+                    <!-- Country you're recognised as a teacher -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Country you're currently recognised as a teacher
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['country'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <!--                    <a href=country-check/question-country>-->
+                            <!--                        Change-->
+                            <!--                        <span class="govuk-visually-hidden">country you're recognised as a teacher</span>-->
+                            <!--                    </a>-->
+                        </dd>
+                    </div>
 
-            <!-- Region you're recognised as a teacher -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    State/territory you're currently recognised as a teacher
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['region'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-<!--                    <a href=country-check/question-country>-->
-<!--                        Change-->
-<!--                        <span class="govuk-visually-hidden">region you're recognised as a teacher</span>-->
-<!--                    </a>-->
-                </dd>
-            </div>
-        </dl>
+                    <!-- Region you're recognised as a teacher -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            State/territory you're currently recognised as a teacher
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['region'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <!--                    <a href=country-check/question-country>-->
+                            <!--                        Change-->
+                            <!--                        <span class="govuk-visually-hidden">region you're recognised as a teacher</span>-->
+                            <!--                    </a>-->
+                        </dd>
+                    </div>
+                </dl>
             </div>
         </div>
 
@@ -79,121 +79,123 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
             <div class="govuk-summary-list__card-content">
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-            <!-- Given names -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Given names
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['first-name'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="personal-information/name-and-dob">
-                        Change
-                        <span class="govuk-visually-hidden">Given names</span>
-                    </a>
-                </dd>
-            </div>
+                    <!-- Given names -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Given names
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['first-name'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="personal-information/name-and-dob">
+                                Change
+                                <span class="govuk-visually-hidden">Given names</span>
+                            </a>
+                        </dd>
+                    </div>
 
-            <!-- Family name -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Family name
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['last-name'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="personal-information/name-and-dob">
-                        Change
-                        <span class="govuk-visually-hidden">Family name</span>
-                    </a>
-                </dd>
-            </div>
+                    <!-- Family name -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Family name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['last-name'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="personal-information/name-and-dob">
+                                Change
+                                <span class="govuk-visually-hidden">Family name</span>
+                            </a>
+                        </dd>
+                    </div>
 
-            <!-- Date of birth -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Date of birth
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    <span>{{ data['dob-day'] }} </span> / <span>{{ data['dob-month'] }} </span> / <span>{{ data['dob-year'] }}</span>
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="personal-information/name-and-dob">
-                        Change
-                        <span class="govuk-visually-hidden">Date of birth</span>
-                    </a>
-                </dd>
-            </div>
+                    <!-- Date of birth -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Date of birth
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <span>{{ data['dob-day'] }} </span> / <span>{{ data['dob-month'] }} </span> / <span>{{ data['dob-year'] }}</span>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="personal-information/name-and-dob">
+                                Change
+                                <span class="govuk-visually-hidden">Date of birth</span>
+                            </a>
+                        </dd>
+                    </div>
 
-            <!-- Legal name same as identity document? -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Name appears differently on your ID documents or qualifications?
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['current-legal-name'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="personal-information/question-current-legal-name">
-                        Change
-                        <span class="govuk-visually-hidden">Legal name same as identity document</span>
-                    </a>
-                </dd>
-            </div>
+                    <!-- Legal name same as identity document? -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Name appears differently on your ID documents or qualifications?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['current-legal-name'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="personal-information/question-current-legal-name">
+                                Change
+                                <span class="govuk-visually-hidden">Legal name same as identity document</span>
+                            </a>
+                        </dd>
+                    </div>
 
-            <!-- Alternate Given names -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Alternate given name
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['alternate-first-name'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="personal-information/question-current-legal-name">
-                        Change
-                        <span class="govuk-visually-hidden">Alternate given name</span>
-                    </a>
-                </dd>
-            </div>
+                    {% if data['current-legal-name'] == "Yes" %}
+                    <!-- Alternate Given names -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Alternate given name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['alternate-first-name'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="personal-information/question-current-legal-name">
+                                Change
+                                <span class="govuk-visually-hidden">Alternate given name</span>
+                            </a>
+                        </dd>
+                    </div>
 
-            <!-- Alternate Family name -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Alternate family name
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['alternate-last-name'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="personal-information/question-current-legal-name">
-                        Change
-                        <span class="govuk-visually-hidden">Alternate family name</span>
-                    </a>
-                </dd>
-            </div>
+                    <!-- Alternate Family name -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Alternate family name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['alternate-last-name'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="personal-information/question-current-legal-name">
+                                Change
+                                <span class="govuk-visually-hidden">Alternate family name</span>
+                            </a>
+                        </dd>
+                    </div>
 
-            <!-- Personal ID Documents -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Identity document
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    <a download href="/" class="govuk-link">passportcopy.jpg</a>
-                </dd>
+                    <!-- Personal ID Documents -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Identity document
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <a download href="/" class="govuk-link">passportcopy.jpg</a>
+                        </dd>
 
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                        Delete<span class="govuk-visually-hidden"> passportcopy.jpg</span>
-                    </a>
-                </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                                Delete<span class="govuk-visually-hidden"> passportcopy.jpg</span>
+                            </a>
+                        </dd>
 
-            </div>
-        </dl>
+                    </div>
+                    {% endif %}
+                </dl>
             </div>
         </div>
 
@@ -204,8 +206,8 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
                     <ul class="govuk-summary-list__card-actions-list">
                         <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">Delete
                             choice<span class="govuk-visually-hidden"> your teaching qualification</span> </a></li>
-<!--                        <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
-<!--                            Withdraw<span class="govuk-visually-hidden"> your teaching qualification</span> </a></li>-->
+                        <!--                        <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
+                        <!--                            Withdraw<span class="govuk-visually-hidden"> your teaching qualification</span> </a></li>-->
                     </ul>
                 </div>
             </div>
@@ -380,12 +382,12 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-summary-list__card-title-wrapper">
                 <h2 class="govuk-summary-list__card-title">Your university degree</h2>
                 <div class="govuk-summary-list__card-actions">
-                                <ul class="govuk-summary-list__card-actions-list">
-                                  <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">Delete
-                                    choice<span class="govuk-visually-hidden"> your university degree</span> </a></li>
-<!--                                  <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
-<!--                                    Withdraw<span class="govuk-visually-hidden"> your university degree</span> </a></li>-->
-                                </ul>
+                    <ul class="govuk-summary-list__card-actions-list">
+                        <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">Delete
+                            choice<span class="govuk-visually-hidden"> your university degree</span> </a></li>
+                        <!--                                  <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
+                        <!--                                    Withdraw<span class="govuk-visually-hidden"> your university degree</span> </a></li>-->
+                    </ul>
                 </div>
             </div>
             <div class="govuk-summary-list__card-content">
@@ -445,7 +447,8 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
                             Start date
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            <span>{{ data['degreeStartDate-month'] }} </span> / <span>{{ data['degreeStartDate-year'] }}</span>
+                            <span>{{ data['degreeStartDate-month'] }} </span> /
+                            <span>{{ data['degreeStartDate-year'] }}</span>
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a href="qualifications/undergraduate-degree/degree-details">
@@ -461,7 +464,8 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
                             Completion date
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            <span>{{ data['degreeEndDate-month'] }} </span> / <span>{{ data['degreeEndDate-year'] }}</span>
+                            <span>{{ data['degreeEndDate-month'] }} </span> /
+                            <span>{{ data['degreeEndDate-year'] }}</span>
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a href="qualifications/undergraduate-degree/degree-details">
@@ -477,7 +481,8 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
                             Certificate date
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            <span>{{ data['certificateDate-month'] }} </span> / <span>{{ data['certificateDate-year'] }}</span>
+                            <span>{{ data['certificateDate-month'] }} </span> /
+                            <span>{{ data['certificateDate-year'] }}</span>
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a href="qualifications/undergraduate-degree/degree-details">
@@ -567,57 +572,88 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
                 </div>
             </div>
             <div class="govuk-summary-list__card-content">
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                    <!-- Minimum age -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Minimum age
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['age-range-min'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="who-you-can-teach/age-range">
+                                Change
+                                <span class="govuk-visually-hidden">minimum age</span>
+                            </a>
+                        </dd>
+                    </div>
 
-            <!-- Minimum age -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Minimum age
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['age-range-min'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="who-you-can-teach/age-range">
-                        Change
-                        <span class="govuk-visually-hidden">minimum age</span>
-                    </a>
-                </dd>
-            </div>
+                    <!-- Maximum age -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Maximum age
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['age-range-max'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="who-you-can-teach/age-range">
+                                Change
+                                <span class="govuk-visually-hidden">maximum age</span>
+                            </a>
+                        </dd>
+                    </div>
 
-            <!-- Maximum age -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Maximum age
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['age-range-max'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="who-you-can-teach/age-range">
-                        Change
-                        <span class="govuk-visually-hidden">maximum age</span>
-                    </a>
-                </dd>
-            </div>
-
-            <!-- Subjects -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Subjects
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['teachable-subjects'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="who-you-can-teach/subjects">
-                        Change
-                        <span class="govuk-visually-hidden">subjects</span>
-                    </a>
-                </dd>
-            </div>
-        </dl>
+                    <!-- Subjects -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Subject
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['teachable-subject-1'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="who-you-can-teach/subjects">
+                                Change
+                                <span class="govuk-visually-hidden">subjects</span>
+                            </a>
+                        </dd>
+                    </div>
+                    {% if data['teachable-subject-2'] %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Subject
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['teachable-subject-2'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="who-you-can-teach/subjects">
+                                Change
+                                <span class="govuk-visually-hidden">subjects</span>
+                            </a>
+                        </dd>
+                    </div>
+                    {% endif %}
+                    {% if data['teachable-subject-3'] %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Subject
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['teachable-subject-3'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="who-you-can-teach/subjects">
+                                Change
+                                <span class="govuk-visually-hidden">subjects</span>
+                            </a>
+                        </dd>
+                    </div>
+                    {% endif %}
+                </dl>
             </div>
         </div>
 
@@ -625,12 +661,12 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-summary-list__card-title-wrapper">
                 <h2 class="govuk-summary-list__card-title">Your current or most recent role</h2>
                 <div class="govuk-summary-list__card-actions">
-                                <ul class="govuk-summary-list__card-actions-list">
-                                  <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">Delete
-                                    choice<span class="govuk-visually-hidden"> your work history</span> </a></li>
-<!--                                  <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
-<!--                                    Withdraw<span class="govuk-visually-hidden"> your work history</span> </a></li>-->
-                                </ul>
+                    <ul class="govuk-summary-list__card-actions-list">
+                        <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">Delete
+                            choice<span class="govuk-visually-hidden"> your work history</span> </a></li>
+                        <!--                                  <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
+                        <!--                                    Withdraw<span class="govuk-visually-hidden"> your work history</span> </a></li>-->
+                    </ul>
                 </div>
             </div>
             <div class="govuk-summary-list__card-content">
@@ -757,12 +793,12 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-summary-list__card-title-wrapper">
                 <h2 class="govuk-summary-list__card-title">Previous workplace</h2>
                 <div class="govuk-summary-list__card-actions">
-                                <ul class="govuk-summary-list__card-actions-list">
-                                  <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">Delete
-                                    choice<span class="govuk-visually-hidden"> your work history</span> </a></li>
-<!--                                  <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
-<!--                                    Withdraw<span class="govuk-visually-hidden"> your work history</span> </a></li>-->
-                                </ul>
+                    <ul class="govuk-summary-list__card-actions-list">
+                        <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">Delete
+                            choice<span class="govuk-visually-hidden"> your work history</span> </a></li>
+                        <!--                                  <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
+                        <!--                                    Withdraw<span class="govuk-visually-hidden"> your work history</span> </a></li>-->
+                    </ul>
                 </div>
             </div>
             <div class="govuk-summary-list__card-content">
@@ -839,7 +875,8 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
                             Role start date
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            <span>{{ data['start-date-month-2'] }} </span> / <span>{{ data['start-date-year-2'] }}</span>
+                            <span>{{ data['start-date-month-2'] }} </span> /
+                            <span>{{ data['start-date-year-2'] }}</span>
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a href="work-history/work-history-in-education-2">
@@ -883,48 +920,49 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
             <div class="govuk-summary-list__card-content">
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-            <!-- Reference number -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Reference number
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['reference-number'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a href="professional-standing/question-reference-number">
-                        Change
-                        <span class="govuk-visually-hidden">reference number</span>
-                    </a>
-                </dd>
-            </div>
+                    <!-- Reference number -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Reference number
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['reference-number'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="professional-standing/question-reference-number">
+                                Change
+                                <span class="govuk-visually-hidden">reference number</span>
+                            </a>
+                        </dd>
+                    </div>
 
-            <!-- Written statement -->
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Written statement
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    <a download href="/" class="govuk-link">written-statement.pdf</a>
-                </dd>
+                    <!-- Written statement -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Written statement
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <a download href="/" class="govuk-link">written-statement.pdf</a>
+                        </dd>
 
-                <dd class="govuk-summary-list__actions">
+                        <dd class="govuk-summary-list__actions">
 
-                    <a class="govuk-link" href="#">
-                        Delete<span class="govuk-visually-hidden"> file 1</span>
-                    </a>
+                            <a class="govuk-link" href="#">
+                                Delete<span class="govuk-visually-hidden"> file 1</span>
+                            </a>
 
-                </dd>
+                        </dd>
 
-            </div>
-        </dl>
+                    </div>
+                </dl>
             </div>
         </div>
 
         <h3 class="govuk-heading-m">Submitting your application</h3>
-        <p class="govuk-body">By selecting the ‘Submit application button’ you confirm that, to the best of your knowledge, the details you’ve provided are correct.</p>
+        <p class="govuk-body">By selecting the ‘Submit application button’ you confirm that, to the best of your
+            knowledge, the details you’ve provided are correct.</p>
         <a class="govuk-button" href="application-complete">Submit your application</a>
     </div>
     {% endblock %}

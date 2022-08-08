@@ -30,3 +30,20 @@ $govuk-assets-path: '/govuk/assets/';
 .app-task-list__items {
   padding-left: 0;
 }
+
+// Add a break after the "Add another subject button"
+#add-another-subject-button {
+  display: block;
+  width: 145pt;
+  text-decoration: none;
+  &::after {
+    content: "\A";
+    white-space: pre;
+  }
+}
+
+// Hide extra subjects on initial page load
+#teachable-subject-container-2,
+#teachable-subject-container-3 {
+ display: none;
+}
