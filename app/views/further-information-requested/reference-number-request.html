@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Why we need more information</h1>
+
+    <form class="form" action="question-reference-number" method="post">
+
+      <h2 class="govuk-heading-m">We could not verify the reference number using the online checker.</h2>
+
+      <p>We could not verify the reference number you provided with your country or state’s online register of teachers.</p>
+
+      <p>You can re-enter this reference number on the next screen.</p>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
