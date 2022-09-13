@@ -1,0 +1,49 @@
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Before you submit your further information</h1>
+
+      <form class="form" action="upload-name-change-request" method="post">
+
+        <p>The assessor has summarised the additional information that you need to provide.</p>
+
+        <p>It’s important that you add all of the requested information, so that the assessor is able to continue reviewing your QTS application.</p>
+
+        <h2 class="govuk-heading-m">Notes from the assessor</h2>
+
+          {{ govukInsetText({
+            text: "Please can you explain the break in your work history between January 2020 and November 2020."
+          }) }}
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="more-detail">
+            Can you provide more detail?
+          </label>
+          </h1>
+          <div id="more-detail-hint" class="govuk-hint">
+            Do not include personal or financial information, like your National Insurance number or credit card details.
+          </div>
+          <textarea class="govuk-textarea" id="question-1-answer" name="question-1-answer" value: data['question-1-answer'] rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

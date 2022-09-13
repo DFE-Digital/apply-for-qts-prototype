@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Application complete – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-xl">Check your answers before submitting your application</h1>
+
+        <div class="govuk-summary-list__card">
+            <div class="govuk-summary-list__card-title-wrapper">
+                <h2 class="govuk-summary-list__card-title">Assessor's question</h2>
+                <div class="govuk-summary-list__card-actions">
+                    <!--            <ul class="govuk-summary-list__card-actions-list">-->
+                    <!--              <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">Delete-->
+                    <!--                choice<span class="govuk-visually-hidden"> your eligibility</span> </a></li>-->
+                    <!--              <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
+                    <!--                Withdraw<span class="govuk-visually-hidden"> your eligibility</span> </a></li>-->
+                    <!--            </ul>-->
+                </div>
+            </div>
+            <div class="govuk-summary-list__card-content">
+
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                    <!-- Country you're recognised as a teacher -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Please can you explain the break in your work history between January 2020 and November 2020?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            I was travelling across Europe.
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href=assessor-question-1>
+                                Change
+                                <span class="govuk-visually-hidden">answer to Assessor's question</span>
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <div class="govuk-summary-list__card">
+            <div class="govuk-summary-list__card-title-wrapper">
+                <h2 class="govuk-summary-list__card-title">About you</h2>
+                <div class="govuk-summary-list__card-actions">
+                    <!--            <ul class="govuk-summary-list__card-actions-list">-->
+                    <!--              <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">Delete-->
+                    <!--                choice<span class="govuk-visually-hidden"> about you</span> </a></li>-->
+                    <!--              <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
+                    <!--                Withdraw<span class="govuk-visually-hidden"> about you</span> </a></li>-->
+                    <!--            </ul>-->
+                </div>
+            </div>
+            <div class="govuk-summary-list__card-content">
+
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Proof of name change
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            mariage_certificate.pdf
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="upload-name-change-request">
+                                Change
+                                <span class="govuk-visually-hidden">teacher training qualification certificate</span>
+                            </a>
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Identity document
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            passport.pdf
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="upload-identification-request">
+                                Change
+                                <span class="govuk-visually-hidden">teacher training qualification certificate</span>
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <div class="govuk-summary-list__card">
+            <div class="govuk-summary-list__card-title-wrapper">
+                <h2 class="govuk-summary-list__card-title">Proof that you’re recognised as a teacher</h2>
+            </div>
+            <div class="govuk-summary-list__card-content">
+
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                    <!-- Reference number -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Reference number
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['reference-number'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="question-reference-number">
+                                Change
+                                <span class="govuk-visually-hidden">reference number</span>
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <h3 class="govuk-heading-m">Submitting your further information</h3>
+        <p class="govuk-body">By selecting the ‘Submit application button’ you confirm that, to the best of your knowledge, the details you’ve provided are correct.</p>
+        <a class="govuk-button" href="further-information-submission-complete">Submit your application</a>
+    </div>
+    {% endblock %}
