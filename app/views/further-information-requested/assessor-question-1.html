@@ -14,25 +14,22 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Before you submit your further information</h1>
+      <h1 class="govuk-heading-l">Further information required</h1>
+      <h2 class="govuk-heading-m">Reason: The information provided on work history is not sufficient to award QTS.</h2>
 
       <form class="form" action="upload-name-change-request" method="post">
 
-        <p>The assessor has summarised the additional information that you need to provide.</p>
-
-        <p>It’s important that you add all of the requested information, so that the assessor is able to continue reviewing your QTS application.</p>
-
-        <h2 class="govuk-heading-s">Notes from the assessor</h2>
+        <h3 class="govuk-heading-s">Notes from the assessor</h3>
 
           {{ govukInsetText({
             text: "Please can you explain the break in your work history between January 2020 and November 2020."
           }) }}
 
         <div class="govuk-form-group">
-          <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="question-1-answer">
+          <h4 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="question-1-answer">
             Enter your response
           </label>
-          </h3>
+          </h4>
           <div id="more-detail-hint" class="govuk-hint">
             Use the text box below to respond to the assessor’s question.
           </div>
