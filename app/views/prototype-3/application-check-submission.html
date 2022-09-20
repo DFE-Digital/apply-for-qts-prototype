@@ -960,9 +960,38 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
         </div>
 
-        <h3 class="govuk-heading-m">Submitting your application</h3>
-        <p class="govuk-body">By selecting the ‘Submit application button’ you confirm that, to the best of your
-            knowledge, the details you’ve provided are correct.</p>
-        <a class="govuk-button" href="application-complete">Submit your application</a>
+
+        <form action="application-complete" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h4 class="govuk-fieldset__heading">
+                            Employment record sanction and restrictions
+                        </h4>
+                    </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small"
+                         data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input"
+                                   id="sanctions-declaration"
+                                   name="sanctions-declaration" type="checkbox"
+                                   value="sanctions-declaration">
+                            <label class="govuk-label govuk-checkboxes__label"
+                                   for="sanctions-declaration">
+                                Tick the box to confirm that your employment record does not contain any sanctions, restrictions, penalties or instances of misconduct.
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <h5 class="govuk-heading-m">Submitting your application</h5>
+            <p class="govuk-body">By clicking the ‘Submit application button’ you confirm that, to the best of your
+                knowledge, the details you’ve provided are correct.</p>
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Submit your application
+                </button>
+            </div>
+        </form>
     </div>
     {% endblock %}
