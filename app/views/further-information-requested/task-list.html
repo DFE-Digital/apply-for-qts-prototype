@@ -84,6 +84,8 @@ active: false
               </span>
               {% if  data['completed-reference-number'] %}
               <strong class="govuk-tag app-task-list__tag" id="reference-number-status">Completed</strong>
+              {% elseif  data['progress-reference-number'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="reference-number-status">In progress</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="reference-number-status">Not started</strong>
               {% endif %}
