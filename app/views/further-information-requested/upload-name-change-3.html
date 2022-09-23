@@ -39,13 +39,13 @@
 
       </dl>
 
-      <form class="form" action="upload-identification-request" method="post">
+      <form class="form" action="task-list" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
-        idPrefix: "another-identification",
-        name: "another-identification",
+        idPrefix: "identity-document",
+        name: "identity-document",
         fieldset: {
           legend: {
             text: "Do you need to upload another page?",
@@ -67,7 +67,15 @@
         ]
       }) }}
 
-      {{ govukButton({ text: 'Continue' }) }}
+        <div class="govuk-button-group">
+          <button class="govuk-button" name="completed-name-change-document" value="completed-name-change-document">
+            Continue
+          </button>
+          <button formaction="task-list" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="progress-name-change-document" value="progress-name-change-document">
+            Save and come back later
+          </button>
+        </div>
+
     </form>
     </div>
   </div>

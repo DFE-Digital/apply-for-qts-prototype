@@ -25,7 +25,7 @@
           </li>
       </ul>
 
-      <form class="form" action="#" method="post">
+      <form class="form" action="upload-identification-3" method="post">
 
 
         <div class="govuk-form-group">
@@ -35,16 +35,17 @@
           <div class="govuk-hint">
             You can upload your files in PDF, JPG or DOC format. Each file must be no larger than 20MB.
           </div>
-          <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
+          <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="identityDocument" value="passport.jpg">Choose file</a>
           <span class="govuk-body" style="position:relative;top:7px">passport.jpg</span>
         </div>
 
-
         <div class="govuk-button-group">
-          <a class="govuk-button" style="text-decoration: none;" href="upload-identification-3">
+          <button class="govuk-button">
             Continue
-          </a>
-
+          </button>
+          <button formaction="task-list" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="progress-identity-document" value="progress-identity-document">
+            Save and come back later
+          </button>
         </div>
 
       </form>

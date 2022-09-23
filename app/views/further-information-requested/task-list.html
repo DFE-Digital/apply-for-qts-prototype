@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Apply for qualified teacher status (QTS) in England",
+serviceUrl: "start.html",
+navigation: [
+{
+href: "/index.html",
+text: "Sign out",
+active: false
+}
+]
+}) }}
+{% endblock %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Apply for qualified teacher status (QTS)
+      </h1>
+
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+          Further information requested
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="assessor-question-1" aria-describedby="personal-information">
+                  Tell us more about your work history
+                </a>
+              </span>
+              {% if  data['completed-assessor-question-1'] %}
+              <strong class="govuk-tag app-task-list__tag" id="assessor-question-1-status">Completed</strong>
+              {% elseif  data['progress-assessor-question-1'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="assessor-question-1-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="assessor-question-1-status">Not started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="upload-name-change-request" aria-describedby="name-change-status">
+                  Upload evidence of your name change
+                </a>
+              </span>
+              {% if  data['completed-name-change-document'] %}
+              <strong class="govuk-tag app-task-list__tag" id="name-change-status">Completed</strong>
+              {% elseif  data['progress-name-change-document'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="name-change-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="name-change-status">Not started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="upload-identification-request" aria-describedby="assessor-question-1">
+                  Upload your ID document
+                </a>
+              </span>
+              {% if  data['completed-identity-document'] %}
+              <strong class="govuk-tag app-task-list__tag" id="identity-document-status">Completed</strong>
+              {% elseif  data['progress-identity-document'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="identity-document-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="identity-document-status">Not started</strong>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="reference-number-request" aria-describedby="reference-number">
+                Tell us your reference number
+              </a>
+              </span>
+              {% if  data['completed-reference-number'] %}
+              <strong class="govuk-tag app-task-list__tag" id="reference-number-status">Completed</strong>
+              {% elseif  data['progress-reference-number'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="reference-number-status">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="reference-number-status">Not started</strong>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+
+        <div class="govuk-button-group">
+          <a class="govuk-button" href="further-information-check-submission">Check your application</a>
+          <a class="govuk-button govuk-button--secondary" href="/index.html">Save and sign out</a>
+        </div>
+
+      </ol>
+    </div>
+  </div>
+
+{% endblock %}
