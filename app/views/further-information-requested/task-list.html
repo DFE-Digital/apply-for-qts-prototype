@@ -56,7 +56,7 @@ active: false
               </span>
               {% if  data['completed-name-change-document'] %}
               <strong class="govuk-tag app-task-list__tag" id="name-change-status">Completed</strong>
-              {% elseif  data['progressed-name-change-document'] %}
+              {% elseif  data['progress-name-change-document'] %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="name-change-status">In progress</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="name-change-status">Not started</strong>
@@ -70,7 +70,7 @@ active: false
               </span>
               {% if  data['completed-identity-document'] %}
               <strong class="govuk-tag app-task-list__tag" id="identity-document-status">Completed</strong>
-              {% elseif  data['progressed-identity-document'] %}
+              {% elseif  data['progress-identity-document'] %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="identity-document-status">In progress</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="identity-document-status">Not started</strong>
