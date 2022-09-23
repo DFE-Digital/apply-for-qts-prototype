@@ -67,7 +67,15 @@
         ]
       }) }}
 
-      {{ govukButton({ text: 'Continue', name: 'completed-identity-document', value: 'completed-identity-document' }) }}
+        <div class="govuk-button-group">
+          <button class="govuk-button" name="completed-identity-document" value="completed-identity-document">
+            Continue
+          </button>
+          <button formaction="task-list" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="progress-identity-document" value="progress-identity-document">
+            Save and come back later
+          </button>
+        </div>
+
     </form>
     </div>
   </div>

@@ -67,7 +67,15 @@
         ]
       }) }}
 
-      {{ govukButton({ text: 'Continue', name: 'completed-name-change-document', value: 'completed-name-change-document' }) }}
+        <div class="govuk-button-group">
+          <button class="govuk-button" name="completed-name-change-document" value="completed-name-change-document">
+            Continue
+          </button>
+          <button formaction="task-list" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="progress-name-change-document" value="progress-name-change-document">
+            Save and come back later
+          </button>
+        </div>
+
     </form>
     </div>
   </div>
