@@ -468,6 +468,18 @@ router.post("/upload-identification-answer", function (req, res) {
   }
 });
 
+// Create account or sign in
+router.post('/prototype-3/country-check/question-country', function (req, res) {
+
+  let hasAccount = req.session.data['has-account']
+
+  if (hasAccount === 'yes') {
+    res.redirect('/prototype-3/country-check/question-country')
+  } else {
+    res.redirect('/prototype-1/check-eligibility/question-country')
+  }
+})
+
 // Check to see if translation required for Uploading LOPS
 router.post('/prototype-3/professional-standing/upload-lops-english-a', function (req, res) {
 
