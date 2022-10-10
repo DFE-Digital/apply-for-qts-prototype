@@ -122,7 +122,7 @@ router.post("/country-answer", function (req, res) {
 router.post("/region-answer", function (req, res) {
   var region = req.session.data["region"];
   if (REGIONS.includes(region)) {
-    res.redirect("/prototype-1/check-eligibility/question-degree");
+    res.redirect("/prototype-1/check-eligibility/question-formal-training");
   } else {
     res.redirect("/prototype-1/check-eligibility/ineligible-country");
   }
