@@ -4,7 +4,7 @@ const { endsWith } = require("lodash");
 const router = express.Router();
 
 router.post("/degree-answer", function (req, res) {
-  res.redirect("/prototype-1/check-eligibility/question-formal-training");
+  res.redirect("/prototype-1/check-eligibility/question-special-educational-needs");
 });
 
 router.all(
@@ -130,7 +130,7 @@ router.post("/region-answer", function (req, res) {
 
 router.post("/formal-training-answer", function (req, res) {
   res.redirect(
-    "/prototype-1/check-eligibility/question-special-educational-needs"
+    "/prototype-1/check-eligibility/question-degree"
   );
 });
 
