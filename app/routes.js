@@ -130,7 +130,7 @@ router.post("/region-answer", function (req, res) {
 
 router.post("/formal-training-answer", function (req, res) {
   res.redirect(
-    "/prototype-1/check-eligibility/question-special-educational-needs"
+    "/prototype-1/check-eligibility/question-degree"
   );
 });
 
