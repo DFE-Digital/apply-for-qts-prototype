@@ -13,87 +13,131 @@ You might be eligible to apply for QTS – {{ serviceName }} prototype
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">You’re eligible to apply for qualified teacher status (QTS) in England</h1>
-        <p class="govuk-body">Based on the information you’ve given us you may be eligible for QTS.</p>
+        <p class="govuk-body">Based on the information you’ve given us you can apply for QTS.</p>
 
-        <h2 class="govuk-heading-m">You can prepare to apply now</h2>
+        <h2 class="govuk-heading-m">Preparing to apply</h2>
         <p class="govuk-body">
-            If you decide to apply, you'll need to provide a range of evidence. We'll ask you
-            to upload some scans, photos, or original files, so it's useful to get these now.
+            If you decide to apply, you'll need to provide a range of evidence. We'll ask you to upload some scans, photos, or original files.
         </p>
+
+        <div class="govuk-inset-text">
+            You may want to spend some time gathering all the documents you need before you begin your application.
+        </div>
 
         <h2 class="govuk-heading-m">What we’ll ask for</h2>
-
-        <p class="govuk-body">You’ll need to provide the following evidence when you apply.</p>
-
-        <h3 class="govuk-heading-s">1. Proof of identity</h3>
-        <p class="govuk-body">You must provide:</p>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>a passport, national identity card or driving licence that shows your date of birth and nationality. This must be valid and have not expired.</li>
-        </ul>
-        <p class="govuk-body">If the name on your proof of identity is different from that on your other documents, you need to provide evidence of your name change (for example, a divorce certificate or name change deed).</p>
-
-        <h3 class="govuk-heading-s">2. Proof of qualifications</h3>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>your degree certificate from the awarding university or institution</li>
-            <li>an official teacher training certificate from the awarding body (this is not required if your teacher training was completed as part of your degree)</li>
-            <li>a transcript or diploma supplement of the qualification that led you to being a recognised teacher. This should be issued by the awarding body and show all the modules you studied and the marks you got for each. If your teacher training was completed as part of your degree, you should supply your degree transcript.</li>
-        </ul>
-
-        <p class="govuk-body">Note that you must have completed all of your teacher training qualification in {{ data["country"] }}.</p>
-
-        <h3 class="govuk-heading-s">3. Proof that you’re recognised as a teacher</h3>
-
-        <p class="govuk-body">The education department or authority that recognises you has an online register of teachers. You’ll need to provide any reference numbers we need to check that you’re registered.</p>
-
-        <p class="govuk-body">The education department or authority must also confirm in writing:</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-            <li>that your authorisation to teach has never been suspended, barred, cancelled, revoked or restricted, and that you have no sanctions against you.</li>
-        </ul>
-
-        <p class="govuk-body">You’ll need to provide a letter that proves your professional recognition as a teacher, which you can obtain by contacting:</p>
-
-        <p class="govuk-body app-teaching-authority-address">
-            Your authority
-            Building
-            Street
-            County
-            Post code
-            Country
+        <p class="govuk-body">
+            You’ll need to provide the following evidence when you apply.
         </p>
 
-        <p class="govuk-body"><a class="govuk-link" href="#">example@url.com</a></p>
+        <!-- Start of accordion -->
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+            <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          1. Proof of identity
+        </span>
+                    </h2>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                    <p class='govuk-body'>You must provide:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>A passport, national identity card or driving licence that shows your date of birth and nationality. This must be valid and have not expired.</li>
+                    </ul>
+                    <p class="govuk-body">If the name on your proof of identity is different from that on your other documents, you need to provide evidence of your name change (for example, a divorce certificate or name change deed).</p>
+                </div>
+            </div>
+            <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+          2. Proof of qualifications
+        </span>
+                    </h2>
+                </div>
+                <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+                    <p class='govuk-body'>You must provide:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Your certificate from the qualification that led to you being a recognised teacher (this might be your university degree, or a separate qualification).</li>
+                        <li>A transcript (or diploma supplement) for that qualification, issued by the awarding body. If your teaching qualification was part of your university degree, use your degree transcript.</li>
+                    </ul>
+                    <p class="govuk-body">A transcript is a document from the institution where you studied. It lists all the modules or subjects you studied in each year, and the marks or grades you were awarded. Note that you must have completed all of your teaching qualification in {{ data["country"] }}.</p>
+                </div>
+            </div>
+            <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+          3. Proof that you&rsquo;re recognised as a teacher
+        </span>
+                    </h2>
+                </div>
+                <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+                    <p class='govuk-body'>As your education department or authority has an online register of teachers, you’ll need to provide any reference numbers we need to check your record.</p>
 
-        <p class="govuk-body">This must be dated within 3 months of you applying for QTS.</p>
+                    <p class="govuk-body">The education department or authority must also confirm in writing:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>that your authorisation to teach has never been suspended, barred, cancelled, revoked or restricted, and that you have no sanctions against you</li>
+                    </ul>
+                    <p class="govuk-body">You’ll need to provide a Letter of Professional Standing, which you can obtain by contacting:</p>
 
-        <h2 class="govuk-heading-m">Providing certified translations</h2>
+                    <p class="govuk-body">Teachers Registration Board of South Australia (TRBSA)</p>
 
-        <p class="govuk-body">If your documents are not written in English, you must provide certified translations (at your own cost) for your:</p>
+                        <p class="govuk-body app-teaching-authority-address">Level 6,
+                        70 Pirie Street,
+                        Adelaide,
+                        South Australia 5000,
+                            Australia</p>
 
-        <ul class="govuk-list govuk-list--bullet">
-            <li>qualifications</li>
-            <li>transcripts</li>
-            <li>proof that you’re recognised as a teacher.</li>
-        </ul>
-        <p class="govuk-body">You do not need translations for ID or change of name documents.</p>
+                    <p class="govuk-body"><a href="mailto:info@trb.sa.edu.au" class="govuk-link" rel="noreferrer noopener">info@trb.sa.edu.au</a></p>
+                    <p class="govuk-body"><a href="http://www.trb.sa.edu.au" class="govuk-link" rel="noreferrer noopener" target="_blank">https://www.trb.sa.edu.au</a></p>
+                    <p class="govuk-body">This must be dated within 3 months of you applying for QTS.</p>
+                </div>
+            </div>
+            <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+          4. Certified translations
+        </span>
+                    </h2>
+                </div>
+                <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+                    <p class='govuk-body'>If your documents are not written in English, you must provide certified translations (at your own cost) for your:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>qualifications</li>
+                        <li>transcripts</li>
+                        <li>proof that you’re recognised as a teacher</li>
+                    </ul>
+                    <p class="govuk-body">You do not need translations for ID or change of name documents.</p>
 
-        <h3 class="govuk-heading-s">About certified translations</h3>
+                    <h3 class="govuk-heading-s">About certified translations</h3>
+                    <p class="govuk-body">Translations must be carried out by a certified translator, who must state (on the document or a separate certification page) that the translation is a true, accurate and correct rendering of the original.</p>
 
-        <p class="govuk-body">Translations must be carried out by a certified translator, who must state (on the document or a separate certification page) that the translation is a true, accurate and correct rendering of the original.</p>
-
-        <p class="govuk-body">Each one must include the date of the translation as well as the certified translator’s:</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-            <li>signature</li>
-            <li>name and contact details</li>
-            <li>official certification seal/stamp or ID number.</li>
-        </ul>
-
-        <h4 class="govuk-heading-s">Finding a certified translator</h4>
-
-        <p class="govuk-body">We cannot recommend translation providers. You may want to explore translators who are members of the <a href="http://www.iti.org.uk/component/itisearch/?view=translators" class="govuk-link" rel="noreferrer noopener" target="_blank">Institute of Translating and Interpretation (opens in a new tab)</a>. Sometimes a university’s language department can also help.</p>
+                    <p class="govuk-body">Each one must include the date of the translation as well as the certified translator’s:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>signature</li>
+                        <li>name and contact details</li>
+                        <li>official certification seal/stamp or ID number</li>
+                    </ul>
+                    <h3 class="govuk-heading-s">Finding a certified translator</h3>
+                    <p class="govuk-body">We cannot recommend translation providers. You may want to explore translators who are members of the <a href="http://www.iti.org.uk/component/itisearch/?view=translators" rel="noreferrer noopener" target="_blank">Institute of Translating and Interpretation (opens in a new tab)</a>. Sometimes a university’s language department can also help.</p>
+                </div>
+            </div>
+        </div>
 
         <a role="button" draggable="false" data-module="govuk-button" class="govuk-button govuk-button--start" href="/prototype-3/create-account-sign-in">Apply for QTS<svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" focusable="false" aria-hidden="true"><path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" /></svg></a>
+
+        <h4 class="govuk-heading-s govuk-!-margin-top-5">Help us to improve this service</h4>
+
+        <p class="govuk-body">We’re redesigning this service as part of the government’s plan to boost teacher recruitment from overseas, so we’d like to talk to people who want to come to England to teach.</p>
+
+        <p class="govuk-body">Throughout 2022 we’re inviting people to chat on video calls – it’ll take no more than 60 minutes.</p>
+
+        <p class="govuk-body">If you’d like to help, follow the link below. If you match our search criteria, we’ll be in touch.</p>
+
+        <p class="govuk-body"><a href="https://forms.office.com/pages/responsepage.aspx?id=yXfS-grGoU2187O4s0qC-fO-t7cRDD1Fs8CDk5513nBUOUE5QkFCSlg3WDlZT01ZTEZSOFlWVzJEMy4u" class="govuk-link" rel="noreferrer noopener" target="_blank">I’d like to take part</a></p>
+
     </div>
 </div>
 
