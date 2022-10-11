@@ -20,14 +20,13 @@
           name: "Degree",
           fieldset: {
             legend: {
-              text: "Do you have a degree?",
+              text: "Do you have a university degree?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {
-            text: "Your degree can be in any subject.
-            "
+            text: "Your degree could include your teaching qualification, or it could be a degree in another subject."
           },
           items: [
             {
@@ -42,6 +41,13 @@
             }
 
           ]
+        }) }}
+
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+        {{ govukDetails({
+        summaryText: "Why we ask this",
+        text: "Teaching is a graduate-level profession in England, which means you must be able to show that you’ve completed a university degree."
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>

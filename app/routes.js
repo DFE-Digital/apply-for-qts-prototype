@@ -4,7 +4,7 @@ const { endsWith } = require("lodash");
 const router = express.Router();
 
 router.post("/degree-answer", function (req, res) {
-  res.redirect("/prototype-1/check-eligibility/question-formal-training");
+  res.redirect("/prototype-1/check-eligibility/question-special-educational-needs");
 });
 
 router.all(
@@ -122,7 +122,7 @@ router.post("/country-answer", function (req, res) {
 router.post("/region-answer", function (req, res) {
   var region = req.session.data["region"];
   if (REGIONS.includes(region)) {
-    res.redirect("/prototype-1/check-eligibility/question-degree");
+    res.redirect("/prototype-1/check-eligibility/question-formal-training");
   } else {
     res.redirect("/prototype-1/check-eligibility/ineligible-country");
   }
@@ -130,7 +130,7 @@ router.post("/region-answer", function (req, res) {
 
 router.post("/formal-training-answer", function (req, res) {
   res.redirect(
-    "/prototype-1/check-eligibility/question-special-educational-needs"
+    "/prototype-1/check-eligibility/question-degree"
   );
 });
 
@@ -467,6 +467,18 @@ router.post("/upload-identification-answer", function (req, res) {
     res.redirect("/prototype-3/task-list");
   }
 });
+
+// Create account or sign in
+router.post('/prototype-3/country-check/question-country', function (req, res) {
+
+  let hasAccount = req.session.data['has-account']
+
+  if (hasAccount === 'yes') {
+    res.redirect('/prototype-3/country-check/question-country')
+  } else {
+    res.redirect('/prototype-1/check-eligibility/question-country')
+  }
+})
 
 // Check to see if translation required for Uploading LOPS
 router.post('/prototype-3/professional-standing/upload-lops-english-a', function (req, res) {
