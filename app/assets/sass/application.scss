@@ -47,3 +47,8 @@ $govuk-assets-path: '/govuk/assets/';
 #teachable-subject-container-3 {
  display: none;
 }
+
+// Added for the LOPS address on the page 'check-eligibility/eligible-bucket-x'
+.app-teaching-authority-address {
+  white-space: pre-line;
+}
