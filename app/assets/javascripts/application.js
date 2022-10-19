@@ -8,13 +8,3 @@ if (window.console && window.console.info) {
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 })
-
-function addAnotherSubject() {
-  if($('#teachable-subject-container-2').is(':hidden')) {
-    $('#teachable-subject-container-2').show()
-    $('#add-another-subject-button').show()
-  } else if($('#teachable-subject-container-3').is(':hidden')) {
-    $('#teachable-subject-container-3').show()
-    $('#add-another-subject-button').hide()
-  }
-}
