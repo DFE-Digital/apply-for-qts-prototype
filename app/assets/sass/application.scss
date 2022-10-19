@@ -42,12 +42,6 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
-// Hide extra subjects on initial page load
-#teachable-subject-container-2,
-#teachable-subject-container-3 {
- display: none;
-}
-
 // Added for the LOPS address on the page 'check-eligibility/eligible-bucket-x'
 .app-teaching-authority-address {
   white-space: pre-line;
