@@ -106,6 +106,8 @@ active: false
               </span>
               {% if  data['completed-teachable-subjects'] %}
               <strong class="govuk-tag app-task-list__tag" id="teachable-subjects-status">Completed</strong>
+              {% elseif  data['progress-teachable-subjects'] %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="teachable-subjects-status">In progress</strong>
               {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="teachable-subjects-status">Not started</strong>
               {% endif %}
