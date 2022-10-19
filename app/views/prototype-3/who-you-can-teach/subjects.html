@@ -13,36 +13,29 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="../task-list" method="post">
-      <span class="govuk-caption-l">What you can teach</span>
-      <h1 class="govuk-heading-l">What subjects are you qualified to teach?</h1>
-      <div id="teachable-subjects-hint" class="govuk-hint">
-        You can enter up to three
-      </div>
 
-      <div id="teachable-subject-container-1" class="govuk-form-group">
-        <label class="govuk-label" for="teachable-subject-1">
-          Subject
-        </label>
-        <input class="govuk-input" id="teachable-subject-1" name="teachable-subject-1" value="{{ data['teachable-subject-1'] }}" type="text">
-      </div>
 
-      <div id="teachable-subject-container-2" class="govuk-form-group">
-        <label class="govuk-label" for="teachable-subject-2">
-          Subject
-        </label>
-        <input class="govuk-input" id="teachable-subject-2" name="teachable-subject-2" value="{{ data['teachable-subject-2'] }}" type="text">
-        <p class="gov-uk-body"><a href="#" class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-body-s" onclick="$('#teachable-subject-container-2').hide(); $('#add-another-subject-button').show()">Remove</a></p>
-      </div>
+        <div class="govuk-form-group">
+          <span class="govuk-caption-l">What you can teach</span>
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="teachable-subjects">
+            What subjects are you qualified to teach?
+          </label>
+          </h1>
+          <textarea class="govuk-textarea" id="teachable-subjects" name="teachable-subjects" value="{{ data['teachable-subjects'] }}" rows="8" aria-describedby="teachable-subjects-hint"></textarea>
+        </div>
 
-      <div id="teachable-subject-container-3" class="govuk-form-group">
-        <label class="govuk-label" for="teachable-subject-3">
-          Subject
-        </label>
-        <input class="govuk-input" id="teachable-subject-3" name="teachable-subject-3" value="{{ data['teachable-subject-3'] }}" type="text">
-        <p class="gov-uk-body"><a href="#" class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-body-s" onclick="$('#teachable-subject-container-3').hide(); $('#add-another-subject-button').show()">Remove</a></p>
-      </div>
-        <a id="add-another-subject-button" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="add-another-subject" value="add-another-subject" onclick="addAnotherSubject();">Add another subject</a>
-        <button class="govuk-button" data-module="govuk-button" name="completed-teachable-subjects" value="completed-teachable-subjects">Continue</button>
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button" name="completed-teachable-subjects" value="completed-teachable-subjects">
+            Continue
+          </button>
+
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
+                  name="progress-teachable-subjects" value="progress-teachable-subjects"
+                  formaction="/prototype-3/task-list">
+            Save and come back later
+          </button>
+        </div>
+
       </form>
 
     </div>
