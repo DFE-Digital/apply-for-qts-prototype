@@ -134,7 +134,12 @@ router.post("/formal-training-answer", function (req, res) {
   );
 });
 
+
 router.post("/special-educational-needs-answer", function (req, res) {
+  res.redirect("/prototype-1/check-eligibility/question-work-experience");
+});
+
+router.post("/work-experience-answer", function (req, res) {
   res.redirect("/prototype-1/check-eligibility/question-misconduct");
 });
 
