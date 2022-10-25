@@ -272,8 +272,8 @@ router.post("/english-proficiency-tested-answer", function (req, res) {
 
   // Check whether the variable matches none
   if (englishProficiencyTested == "no") {
-    // Send user to English proficiency tested
-    res.redirect("/prototype-1/check-eligibility/question-work-experience");
+    // Send user to Ineligible page as no proof of English proficiency
+    res.redirect("/prototype-1/check-eligibility/ineligible");
   } else {
     // Send user to work experience
     res.redirect("/prototype-1/check-eligibility/question-work-experience");
