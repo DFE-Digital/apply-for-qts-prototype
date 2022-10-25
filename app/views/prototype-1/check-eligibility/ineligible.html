@@ -35,6 +35,10 @@
           <li>You do not have sufficient evidence of English language proficiency.</li>
         {% endif %}
 
+        {% if data['work-experience'] == 'less-than-1-year' %}
+          <li>You have 1 year of professional teaching experience or less.</li>
+        {% endif %}
+
         {% if data['special-educational-needs'] != 'Yes' %}
           <li>You are not qualified to teach children who are aged somewhere between 5 and 16 years.</li>
         {% endif %}
