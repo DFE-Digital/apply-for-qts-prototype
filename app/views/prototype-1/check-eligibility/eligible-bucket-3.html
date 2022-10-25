@@ -65,49 +65,71 @@ You might be eligible to apply for QTS – {{ serviceName }} prototype
                 </div>
             </div>
 
+            <!-- English language -->
 
-            <!-- Work History -->
-            <!-- Version shown to applicants with more than 1 year, but less than 2 years -->
-
-            between-1-and-2-years
-
+            <!-- Version shown if the applicant is not a national/citizen of any of the countries on the list, but DID study in English. -->
+            {% if (data['english-proficiency-exempt-countries'] == 'none') and (data['english-proficiency-degree'] == 'yes') %}
             <div class="govuk-accordion__section ">
                 <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-          3. Proof of your work history
-        </span>
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                            Proof of English language ability
+                        </span>
+                    </h2>
+                </div>
+                <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+                    <p class='govuk-body'>You’ll need to provide the ‘Method of instruction’ (MOI) from your degree qualification. You can get this by contacting the institution where you studied.</p>
+                    <p class='govuk-body'>The MOI shows us which language was used as the primary means of teaching on that qualification. To teach in England, that primary language must be English.</p>
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Version shown if the applicant is not a national/citizen of any of the countries and DID NOT study in English. -->
+            {% if (data['english-proficiency-exempt-countries'] == 'none') and (data['english-proficiency-degree'] == 'no') %}
+            <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                            Proof of English language ability
+                        </span>
+                    </h2>
+                </div>
+                <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+                    <p class='govuk-body'>You’ll need to provide the ‘Method of instruction’ (MOI) from your degree qualification. You can get this by contacting the institution where you studied.</p>
+                    <p class='govuk-body'>The MOI shows us which language was used as the primary means of teaching on that qualification. To teach in England, that primary language must be English.</p>
+                </div>
+            </div>
+            {% endif %}
+
+
+            <!-- Work History -->
+            <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                            Proof of your work history
+                        </span>
                     </h2>
                 </div>
                 <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+                    <!-- Version shown to applicants with more than 1 year, but less than 2 years -->
+                    {% if data['work-experience'] == 'between-1-and-2-years' %}
+                        <p class='govuk-body'>You’ll need to show you’ve spent more than 1 year working professionally as a teacher (not including any time spent teaching as part of your teaching qualification).</p>
 
-                    <p class='govuk-body'>You’ll need to show you’ve spent more than 1 year working professionally as a teacher (not including any time spent teaching as part of your teaching qualification).</p>
+                        <p class='govuk-body'>This experience can be from teaching any subject in any type of mainstream school (for example, international schools, schools teaching the International Baccalaureate and state or private schools) or from alternative schools or settings equivalent to English PRUs (Pupil Referral Units), alternative provision academies, or alternative provision free schools, or settings for children with special education needs or disabilities (SEND).</p>
 
-                    <p class='govuk-body'>This experience can be from teaching any subject in any type of mainstream school (for example, international schools, schools teaching the International Baccalaureate and state or private schools) or from alternative schools or settings equivalent to English PRUs (Pupil Referral Units), alternative provision academies, or alternative provision free schools, or settings for children with special education needs or disabilities (SEND).</p>
+                        <p class='govuk-body'>You’ll need to provide the name and email address of a contact who we can ask to confirm that your professional work experience:</p>
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>was in a full-time role where your main function was as a teacher (rather than other responsibilities in school)</li>
+                            <li>was gained working with children aged 5-16 (although we can accept experience with children aged 3-4 or 17-19 if the educational setting also included children aged 5-16)</li>
+                            <li>involved being responsible for a minimum of 4 children</li>
+                        </ul>
+                        <p class='govuk-body'>If you’re awarded QTS, as a teacher with more than 1 year of professional experience, but less than 2 years, you’ll need to complete a 2-year ‘statutory induction’ period as a newly qualified teacher.</p>
 
-                    <p class='govuk-body'>You’ll need to provide the name and email address of a contact who we can ask to confirm that your professional work experience:</p>
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>was in a full-time role where your main function was as a teacher (rather than other responsibilities in school)</li>
-                        <li>was gained working with children aged 5-16 (although we can accept experience with children aged 3-4 or 17-19 if the educational setting also included children aged 5-16)</li>
-                        <li>involved being responsible for a minimum of 4 children</li>
-                    </ul>
-                    <p class='govuk-body'>If you’re awarded QTS, as a teacher with more than 1 year of professional experience, but less than 2 years, you’ll need to complete a 2-year ‘statutory induction’ period as a newly qualified teacher.</p>
-
-                    <p class='govuk-body'>Learn more about <a href="https://www.gov.uk/government/publications/induction-for-early-career-teachers-england">statutory induction periods for newly qualified teachers.</a></p>
-
-
-
-
-
-
-
-
-
-
+                        <p class='govuk-body'>Learn more about <a href="https://www.gov.uk/government/publications/induction-for-early-career-teachers-england">statutory induction periods for newly qualified teachers.</a></p>
+                    {% endif %}
                 </div>
             </div>
-
-
 
             <div class="govuk-accordion__section ">
                 <div class="govuk-accordion__section-header">
