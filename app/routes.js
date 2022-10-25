@@ -462,20 +462,18 @@ router.post("/upload-lops-answer", function (req, res) {
   }
 });
 
-// Run this code when a form is submitted to 'create-account-sign-in'
-router.post("/create-account-sign-in-answer", function (req, res) {
-  // Make a variable and give it the value from 'createAccountSignInAnswer'
-  var createAccountSignInAnswer = req.session.data["create-account-sign-in"];
 
-  // Check whether the variable matches a condition
-  if (createAccountSignInAnswer == "No") {
-    // Send user to next page
-    res.redirect("/prototype-3/create-an-account");
+// Create account or sign in
+router.post('/create-account-sign-in-answer', function (req, res) {
+
+  let hasAccount = req.session.data['has-account']
+
+  if (hasAccount === 'yes') {
+    res.redirect('/prototype-3/country-check/question-country')
   } else {
-    // Send user to ineligible page
-    res.redirect("/prototype-3/country-check/question-country");
+    res.redirect('/prototype-1/check-eligibility/question-formal-training')
   }
-});
+})
 
 // Run this code when a form is submitted to 'upload-ttq-answer'
 router.post("/upload-ttq-answer", function (req, res) {
@@ -519,18 +517,6 @@ router.post("/upload-identification-answer", function (req, res) {
     res.redirect("/prototype-3/task-list");
   }
 });
-
-// Create account or sign in
-router.post('/prototype-3/country-check/question-country', function (req, res) {
-
-  let hasAccount = req.session.data['has-account']
-
-  if (hasAccount === 'yes') {
-    res.redirect('/prototype-3/country-check/question-country')
-  } else {
-    res.redirect('/prototype-1/check-eligibility/question-country')
-  }
-})
 
 // Check to see if translation required for Uploading LOPS
 router.post('/prototype-3/professional-standing/upload-lops-english-a', function (req, res) {
