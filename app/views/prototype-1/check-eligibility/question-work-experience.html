@@ -14,8 +14,8 @@
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "workExperience",
-          name: "workExperience",
+          idPrefix: "work-experience",
+          name: "work-experience",
           fieldset: {
             legend: {
               text: "How long have you spent working professionally as a teacher?",
@@ -30,17 +30,17 @@
             {
               value: "less-than-1-year",
               text: "Less than 1 year",
-              checked: checked("workExperience", "Less than 1 year")
+              checked: checked("work-experience", "Less than 1 year")
             },
             {
               value: "between-1-and-2-years",
               text: "1 year or more, but under 2 years",
-              checked: checked("workExperience", "1 year or more, but under 2 years")
+              checked: checked("work-experience", "1 year or more, but under 2 years")
             },
             {
               value: "more-than-2-years",
               text: "2 years or more",
-              checked: checked("workExperience", "2 years or more")
+              checked: checked("work-experience", "2 years or more")
             }
 
           ]
