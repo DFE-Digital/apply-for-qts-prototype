@@ -1,0 +1,65 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+  Work experience – {{ serviceName }} prototype
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/work-experience-answer" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "work-experience",
+          name: "work-experience",
+          fieldset: {
+            legend: {
+              text: "How long have you spent working professionally as a teacher?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Do not include any time spent working as a teacher while you were still completing your teaching qualification."
+          },
+          items: [
+            {
+              value: "less-than-1-year",
+              text: "Less than 1 year",
+              checked: checked("work-experience", "Less than 1 year")
+            },
+            {
+              value: "between-1-and-2-years",
+              text: "1 year or more, but under 2 years",
+              checked: checked("work-experience", "1 year or more, but under 2 years")
+            },
+            {
+              value: "more-than-2-years",
+              text: "2 years or more",
+              checked: checked("work-experience", "2 years or more")
+            }
+
+          ]
+        }) }}
+
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+        {{ govukDetails({
+        summaryText: "Why we ask this",
+        html: "<p>To teach in England, you must have at least 1 year of professional teaching experience that took place after completing your teaching qualification.</p>
+        <p>If you have more than 1 year, but less than 2 years of teaching experience, you may still be awarded QTS, but you’ll need to complete a 2-year ‘statutory induction’ period as a newly qualified teacher.</p>
+        <p>You’ll need to provide a contact name and email address so that we can verify your work history.</p>"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

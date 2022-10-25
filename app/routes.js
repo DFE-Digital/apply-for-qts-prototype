@@ -112,7 +112,7 @@ router.post("/country-answer", function (req, res) {
     if (region_countries_arr[country]) {
       res.redirect(region_countries_arr[country]);
     } else {
-      res.redirect("/prototype-1/check-eligibility/question-degree");
+      res.redirect("/prototype-1/check-eligibility/question-english-proficiency-exempt");
     }
   } else {
     res.redirect("/prototype-1/check-eligibility/ineligible-country");
@@ -122,7 +122,7 @@ router.post("/country-answer", function (req, res) {
 router.post("/region-answer", function (req, res) {
   var region = req.session.data["region"];
   if (REGIONS.includes(region)) {
-    res.redirect("/prototype-1/check-eligibility/question-formal-training");
+    res.redirect("/prototype-1/check-eligibility/question-english-proficiency-exempt");
   } else {
     res.redirect("/prototype-1/check-eligibility/ineligible-country");
   }
@@ -134,9 +134,26 @@ router.post("/formal-training-answer", function (req, res) {
   );
 });
 
+
 router.post("/special-educational-needs-answer", function (req, res) {
-  res.redirect("/prototype-1/check-eligibility/question-misconduct");
+  res.redirect("/prototype-1/check-eligibility/question-country");
 });
+
+// Run this code when a form is submitted to 'work-experience-answer'
+router.post("/work-experience-answer", function (req, res) {
+  // Make a variable and give it the value from the work experience question
+  var workExperience = req.session.data["work-experience"];
+
+  // Check whether the variable matches less than 1 year
+  if (workExperience == "less-than-1-year") {
+    // Send user to Ineligible page
+    res.redirect("/prototype-1/check-eligibility/ineligible");
+  } else {
+    // Send user to misconduct question
+    res.redirect("/prototype-1/check-eligibility/question-misconduct");
+  }
+});
+
 
 // Run this code when a form is submitted to 'completed-year-answer'
 router.post("/completed-year-answer", function (req, res) {
@@ -160,12 +177,14 @@ router.post("/misconduct-answer", function (req, res) {
   var formalTraining = req.session.data["formal-training"];
   var specialeducationalNeeds = req.session.data["special-educational-needs"];
   var haveMisconduct = req.session.data["misconduct"];
+  var workExperience = req.session.data["work-experience"];
 
   if (
     haveDegree == "Yes" &&
     formalTraining == "Yes" &&
     specialeducationalNeeds == "Yes" &&
-    haveMisconduct == "No"
+    haveMisconduct == "No" &&
+    workExperience != "less-than-1-year"
   ) {
     if (BUCKET_1_REGIONS.includes(region) || BUCKET_1_COUNTRIES.includes(country)) {
       res.redirect("/prototype-1/check-eligibility/eligible-bucket-1");
@@ -214,6 +233,53 @@ router.post("/country-trained-answer", function (req, res) {
     res.redirect("/prototype-1/get-prepared/question-degree-english");
   }
 });
+
+// English proficiency
+// Run this code when a form is submitted to 'Country Trained in'
+router.post("/english-proficiency-exempt-answer", function (req, res) {
+  // Make a variable and give it the value from 'degree'
+  var englishProficiencyExemptCountries = req.session.data["english-proficiency-exempt-countries"];
+
+  // Check whether the variable matches none
+  if (englishProficiencyExemptCountries == "none") {
+    // Send user to degree in english
+    res.redirect("/prototype-1/check-eligibility/question-english-proficiency-degree");
+  } else {
+    // Send user to work experience
+    res.redirect("/prototype-1/check-eligibility/question-work-experience");
+  }
+});
+
+// Run this code when a form is submitted to 'Degree completed in English'
+router.post("/english-proficiency-degree-answer", function (req, res) {
+  // Make a variable and give it the value from 'degree'
+  var englishProficiencyDegree = req.session.data["english-proficiency-degree"];
+
+  // Check whether the variable matches none
+  if (englishProficiencyDegree == "no") {
+    // Send user to English proficiency tested
+    res.redirect("/prototype-1/check-eligibility/question-english-proficiency-tested");
+  } else {
+    // Send user to work experience
+    res.redirect("/prototype-1/check-eligibility/question-work-experience");
+  }
+});
+
+// Run this code when a form is submitted to 'English proficiency test'
+router.post("/english-proficiency-tested-answer", function (req, res) {
+  // Make a variable and give it the value from 'proficiency test'
+  var englishProficiencyTested = req.session.data["english-proficiency-tested"];
+
+  // Check whether the variable matches none
+  if (englishProficiencyTested == "no") {
+    // Send user to Ineligible page as no proof of English proficiency
+    res.redirect("/prototype-1/check-eligibility/ineligible");
+  } else {
+    // Send user to work experience
+    res.redirect("/prototype-1/check-eligibility/question-work-experience");
+  }
+});
+
 
 // Run this code when a form is submitted to 'Degree in STEM'
 router.post("/stem-answer", function (req, res) {
@@ -410,20 +476,18 @@ router.post("/upload-lops-answer", function (req, res) {
   }
 });
 
-// Run this code when a form is submitted to 'create-account-sign-in'
-router.post("/create-account-sign-in-answer", function (req, res) {
-  // Make a variable and give it the value from 'createAccountSignInAnswer'
-  var createAccountSignInAnswer = req.session.data["create-account-sign-in"];
 
-  // Check whether the variable matches a condition
-  if (createAccountSignInAnswer == "No") {
-    // Send user to next page
-    res.redirect("/prototype-3/create-an-account");
+// Create account or sign in
+router.post('/create-account-sign-in-answer', function (req, res) {
+
+  let hasAccount = req.session.data['has-account']
+
+  if (hasAccount === 'yes') {
+    res.redirect('/prototype-3/country-check/question-country')
   } else {
-    // Send user to ineligible page
-    res.redirect("/prototype-3/country-check/question-country");
+    res.redirect('/prototype-1/check-eligibility/question-formal-training')
   }
-});
+})
 
 // Run this code when a form is submitted to 'upload-ttq-answer'
 router.post("/upload-ttq-answer", function (req, res) {
@@ -467,18 +531,6 @@ router.post("/upload-identification-answer", function (req, res) {
     res.redirect("/prototype-3/task-list");
   }
 });
-
-// Create account or sign in
-router.post('/prototype-3/country-check/question-country', function (req, res) {
-
-  let hasAccount = req.session.data['has-account']
-
-  if (hasAccount === 'yes') {
-    res.redirect('/prototype-3/country-check/question-country')
-  } else {
-    res.redirect('/prototype-1/check-eligibility/question-country')
-  }
-})
 
 // Check to see if translation required for Uploading LOPS
 router.post('/prototype-3/professional-standing/upload-lops-english-a', function (req, res) {
