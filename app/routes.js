@@ -177,12 +177,14 @@ router.post("/misconduct-answer", function (req, res) {
   var formalTraining = req.session.data["formal-training"];
   var specialeducationalNeeds = req.session.data["special-educational-needs"];
   var haveMisconduct = req.session.data["misconduct"];
+  var workExperience = req.session.data["work-experience"];
 
   if (
     haveDegree == "Yes" &&
     formalTraining == "Yes" &&
     specialeducationalNeeds == "Yes" &&
-    haveMisconduct == "No"
+    haveMisconduct == "No" &&
+    workExperience != "less-than-1-year"
   ) {
     if (BUCKET_1_REGIONS.includes(region) || BUCKET_1_COUNTRIES.includes(country)) {
       res.redirect("/prototype-1/check-eligibility/eligible-bucket-1");
