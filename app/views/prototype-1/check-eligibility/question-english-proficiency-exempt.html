@@ -1,0 +1,123 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+  Are you a national? – {{ serviceName }} prototype
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/english-proficiency-exempt-answer" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+        name: "english-proficiency-exempt-countries",
+        fieldset: {
+        legend: {
+        text: "Are you a national (including holding citizenship) of any of these countries?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+        }
+        },
+        items: [
+        {
+        value: "antigua-and-barbuda",
+        text: "Antigua and Barbuda"
+        },
+        {
+        value: "australia",
+        text: "Australia"
+        },
+        {
+        value: "the-bahamas",
+        text: "The Bahamas"
+        },
+        {
+        value: "barbados",
+        text: "Barbados"
+        },
+        {
+        value: "belize",
+        text: "Belize"
+        },
+        {
+        value: "canada",
+        text: "Canada"
+        },
+        {
+        value: "dominica",
+        text: "Dominica"
+        },
+        {
+        value: "grenada",
+        text: "Grenada"
+        },
+        {
+        value: "guyana",
+        text: "Guyana"
+        },
+        {
+        value: "jamaica",
+        text: "Jamaica"
+        },
+        {
+        value: "ireland",
+        text: "Ireland (for citizenship only)"
+        },
+        {
+        value: "malta",
+        text: "Malta"
+        },
+        {
+        value: "new-zealand",
+        text: "New Zealand"
+        },
+        {
+        value: "st-kitts-and-nevis",
+        text: "St Kitts and Nevis"
+        },
+        {
+        value: "st-lucia",
+        text: "St Lucia"
+        },
+        {
+        value: "st-vincent-and-the-grenadines",
+        text: "St Vincent and the Grenadines"
+        },
+        {
+        value: "trinidad-and-tobago",
+        text: "Trinidad and Tobago"
+        },
+        {
+        value: "usa",
+        text: "USA"
+        },
+        {
+        divider: "or"
+        },
+        {
+        value: "none",
+        text: "None of these",
+        checked: true,
+        behaviour: "exclusive"
+        }
+        ]
+        }) }}
+
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+        {{ govukDetails({
+        summaryText: "Help with nationality",
+        html: "<p>Applicants with any of the nationalities on this list (including holding citizenship) are exempt from taking an english language test as part of their QTS application.</p>
+        <p>You’ll need to show evidence by uploading a copy of your passport.</p>
+        <p>If you hold a second nationality that does not appear on this list (and you apply for QTS using that nationality) you’ll need to already hold or take an approved english language test.</p>"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
