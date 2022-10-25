@@ -265,9 +265,9 @@ router.post("/english-proficiency-degree-answer", function (req, res) {
   }
 });
 
-// Run this code when a form is submitted to 'Degree completed in English'
+// Run this code when a form is submitted to 'English proficiency test'
 router.post("/english-proficiency-tested-answer", function (req, res) {
-  // Make a variable and give it the value from 'degree'
+  // Make a variable and give it the value from 'proficiency test'
   var englishProficiencyTested = req.session.data["english-proficiency-tested"];
 
   // Check whether the variable matches none
