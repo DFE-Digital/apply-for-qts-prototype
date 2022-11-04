@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sign in – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="email-magic-link" method="post">
+
+        <h1 class="govuk-heading-l">
+          Apply for qualified teacher status (QTS) in England
+        </h1>
+        <h2 class="govuk-heading-m">
+          Sign in
+        </h2>
+
+        <div class="govuk-form-group">
+          <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="sign-in">
+            Email address
+          </label>
+          </h3>
+          <div id="sign-in-hint" class="govuk-hint">
+            Enter the email address you used to register, and we'll send you a link to sign in.
+          </div>
+          <input class="govuk-input" id="sign-in" name="sign-in" type="text" aria-describedby="sign-in-hint">
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+    </div>
+  </div>
+
+{% endblock %}
