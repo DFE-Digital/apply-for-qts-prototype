@@ -4,7 +4,9 @@ const { endsWith } = require("lodash");
 const router = express.Router();
 
 router.post("/degree-answer", function (req, res) {
-  res.redirect("/prototype-1/check-eligibility/question-special-educational-needs");
+  res.redirect(
+    "/prototype-1/check-eligibility/question-special-educational-needs"
+  );
 });
 
 router.all(
@@ -25,9 +27,9 @@ router.all(
   }
 );
 
-const BUCKET_1_COUNTRIES = ["South Africa"]
-const BUCKET_2_COUNTRIES = ["Poland"]
-const BUCKET_3_COUNTRIES = []
+const BUCKET_1_COUNTRIES = ["South Africa"];
+const BUCKET_2_COUNTRIES = ["Poland"];
+const BUCKET_3_COUNTRIES = [];
 const BUCKET_4_COUNTRIES = [
   "Hong Kong",
   "Spain",
@@ -43,11 +45,17 @@ const BUCKET_4_COUNTRIES = [
   "Denmark",
   "Czech Republic",
   "Austria",
-]
-const BUCKET_6_COUNTRIES = ["India", "Luxembourg", "Liechtenstein", "Cyprus", "Ukraine"];
+];
+const BUCKET_6_COUNTRIES = [
+  "India",
+  "Luxembourg",
+  "Liechtenstein",
+  "Cyprus",
+  "Ukraine",
+];
 
-const BUCKET_1_REGIONS = ["Florida"]
-const BUCKET_2_REGIONS = ["North Rhine-Westphalia"]
+const BUCKET_1_REGIONS = ["Florida"];
+const BUCKET_2_REGIONS = ["North Rhine-Westphalia"];
 const BUCKET_3_REGIONS = [
   "Kansas",
   "Minnesota",
@@ -85,14 +93,12 @@ const REGION_COUNTRIES = [
   "Germany",
 ];
 
-const REGIONS = BUCKET_1_REGIONS
-  .concat(BUCKET_2_REGIONS)
+const REGIONS = BUCKET_1_REGIONS.concat(BUCKET_2_REGIONS)
   .concat(BUCKET_3_REGIONS)
   .concat(BUCKET_4_REGIONS)
   .concat(BUCKET_6_REGIONS);
 
-const COUNTRIES = BUCKET_1_COUNTRIES
-  .concat(BUCKET_2_COUNTRIES)
+const COUNTRIES = BUCKET_1_COUNTRIES.concat(BUCKET_2_COUNTRIES)
   .concat(BUCKET_3_COUNTRIES)
   .concat(BUCKET_4_COUNTRIES)
   .concat(BUCKET_6_COUNTRIES)
@@ -131,11 +137,8 @@ router.post("/region-answer", function (req, res) {
 });
 
 router.post("/formal-training-answer", function (req, res) {
-  res.redirect(
-    "/prototype-1/check-eligibility/question-degree"
-  );
+  res.redirect("/prototype-1/check-eligibility/question-degree");
 });
-
 
 router.post("/special-educational-needs-answer", function (req, res) {
   res.redirect("/prototype-1/check-eligibility/question-country");
@@ -155,7 +158,6 @@ router.post("/work-experience-answer", function (req, res) {
     res.redirect("/prototype-1/check-eligibility/question-misconduct");
   }
 });
-
 
 // Run this code when a form is submitted to 'completed-year-answer'
 router.post("/completed-year-answer", function (req, res) {
@@ -188,15 +190,30 @@ router.post("/misconduct-answer", function (req, res) {
     haveMisconduct == "No" &&
     workExperience != "less-than-1-year"
   ) {
-    if (BUCKET_1_REGIONS.includes(region) || BUCKET_1_COUNTRIES.includes(country)) {
+    if (
+      BUCKET_1_REGIONS.includes(region) ||
+      BUCKET_1_COUNTRIES.includes(country)
+    ) {
       res.redirect("/prototype-1/check-eligibility/eligible-bucket-1");
-    } else if (BUCKET_2_REGIONS.includes(region) || BUCKET_2_COUNTRIES.includes(country)) {
+    } else if (
+      BUCKET_2_REGIONS.includes(region) ||
+      BUCKET_2_COUNTRIES.includes(country)
+    ) {
       res.redirect("/prototype-1/check-eligibility/eligible-bucket-2");
-    } else if (BUCKET_3_REGIONS.includes(region) || BUCKET_3_COUNTRIES.includes(country)) {
+    } else if (
+      BUCKET_3_REGIONS.includes(region) ||
+      BUCKET_3_COUNTRIES.includes(country)
+    ) {
       res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
-    } else if (BUCKET_4_REGIONS.includes(region) || BUCKET_4_COUNTRIES.includes(country)) {
+    } else if (
+      BUCKET_4_REGIONS.includes(region) ||
+      BUCKET_4_COUNTRIES.includes(country)
+    ) {
       res.redirect("/prototype-1/check-eligibility/eligible-bucket-4");
-    } else if (BUCKET_6_REGIONS.includes(region) || BUCKET_6_COUNTRIES.includes(country)) {
+    } else if (
+      BUCKET_6_REGIONS.includes(region) ||
+      BUCKET_6_COUNTRIES.includes(country)
+    ) {
       res.redirect("/prototype-1/check-eligibility/eligible-bucket-6");
     } else {
       res.redirect("/prototype-1/check-eligibility/eligible");
@@ -431,18 +448,16 @@ router.post("/upload-lops-answer", function (req, res) {
   }
 });
 
-
 // Create account or sign in
-router.post('/create-account-sign-in-answer', function (req, res) {
+router.post("/create-account-sign-in-answer", function (req, res) {
+  let hasAccount = req.session.data["has-account"];
 
-  let hasAccount = req.session.data['has-account']
-
-  if (hasAccount === 'yes') {
-    res.redirect('/prototype-3/country-check/question-country')
+  if (hasAccount === "yes") {
+    res.redirect("/prototype-3/country-check/question-country");
   } else {
-    res.redirect('/prototype-1/check-eligibility/question-formal-training')
+    res.redirect("/prototype-1/check-eligibility/question-formal-training");
   }
-})
+});
 
 // Run this code when a form is submitted to 'upload-ttq-answer'
 router.post("/upload-ttq-answer", function (req, res) {
@@ -488,74 +503,100 @@ router.post("/upload-identification-answer", function (req, res) {
 });
 
 // Check to see if translation required for Uploading LOPS
-router.post('/prototype-3/professional-standing/upload-lops-english-a', function (req, res) {
+router.post(
+  "/prototype-3/professional-standing/upload-lops-english-a",
+  function (req, res) {
+    let writtenInEnglish = req.session.data["written-in-english"];
 
-  let writtenInEnglish = req.session.data['written-in-english']
-
-  if (writtenInEnglish === 'yes') {
-    res.redirect('/prototype-3/professional-standing/upload-lops-english-a')
-  } else {
-    res.redirect('/prototype-3/professional-standing/upload-lops-non-english-a')
+    if (writtenInEnglish === "yes") {
+      res.redirect("/prototype-3/professional-standing/upload-lops-english-a");
+    } else {
+      res.redirect(
+        "/prototype-3/professional-standing/upload-lops-non-english-a"
+      );
+    }
   }
-})
+);
 
 // Do you need to add another qualification
-router.post('/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another', function (req, res) {
+router.post(
+  "/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another",
+  function (req, res) {
+    let wasTeacherTrainingADegree =
+      req.session.data["was-teacher-training-a-degree"];
 
-  let wasTeacherTrainingADegree = req.session.data['was-teacher-training-a-degree']
-
-  if (wasTeacherTrainingADegree === 'no') {
-    res.redirect('/prototype-3/qualifications/undergraduate-degree/degree-details')
-  } else {
-    res.redirect('/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another')
+    if (wasTeacherTrainingADegree === "no") {
+      res.redirect(
+        "/prototype-3/qualifications/undergraduate-degree/degree-details"
+      );
+    } else {
+      res.redirect(
+        "/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another"
+      );
+    }
   }
-})
+);
 
 // Would you like to add another qualification
-router.post('/prototype-3/qualifications/undergraduate-degree/degree-details', function (req, res) {
-  let addAnotherQualification = req.session.data['add-another-qualification']
+router.post(
+  "/prototype-3/qualifications/undergraduate-degree/degree-details",
+  function (req, res) {
+    let addAnotherQualification = req.session.data["add-another-qualification"];
 
-  if (addAnotherQualification === 'yes') {
-    res.redirect('/prototype-3/qualifications/undergraduate-degree/degree-details')
-  } else {
-    res.redirect('/prototype-3/task-list')
+    if (addAnotherQualification === "yes") {
+      res.redirect(
+        "/prototype-3/qualifications/undergraduate-degree/degree-details"
+      );
+    } else {
+      res.redirect("/prototype-3/task-list");
+    }
   }
-})
+);
 
 // Do you need to add another qualification? (loop 2)
 // This takes the user to a second version of the degree details page but the document uploads and summary page are the same as loop one
-router.post('/prototype-3/qualifications/undergraduate-degree/degree-details-2', function (req, res) {
-  let addAnotherQualification2 = req.session.data['add-another-qualification-2']
+router.post(
+  "/prototype-3/qualifications/undergraduate-degree/degree-details-2",
+  function (req, res) {
+    let addAnotherQualification2 =
+      req.session.data["add-another-qualification-2"];
 
-  if (addAnotherQualification2 === 'yes') {
-    res.redirect('/prototype-3/qualifications/undergraduate-degree/degree-details-2')
-  } else {
-    res.redirect('/prototype-3/task-list')
+    if (addAnotherQualification2 === "yes") {
+      res.redirect(
+        "/prototype-3/qualifications/undergraduate-degree/degree-details-2"
+      );
+    } else {
+      res.redirect("/prototype-3/task-list");
+    }
   }
-})
+);
 
 // Do you have any work history
-router.post('/prototype-3/work-history/work-history-in-education-1', function (req, res) {
+router.post(
+  "/prototype-3/work-history/work-history-in-education-1",
+  function (req, res) {
+    let haveWorkHistory = req.session.data["have-work-history"];
 
-  let haveWorkHistory = req.session.data['have-work-history']
-
-  if (haveWorkHistory === 'yes') {
-    res.redirect('/prototype-3/work-history/work-history-in-education-1')
-  } else {
-    res.redirect('/prototype-3/task-list')
+    if (haveWorkHistory === "yes") {
+      res.redirect("/prototype-3/work-history/work-history-in-education-1");
+    } else {
+      res.redirect("/prototype-3/task-list");
+    }
   }
-})
+);
 
 // Add a second work history example
-router.post('/prototype-3/work-history/work-history-in-education-2', function (req, res) {
+router.post(
+  "/prototype-3/work-history/work-history-in-education-2",
+  function (req, res) {
+    let addAnotherWorkplace = req.session.data["add-another-workplace"];
 
-  let addAnotherWorkplace = req.session.data['add-another-workplace']
-
-  if (addAnotherWorkplace === 'yes') {
-    res.redirect('/prototype-3/work-history/work-history-in-education-2')
-  } else {
-    res.redirect('/prototype-3/task-list')
+    if (addAnotherWorkplace === "yes") {
+      res.redirect("/prototype-3/work-history/work-history-in-education-2");
+    } else {
+      res.redirect("/prototype-3/task-list");
+    }
   }
-})
+);
 
 module.exports = router;
