@@ -74,8 +74,6 @@ You might be eligible to apply for QTS – {{ serviceName }} prototype
 
             <!-- English language -->
 
-            <!-- Version shown if the applicant is not a national/citizen of any of the countries on the list, but DID study in English. -->
-            {% if (data['english-proficiency-exempt-countries'] == 'none') and (data['english-proficiency-degree'] == 'yes') %}
             <div class="govuk-accordion__section ">
                 <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
@@ -85,31 +83,32 @@ You might be eligible to apply for QTS – {{ serviceName }} prototype
                     </h2>
                 </div>
                 <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-                    <p class='govuk-body'>You’ll need to provide the ‘Method of instruction’ (MOI) from your degree qualification. You can get this by contacting the institution where you studied.</p>
-                    <p class='govuk-body'>The MOI shows us which language was used as the primary means of teaching on that qualification. To teach in England, that primary language must be English.</p>
+                    <p class='govuk-body'>We need to understand your level of English language proficiency. You can provide evidence in 3 ways:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li><h3 class="govuk-heading-s">Show you were taught in English</h3>
+                            <p class="govuk-body">Upload the ‘Method of instruction’ (MOI) from your degree qualification. The MOI shows us which language was used as the primary means of teaching. You can get this by contacting the institution where you studied.</p></li>
+                        <li><h4 class="govuk-heading-s">Show you hold an approved English language certificate</h4>
+                            <p class="govuk-body">This means a secure English language test (SELT) at level B2 of the Common European Framework of Reference for Languages (CEFR) scale.</p>
+                            <p class="govuk-body">This is 1 level higher than the B1 proficiency the UK Home Office requires when people apply for UK citizenship. As a teacher, you’ll be instructing students in English, so the requirement is higher than for some other professions.</p>
+                            <p class="govuk-body">The test must be on the list of approved English language tests and awarded within the last 2 years before the date of your application.</p>
+                        <p class="govuk-body">Learn more about <a href="https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-cefr-3.3-common-reference-levels-global-scale" class="govuk-link">level B2 English language</a>.</p>
+                        <p class="govuk-body">Find out about <a href="https://www.gov.uk/guidance/prove-your-english-language-abilities-with-a-secure-english-language-test-selt" class="govuk-link">approved test providers</a>.</p></li>
+                        <li><h5 class="govuk-heading-s">Show that you were born or hold citizenship of an exempt country</h5>
+                            <p class="govuk-body">If you hold nationality/citizenship of an exempt country, you do not need to prove your English language proficiency. However, you’ll need to show evidence by uploading a copy of your passport.</p></li>
+                    </ul>
+                    <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What about multiple nationalities?
+    </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            <p class="govuk-body">If you’re a national of more than 1 country and both are exempt from English language requirements, you can choose which of them you use to apply for QTS. Remember, you must be able to show a passport (or the recognised identity document for that country).</p>
+                            <p class="govuk-body">If you hold a second nationality that is not exempt (and you apply for QTS using that nationality) you’ll need to prove your English language proficiency using one of the other methods.</p>
+                        </div>
+                    </details>
                 </div>
             </div>
-            {% endif %}
-
-            <!-- Version shown if the applicant is not a national/citizen of any of the countries and DID NOT study in English. -->
-            {% if (data['english-proficiency-exempt-countries'] == 'none') and (data['english-proficiency-degree'] == 'no') %}
-            <div class="govuk-accordion__section ">
-                <div class="govuk-accordion__section-header">
-                    <h2 class="govuk-accordion__section-heading">
-                        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-                            Proof of English language ability
-                        </span>
-                    </h2>
-                </div>
-                <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-                    <p class='govuk-body'>You’ll need to show that you hold an approved secure English language test (SELT) at level B2 of the Common European Framework of Reference for Languages (CEFR) scale, or you’ll need to undertake this type of test before you apply.</p>
-                    <p class='govuk-body'>The test must be on the list of approved English language tests and awarded in the last two years before the date of your application.</p>
-                    <p class='govuk-body'>This is 1 level higher than the level B1 proficiency the UK Home Office requires when people apply for UK citizenship. As a teacher, you’ll be instructing students in English, so the requirement is higher than for some other professions.</p>
-                    <p class='govuk-body'>Learn more about level <a href="https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-cefr-3.3-common-reference-levels-global-scale" class="govuk-link">B2 English language</a>.</p>
-                    <p class='govuk-body'>Find out about <a href="https://www.gov.uk/guidance/prove-your-english-language-abilities-with-a-secure-english-language-test-selt" class="govuk-link">approved test providers</a>.</p>
-                </div>
-            </div>
-            {% endif %}
 
 
             <!-- Work History -->
