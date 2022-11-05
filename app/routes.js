@@ -164,15 +164,17 @@ router.post("/misconduct-answer", function (req, res) {
   var haveDegree = req.session.data["Degree"];
   var region = req.session.data["region"];
   var formalTraining = req.session.data["formal-training"];
+  var workExperience = req.session.data["work-experience"];
+  var englishProficiency = req.session.data["english-proficiency"];
   var specialeducationalNeeds = req.session.data["special-educational-needs"];
   var haveMisconduct = req.session.data["misconduct"];
-  var workExperience = req.session.data["work-experience"];
 
   if (
     haveDegree == "Yes" &&
     formalTraining == "Yes" &&
     specialeducationalNeeds == "Yes" &&
     haveMisconduct == "No" &&
+    englishProficiency == "yes" &&
     workExperience != "less-than-1-year"
   ) {
     if (
