@@ -1,0 +1,87 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+  Can you provide evidence of your English language skills? – {{ serviceName }} prototype
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Can you provide evidence of your English language skills?</h1>
+
+      <form class="form" action="question-work-experience" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="english-proficiency-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                Can you show that you meet at least one of the following requirements?
+            </legend>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>You have a university degree that was taught in English.</li>
+              <li>You hold an English language proficiency certificate.</li>
+              <li>You were born in or hold citizenship of an exempt country.</li>
+            </ul>
+            <p class="govuk-body">If you’re eligible to apply, you’ll need to provide evidence.</p>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="english-proficiency" name="english-proficiency" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="english-proficiency">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="english-proficiency-2" name="english-proficiency" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="english-proficiency-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Which countries are exempt?
+    </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">The following countries are exempt from additional English language proficiency requirements:</p>
+  <ul class="govuk-list govuk-list--bullet">
+            <li>Antigua and Barbuda</li>
+    <li>Australia</li>
+    <li>The Bahamas</li>
+    <li>Barbados</li>
+    <li>Belize</li>
+    <li>Canada</li>
+    <li>Dominica</li>
+    <li>Grenada</li>
+    <li>Guyana</li>
+    <li>Jamaica</li>
+    <li>Ireland</li>
+    <li>Malta</li>
+    <li>New Zealand</li>
+    <li>St Kitts and Nevis</li>
+    <li>St Lucia</li>
+    <li>St Vincent and the Grenadines</li>
+    <li>Trinidad and Tobago</li>
+    <li>USA</li>
+    <li>England</li>
+    <li>Scotland</li>
+    <li>Northern Ireland</li>
+    <li>Wales</li>
+
+  </ul>
+
+          </div>
+        </details>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

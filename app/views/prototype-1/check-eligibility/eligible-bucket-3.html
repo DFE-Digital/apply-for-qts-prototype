@@ -35,7 +35,7 @@ You might be eligible to apply for QTS – {{ serviceName }} prototype
                 <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          Proof of identity
+          1. Proof of identity
         </span>
                     </h2>
                 </div>
@@ -51,11 +51,18 @@ You might be eligible to apply for QTS – {{ serviceName }} prototype
                 <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-          Proof of qualifications
+          2. Proof of qualifications
         </span>
                     </h2>
                 </div>
                 <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+
+                    <p class='govuk-body'>To apply for QTS, you must hold a teaching qualification that’s equivalent to a ‘level 6’ qualification in the UK. The assessor will need to review the level and the duration of your qualification.</p>
+
+                    <p class='govuk-body'>Learn more about <a href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels">qualification levels in the UK</a>.</p>
+
+                    <p class='govuk-body'>They’ll also need to understand the extent to which your qualification was focussed on developing practical teaching skills. As evidence, you must provide:</p>
+
                     <p class='govuk-body'>You must provide:</p>
                     <ul class="govuk-list govuk-list--bullet">
                         <li>Your certificate from the qualification that led to you being a recognised teacher (this might be your university degree, or a separate qualification).</li>
@@ -66,43 +73,41 @@ You might be eligible to apply for QTS – {{ serviceName }} prototype
             </div>
 
             <!-- English language -->
-
-            <!-- Version shown if the applicant is not a national/citizen of any of the countries on the list, but DID study in English. -->
-            {% if (data['english-proficiency-exempt-countries'] == 'none') and (data['english-proficiency-degree'] == 'yes') %}
             <div class="govuk-accordion__section ">
                 <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-                            Proof of English language ability
+                            3. Proof of English language ability
                         </span>
                     </h2>
                 </div>
-                <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-                    <p class='govuk-body'>You’ll need to provide the ‘Method of instruction’ (MOI) from your degree qualification. You can get this by contacting the institution where you studied.</p>
-                    <p class='govuk-body'>The MOI shows us which language was used as the primary means of teaching on that qualification. To teach in England, that primary language must be English.</p>
+                <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+                    <p class='govuk-body'>We need to understand your level of English language proficiency. You can provide evidence in 3 ways:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li><h3 class="govuk-heading-s">Show you were taught in English</h3>
+                            <p class="govuk-body">Upload the ‘Method of instruction’ (MOI) from your degree qualification. The MOI shows us which language was used as the primary means of teaching. You can get this by contacting the institution where you studied.</p></li>
+                        <li><h4 class="govuk-heading-s">Show you hold an approved English language certificate</h4>
+                            <p class="govuk-body">This means a secure English language test (SELT) at level B2 of the Common European Framework of Reference for Languages (CEFR) scale.</p>
+                            <p class="govuk-body">This is 1 level higher than the B1 proficiency the UK Home Office requires when people apply for UK citizenship. As a teacher, you’ll be instructing students in English, so the requirement is higher than for some other professions.</p>
+                            <p class="govuk-body">The test must be on the list of approved English language tests and awarded within the last 2 years before the date of your application.</p>
+                            <p class="govuk-body">Learn more about <a href="https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-cefr-3.3-common-reference-levels-global-scale" class="govuk-link">level B2 English language</a>.</p>
+                            <p class="govuk-body">Find out about <a href="https://www.gov.uk/guidance/prove-your-english-language-abilities-with-a-secure-english-language-test-selt" class="govuk-link">approved test providers</a>.</p></li>
+                        <li><h5 class="govuk-heading-s">Show that you were born or hold citizenship of an exempt country</h5>
+                            <p class="govuk-body">If you hold nationality/citizenship of an exempt country, you do not need to prove your English language proficiency. However, you’ll need to show evidence by uploading a copy of your passport.</p></li>
+                    </ul>
+                    <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What about multiple nationalities?
+    </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            <p class="govuk-body">If you’re a national of more than 1 country and both are exempt from English language requirements, you can choose which of them you use to apply for QTS. Remember, you must be able to show a passport (or the recognised identity document for that country).</p>
+                            <p class="govuk-body">If you hold a second nationality that is not exempt (and you apply for QTS using that nationality) you’ll need to prove your English language proficiency using one of the other methods.</p>
+                        </div>
+                    </details>
                 </div>
             </div>
-            {% endif %}
-
-            <!-- Version shown if the applicant is not a national/citizen of any of the countries and DID NOT study in English. -->
-            {% if (data['english-proficiency-exempt-countries'] == 'none') and (data['english-proficiency-degree'] == 'no') %}
-            <div class="govuk-accordion__section ">
-                <div class="govuk-accordion__section-header">
-                    <h2 class="govuk-accordion__section-heading">
-                        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-                            Proof of English language ability
-                        </span>
-                    </h2>
-                </div>
-                <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-                    <p class='govuk-body'>You’ll need to show that you hold an approved secure English language test (SELT) at level B2 of the Common European Framework of Reference for Languages (CEFR) scale, or you’ll need to undertake this type of test before you apply.</p>
-                    <p class='govuk-body'>The test must be on the list of approved English language tests and awarded in the last two years before the date of your application.</p>
-                    <p class='govuk-body'>This is 1 level higher than the level B1 proficiency the UK Home Office requires when people apply for UK citizenship. As a teacher, you’ll be instructing students in English, so the requirement is higher than for some other professions.</p>
-                    <p class='govuk-body'>Learn more about level <a href="https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-cefr-3.3-common-reference-levels-global-scale" class="govuk-link">B2 English language</a>.</p>
-                    <p class='govuk-body'>Find out about <a href="https://www.gov.uk/guidance/prove-your-english-language-abilities-with-a-secure-english-language-test-selt" class="govuk-link">approved test providers</a>.</p>
-                </div>
-            </div>
-            {% endif %}
 
 
             <!-- Work History -->
@@ -111,25 +116,27 @@ You might be eligible to apply for QTS – {{ serviceName }} prototype
             <div class="govuk-accordion__section ">
                 <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
-                        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-                            Proof of your work history
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-4a">
+                            4. Proof of your work history
                         </span>
                     </h2>
                 </div>
-                <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-                        <p class='govuk-body'>You’ll need to show you’ve spent more than 1 year working professionally as a teacher (not including any time spent teaching as part of your teaching qualification).</p>
+                <div id="accordion-default-content-4a" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4a">
 
-                        <p class='govuk-body'>This experience can be from teaching any subject in any type of mainstream school (for example, international schools, schools teaching the International Baccalaureate and state or private schools) or from alternative schools or settings equivalent to English PRUs (Pupil Referral Units), alternative provision academies, or alternative provision free schools, or settings for children with special education needs or disabilities (SEND).</p>
+                    <p class='govuk-body'>You’ll need to show you’ve spent more than 1 year working professionally as a teacher after completing your teaching qualification.</p>
+                    <p class='govuk-body'>This experience can be from teaching any subject in any type of mainstream school (for example, international schools, schools teaching the International Baccalaureate and state or private schools) or from alternative schools or settings equivalent to English PRUs (Pupil Referral Units), alternative provision academies, or alternative provision free schools, or settings for children with special education needs or disabilities (SEND).</p>
+                    <p class='govuk-body'>We’ll ask you to provide the name and email address of a contact who we can ask to confirm that your professional work experience:</p>
 
-                        <p class='govuk-body'>You’ll need to provide the name and email address of a contact who we can ask to confirm that your professional work experience:</p>
-                        <ul class="govuk-list govuk-list--bullet">
-                            <li>was in a full-time role where your main function was as a teacher (rather than other responsibilities in school)</li>
-                            <li>was gained working with children aged 5-16 (although we can accept experience with children aged 3-4 or 17-19 if the educational setting also included children aged 5-16)</li>
-                            <li>involved being responsible for a minimum of 4 children</li>
-                        </ul>
-                        <p class='govuk-body'>If you’re awarded QTS, as a teacher with more than 1 year of professional experience, but less than 2 years, you’ll need to complete a 2-year ‘statutory induction’ period as a newly qualified teacher.</p>
+                    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                        <li>was in a full-time role where your main function was as a teacher (rather than other responsibilities in school)</li>
+                        <li>was gained working with children aged 5-16 (although we can accept experience with children aged 3-4 or 17-19 if the educational setting also included children aged 5-16)</li>
+                        <li>involved being responsible for a minimum of 4 children</li>
+                    </ul>
 
-                        <p class='govuk-body'>Learn more about <a href="https://www.gov.uk/government/publications/induction-for-early-career-teachers-england">statutory induction periods for newly qualified teachers.</a></p>
+                    <p class='govuk-body'>If the assessor recommends awarding QTS, you understand that we’ll contact the references you’ve provided to verify your work history before the award is issued.</p>
+                    <p class='govuk-body'>Note that as a teacher with more than 1 year of professional experience, but less than 2 years, you’ll need to complete a 2-year ‘statutory induction’ period as a newly qualified teacher.</p>
+                    <p class='govuk-body'><a href="https://www.gov.uk/government/publications/induction-for-newly-qualified-teachers-nqts">Learn more about statutory induction periods for newly qualified teachers.</a></p>
+
                 </div>
             </div>
             {% endif %}
@@ -139,20 +146,25 @@ You might be eligible to apply for QTS – {{ serviceName }} prototype
             <div class="govuk-accordion__section ">
                 <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
-                        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-                            Proof of your work history
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-4b">
+                            4. Proof of your work history
                         </span>
                     </h2>
                 </div>
-                <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-                    <p class='govuk-body'>You’ll need to show you’ve spent 2 years or more working professionally as a teacher (not including any time spent teaching as part of your teaching qualification).</p>
+                <div id="accordion-default-content-4b" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4b">
+
+                    <p class='govuk-body'>You’ll need to show you’ve spent more than 1 year working professionally as a teacher after completing your teaching qualification.</p>
                     <p class='govuk-body'>This experience can be from teaching any subject in any type of mainstream school (for example, international schools, schools teaching the International Baccalaureate and state or private schools) or from alternative schools or settings equivalent to English PRUs (Pupil Referral Units), alternative provision academies, or alternative provision free schools, or settings for children with special education needs or disabilities (SEND).</p>
-                    <p class='govuk-body'>You’ll need to provide the name and email address of a contact who we can ask to confirm that your professional work experience:</p>
-                    <ul class="govuk-list govuk-list--bullet">
+                    <p class='govuk-body'>We’ll ask you to provide the name and email address of a contact who we can ask to confirm that your professional work experience:</p>
+
+                    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
                         <li>was in a full-time role where your main function was as a teacher (rather than other responsibilities in school)</li>
                         <li>was gained working with children aged 5-16 (although we can accept experience with children aged 3-4 or 17-19 if the educational setting also included children aged 5-16)</li>
                         <li>involved being responsible for a minimum of 4 children</li>
                     </ul>
+
+                    <p class='govuk-body'>If the assessor recommends awarding QTS, you understand that we’ll contact the references you’ve provided to verify your work history before the award is issued.</p>
+
                 </div>
             </div>
             {% endif %}
@@ -161,11 +173,11 @@ You might be eligible to apply for QTS – {{ serviceName }} prototype
                 <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button" id="accordion-default-heading-5">
-          Proof that you&rsquo;re recognised as a teacher
+          5. Proof that you&rsquo;re recognised as a teacher
         </span>
                     </h2>
                 </div>
-                <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
+                <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
                     <p class='govuk-body'>As your education department or authority has an online register of teachers, you’ll need to provide any reference numbers we need to check your record.</p>
 
                     <p class="govuk-body">The education department or authority must also confirm in writing:</p>
@@ -183,7 +195,7 @@ You might be eligible to apply for QTS – {{ serviceName }} prototype
                             Australia</p>
 
                     <p class="govuk-body"><a href="mailto:info@trb.sa.edu.au" class="govuk-link" rel="noreferrer noopener">info@trb.sa.edu.au</a></p>
-                    <p class="govuk-body"><a href="http://www.trb.sa.edu.au" class="govuk-link" rel="noreferrer noopener" target="_blank">https://www.trb.sa.edu.au</a></p>
+                    <p class="govuk-body"><a href="https://www.trb.sa.edu.au" class="govuk-link" rel="noreferrer noopener" target="_blank">https://www.trb.sa.edu.au</a></p>
                     <p class="govuk-body">This must be dated within 3 months of you applying for QTS.</p>
                 </div>
             </div>
@@ -191,11 +203,11 @@ You might be eligible to apply for QTS – {{ serviceName }} prototype
                 <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button" id="accordion-default-heading-6">
-          Certified translations
+          6. Certified translations
         </span>
                     </h2>
                 </div>
-                <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-6">
+                <div id="accordion-default-content-6" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-6">
                     <p class='govuk-body'>If your documents are not written in English, you must provide certified translations (at your own cost) for your:</p>
                     <ul class="govuk-list govuk-list--bullet">
                         <li>qualifications</li>
@@ -214,7 +226,7 @@ You might be eligible to apply for QTS – {{ serviceName }} prototype
                         <li>official certification seal/stamp or ID number</li>
                     </ul>
                     <h3 class="govuk-heading-s">Finding a certified translator</h3>
-                    <p class="govuk-body">We cannot recommend translation providers. You may want to explore translators who are members of the <a href="http://www.iti.org.uk/component/itisearch/?view=translators" rel="noreferrer noopener" target="_blank">Institute of Translating and Interpretation (opens in a new tab)</a>. Sometimes a university’s language department can also help.</p>
+                    <p class="govuk-body">We cannot recommend translation providers. You may want to explore translators who are members of the <a href="https://www.iti.org.uk/component/itisearch/?view=translators" rel="noreferrer noopener" target="_blank">Institute of Translating and Interpretation (opens in a new tab)</a>. Sometimes a university’s language department can also help.</p>
                 </div>
             </div>
         </div>

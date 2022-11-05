@@ -9,7 +9,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/work-experience-answer" method="post">
+      <form class="form" action="question-misconduct" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -24,7 +24,7 @@
             }
           },
           hint: {
-            text: "Do not include any time spent working as a teacher while you were still completing your teaching qualification."
+            text: "Do not include any time spent working as a teacher before or while you were completing your teaching qualification."
           },
           items: [
             {
@@ -51,8 +51,10 @@
         {{ govukDetails({
         summaryText: "Why we ask this",
         html: "<p>To teach in England, you must have at least 1 year of professional teaching experience that took place after completing your teaching qualification.</p>
+
         <p>If you have more than 1 year, but less than 2 years of teaching experience, you may still be awarded QTS, but you’ll need to complete a 2-year ‘statutory induction’ period as a newly qualified teacher.</p>
-        <p>You’ll need to provide a contact name and email address so that we can verify your work history.</p>"
+
+        <p>You’ll need to provide a contact name and email address. If you’re successful, we’ll contact them to verify your work history before awarding QTS.</p>"
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
