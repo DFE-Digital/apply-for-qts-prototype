@@ -144,21 +144,6 @@ router.post("/special-educational-needs-answer", function (req, res) {
   res.redirect("/prototype-1/check-eligibility/question-country");
 });
 
-// Run this code when a form is submitted to 'work-experience-answer'
-router.post("/work-experience-answer", function (req, res) {
-  // Make a variable and give it the value from the work experience question
-  var workExperience = req.session.data["work-experience"];
-
-  // Check whether the variable matches less than 1 year
-  if (workExperience == "less-than-1-year") {
-    // Send user to Ineligible page
-    res.redirect("/prototype-1/check-eligibility/ineligible");
-  } else {
-    // Send user to misconduct question
-    res.redirect("/prototype-1/check-eligibility/question-misconduct");
-  }
-});
-
 // Run this code when a form is submitted to 'completed-year-answer'
 router.post("/completed-year-answer", function (req, res) {
   // Make a variable and give it the value from 'completedYear'
