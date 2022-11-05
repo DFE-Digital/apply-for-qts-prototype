@@ -1,0 +1,56 @@
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your QTS application was declined – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Your QTS application has been declined
+      </h1>
+
+      <h4 class="govuk-heading-s">Notes from the assessor</h4>
+
+      {{ govukInsetText({
+      text: "We declined this QTS application as you already have another application in progress."
+      }) }}
+
+      <h3 class="govuk-heading-s">What you can do next</h3>
+
+      <p class="govuk-body">While your QTS application was declined this time, you can make a new application in future, if you’re able to address the decline reasons we’ve set out.</p>
+
+      <p class="govuk-body">You may want to explore other routes to teaching in England. QTS is not a requirement to teach in independent (private) schools, academies, free schools and in the further education (FE) sector in England.</p>
+
+      <p class="govuk-body">You can find out more about working in these sectors from:</p>
+
+      <p class="govuk-body"><a href="http://www.isc.co.uk/" class="govuk-link">Independent Schools Council</a></p>
+
+      <p class="govuk-body"><a href="http://www.et-foundation.co.uk/" class="govuk-link">The Education & Training Foundation</a></p>
+
+      <p class="govuk-body"><a href="https://www.gov.uk/types-of-school" class="govuk-link">Academies and Free Schools</a></p>
+
+      <p class="govuk-body">For further information on other routes to gaining QTS visit <a href="https://getintoteaching.education.gov.uk/non-uk-teachers/teach-in-england-if-you-trained-overseas" class="govuk-link">Get into teaching</a>.</p>
+
+      <p class="govuk-body">You can also learn more about <a href="https://getintoteaching.education.gov.uk/non-uk-teachers/train-to-teach-in-england-as-an-international-student" class="govuk-link">training to teach in England</a>.</p>
+
+      <p class="govuk-body">You have the right of appeal to the Head of Teacher Qualifications and/or the County Court against this decision.</p>
+
+      <p class="govuk-body">If you want to appeal, you should inform QTS Enquiries and do so within 4 months of this notification.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+  </div>
+{% endblock %}
