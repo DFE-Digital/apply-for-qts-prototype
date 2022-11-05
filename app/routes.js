@@ -234,53 +234,6 @@ router.post("/country-trained-answer", function (req, res) {
   }
 });
 
-// English proficiency
-// Run this code when a form is submitted to 'Country Trained in'
-router.post("/english-proficiency-exempt-answer", function (req, res) {
-  // Make a variable and give it the value from 'degree'
-  var englishProficiencyExemptCountries = req.session.data["english-proficiency-exempt-countries"];
-
-  // Check whether the variable matches none
-  if (englishProficiencyExemptCountries == "none") {
-    // Send user to degree in english
-    res.redirect("/prototype-1/check-eligibility/question-english-proficiency-degree");
-  } else {
-    // Send user to work experience
-    res.redirect("/prototype-1/check-eligibility/question-work-experience");
-  }
-});
-
-// Run this code when a form is submitted to 'Degree completed in English'
-router.post("/english-proficiency-degree-answer", function (req, res) {
-  // Make a variable and give it the value from 'degree'
-  var englishProficiencyDegree = req.session.data["english-proficiency-degree"];
-
-  // Check whether the variable matches none
-  if (englishProficiencyDegree == "no") {
-    // Send user to English proficiency tested
-    res.redirect("/prototype-1/check-eligibility/question-english-proficiency-tested");
-  } else {
-    // Send user to work experience
-    res.redirect("/prototype-1/check-eligibility/question-work-experience");
-  }
-});
-
-// Run this code when a form is submitted to 'English proficiency test'
-router.post("/english-proficiency-tested-answer", function (req, res) {
-  // Make a variable and give it the value from 'proficiency test'
-  var englishProficiencyTested = req.session.data["english-proficiency-tested"];
-
-  // Check whether the variable matches none
-  if (englishProficiencyTested == "no") {
-    // Send user to Ineligible page as no proof of English proficiency
-    res.redirect("/prototype-1/check-eligibility/ineligible");
-  } else {
-    // Send user to work experience
-    res.redirect("/prototype-1/check-eligibility/question-work-experience");
-  }
-});
-
-
 // Run this code when a form is submitted to 'Degree in STEM'
 router.post("/stem-answer", function (req, res) {
   // Make a variable and give it the value from 'degree'
