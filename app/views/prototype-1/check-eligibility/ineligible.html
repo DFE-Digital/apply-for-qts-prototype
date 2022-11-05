@@ -28,9 +28,7 @@
           <li>You have not completed a formal teaching qualification, for example, an undergraduate teaching degree or postgraduate teaching qualification.</li>
         {% endif %}
 
-        {% if (data['english-proficiency-exempt-countries'] == 'none') and
-              (data['english-proficiency-degree'] == 'no') and
-              (data['english-proficiency-tested'] == 'no') %}
+        {% if (data['english-proficiency'] == 'no') %}
           <li>You do not have sufficient evidence of English language proficiency.</li>
         {% endif %}
 
