@@ -1,116 +1,116 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers</h1>
+		<h1 class="govuk-heading-xl">Check your answers</h1>
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-        <!-- Teacher reference number -->
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Nationality
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['nationality'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="question-nationality">
-              Change
-              <span class="govuk-visually-hidden"> Nationality</span>
-            </a>
-          </dd>
-        </div>
+			<!-- Teacher reference number -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Nationality
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['nationality'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-nationality">
+						Change
+						<span class="govuk-visually-hidden"> Nationality</span>
+					</a>
+				</dd>
+			</div>
 
-        <!-- Country Trained answer -->
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Country Trained in
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['country'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="question-country-trained">
-              Change
-              <span class="govuk-visually-hidden"> Country trained in</span>
-            </a>
-          </dd>
-        </div>
+			<!-- Country Trained answer -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Country Trained in
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['country'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-country-trained">
+						Change
+						<span class="govuk-visually-hidden"> Country trained in</span>
+					</a>
+				</dd>
+			</div>
 
-        {% if  data['DegreeEnglish']  %}
-        <!-- Degree taught in english answer -->
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Degree taught in english
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['DegreeEnglish'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="question-degree-english">
-              Change
-              <span class="govuk-visually-hidden"> if degree was studied in english</span>
-            </a>
-          </dd>
-        </div>
-        {% endif %}
+			{% if data['DegreeEnglish'] %}
+			<!-- Degree taught in english answer -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Degree taught in english
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['DegreeEnglish'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-degree-english">
+						Change
+						<span class="govuk-visually-hidden"> if degree was studied in english</span>
+					</a>
+				</dd>
+			</div>
+			{% endif %}
 
-        <!-- Degree in STEM answer -->
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Degree contains Maths and Science content
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['DegreeStem'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="question-degree-stem">
-              Change
-              <span class="govuk-visually-hidden"> if degree was in STEM</span>
-            </a>
-          </dd>
-        </div>
+			<!-- Degree in STEM answer -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Degree contains Maths and Science content
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['DegreeStem'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-degree-stem">
+						Change
+						<span class="govuk-visually-hidden"> if degree was in STEM</span>
+					</a>
+				</dd>
+			</div>
 
-        {% if  data['PrimarySecondary']  %}
-        <!-- primary secondary answer -->
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Trained in primary or secondary
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['PrimarySecondary'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="question-primary-secondary">
-              Change
-              <span class="govuk-visually-hidden"> if studied primary or secondary</span>
-            </a>
-          </dd>
-        </div>
-        {% endif %}
-      </dl>
+			{% if data['PrimarySecondary'] %}
+			<!-- primary secondary answer -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Trained in primary or secondary
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['PrimarySecondary'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-primary-secondary">
+						Change
+						<span class="govuk-visually-hidden"> if studied primary or secondary</span>
+					</a>
+				</dd>
+			</div>
+			{% endif %}
+		</dl>
 
-      <form action="documents" method="post" novalidate>
+		<form action="documents" method="post" novalidate>
 
-        <input type="hidden" name="answers-checked" value="true">
+			<input type="hidden" name="answers-checked" value="true">
 
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+			<button type="submit" class="govuk-button" data-module="govuk-button">
+				Continue
+			</button>
 
-      </form>
+		</form>
 
-    </div>
-  </div>
+	</div>
+</div>
 {% endblock %}

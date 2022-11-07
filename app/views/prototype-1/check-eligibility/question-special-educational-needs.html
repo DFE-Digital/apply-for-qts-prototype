@@ -1,53 +1,54 @@
 {% extends "wizard.html" %}
 
 {% block pageTitle %}
-  Are you qualified to teach children who are aged somewhere between 5 and 16 years? – {{ serviceName }} prototype
+Are you qualified to teach children who are aged somewhere between 5 and 16 years? – {{ serviceName }} prototype
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
 
-      <!-- <h1 class="govuk-heading-xl">Radio Button question</h1> -->
+		<!-- <h1 class="govuk-heading-xl">Radio Button question</h1> -->
 
-      <form class="form" action="/special-educational-needs-answer" method="post">
+		<form class="form" action="/special-educational-needs-answer" method="post">
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+			{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-        {{ govukRadios({
-          idPrefix: "special-educational-needs",
-          name: "special-educational-needs",
-          fieldset: {
-            legend: {
-              text: "Are you qualified to teach children who are aged somewhere between 5 and 16 years?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          hint: {
-            text: "You do not need to be qualified to teach this full age range. For example, you might be qualified to teach children aged 5 to 11, or 14 to 16."
-          },
-          items: [
-            {
-              value: "Yes",
-              text: "Yes",
-              checked: checked("special-educational-needs", "Yes")
-            },
-            {
-              value: "No",
-              text: "No",
-              checked: checked("special-educational-needs", "No")
-            }
+			{{ govukRadios({
+			idPrefix: "special-educational-needs",
+			name: "special-educational-needs",
+			fieldset: {
+			legend: {
+			text: "Are you qualified to teach children who are aged somewhere between 5 and 16 years?",
+			isPageHeading: true,
+			classes: "govuk-fieldset__legend--l"
+			}
+			},
+			hint: {
+			text: "You do not need to be qualified to teach this full age range. For example, you might be qualified to
+			teach children aged 5 to 11, or 14 to 16."
+			},
+			items: [
+			{
+			value: "Yes",
+			text: "Yes",
+			checked: checked("special-educational-needs", "Yes")
+			},
+			{
+			value: "No",
+			text: "No",
+			checked: checked("special-educational-needs", "No")
+			}
 
-          ]
-        }) }}
+			]
+			}) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
 
-      </form>
+		</form>
 
-    </div>
-  </div>
+	</div>
+</div>
 
 {% endblock %}

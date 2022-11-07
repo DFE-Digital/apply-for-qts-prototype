@@ -1,153 +1,167 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block pageStyles %}
-<link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen" rel="stylesheet">
+<link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen"
+	  rel="stylesheet">
 {% endblock %}
 
 {% block pageScripts %}
 <script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
 <script>
-  openregisterLocationPicker({
-    selectElement: document.getElementById('school-country-2'),
-    url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
-    defaultValue: '{{ data["school-country-2"] }}'
-  })
+    openregisterLocationPicker({
+        selectElement: document.getElementById('school-country-2'),
+        url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
+        defaultValue: '{{ data["school-country-2"] }}'
+    })
 </script>
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">Proof that you're recognised as a teacher</span>
-      <h1 class="govuk-heading-l">Your work history in education</h1>
-      <p class="govuk-body">We need to see your work history in education, beginning with your current or most recent employer.</p>
-      <p class="govuk-body">You can add previous employers and roles dating back to a maximum of 10 years.</p>
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<span class="govuk-caption-l">Proof that you're recognised as a teacher</span>
+		<h1 class="govuk-heading-l">Your work history in education</h1>
+		<p class="govuk-body">We need to see your work history in education, beginning with your current or most recent
+			employer.</p>
+		<p class="govuk-body">You can add previous employers and roles dating back to a maximum of 10 years.</p>
 
-      <form class="form" action="work-history-in-education-summary-2" method="post">
+		<form class="form" action="work-history-in-education-summary-2" method="post">
 
-        <h2 class="govuk-heading-m">Enter the details of a previous role</h2>
+			<h2 class="govuk-heading-m">Enter the details of a previous role</h2>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="school-name-2">
-            School name
-          </label>
-          <input class="govuk-input" id="school-name-2" name="school-name-2" value="{{ data['school-name-2'] }}" type="text" >
-        </div>
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="school-name-2">
+					School name
+				</label>
+				<input class="govuk-input" id="school-name-2" name="school-name-2" value="{{ data['school-name-2'] }}"
+					   type="text">
+			</div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="school-city-2">
-            City
-          </label>
-          <input class="govuk-input" id="school-city-2" name="school-city-2" value="{{ data['school-city-2'] }}" type="text" >
-        </div>
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="school-city-2">
+					City
+				</label>
+				<input class="govuk-input" id="school-city-2" name="school-city-2" value="{{ data['school-city-2'] }}"
+					   type="text">
+			</div>
 
-        {% from "govuk/components/select/macro.njk" import govukSelect %}
+			{% from "govuk/components/select/macro.njk" import govukSelect %}
 
-        {{ govukSelect({
-        id: "school-country-2",
-        name: "school-country-2",
-        classes: "govuk-input--width-10",
-        label: {
-        classes: "govuk-label--s, govuk-!-font-weight-regular",
-        isPageHeading: true,
-        text: "Country"
-        },
-        items: countries
-        }) }}
+			{{ govukSelect({
+			id: "school-country-2",
+			name: "school-country-2",
+			classes: "govuk-input--width-10",
+			label: {
+			classes: "govuk-label--s, govuk-!-font-weight-regular",
+			isPageHeading: true,
+			text: "Country"
+			},
+			items: countries
+			}) }}
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="job-role-2">
-            Your job role
-          </label>
-          <input class="govuk-input" id="job-role-2" name="job-role-2" value="{{ data['job-role-2'] }}" type="text">
-        </div>
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="job-role-2">
+					Your job role
+				</label>
+				<input class="govuk-input" id="job-role-2" name="job-role-2" value="{{ data['job-role-2'] }}"
+					   type="text">
+			</div>
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h1 class="govuk-fieldset__heading">
-                Your start date
-              </h1>
-            </legend>
-            <div id="start-date-hint" class="govuk-hint">
-              For example, 3 2020
-            </div>
-            <div class="govuk-date-input" id="start-date">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="start-date-month-2">
-                    Month
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month-2" name="start-date-month-2" value="{{ data['start-date-month-2'] }}" type="text" inputmode="numeric">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="start-date-year-2">
-                    Year
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year-2" name="start-date-year-2" value="{{ data['start-date-year-2'] }}" type="text" inputmode="numeric">
-                </div>
-              </div>
-            </div>
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							Your start date
+						</h1>
+					</legend>
+					<div id="start-date-hint" class="govuk-hint">
+						For example, 3 2020
+					</div>
+					<div class="govuk-date-input" id="start-date">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="start-date-month-2">
+									Month
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
+									   id="start-date-month-2" name="start-date-month-2"
+									   value="{{ data['start-date-month-2'] }}" type="text" inputmode="numeric">
+							</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="start-date-year-2">
+									Year
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
+									   id="start-date-year-2" name="start-date-year-2"
+									   value="{{ data['start-date-year-2'] }}" type="text" inputmode="numeric">
+							</div>
+						</div>
+					</div>
 
-          </fieldset>
-        </div>
+				</fieldset>
+			</div>
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" role="group" aria-describedby="end-date-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h1 class="govuk-fieldset__heading">
-                Your end date
-              </h1>
-            </legend>
-            <div id="end-date-hint" class="govuk-hint">
-              For example, 3 2020
-            </div>
-            <div class="govuk-date-input" id="end-date">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="end-date-month-2">
-                    Month
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end-date-month-2" name="end-date-month-2" value="{{ data['end-date-month-2'] }}" type="text" inputmode="numeric">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="end-date-year-2">
-                    Year
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="end-date-year-2" name="end-date-year-2" value="{{ data['end-date-year-2'] }}" type="text" inputmode="numeric">
-                </div>
-              </div>
-            </div>
-          </fieldset>
-        </div>
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="end-date-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							Your end date
+						</h1>
+					</legend>
+					<div id="end-date-hint" class="govuk-hint">
+						For example, 3 2020
+					</div>
+					<div class="govuk-date-input" id="end-date">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="end-date-month-2">
+									Month
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
+									   id="end-date-month-2" name="end-date-month-2"
+									   value="{{ data['end-date-month-2'] }}" type="text" inputmode="numeric">
+							</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="end-date-year-2">
+									Year
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
+									   id="end-date-year-2" name="end-date-year-2" value="{{ data['end-date-year-2'] }}"
+									   type="text" inputmode="numeric">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
 
-        <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button">
-            Continue
-          </button>
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Continue
+				</button>
 
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" name="" value="progress" formaction="/prototype-3/task-list">
-            Save and come back later
-          </button>
-        </div>
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" name=""
+						value="progress" formaction="/prototype-3/task-list">
+					Save and come back later
+				</button>
+			</div>
 
-      </form>
+		</form>
 
-    </div>
-    <div class="govuk-grid-column-one-third"></div>
-  </div>
+	</div>
+	<div class="govuk-grid-column-one-third"></div>
+</div>
 
 {% endblock %}

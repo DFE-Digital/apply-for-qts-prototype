@@ -5,91 +5,90 @@ In which state/territory are you currently recognised as a teacher? – {{ servi
 {% endblock %}
 
 {% set states = [
-    "Alabama",
-    "Alaska",
-    "Arizona",
-    "Arkansas",
-    "California",
-    "Colorado",
-    "Connecticut",
-    "Delaware",
-    "Florida",
-    "Georgia",
-    "Hawaii",
-    "Idaho",
-    "Illinois",
-    "Indiana",
-    "Iowa",
-    "Kansas",
-    "Kentucky",
-    "Louisiana",
-    "Maine",
-    "Maryland",
-    "Massachusetts",
-    "Michigan",
-    "Minnesota",
-    "Mississippi",
-    "Missouri",
-    "Montana",
-    "Nebraska",
-    "Nevada",
-    "New Hampshire",
-    "New Jersey",
-    "New Mexico",
-    "New York",
-    "North Carolina",
-    "North Dakota",
-    "Ohio",
-    "Oklahoma",
-    "Oregon",
-    "Pennsylvania",
-    "Rhode Island",
-    "South Carolina",
-    "South Dakota",
-    "Tennessee",
-    "Texas",
-    "Utah",
-    "Vermont",
-    "Virginia",
-    "Washington DC",
-    "Washington",
-    "West Virginia",
-    "Wisconsin",
-    "Wyoming"
+"Alabama",
+"Alaska",
+"Arizona",
+"Arkansas",
+"California",
+"Colorado",
+"Connecticut",
+"Delaware",
+"Florida",
+"Georgia",
+"Hawaii",
+"Idaho",
+"Illinois",
+"Indiana",
+"Iowa",
+"Kansas",
+"Kentucky",
+"Louisiana",
+"Maine",
+"Maryland",
+"Massachusetts",
+"Michigan",
+"Minnesota",
+"Mississippi",
+"Missouri",
+"Montana",
+"Nebraska",
+"Nevada",
+"New Hampshire",
+"New Jersey",
+"New Mexico",
+"New York",
+"North Carolina",
+"North Dakota",
+"Ohio",
+"Oklahoma",
+"Oregon",
+"Pennsylvania",
+"Rhode Island",
+"South Carolina",
+"South Dakota",
+"Tennessee",
+"Texas",
+"Utah",
+"Vermont",
+"Virginia",
+"Washington DC",
+"Washington",
+"West Virginia",
+"Wisconsin",
+"Wyoming"
 ]
 %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+	<div class="govuk-grid-column-two-thirds">
 
-        <form class="form" action="/region-answer" method="post">
+		<form class="form" action="/region-answer" method="post">
 
-            {% from "govuk/components/radios/macro.njk" import govukRadios %}
-            {{ govukRadios({
-            idPrefix: "region",
-            name: "region",
-            fieldset: {
-            legend: {
-            text: "In which state/territory are you currently recognised as a teacher?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-            }
-            },
-            hint: {
-            text: "This means you have all the qualifications needed to teach in a state school. You'll need to provide evidence of this if you apply for QTS."
-            },
-            items: states | regionsRadio
-            }) }}
+			{% from "govuk/components/radios/macro.njk" import govukRadios %}
+			{{ govukRadios({
+			idPrefix: "region",
+			name: "region",
+			fieldset: {
+			legend: {
+			text: "In which state/territory are you currently recognised as a teacher?",
+			isPageHeading: true,
+			classes: "govuk-fieldset__legend--l"
+			}
+			},
+			hint: {
+			text: "This means you have all the qualifications needed to teach in a state school. You'll need to provide
+			evidence of this if you apply for QTS."
+			},
+			items: states | regionsRadio
+			}) }}
 
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
 
+		</form>
 
-            <button class="govuk-button" data-module="govuk-button">Continue</button>
-
-        </form>
-
-    </div>
+	</div>
 </div>
 
 {% endblock %}

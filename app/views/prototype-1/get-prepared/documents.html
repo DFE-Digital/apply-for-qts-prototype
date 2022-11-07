@@ -1,159 +1,204 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Your supporting documents</h1>
+		<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Your supporting documents</h1>
 
+		<p>Before you apply, you will need to prepare some evidence.</p>
+		<p> When you apply, you will need to upload scans or photos of your original documents in .pdf, .jpg and .jpeg
+			formats.</p>
 
-      <p>Before you apply, you will need to prepare some evidence.</p> 
-      <p> When you apply, you will need to upload scans or photos of your original documents in .pdf, .jpg and .jpeg formats.</p>
-  
-      <p class="govuk-!-font-weight-bold">If your documents are not in English you’ll also need to provide a certified translation of each.</p>
-      
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Qualifications</h2>
+		<p class="govuk-!-font-weight-bold">If your documents are not in English you’ll also need to provide a certified
+			translation of each.</p>
 
-      <p>You must provide the following:</p>
-      
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Degree certificate from the awarding university or institution</li> 
-        <li>Official teacher training certificate from the awarding body. This is not required if your teacher training was completed as part of your degree</li>
-        <li>A transcript or diploma supplement of the qualification that led you to be a recognised teacher. This should be issued by the awarding body and show all the modules you studied and the marks you got for each. If your teacher training was completed as part of your degree, you should supply your degree transcript.</li>
-        </ul>
-      <hr class="govuk-!-margin-bottom-4">
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Qualifications</h2>
 
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Identification</h2>
-      <p>Supply one of forms of ID from the list below.</p>
-      <p> </p>
-      <p> The supplied document must provide details of your date of birth and your nationality. Documents should be currently valid and not expired.</p>
+		<p>You must provide the following:</p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Passport</li> 
-        <li>Driving Licence</li>
-        <li>Identity Card</li>
-        <li>Birth Certificate</li>
-        </p>
-        </ul>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Change of name</h3>
-        <p>Supply evidence of any changes of name if different to that on the supplied qualification or identity documents.</p>
-        <p>Evidence to be a document from the list below.</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Change of name deed</li>
-          <li>Divorce certificate</li>
-          <li>Marriage certificate</li>
-          </p>
-          </ul>
-      <hr class="govuk-!-margin-bottom-4">
+		<ul class="govuk-list govuk-list--bullet">
+			<li>Degree certificate from the awarding university or institution</li>
+			<li>Official teacher training certificate from the awarding body. This is not required if your teacher
+				training was completed as part of your degree
+			</li>
+			<li>A transcript or diploma supplement of the qualification that led you to be a recognised teacher. This
+				should be issued by the awarding body and show all the modules you studied and the marks you got for
+				each. If your teacher training was completed as part of your degree, you should supply your degree
+				transcript.
+			</li>
+		</ul>
+		<hr class="govuk-!-margin-bottom-4">
 
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Identification</h2>
+		<p>Supply one of forms of ID from the list below.</p>
+		<p></p>
+		<p> The supplied document must provide details of your date of birth and your nationality. Documents should be
+			currently valid and not expired.</p>
 
+		<ul class="govuk-list govuk-list--bullet">
+			<li>Passport</li>
+			<li>Driving Licence</li>
+			<li>Identity Card</li>
+			<li>Birth Certificate</li>
+			</p>
+		</ul>
+		<h3 class="govuk-heading-s govuk-!-margin-bottom-1">Change of name</h3>
+		<p>Supply evidence of any changes of name if different to that on the supplied qualification or identity
+			documents.</p>
+		<p>Evidence to be a document from the list below.</p>
+		<ul class="govuk-list govuk-list--bullet">
+			<li>Change of name deed</li>
+			<li>Divorce certificate</li>
+			<li>Marriage certificate</li>
+			</p>
+		</ul>
+		<hr class="govuk-!-margin-bottom-4">
 
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Work experience reference</h2>
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Work experience reference</h2>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>You should give the name, role and current email address of a senior staff member who can confirm that you have worked as a teacher for 1 year or more since you qualified.</li> 
-        <li>The staff member should be expecting us to contact them to confirm the size, subject and age range of the classes you have taught, and the dates you worked there</li>
-        </ul>
-      <hr class="govuk-!-margin-bottom-4">
+		<ul class="govuk-list govuk-list--bullet">
+			<li>You should give the name, role and current email address of a senior staff member who can confirm that
+				you have worked as a teacher for 1 year or more since you qualified.
+			</li>
+			<li>The staff member should be expecting us to contact them to confirm the size, subject and age range of
+				the classes you have taught, and the dates you worked there
+			</li>
+		</ul>
+		<hr class="govuk-!-margin-bottom-4">
 
-      {% if data['nationality'] == "Canada"  %}
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Teacher reference number</h2>
-        <p>Description here of teacher refernce number and maybe where to find it.</p>
-        <hr class="govuk-!-margin-bottom-4">
+		{% if data['nationality'] == "Canada" %}
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Teacher reference number</h2>
+		<p>Description here of teacher refernce number and maybe where to find it.</p>
+		<hr class="govuk-!-margin-bottom-4">
 
-      {% elseif data['nationality'] == "India"  %}
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Professional standing as a teacher</h2>
-        <p>You will need to provide proof that you are recognised as a teacher by the competent education or teaching department, ministry or authority in the country or territory where you qualified. This must show that:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li> You have completed a teaching qualification/teacher training which is recognised by the competent authority in that country or territory.</li>
-            <li> You have successfully completed any period of professional experience comparable to an induction period.</li>
-            <li> Your authorisation to teach in the country or territory has never been suspended, barred, cancelled, revoked or restricted and that you have no sanctions against you. </li>
-          </ul>
-        <p>Ways to prove professional standing:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Online register: If your competent education department or authority has an online register of teachers, you will need to provide us with any reference numbers that we will need to check your record</li>
-          <li>A written statement: the competent authority or territory that recognises you as a teacher must confirm any of the details above that are not available online in writing. This written confirmation must be dated within three months of you applying for QTS.</li>
-          <p>This written statement may also be known as a letter of professional standing, a letter of confirmation, letter of reference, confirmation of tenure or a teaching licence.</p>
-        </ul>
-      <hr class="govuk-!-margin-bottom-4">
+		{% elseif data['nationality'] == "India" %}
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Professional standing as a teacher</h2>
+		<p>You will need to provide proof that you are recognised as a teacher by the competent education or teaching
+			department, ministry or authority in the country or territory where you qualified. This must show that:</p>
+		<ul class="govuk-list govuk-list--bullet">
+			<li> You have completed a teaching qualification/teacher training which is recognised by the competent
+				authority in that country or territory.
+			</li>
+			<li> You have successfully completed any period of professional experience comparable to an induction
+				period.
+			</li>
+			<li> Your authorisation to teach in the country or territory has never been suspended, barred, cancelled,
+				revoked or restricted and that you have no sanctions against you.
+			</li>
+		</ul>
+		<p>Ways to prove professional standing:</p>
+		<ul class="govuk-list govuk-list--bullet">
+			<li>Online register: If your competent education department or authority has an online register of teachers,
+				you will need to provide us with any reference numbers that we will need to check your record
+			</li>
+			<li>A written statement: the competent authority or territory that recognises you as a teacher must confirm
+				any of the details above that are not available online in writing. This written confirmation must be
+				dated within three months of you applying for QTS.
+			</li>
+			<p>This written statement may also be known as a letter of professional standing, a letter of confirmation,
+				letter of reference, confirmation of tenure or a teaching licence.</p>
+		</ul>
+		<hr class="govuk-!-margin-bottom-4">
 
-      {% elseif data['nationality'] == "Nigereia"  %}
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Professional standing as a teacher</h2>
-        <p>You will need to provide proof that you are recognised as a teacher by the competent education or teaching department, ministry or authority in the country or territory where you qualified. This must show that:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li> You have completed a teaching qualification/teacher training which is recognised by the competent authority in that country or territory.</li>
-            <li> You have successfully completed any period of professional experience comparable to an induction period.</li>
-            <li> Your authorisation to teach in the country or territory has never been suspended, barred, cancelled, revoked or restricted and that you have no sanctions against you. </li>
-          </ul>
-        <p>Ways to prove professional standing:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Online register: If your competent education department or authority has an online register of teachers, you will need to provide us with any reference numbers that we will need to check your record</li>
-          <li>A written statement: the competent authority or territory that recognises you as a teacher must confirm any of the details above that are not available online in writing. This written confirmation must be dated within three months of you applying for QTS.</li>
-          <p>this written statement may also be known as a letter of professional standing, a letter of confirmation, letter of reference, confirmation of tenure or a teaching licence.</p>
-        </ul>
-      <hr class="govuk-!-margin-bottom-4">
-      {% endif %}
+		{% elseif data['nationality'] == "Nigereia" %}
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Professional standing as a teacher</h2>
+		<p>You will need to provide proof that you are recognised as a teacher by the competent education or teaching
+			department, ministry or authority in the country or territory where you qualified. This must show that:</p>
+		<ul class="govuk-list govuk-list--bullet">
+			<li> You have completed a teaching qualification/teacher training which is recognised by the competent
+				authority in that country or territory.
+			</li>
+			<li> You have successfully completed any period of professional experience comparable to an induction
+				period.
+			</li>
+			<li> Your authorisation to teach in the country or territory has never been suspended, barred, cancelled,
+				revoked or restricted and that you have no sanctions against you.
+			</li>
+		</ul>
+		<p>Ways to prove professional standing:</p>
+		<ul class="govuk-list govuk-list--bullet">
+			<li>Online register: If your competent education department or authority has an online register of teachers,
+				you will need to provide us with any reference numbers that we will need to check your record
+			</li>
+			<li>A written statement: the competent authority or territory that recognises you as a teacher must confirm
+				any of the details above that are not available online in writing. This written confirmation must be
+				dated within three months of you applying for QTS.
+			</li>
+			<p>this written statement may also be known as a letter of professional standing, a letter of confirmation,
+				letter of reference, confirmation of tenure or a teaching licence.</p>
+		</ul>
+		<hr class="govuk-!-margin-bottom-4">
+		{% endif %}
 
-      {% if data['DegreeEnglish'] == "No" and data['nationality'] != "Jamaica"  %}
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">English proficiency evidence</h2>
-        <p>You may not be:</p>
-        <ul class="govuk-list govuk-list--bullet"> 
-          <li>A citizen of a country that is exempt from proving your knowledge of English</li>
-          <li>Taught in English for your undergraduate degree</li>
-        </ul>
-        <p>Then you must prove your knowledge of English by supplying proof of undertaking a Secure English Language Test (SELT). Your test result must prove that you can read, write, speak and understand English to at least level B2 on the Common European Framework of Reference for Languages (CEFR) scale.</p>
+		{% if data['DegreeEnglish'] == "No" and data['nationality'] != "Jamaica" %}
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">English proficiency evidence</h2>
+		<p>You may not be:</p>
+		<ul class="govuk-list govuk-list--bullet">
+			<li>A citizen of a country that is exempt from proving your knowledge of English</li>
+			<li>Taught in English for your undergraduate degree</li>
+		</ul>
+		<p>Then you must prove your knowledge of English by supplying proof of undertaking a Secure English Language
+			Test (SELT). Your test result must prove that you can read, write, speak and understand English to at least
+			level B2 on the Common European Framework of Reference for Languages (CEFR) scale.</p>
 
-      <p>The test must have been taken in the last 2 years prior to the date of application and also taken at the test centre of an approved SELT provider.</p>
-      <p>Approved SELT providers are:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Pearson</li>
-        <li>PSI Services (UK) Ltd</li>
-        <li>IELTS SELT Consortium</li>
-        <li>LanguageCert</li>
-      </ul>
+		<p>The test must have been taken in the last 2 years prior to the date of application and also taken at the test
+			centre of an approved SELT provider.</p>
+		<p>Approved SELT providers are:</p>
+		<ul class="govuk-list govuk-list--bullet">
+			<li>Pearson</li>
+			<li>PSI Services (UK) Ltd</li>
+			<li>IELTS SELT Consortium</li>
+			<li>LanguageCert</li>
+		</ul>
 
-      <p>Supply a copy of the test certificate or a valid digital reference number of an approved SELT.</p>
-        <hr class="govuk-!-margin-bottom-4">
-      {% endif %}
+		<p>Supply a copy of the test certificate or a valid digital reference number of an approved SELT.</p>
+		<hr class="govuk-!-margin-bottom-4">
+		{% endif %}
 
-      {% if data['DegreeStem'] == "No"  %}
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Maths equivalency evidence</h2>
-        <p>Supply evidence of a qualification that demonstrates that you have achieved a level of Mathematics at least equivalent to a GCSE at grade 4 (grade 'C') in England.</p>
-        <p>For example, this could be your degree, or a school leaving certificate that shows the subjects you studied.</p>
-        <hr class="govuk-!-margin-bottom-4">
-      {% endif %}
+		{% if data['DegreeStem'] == "No" %}
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Maths equivalency evidence</h2>
+		<p>Supply evidence of a qualification that demonstrates that you have achieved a level of Mathematics at least
+			equivalent to a GCSE at grade 4 (grade 'C') in England.</p>
+		<p>For example, this could be your degree, or a school leaving certificate that shows the subjects you
+			studied.</p>
+		<hr class="govuk-!-margin-bottom-4">
+		{% endif %}
 
-      {% if data['PrimarySecondary'] == "Primary"  %}
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Science equivalency evidence</h2>
-        <p>Supply evidence of a qualification that demonstrates that you have achieved a level of Science at least equivalent to a GCSE at grade 4 (grade 'C') in England.</p>
-        <p>For example, this could be your degree, or a school leaving certificate that shows the subjects you studied</p>
-        <hr class="govuk-!-margin-bottom-4">
-      {% endif %}
+		{% if data['PrimarySecondary'] == "Primary" %}
+		<h2 class="govuk-heading-m govuk-!-margin-bottom-1">Science equivalency evidence</h2>
+		<p>Supply evidence of a qualification that demonstrates that you have achieved a level of Science at least
+			equivalent to a GCSE at grade 4 (grade 'C') in England.</p>
+		<p>For example, this could be your degree, or a school leaving certificate that shows the subjects you
+			studied</p>
+		<hr class="govuk-!-margin-bottom-4">
+		{% endif %}
 
-      <h2 class="govuk-heading-m">What to do if you cannot provide these documents
+		<h2 class="govuk-heading-m">What to do if you cannot provide these documents
 
- </h2>
+		</h2>
 
-      <p>We will need to see all of these documents to process your application. Email us at email@digital.education.gov.uk for help with paperwork.</p>
+		<p>We will need to see all of these documents to process your application. Email us at
+			email@digital.education.gov.uk for help with paperwork.</p>
 
-      <form action="/prototype-1/task-list-3" method="post" novalidate>
+		<form action="/prototype-1/task-list-3" method="post" novalidate>
 
-        <input type="hidden" name="answers-checked" value="true">
+			<input type="hidden" name="answers-checked" value="true">
 
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Return to task list
-        </button>
+			<button type="submit" class="govuk-button" data-module="govuk-button">
+				Return to task list
+			</button>
 
-      </form>
+		</form>
 
-    </div>
-  </div>
+	</div>
+</div>
 {% endblock %}
