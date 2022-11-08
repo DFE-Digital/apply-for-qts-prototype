@@ -78,24 +78,6 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 				<ul class="app-task-list__items">
 					<li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="english-language-proficiency/how-to-verify-english-language"
-				   aria-describedby="verify-english-language-proficiency">
-                  Verify English language proficiency
-                </a>
-              </span>
-						{% if data['completed-english-proficiency'] %}
-						<strong class="govuk-tag app-task-list__tag" id="english-proficiency-status">Completed</strong>
-						{% elseif data['progress-english-proficiency'] %}
-						<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="english-proficiency-status">In
-							progress</strong>
-						{% else %}
-						<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="english-proficiency-status">Not
-							started</strong>
-						{% endif %}
-					</li>
-
-					<li class="app-task-list__item">
-              <span class="app-task-list__task-name">
                 <a href="qualifications/teacher-training-qualification/teacher-training-qualification"
 				   aria-describedby="teacher-training-qualification">
                   Add your teaching qualifications
@@ -137,6 +119,34 @@ Task list template – {{ serviceName }} – GOV.UK Prototype Kit
 							progress</strong>
 						{% else %}
 						<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="teachable-subjects-status">Not
+							started</strong>
+						{% endif %}
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<h2 class="app-task-list__section">
+					Your English language proficiency
+				</h2>
+				<ul class="app-task-list__items">
+					<li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="english-language-proficiency/how-to-verify-english-language"
+				   aria-describedby="verify-english-proficiency">
+                  Verify your English language proficiency
+                </a>
+              </span>
+						{% if data['completed-verify-english-proficiency']
+						or (data['verify-english-proficiency'] == "supplied-passport-from-exempt-country")
+						or (data['verify-english-proficiency'] == "supplied-university-transcript-from-exempt-country") %}
+
+						<strong class="govuk-tag app-task-list__tag" id="english-proficiency-status">Completed</strong>
+						{% elseif data['progress-verify-english-proficiency'] %}
+						<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="english-proficiency-status">In
+							progress</strong>
+						{% else %}
+						<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="english-proficiency-status">Not
 							started</strong>
 						{% endif %}
 					</li>
