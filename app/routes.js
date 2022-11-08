@@ -536,6 +536,23 @@ router.post("/upload-method-of-instruction-answer", function (req, res) {
   }
 });
 
+// See if second page required for English proficiency certificate
+router.post(
+  "/upload-english-proficiency-certificate-answer",
+  function (req, res) {
+    let anotherEnglishProficiencyCertificate =
+      req.session.data["another-english-proficiency-certificate"];
+
+    if (anotherEnglishProficiencyCertificate === "Yes") {
+      res.redirect(
+        "/prototype-3/english-language-proficiency/upload-english-proficiency-certificate-b"
+      );
+    } else {
+      res.redirect("/prototype-3/task-list");
+    }
+  }
+);
+
 // Do you need to add another qualification
 router.post(
   "/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another",
