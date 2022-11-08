@@ -515,7 +515,7 @@ router.post("/verify-english-proficiency", function (req, res) {
     );
   } else if (verifyEnglishProficiency === "upload-proficiency-certificate") {
     res.redirect(
-      "/prototype-3/english-language-proficiency/upload-proficiency-certificate"
+      "/prototype-3/english-language-proficiency/upload-english-proficiency-certificate"
     );
   } else {
     res.redirect("/prototype-3/task-list");
