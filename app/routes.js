@@ -505,6 +505,23 @@ router.post(
   }
 );
 
+// Verify English language proficiency
+router.post("/verify-english-proficiency", function (req, res) {
+  let verifyEnglishProficiency = req.session.data["verify-english-proficiency"];
+
+  if (verifyEnglishProficiency === "upload-method-of-instruction") {
+    res.redirect(
+      "/prototype-3/english-language-proficiency/upload-method-of-instruction"
+    );
+  } else if (verifyEnglishProficiency === "upload-proficiency-certificate") {
+    res.redirect(
+      "/prototype-3/english-language-proficiency/upload-proficiency-certificate"
+    );
+  } else {
+    res.redirect("/prototype-3/task-list");
+  }
+});
+
 // Do you need to add another qualification
 router.post(
   "/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another",
