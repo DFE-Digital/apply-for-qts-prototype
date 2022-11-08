@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Verify your English language proficiency? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form class="form" action="/verify-english-proficiency" method="post">
+			<span class="govuk-caption-l">Your qualifications</span>
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="verify-english-proficiency-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">
+							How should we verify your English language proficiency?
+						</h1>
+					</legend>
+					<div id="verify-english-proficiency-hint" class="govuk-hint">
+						Tell us which of the following methods we should use to verify your English language proficiency.
+					</div>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="verify-english-proficiency" name="verify-english-proficiency" type="radio" value="upload-method-of-instruction">
+							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency">
+								I’ll upload the Method of instruction (MOI) from my university degree.
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="verify-english-proficiency-2" name="verify-english-proficiency" type="radio" value="upload-proficiency-certificate">
+							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency-2">
+								I’ll upload an English language proficiency certificate.
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="verify-english-proficiency-3" name="verify-english-proficiency" type="radio" value="supplied-passport-from-exempt-country">
+							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency-3">
+								I’ve already uploaded a passport that proves I was born in or hold citizenship of an exempt country.
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="verify-english-proficiency-4" name="verify-english-proficiency" type="radio" value="supplied-university-transcript-from-exempt-country">
+							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency-4">
+								I’ve already uploaded the transcript of a university degree from an exempt country.
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<details class="govuk-details" data-module="govuk-details">
+				<summary class="govuk-details__summary">
+    				<span class="govuk-details__summary-text">
+      					Which countries are exempt?
+    				</span>
+				</summary>
+				<div class="govuk-details__text">
+					<p class="govuk-body">The following countries are exempt from additional English language
+						proficiency requirements:</p>
+					<ul class="govuk-list govuk-list--bullet">
+						<li>Antigua and Barbuda</li>
+						<li>Australia</li>
+						<li>The Bahamas</li>
+						<li>Barbados</li>
+						<li>Belize</li>
+						<li>Canada</li>
+						<li>Dominica</li>
+						<li>Grenada</li>
+						<li>Guyana</li>
+						<li>Jamaica</li>
+						<li>Ireland</li>
+						<li>Malta</li>
+						<li>New Zealand</li>
+						<li>St Kitts and Nevis</li>
+						<li>St Lucia</li>
+						<li>St Vincent and the Grenadines</li>
+						<li>Trinidad and Tobago</li>
+						<li>USA</li>
+						<li>England</li>
+						<li>Scotland</li>
+						<li>Northern Ireland</li>
+						<li>Wales</li>
+					</ul>
+				</div>
+			</details>
+
+			<div class="govuk-button-group">
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+			<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
+					name="progress-verify-english-proficiency" value="progress-verify-english-proficiency" formaction="/prototype-3/task-list">
+				Save and come back later
+			</button>
+			</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,60 +1,61 @@
 {% extends "wizard.html" %}
 
 {% block pageTitle %}
-  Do you have a degree? – {{ serviceName }} prototype
+Do you have a degree? – {{ serviceName }} prototype
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
 
-      <!-- <h1 class="govuk-heading-xl">Radio Button question</h1> -->
+		<!-- <h1 class="govuk-heading-xl">Radio Button question</h1> -->
 
-      <form class="form" action="/degree-answer" method="post">
+		<form class="form" action="/degree-answer" method="post">
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+			{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-        {{ govukRadios({
-          idPrefix: "Degree",
-          name: "Degree",
-          fieldset: {
-            legend: {
-              text: "Do you have a university degree?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          hint: {
-            text: "Your degree could include your teaching qualification, or it could be a degree in another subject."
-          },
-          items: [
-            {
-              value: "Yes",
-              text: "Yes",
-              checked: checked("Degree", "Yes")
-            },
-            {
-              value: "No",
-              text: "No",
-              checked: checked("Degree", "No")
-            }
+			{{ govukRadios({
+			idPrefix: "Degree",
+			name: "Degree",
+			fieldset: {
+			legend: {
+			text: "Do you have a university degree?",
+			isPageHeading: true,
+			classes: "govuk-fieldset__legend--l"
+			}
+			},
+			hint: {
+			text: "Your degree could include your teaching qualification, or it could be a degree in another subject."
+			},
+			items: [
+			{
+			value: "Yes",
+			text: "Yes",
+			checked: checked("Degree", "Yes")
+			},
+			{
+			value: "No",
+			text: "No",
+			checked: checked("Degree", "No")
+			}
 
-          ]
-        }) }}
+			]
+			}) }}
 
-        {% from "govuk/components/details/macro.njk" import govukDetails %}
+			{% from "govuk/components/details/macro.njk" import govukDetails %}
 
-        {{ govukDetails({
-        summaryText: "Why we ask this",
-        text: "Teaching is a graduate-level profession in England, which means you must be able to show that you’ve completed a university degree."
-        }) }}
+			{{ govukDetails({
+			summaryText: "Why we ask this",
+			text: "Teaching is a graduate-level profession in England, which means you must be able to show that you’ve
+			completed a university degree."
+			}) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
 
-      </form>
+		</form>
 
-    </div>
-  </div>
+	</div>
+</div>
 
 {% endblock %}

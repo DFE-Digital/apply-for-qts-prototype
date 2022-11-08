@@ -505,6 +505,54 @@ router.post(
   }
 );
 
+// Verify English language proficiency
+router.post("/verify-english-proficiency", function (req, res) {
+  let verifyEnglishProficiency = req.session.data["verify-english-proficiency"];
+
+  if (verifyEnglishProficiency === "upload-method-of-instruction") {
+    res.redirect(
+      "/prototype-3/english-language-proficiency/upload-method-of-instruction"
+    );
+  } else if (verifyEnglishProficiency === "upload-proficiency-certificate") {
+    res.redirect(
+      "/prototype-3/english-language-proficiency/upload-english-proficiency-certificate"
+    );
+  } else {
+    res.redirect("/prototype-3/task-list");
+  }
+});
+
+// See if second page required for MOI
+router.post("/upload-method-of-instruction-answer", function (req, res) {
+  let anotherMethodOfInstruction =
+    req.session.data["another-method-of-instruction"];
+
+  if (anotherMethodOfInstruction === "Yes") {
+    res.redirect(
+      "/prototype-3/english-language-proficiency/upload-method-of-instruction-b"
+    );
+  } else {
+    res.redirect("/prototype-3/task-list");
+  }
+});
+
+// See if second page required for English proficiency certificate
+router.post(
+  "/upload-english-proficiency-certificate-answer",
+  function (req, res) {
+    let anotherEnglishProficiencyCertificate =
+      req.session.data["another-english-proficiency-certificate"];
+
+    if (anotherEnglishProficiencyCertificate === "Yes") {
+      res.redirect(
+        "/prototype-3/english-language-proficiency/upload-english-proficiency-certificate-b"
+      );
+    } else {
+      res.redirect("/prototype-3/task-list");
+    }
+  }
+);
+
 // Do you need to add another qualification
 router.post(
   "/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another",
