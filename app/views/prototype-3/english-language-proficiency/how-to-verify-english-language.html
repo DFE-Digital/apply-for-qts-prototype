@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Age range – {{ serviceName }} – GOV.UK Prototype Kit
+Verify your English language proficiency? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,51 +12,42 @@ Age range – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<form class="form" action="../task-list" method="post">
-			<span class="govuk-caption-l">Who you can teach</span>
-			<h1 class="govuk-heading-l govuk-!-margin-bottom-0">What age range are you qualified to teach?</h1>
-			<div id="event-name-hint" class="govuk-hint govuk-!-margin-bottom-0">
-				Tell us about the age range of the children you’re qualified to teach.
-				for example, from 5 to 11.
-			</div>
-			<div class="govuk-form-group govuk-!-margin-bottom-0">
-				<fieldset class="govuk-fieldset" role="group" aria-describedby="age-range-hint">
+		<form class="form" action="/verify-english-proficiency" method="post">
+			<span class="govuk-caption-l">Your qualifications</span>
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="verify-english-proficiency-hint">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-						<h1 class="govuk-fieldset__heading govuk-!-display-none">
-							Youngest age you qualified to teach?
+						<h1 class="govuk-fieldset__heading">
+							How should we verify your English language proficiency?
 						</h1>
 					</legend>
-					<div class="govuk-date-input" id="age-range-min">
-						<div class="govuk-date-input__item">
-							<div class="govuk-form-group">
-								<label class="govuk-label govuk-date-input__label" for="age-range-min">
-									From
-								</label>
-								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
-									   id="age-range-min" name="age-range-min" value="{{ data['age-range-min'] }}"
-									   type="text" inputmode="numeric">
-							</div>
-						</div>
+					<div id="verify-english-proficiency-hint" class="govuk-hint">
+						Tell us which of the following methods we should use to verify your English language proficiency.
 					</div>
-				</fieldset>
-			</div>
-			<div class="govuk-form-group">
-				<fieldset class="govuk-fieldset" role="group" aria-describedby="age-range-hint">
-					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-						<h2 class="govuk-fieldset__heading govuk-!-display-none">
-							Oldest age you are qualified to teach?
-						</h2>
-					</legend>
-					<div class="govuk-date-input" id="age-range-max">
-						<div class="govuk-date-input__item">
-							<div class="govuk-form-group">
-								<label class="govuk-label govuk-date-input__label" for="age-range-max">
-									To
-								</label>
-								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
-									   id="age-range-max" name="age-range-max" value="{{ data['age-range-max'] }}"
-									   type="text" inputmode="numeric">
-							</div>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="verify-english-proficiency" name="verify-english-proficiency" type="radio" value="upload-method-of-instruction">
+							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency">
+								I’ll upload the Method of instruction (MOI) from my university degree.
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="verify-english-proficiency-2" name="verify-english-proficiency" type="radio" value="upload-proficiency-certificate">
+							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency-2">
+								I’ll upload an English language proficiency certificate.
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="verify-english-proficiency-3" name="verify-english-proficiency" type="radio" value="supplied-passport-from-exempt-country">
+							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency-3">
+								I’ve already uploaded a passport that proves I was born in or hold citizenship of an exempt country.
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="verify-english-proficiency-4" name="verify-english-proficiency" type="radio" value="supplied-university-transcript-from-exempt-country">
+							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency-4">
+								I’ve already uploaded the transcript of a university degree from an exempt country.
+							</label>
 						</div>
 					</div>
 				</fieldset>
@@ -64,24 +55,48 @@ Age range – {{ serviceName }} – GOV.UK Prototype Kit
 
 			<details class="govuk-details" data-module="govuk-details">
 				<summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      About age ranges and grades
-    </span>
+    				<span class="govuk-details__summary-text">
+      					Which countries are exempt?
+    				</span>
 				</summary>
 				<div class="govuk-details__text">
-					<p>Some countries recognise a teacher’s qualifications by the age of the children, while others use
-						the grade or year group the children are in.</p>
-
-					<p>Sometimes, you might teach children whose age falls outside the range that you’d normally teach.
-						For this question, we just need the approximate age range of the children you’re qualified to
-						teach.</p>
+					<p class="govuk-body">The following countries are exempt from additional English language
+						proficiency requirements:</p>
+					<ul class="govuk-list govuk-list--bullet">
+						<li>Antigua and Barbuda</li>
+						<li>Australia</li>
+						<li>The Bahamas</li>
+						<li>Barbados</li>
+						<li>Belize</li>
+						<li>Canada</li>
+						<li>Dominica</li>
+						<li>Grenada</li>
+						<li>Guyana</li>
+						<li>Jamaica</li>
+						<li>Ireland</li>
+						<li>Malta</li>
+						<li>New Zealand</li>
+						<li>St Kitts and Nevis</li>
+						<li>St Lucia</li>
+						<li>St Vincent and the Grenadines</li>
+						<li>Trinidad and Tobago</li>
+						<li>USA</li>
+						<li>England</li>
+						<li>Scotland</li>
+						<li>Northern Ireland</li>
+						<li>Wales</li>
+					</ul>
 				</div>
 			</details>
 
-			<button class="govuk-button" data-module="govuk-button" name="completed-age-range"
-					value="completed-age-range">Continue
-			</button>
+			<div class="govuk-button-group">
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
 
+			<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
+					name="progress-verify-english-proficiency" value="progress-verify-english-proficiency" formaction="/prototype-3/task-list">
+				Save and come back later
+			</button>
+			</div>
 	</div>
 </div>
 
