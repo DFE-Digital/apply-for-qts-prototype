@@ -522,6 +522,20 @@ router.post("/verify-english-proficiency", function (req, res) {
   }
 });
 
+// See if second page required for MOI
+router.post("/upload-method-of-instruction-answer", function (req, res) {
+  let anotherMethodOfInstruction =
+    req.session.data["another-method-of-instruction"];
+
+  if (anotherMethodOfInstruction === "Yes") {
+    res.redirect(
+      "/prototype-3/english-language-proficiency/upload-method-of-instruction-b"
+    );
+  } else {
+    res.redirect("/prototype-3/task-list");
+  }
+});
+
 // Do you need to add another qualification
 router.post(
   "/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another",
