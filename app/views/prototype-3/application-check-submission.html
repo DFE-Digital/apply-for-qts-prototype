@@ -588,13 +588,14 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 			<div class="govuk-summary-list__card-content">
 				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
+					{% if data['verify-english-proficiency'] == "upload-method-of-instruction" %}
 					<!-- Method of instruction -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Method of instruction
 						</dt>
 						<dd class="govuk-summary-list__value">
-							method-of-instruction.pdf
+							<a href="#">method-of-instruction.pdf</a>
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a href="english-language-proficiency/upload-method-of-instruction-3">
@@ -603,6 +604,85 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 							</a>
 						</dd>
 					</div>
+					{% endif %}
+					{% if data['verify-english-proficiency'] == "upload-proficiency-certificate" %}
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Approved provider
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['approved-provider'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="english-language-proficiency/provide-test-details">
+								Change
+								<span class="govuk-visually-hidden">approved provider</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Reference number
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['english-proficiency-reference'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="english-language-proficiency/upload-english-proficiency-certificate-3.html">
+								Change
+								<span class="govuk-visually-hidden">maximum age</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Certificate
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<a href="#">english-proficiency-certificate.pdf</a>
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="english-language-proficiency/upload-english-proficiency-certificate-3">
+								Change
+								<span class="govuk-visually-hidden">maximum age</span>
+							</a>
+						</dd>
+					</div>
+					{% endif %}
+					{% if data['verify-english-proficiency'] == "supplied-passport-from-exempt-country" %}
+					<!-- Method of instruction -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Verification method
+						</dt>
+						<dd class="govuk-summary-list__value">
+							I’ve already uploaded a passport that proves I was born in or hold citizenship of an exempt country.
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="english-language-proficiency/how-to-verify-english-language">
+								Change
+								<span class="govuk-visually-hidden">English verification method</span>
+							</a>
+						</dd>
+					</div>
+					{% endif %}
+					{% if data['verify-english-proficiency'] == "supplied-university-transcript-from-exempt-country" %}
+					<!-- Method of instruction -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Verification method
+						</dt>
+						<dd class="govuk-summary-list__value">
+							I’ve already uploaded the transcript of a university degree from an exempt country.
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="english-language-proficiency/how-to-verify-english-language">
+								Change
+								<span class="govuk-visually-hidden">English verification method</span>
+							</a>
+						</dd>
+					</div>
+					{% endif %}
 				</dl>
 			</div>
 		</div>
