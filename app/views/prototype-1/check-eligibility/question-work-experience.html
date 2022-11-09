@@ -18,29 +18,28 @@ Work experience – {{ serviceName }} prototype
 			name: "work-experience",
 			fieldset: {
 			legend: {
-			text: "How long have you spent working professionally as a teacher?",
+			text: "How long have you been employed as a recognised teacher?",
 			isPageHeading: true,
 			classes: "govuk-fieldset__legend--l"
 			}
 			},
 			hint: {
-			text: "Do not include any time spent working as a teacher before or while you were completing your teaching
-			qualification."
+			text: "We need to know how long you’ve been employed as a teacher, since completing your teaching qualification."
 			},
 			items: [
 			{
 			value: "less-than-1-year",
-			text: "Less than 1 year",
+			text: "Less than 1 school year",
 			checked: checked("work-experience", "Less than 1 year")
 			},
 			{
 			value: "between-1-and-2-years",
-			text: "1 year or more, but under 2 years",
+			text: "1 to 2 school years",
 			checked: checked("work-experience", "1 year or more, but under 2 years")
 			},
 			{
 			value: "more-than-2-years",
-			text: "2 years or more",
+			text: "More than 2 school years",
 			checked: checked("work-experience", "2 years or more")
 			}
 
@@ -50,15 +49,14 @@ Work experience – {{ serviceName }} prototype
 			{% from "govuk/components/details/macro.njk" import govukDetails %}
 
 			{{ govukDetails({
-			summaryText: "Why we ask this",
-			html: "<p>To teach in England, you must have at least 1 year of professional teaching experience that took
-			place after completing your teaching qualification.</p>
+			summaryText: "How to calculate your work experience",
+			html: "<p>Our definition of a ‘school year’ is at least 9 months of time spent teaching. This can include scheduled school holiday periods, but cannot include any other time you’ve spent away from teaching.</p>
 
-			<p>If you have more than 1 year, but less than 2 years of teaching experience, you may still be awarded QTS,
-				but you’ll need to complete a 2-year ‘statutory induction’ period as a newly qualified teacher.</p>
+			<p>To work out your experience, add up the time you’ve spent employed as a teacher, including any scheduled school holidays.</p>
 
-			<p>You’ll need to provide a contact name and email address. If you’re successful, we’ll contact them to
-				verify your work history before awarding QTS.</p>"
+			<p>If you have between 1 and 2 academic years of experience, you may still be awarded QTS, but you’ll need to complete a 2-year ‘statutory induction’ period as a newly qualified teacher.</p>
+
+			<p>We’ll ask you to provide a contact name and email address to verify your work history. If you’re successful, we’ll contact them before awarding QTS.</p>"
 			}) }}
 
 			<button class="govuk-button" data-module="govuk-button">Continue</button>
