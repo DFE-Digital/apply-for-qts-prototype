@@ -20,16 +20,20 @@ Not eligible for QTS in England – {{ serviceName }} – GOV.UK Prototype Kit
 		<p>This is because:</p>
 
 		<ul class="govuk-list govuk-list--bullet">
+			{% if data['formal-training'] != 'Yes' %}
+			<li>You have not completed a formal teaching qualification, for example, an undergraduate teaching degree or
+				postgraduate teaching qualification.
+			</li>
+			{% endif %}
+
 			{% if data['Degree'] != 'Yes' %}
 			<li>You do not have a degree. As teaching in England is a graduate profession, you must have an
 				undergraduate degree.
 			</li>
 			{% endif %}
 
-			{% if data['formal-training'] != 'Yes' %}
-			<li>You have not completed a formal teaching qualification, for example, an undergraduate teaching degree or
-				postgraduate teaching qualification.
-			</li>
+			{% if data['special-educational-needs'] != 'Yes' %}
+			<li>You are not qualified to teach children who are aged somewhere between 5 and 16 years.</li>
 			{% endif %}
 
 			{% if (data['english-proficiency'] == 'no') %}
@@ -38,10 +42,6 @@ Not eligible for QTS in England – {{ serviceName }} – GOV.UK Prototype Kit
 
 			{% if data['work-experience'] == 'less-than-1-year' %}
 			<li>You do not have sufficient work experience as a teacher</li>
-			{% endif %}
-
-			{% if data['special-educational-needs'] != 'Yes' %}
-			<li>You are not qualified to teach children who are aged somewhere between 5 and 16 years.</li>
 			{% endif %}
 
 			{% if data['misconduct'] != 'No' %}
