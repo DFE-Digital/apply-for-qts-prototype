@@ -119,7 +119,7 @@ router.post("/country-answer", function (req, res) {
       res.redirect(region_countries_arr[country]);
     } else {
       res.redirect(
-        "/prototype-1/check-eligibility/question-english-proficiency"
+        "/prototype-1/check-eligibility/question-formal-training"
       );
     }
   } else {
@@ -130,7 +130,7 @@ router.post("/country-answer", function (req, res) {
 router.post("/region-answer", function (req, res) {
   var region = req.session.data["region"];
   if (REGIONS.includes(region)) {
-    res.redirect("/prototype-1/check-eligibility/question-english-proficiency");
+    res.redirect("/prototype-1/check-eligibility/question-formal-training");
   } else {
     res.redirect("/prototype-1/check-eligibility/ineligible-country");
   }
@@ -141,7 +141,7 @@ router.post("/formal-training-answer", function (req, res) {
 });
 
 router.post("/special-educational-needs-answer", function (req, res) {
-  res.redirect("/prototype-1/check-eligibility/question-country");
+  res.redirect("/prototype-1/check-eligibility/question-english-proficiency");
 });
 
 // Run this code when a form is submitted to 'completed-year-answer'
@@ -442,7 +442,7 @@ router.post("/create-account-sign-in-answer", function (req, res) {
   if (hasAccount === "yes") {
     res.redirect("/prototype-3/country-check/question-country");
   } else {
-    res.redirect("/prototype-1/check-eligibility/question-formal-training");
+    res.redirect("/prototype-1/check-eligibility/question-country");
   }
 });
 
