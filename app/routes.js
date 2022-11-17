@@ -608,12 +608,11 @@ router.post(
 
 
 // Add a second work history example
-router.post(
-  "/prototype-3/work-history/work-history-in-education-2",
+router.post("/work-history",
   function (req, res) {
-    let addAnotherWorkplace = req.session.data["add-another-workplace"];
+    let finishedAddingWorkHistory = req.session.data["finished-adding-work-history"];
 
-    if (addAnotherWorkplace === "yes") {
+    if (finishedAddingWorkHistory === "no") {
       res.redirect("/prototype-3/work-history/work-history-in-education-2");
     } else {
       res.redirect("/prototype-3/task-list");
