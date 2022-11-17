@@ -41,21 +41,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 				<input class="govuk-input" id="school-name" name="school-name" value="{{ data['school-name'] }}"
 					   type="text">
 			</div>
-
-			{% from "govuk/components/select/macro.njk" import govukSelect %}
-
-			{{ govukSelect({
-			id: "school-country",
-			name: "school-country",
-			classes: "govuk-input--width-10",
-			label: {
-			classes: "govuk-label--s, govuk-!-font-weight-regular",
-			isPageHeading: true,
-			text: "Country"
-			},
-			items: countries
-			}) }}
-
+			
 			<div class="govuk-form-group">
 				<label class="govuk-label" for="job-role">
 					Your job role
