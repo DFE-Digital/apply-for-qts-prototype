@@ -40,175 +40,12 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 							School name
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{ data['school-name'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">school name</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- School city -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							City of institution
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['school-city'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">city of institution</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- School country -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Country of institution
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['school-country'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">country of institution</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- Job role -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Your job role
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['job-role'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">your job role</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- Contact email address -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Contact email address
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['reference-email'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">contact email address</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- Role start date -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Role start date
-						</dt>
-						<dd class="govuk-summary-list__value">
-							<span>{{ data['start-date-month'] }} </span> / <span>{{ data['start-date-year'] }}</span>
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">role start date</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- Role start date -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Role end date
-						</dt>
-						<dd class="govuk-summary-list__value">
-							<span>{{ data['end-date-month'] }} </span> / <span>{{ data['end-date-year'] }}</span>
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">role end date</span>
-							</a>
-						</dd>
-					</div>
-				</dl>
-
-			</div>
-		</div>
-		<div class="govuk-summary-list__card">
-			<div class="govuk-summary-list__card-title-wrapper">
-				<h2 class="govuk-summary-list__card-title">Previous workplace</h2>
-				<div class="govuk-summary-list__card-actions">
-					<!--            <ul class="govuk-summary-list__card-actions-list">-->
-					<!--              <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">Delete-->
-					<!--                choice<span class="govuk-visually-hidden"> your work history</span> </a></li>-->
-					<!--              <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
-					<!--                Withdraw<span class="govuk-visually-hidden"> your work history</span> </a></li>-->
-					<!--            </ul>-->
-				</div>
-			</div>
-			<div class="govuk-summary-list__card-content">
-
-				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-					<!-- School name -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							School name
-						</dt>
-						<dd class="govuk-summary-list__value">
 							{{ data['school-name-2'] }}
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a href="work-history-in-education-2">
 								Change
 								<span class="govuk-visually-hidden">school name</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- School city -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							City of institution
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['school-city-2'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-2">
-								Change
-								<span class="govuk-visually-hidden">city of institution</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- School country -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Country of institution
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['school-country-2'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-2">
-								Change
-								<span class="govuk-visually-hidden">country of institution</span>
 							</a>
 						</dd>
 					</div>
@@ -229,14 +66,94 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 
+					<!-- Contact's full name -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Contact's full name
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['contact-full-name-2'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">contact-full-name</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Contact email address -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Contact email address
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['reference-email-2'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">contact email address</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Full or part time -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Role full time or part time
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['full-or-part-time-2'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">role full time or part time</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Children aged somewhere between 5 and 16 -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Children aged somewhere between 5 and 16
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['age-range-2'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">children aged somewhere between 5 and 16</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Responsible for at least 4 children -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Responsible for at least 4 children
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['student-number-2'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">responsible for at least 4 children</span>
+							</a>
+						</dd>
+					</div>
+
+
 					<!-- Role start date -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Role start date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<span>{{ data['start-date-month-2'] }} </span> /
-							<span>{{ data['start-date-year-2'] }}</span>
+							<span>{{ data['start-date-2-month'] }} </span> / <span>{{ data['start-date-2-year'] }}</span> <span>{{ data['start-date-2-estimate'] }}</span>
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a href="work-history-in-education-2">
@@ -246,13 +163,13 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 
-					<!-- Role end date -->
+					<!-- Role start date -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Role end date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<span>{{ data['end-date-month-2'] }} </span> / <span>{{ data['end-date-year-2'] }}</span>
+							<span>{{ data['end-date-2-month'] }} </span> / <span>{{ data['end-date-2-year'] }}</span> <span>{{ data['end-date-2-estimate'] }}</span>
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a href="work-history-in-education-2">
@@ -262,10 +179,10 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 				</dl>
-
 			</div>
 		</div>
-		<form action="../task-list" method="post" novalidate>
+
+		<form action="/work-history" method="post" novalidate>
 			<h1 class="govuk-heading-m">Add another workplace</h1>
 
 			<div class="govuk-form-group">
@@ -275,34 +192,26 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 					</legend>
 					<div class="govuk-radios" data-module="govuk-radios">
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="add-another-workplace" name="add-another-workplace"
-								   type="radio" value="no">
-							<label class="govuk-label govuk-radios__label" for="add-another-workplace">
+							<input class="govuk-radios__input" id="finished-adding-work-history" name="finished-adding-work-history"
+								   type="radio" value="yes">
+							<label class="govuk-label govuk-radios__label" for="finished-adding-work-history">
 								Yes
 							</label>
 						</div>
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="add-another-workplace-2" name="add-another-workplace"
-								   type="radio" value="yes">
-							<label class="govuk-label govuk-radios__label" for="add-another-workplace-2">
+							<input class="govuk-radios__input" id="finished-adding-work-history-2" name="finished-adding-work-history"
+								   type="radio" value="no">
+							<label class="govuk-label govuk-radios__label" for="finished-adding-work-history-2">
 								No
 							</label>
 						</div>
 					</div>
-
 				</fieldset>
 			</div>
-			<div class="govuk-button-group">
-				<button class="govuk-button" data-module="govuk-button" name="completed-work-history"
-						value="completed-work-history" type="submit">
-					Continue
-				</button>
-
-				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" name=""
-						value="progress" formaction="/prototype-3/task-list">
-					Save and come back later
-				</button>
-			</div>
+			<button class="govuk-button" data-module="govuk-button" name="completed-work-history"
+					value="completed-work-history" type="submit">
+				Continue
+			</button>
 		</form>
 	</div>
 </div>
