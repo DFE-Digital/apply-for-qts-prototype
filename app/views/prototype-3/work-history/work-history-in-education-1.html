@@ -100,6 +100,21 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
 				</fieldset>
 			</div>
+
+			{{ govukRadios({
+			name: "full-or-part-time",
+			fieldset: {
+			legend: {
+			text: "Was this job full time or part time?"
+			}
+			},
+			items: [{
+			text: "Full time (usually at least 35 hours a week)",
+			value: "Full time"
+			}, {
+			text: "Part time"
+			}]
+			}) }}
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
