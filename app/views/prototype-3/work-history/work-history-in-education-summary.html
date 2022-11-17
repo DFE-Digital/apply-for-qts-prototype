@@ -50,38 +50,6 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 
-					<!-- School city -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							City of institution
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['school-city'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">city of institution</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- School country -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Country of institution
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['school-country'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">country of institution</span>
-							</a>
-						</dd>
-					</div>
-
 					<!-- Job role -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -130,13 +98,62 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 
+					<!-- Full or part time -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Role full time or part time
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['full-or-part-time'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">role full time or part time</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Children aged somewhere between 5 and 16 -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Children aged somewhere between 5 and 16
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['age-range'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">children aged somewhere between 5 and 16</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Responsible for at least 4 children -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Responsible for at least 4 children
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['student-number'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">responsible for at least 4 children</span>
+							</a>
+						</dd>
+					</div>
+
+
 					<!-- Role start date -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Role start date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<span>{{ data['start-date-month'] }} </span> / <span>{{ data['start-date-year'] }}</span>
+							<span>{{ data['start-date-month'] }} </span> / <span>{{ data['start-date-year'] }}</span> <span>{{ data['start-date-estimate'] }}</span>
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a href="work-history-in-education-1">
@@ -152,7 +169,7 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 							Role end date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<span>{{ data['end-date-month'] }} </span> / <span>{{ data['end-date-year'] }}</span>
+							<span>{{ data['end-date-month'] }} </span> / <span>{{ data['end-date-year'] }}</span> <span>{{ data['end-date-estimate'] }}</span>
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a href="work-history-in-education-1">
