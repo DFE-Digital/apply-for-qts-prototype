@@ -13,9 +13,9 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 <script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
 <script>
     openregisterLocationPicker({
-        selectElement: document.getElementById('school-country-2'),
+        selectElement: document.getElementById('school-country'),
         url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
-        defaultValue: '{{ data["school-country-2"] }}'
+        defaultValue: '{{ data["school-country"] }}'
     })
 </script>
 {% endblock %}
@@ -28,83 +28,147 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<span class="govuk-caption-l">Proof that you're recognised as a teacher</span>
-		<h1 class="govuk-heading-l">Your work history in education</h1>
-		<p class="govuk-body">We need to see your work history in education, beginning with your current or most recent
-			employer.</p>
-		<p class="govuk-body">You can add previous employers and roles dating back to a maximum of 10 years.</p>
+		<span class="govuk-caption-l">Work history</span>
+		<h1 class="govuk-heading-l">Add a role</h1>
+		<p class="govuk-body">Tell us about the teaching roles you’ve held since becoming recognised as a teacher, beginning with your current or most recent employer.</p>
 
 		<form class="form" action="work-history-in-education-summary-2" method="post">
 
-			<h2 class="govuk-heading-m">Enter the details of a previous role</h2>
-
 			<div class="govuk-form-group">
 				<label class="govuk-label" for="school-name-2">
-					School name
+					Name of school
 				</label>
 				<input class="govuk-input" id="school-name-2" name="school-name-2" value="{{ data['school-name-2'] }}"
 					   type="text">
 			</div>
 
 			<div class="govuk-form-group">
-				<label class="govuk-label" for="school-city-2">
-					City
+				<label class="govuk-label" for="job-role">
+					Job title or role
 				</label>
-				<input class="govuk-input" id="school-city-2" name="school-city-2" value="{{ data['school-city-2'] }}"
-					   type="text">
+				<input class="govuk-input" id="job-role" name="job-role-2" value="{{ data['job-role-2'] }}" type="text">
 			</div>
 
-			{% from "govuk/components/select/macro.njk" import govukSelect %}
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="contact-full-name-2">
+					Contact's full name
+				</label>
+				<input class="govuk-input" id="contact-full-name-2" name="contact-full-name-2" type="text"
+					   spellcheck="false" autocomplete="name" value="{{ data['contact-full-name-2'] }}">
+			</div>
 
-			{{ govukSelect({
-			id: "school-country-2",
-			name: "school-country-2",
-			classes: "govuk-input--width-10",
-			label: {
-			classes: "govuk-label--s, govuk-!-font-weight-regular",
-			isPageHeading: true,
-			text: "Country"
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="reference-email">
+					Contact email address for this organisation
+				</label>
+				<input class="govuk-input" id="reference-email-2" name="reference-email-2"
+					   value="{{ data['reference-email-2'] }}" type="text">
+			</div>
+
+			<details class="govuk-details" data-module="govuk-details">
+				<summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+             Why we ask for this
+            </span>
+				</summary>
+				<div class="govuk-details__text">
+					We need a name and an official contact email address for your current or most recent employer in
+					case we need to get in touch with them. This must not be a web-based email address such as
+					@gmail.com.
+				</div>
+			</details>
+
+			{{ govukRadios({
+			name: "full-or-part-time-2",
+			fieldset: {
+			legend: {
+			text: "Was this role full time or part time?"
+			}
 			},
-			items: countries
+			items: [{
+			text: "Full time (usually at least 35 hours a week)",
+			value: "Full time"
+			}, {
+			text: "Part time",
+			value: "Part time"
+			}]
 			}) }}
 
 			<div class="govuk-form-group">
-				<label class="govuk-label" for="job-role-2">
-					Your job role
-				</label>
-				<input class="govuk-input" id="job-role-2" name="job-role-2" value="{{ data['job-role-2'] }}"
-					   type="text">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend">
+						Did you work with children aged somewhere between 5 and 16?
+					</legend>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="age-range-2" name="age-range-2" type="radio" value="Yes">
+							<label class="govuk-label govuk-radios__label" for="age-range-2">
+								Yes
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="age-range-2" name="age-range-2" type="radio" value="No">
+							<label class="govuk-label govuk-radios__label" for="age-range-2">
+								No
+							</label>
+						</div>
+					</div>
+
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend">
+						Were you responsible for at least 4 children in this role?
+					</legend>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="student-number" name="student-number-2" type="radio" value="Yes">
+							<label class="govuk-label govuk-radios__label" for="student-number">
+								Yes
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="student-number-2" name="student-number-2" type="radio" value="No">
+							<label class="govuk-label govuk-radios__label" for="student-number-2">
+								No
+							</label>
+						</div>
+					</div>
+
+				</fieldset>
 			</div>
 
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
-					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+					<legend class="govuk-fieldset__legend">
 						<h1 class="govuk-fieldset__heading">
-							Your start date
+							When did you start this role?
 						</h1>
 					</legend>
 					<div id="start-date-hint" class="govuk-hint">
-						For example, 3 2020
+						For example, 3 2020, If you cannot remember the exact month or year, enter an estimate.
 					</div>
 					<div class="govuk-date-input" id="start-date">
 						<div class="govuk-date-input__item">
 							<div class="govuk-form-group">
-								<label class="govuk-label govuk-date-input__label" for="start-date-month-2">
+								<label class="govuk-label govuk-date-input__label" for="start-date-2-month">
 									Month
 								</label>
 								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
-									   id="start-date-month-2" name="start-date-month-2"
-									   value="{{ data['start-date-month-2'] }}" type="text" inputmode="numeric">
+									   id="start-date-2-month" name="start-date-2-month"
+									   value="{{ data['start-date-2-month'] }}" type="text" inputmode="numeric">
 							</div>
 						</div>
 						<div class="govuk-date-input__item">
 							<div class="govuk-form-group">
-								<label class="govuk-label govuk-date-input__label" for="start-date-year-2">
+								<label class="govuk-label govuk-date-input__label" for="start-date-year">
 									Year
 								</label>
 								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
-									   id="start-date-year-2" name="start-date-year-2"
-									   value="{{ data['start-date-year-2'] }}" type="text" inputmode="numeric">
+									   id="start-date-2-year" name="start-date-2-year" value="{{ data['start-date-2-year'] }}"
+									   type="text" inputmode="numeric">
 							</div>
 						</div>
 					</div>
@@ -113,51 +177,97 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 			</div>
 
 			<div class="govuk-form-group">
-				<fieldset class="govuk-fieldset" role="group" aria-describedby="end-date-hint">
-					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+				<div class="govuk-checkboxes__item">
+					<input class="govuk-checkboxes__input" id="start-date-2-estimate" name="start-date-2-estimate" type="checkbox" value="estimated">
+					<label class="govuk-label govuk-checkboxes__label" for="start-date-2-estimate">
+						This is an estimate
+					</label>
+				</div>
+			</div>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="still-at-school-hint">
+					<legend class="govuk-fieldset__legend">
 						<h1 class="govuk-fieldset__heading">
-							Your end date
+							Are you still employed at this school?
 						</h1>
 					</legend>
-					<div id="end-date-hint" class="govuk-hint">
-						For example, 3 2020
-					</div>
-					<div class="govuk-date-input" id="end-date">
-						<div class="govuk-date-input__item">
-							<div class="govuk-form-group">
-								<label class="govuk-label govuk-date-input__label" for="end-date-month-2">
-									Month
-								</label>
-								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
-									   id="end-date-month-2" name="end-date-month-2"
-									   value="{{ data['end-date-month-2'] }}" type="text" inputmode="numeric">
-							</div>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="still-at-school-2" name="still-at-school-2" type="radio"
+								   value="still-at-school-yes" data-aria-controls="conditional-still-at-school-2">
+							<label class="govuk-label govuk-radios__label" for="still-at-school-2">
+								Yes
+							</label>
 						</div>
-						<div class="govuk-date-input__item">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="still-at-school-2" name="still-at-school-2"
+								   type="radio" value="still-at-school-no"
+								   data-aria-controls="conditional-still-at-school-2">
+							<label class="govuk-label govuk-radios__label" for="still-at-school-2">
+								No
+							</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+							 id="conditional-still-at-school-2">
 							<div class="govuk-form-group">
-								<label class="govuk-label govuk-date-input__label" for="end-date-year-2">
-									Year
-								</label>
-								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
-									   id="end-date-year-2" name="end-date-year-2" value="{{ data['end-date-year-2'] }}"
-									   type="text" inputmode="numeric">
+								<fieldset class="govuk-fieldset" role="group" aria-describedby="end-date-hint">
+									<legend class="govuk-fieldset__legend">
+										<h1 class="govuk-fieldset__heading">
+											Your end date
+										</h1>
+									</legend>
+									<div id="end-date-hint" class="govuk-hint">
+										For example, 3 2020, If you cannot remember the exact month or year, enter an estimate.
+									</div>
+									<div class="govuk-date-input" id="end-date">
+										<div class="govuk-date-input__item">
+											<div class="govuk-form-group">
+												<label class="govuk-label govuk-date-input__label" for="end-date-2-month">
+													Month
+												</label>
+												<input class="govuk-input govuk-date-input__input govuk-input--width-2"
+													   id="end-date-2-month" name="end-date-2-month"
+													   value="{{ data['end-date-2-month'] }}" type="text"
+													   inputmode="numeric">
+											</div>
+										</div>
+										<div class="govuk-date-input__item">
+											<div class="govuk-form-group">
+												<label class="govuk-label govuk-date-input__label" for="end-date-2-year">
+													Year
+												</label>
+												<input class="govuk-input govuk-date-input__input govuk-input--width-4"
+													   id="end-date-2-year" name="end-date-2-year"
+													   value="{{ data['end-date-2-year'] }}" type="text"
+													   inputmode="numeric">
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+							<div class="govuk-form-group">
+								<div class="govuk-checkboxes__item">
+									<input class="govuk-checkboxes__input" id="end-date-2-estimate" name="end-date-2-estimate" type="checkbox" value="estimated">
+									<label class="govuk-label govuk-checkboxes__label" for="end-date-2-estimate">
+										This is an estimate
+									</label>
+								</div>
 							</div>
 						</div>
 					</div>
 				</fieldset>
 			</div>
-
 			<div class="govuk-button-group">
 				<button class="govuk-button" data-module="govuk-button">
 					Continue
 				</button>
 
 				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" name=""
-						value="progress" formaction="/prototype-3/task-list">
+						value="progress" formaction="../task-list">
 					Save and come back later
 				</button>
 			</div>
-
 		</form>
 
 	</div>
