@@ -10,7 +10,7 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block pageStyles %}
 <link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen"
-	  rel="stylesheet">
+      rel="stylesheet">
 {% endblock %}
 
 {% block pageScripts %}
@@ -42,7 +42,7 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 					University degree title
 				</label>
 				<input class="govuk-input" id="degreeTitle" name="degreeTitle" value="{{ data['degreeTitle'] }}"
-					   type="text">
+				       type="text">
 			</div>
 
 			<div class="govuk-form-group">
@@ -50,7 +50,7 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 					Name of institution
 				</label>
 				<input class="govuk-input" id="degreeInstitutionName" name="degreeInstitutionName"
-					   value="{{ data['degreeInstitutionName'] }}" type="text">
+				       value="{{ data['degreeInstitutionName'] }}" type="text">
 			</div>
 
 			{% from "govuk/components/select/macro.njk" import govukSelect %}
@@ -86,8 +86,8 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 									Month
 								</label>
 								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
-									   id="degreeStartDate-month" name="degreeStartDate-month"
-									   value="{{ data['degreeStartDate-month'] }}" type="text" inputmode="numeric">
+								       id="degreeStartDate-month" name="degreeStartDate-month"
+								       value="{{ data['degreeStartDate-month'] }}" type="text" inputmode="numeric">
 							</div>
 						</div>
 						<div class="govuk-date-input__item">
@@ -96,8 +96,8 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 									Year
 								</label>
 								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
-									   id="degreeStartDate-year" name="degreeStartDate-year"
-									   value="{{ data['degreeStartDate-year'] }}" type="text" inputmode="numeric">
+								       id="degreeStartDate-year" name="degreeStartDate-year"
+								       value="{{ data['degreeStartDate-year'] }}" type="text" inputmode="numeric">
 							</div>
 						</div>
 					</div>
@@ -121,8 +121,8 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 									Month
 								</label>
 								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
-									   id="degreeEndDate-month" name="degreeEndDate-month"
-									   value="{{ data['degreeEndDate-month'] }}" type="text" inputmode="numeric">
+								       id="degreeEndDate-month" name="degreeEndDate-month"
+								       value="{{ data['degreeEndDate-month'] }}" type="text" inputmode="numeric">
 							</div>
 						</div>
 						<div class="govuk-date-input__item">
@@ -131,8 +131,8 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 									Year
 								</label>
 								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
-									   id="degreeEndDate-year" name="degreeEndDate-year"
-									   value="{{ data['degreeEndDate-year'] }}" type="text" inputmode="numeric">
+								       id="degreeEndDate-year" name="degreeEndDate-year"
+								       value="{{ data['degreeEndDate-year'] }}" type="text" inputmode="numeric">
 							</div>
 						</div>
 					</div>
@@ -156,8 +156,8 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 									Month
 								</label>
 								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
-									   id="certificateDate-month" name="certificateDate-month"
-									   value="{{ data['certificateDate-month'] }}" type="text" inputmode="numeric">
+								       id="certificateDate-month" name="certificateDate-month"
+								       value="{{ data['certificateDate-month'] }}" type="text" inputmode="numeric">
 							</div>
 						</div>
 						<div class="govuk-date-input__item">
@@ -166,8 +166,8 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 									Year
 								</label>
 								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
-									   id="certificateDate-year" name="certificateDate-year"
-									   value="{{ data['certificateDate-month'] }}" type="text" inputmode="numeric">
+								       id="certificateDate-year" name="certificateDate-year"
+								       value="{{ data['certificateDate-month'] }}" type="text" inputmode="numeric">
 							</div>
 						</div>
 					</div>
@@ -179,7 +179,7 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 				</button>
 
 				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" name=""
-						value="progress" formaction="/prototype-3/task-list">
+				        value="progress" formaction="/prototype-3/task-list">
 					Save and come back later
 				</button>
 			</div>

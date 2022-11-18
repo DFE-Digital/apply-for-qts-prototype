@@ -14,14 +14,15 @@ Upload teacher training certificate – {{ serviceName }} – GOV.UK Prototype K
 	<div class="govuk-grid-column-two-thirds">
 
 		<form class="form" action="../teacher-training-qualification/teacher-training-qualification-summary"
-			  method="post">
+		      method="post">
         <span class="govuk-caption-l">
           Your qualifications
         </span>
 			<h1 class="govuk-heading-l">Upload your {{ data['qualificationInstitutionName'] }} teaching qualification
 				transcript
 			</h1>
-			<p class="govuk-body">Upload a transcript of your teaching qualification, issued by the awarding body. If your teaching
+			<p class="govuk-body">Upload a transcript of your teaching qualification, issued by the awarding body. If
+				your teaching
 				qualification was completed as part of your degree, you should supply your degree transcript.</p>
 			<h2 class="govuk-heading-m">Upload your transcript</h2>
 			<div class="govuk-form-group">
@@ -62,21 +63,21 @@ Upload teacher training certificate – {{ serviceName }} – GOV.UK Prototype K
 					<div class="govuk-radios" data-module="govuk-radios">
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="written-in-english" name="written-in-english"
-								   type="radio" value="yes" data-aria-controls="conditional-written-in-english">
+							       type="radio" value="yes" data-aria-controls="conditional-written-in-english">
 							<label class="govuk-label govuk-radios__label" for="written-in-english">
 								Yes
 							</label>
 						</div>
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="written-in-english-2" name="written-in-english"
-								   type="radio" value="no" data-aria-controls="conditional-written-in-english-2"
-								   checked>
+							       type="radio" value="no" data-aria-controls="conditional-written-in-english-2"
+							       checked>
 							<label class="govuk-label govuk-radios__label" for="written-in-english-2">
 								No, I'll upload a translation as well
 							</label>
 						</div>
 						<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-							 id="conditional-written-in-english-2">
+						     id="conditional-written-in-english-2">
 							<div class="govuk-form-group">
 								<label class="govuk-label" for="file-upload-2">
 									Upload your teaching qualification transcript translation
@@ -98,12 +99,12 @@ Upload teacher training certificate – {{ serviceName }} – GOV.UK Prototype K
 			</div>
 			<div class="govuk-button-group">
 				<button class="govuk-button" data-module="govuk-button" name="teacher-transcript-added" value="progress"
-						type="submit">
+				        type="submit">
 					Continue
 				</button>
 
 				<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
-						name="teacher-transcript-added" value="progress" formaction="/prototype-3/task-list">
+				        name="teacher-transcript-added" value="progress" formaction="/prototype-3/task-list">
 					Add this later
 				</button>
 			</div>
