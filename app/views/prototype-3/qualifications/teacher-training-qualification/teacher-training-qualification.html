@@ -6,7 +6,7 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block pageStyles %}
 <link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen"
-	  rel="stylesheet">
+      rel="stylesheet">
 {% endblock %}
 
 {% block pageScripts %}
@@ -34,7 +34,7 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 			of your university degree course, or it could be a separate qualification.</p>
 
 		<form class="form" action="../teacher-training-qualification-documents/upload-teacher-training-qualification"
-			  method="post">
+		      method="post">
 
 			<h2 class="govuk-heading-m">Enter the details of your teaching qualification</h2>
 
@@ -43,7 +43,7 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 					Qualification title
 				</label>
 				<input class="govuk-input" id="qualification-title" name="qualification-title"
-					   value="{{ data['qualification-title'] }}" type="text">
+				       value="{{ data['qualification-title'] }}" type="text">
 			</div>
 
 			<div class="govuk-form-group">
@@ -51,7 +51,7 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 					Name of institution
 				</label>
 				<input class="govuk-input" id="qualificationInstitutionName" name="qualificationInstitutionName"
-					   value="{{ data['qualificationInstitutionName'] }}" type="text">
+				       value="{{ data['qualificationInstitutionName'] }}" type="text">
 			</div>
 
 			{% from "govuk/components/select/macro.njk" import govukSelect %}
@@ -100,9 +100,9 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 									Month
 								</label>
 								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
-									   id="qualificationStartDate-month" name="qualificationStartDate-month"
-									   value="{{ data['qualificationStartDate-month'] }}" type="text"
-									   inputmode="numeric">
+								       id="qualificationStartDate-month" name="qualificationStartDate-month"
+								       value="{{ data['qualificationStartDate-month'] }}" type="text"
+								       inputmode="numeric">
 							</div>
 						</div>
 						<div class="govuk-date-input__item">
@@ -111,9 +111,9 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 									Year
 								</label>
 								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
-									   id="qualificationStartDate-year" name="qualificationStartDate-year"
-									   value="{{ data['qualificationStartDate-year'] }}" type="text"
-									   inputmode="numeric">
+								       id="qualificationStartDate-year" name="qualificationStartDate-year"
+								       value="{{ data['qualificationStartDate-year'] }}" type="text"
+								       inputmode="numeric">
 							</div>
 						</div>
 					</div>
@@ -137,8 +137,8 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 									Month
 								</label>
 								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
-									   id="qualificationEndDate-month" name="qualificationEndDate-month"
-									   value="{{ data['qualificationEndDate-month'] }}" type="text" inputmode="numeric">
+								       id="qualificationEndDate-month" name="qualificationEndDate-month"
+								       value="{{ data['qualificationEndDate-month'] }}" type="text" inputmode="numeric">
 							</div>
 						</div>
 						<div class="govuk-date-input__item">
@@ -147,8 +147,8 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 									Year
 								</label>
 								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
-									   id="qualificationEndDate-year" name="qualificationEndDate-year"
-									   value="{{ data['qualificationEndDate-year'] }}" type="text" inputmode="numeric">
+								       id="qualificationEndDate-year" name="qualificationEndDate-year"
+								       value="{{ data['qualificationEndDate-year'] }}" type="text" inputmode="numeric">
 							</div>
 						</div>
 					</div>
@@ -172,9 +172,9 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 									Month
 								</label>
 								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
-									   id="qualificationAwardDate-month" name="qualificationAwardDate-month"
-									   value="{{ data['qualificationAwardDate-month'] }}" type="text"
-									   inputmode="numeric">
+								       id="qualificationAwardDate-month" name="qualificationAwardDate-month"
+								       value="{{ data['qualificationAwardDate-month'] }}" type="text"
+								       inputmode="numeric">
 							</div>
 						</div>
 						<div class="govuk-date-input__item">
@@ -183,9 +183,9 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 									Year
 								</label>
 								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
-									   id="qualificationAwardDate-year" name="qualificationAwardDate-year"
-									   value="{{ data['qualificationAwardDate-year'] }}" type="text"
-									   inputmode="numeric">
+								       id="qualificationAwardDate-year" name="qualificationAwardDate-year"
+								       value="{{ data['qualificationAwardDate-year'] }}" type="text"
+								       inputmode="numeric">
 							</div>
 						</div>
 					</div>
@@ -194,11 +194,11 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 
 			<div class="govuk-button-group">
 				<button class="govuk-button" data-module="govuk-button" name="progress-qualification-details"
-						type="submit">Continue
+				        type="submit">Continue
 				</button>
 
 				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
-						name="progress-qualification-details" formaction="/prototype-3/task-list">
+				        name="progress-qualification-details" formaction="/prototype-3/task-list">
 					Save and come back later
 				</button>
 			</div>

@@ -33,13 +33,13 @@ Current legal name – {{ serviceName }} – GOV.UK Prototype Kit
 					<div class="govuk-radios" data-module="govuk-radios">
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="current-legal-name" name="current-legal-name"
-								   type="radio" value="Yes" data-aria-controls="conditional-current-legal-name">
+							       type="radio" value="Yes" data-aria-controls="conditional-current-legal-name">
 							<label class="govuk-label govuk-radios__label" for="current-legal-name">
 								Yes – I'II upload another document to prove this
 							</label>
 						</div>
 						<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-							 id="conditional-current-legal-name">
+						     id="conditional-current-legal-name">
 							{% from "govuk/components/input/macro.njk" import govukInput %}
 
 							{{ govukInput({
@@ -85,7 +85,7 @@ Current legal name – {{ serviceName }} – GOV.UK Prototype Kit
 						</div>
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="current-legal-name-2" name="current-legal-name"
-								   type="radio" value="No" data-aria-controls="conditional-current-legal-name-2">
+							       type="radio" value="No" data-aria-controls="conditional-current-legal-name-2">
 							<label class="govuk-label govuk-radios__label" for="current-legal-name-2">
 								No
 							</label>
@@ -100,8 +100,8 @@ Current legal name – {{ serviceName }} – GOV.UK Prototype Kit
 				</button>
 
 				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
-						name="progress-personal-details" value="progress-personal-details"
-						formaction="/prototype-3/task-list">
+				        name="progress-personal-details" value="progress-personal-details"
+				        formaction="/prototype-3/task-list">
 					Save and come back later
 				</button>
 			</div>

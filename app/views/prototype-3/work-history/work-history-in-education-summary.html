@@ -61,7 +61,7 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 						<dd class="govuk-summary-list__actions">
 							<a href="work-history-in-education-1">
 								Change
-								<span class="govuk-visually-hidden">city of institution</span>
+								<span class="govuk-visually-hidden">school city</span>
 							</a>
 						</dd>
 					</div>
@@ -77,7 +77,7 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 						<dd class="govuk-summary-list__actions">
 							<a href="work-history-in-education-1">
 								Change
-								<span class="govuk-visually-hidden">country of institution</span>
+								<span class="govuk-visually-hidden">school country</span>
 							</a>
 						</dd>
 					</div>
@@ -85,7 +85,7 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 					<!-- Job role -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Your job role
+							Job title or role
 						</dt>
 						<dd class="govuk-summary-list__value">
 							{{ data['job-role'] }}
@@ -130,6 +130,54 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 
+					<!-- Full or part time -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Role full time or part time
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['full-or-part-time'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">role full time or part time</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Children aged somewhere between 5 and 16 -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Children aged somewhere between 5 and 16
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['age-range'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">children aged somewhere between 5 and 16</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Responsible for at least 4 children -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Responsible for at least 4 children
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['student-number'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">responsible for at least 4 children</span>
+							</a>
+						</dd>
+					</div>
+
 					<!-- Role start date -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -137,6 +185,7 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 						</dt>
 						<dd class="govuk-summary-list__value">
 							<span>{{ data['start-date-month'] }} </span> / <span>{{ data['start-date-year'] }}</span>
+							<span>{{ data['start-date-estimate'] }}</span>
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a href="work-history-in-education-1">
@@ -152,7 +201,7 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 							Role end date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<span>{{ data['end-date-month'] }} </span> / <span>{{ data['end-date-year'] }}</span>
+							<span>{{ data['end-date-month'] }} </span> / <span>{{ data['end-date-year'] }}</span> <span>{{ data['end-date-estimate'] }}</span>
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a href="work-history-in-education-1">
@@ -165,26 +214,28 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 			</div>
 		</div>
 
-		<form action="work-history-in-education-2" method="post" novalidate>
-			<h1 class="govuk-heading-m">Add another workplace</h1>
-
+		<form action="/work-history" method="post" novalidate>
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
-					<legend class="govuk-fieldset__legend">
-						Have you completed your work history in education for the last 10 years?
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							Have you completed your work history?
+						</h1>
 					</legend>
 					<div class="govuk-radios" data-module="govuk-radios">
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="add-another-workplace" name="add-another-workplace"
-								   type="radio" value="no">
-							<label class="govuk-label govuk-radios__label" for="add-another-workplace">
+							<input class="govuk-radios__input" id="finished-adding-work-history"
+							       name="finished-adding-work-history"
+							       type="radio" value="yes">
+							<label class="govuk-label govuk-radios__label" for="finished-adding-work-history">
 								Yes
 							</label>
 						</div>
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="add-another-workplace-2" name="add-another-workplace"
-								   type="radio" value="yes">
-							<label class="govuk-label govuk-radios__label" for="add-another-workplace-2">
+							<input class="govuk-radios__input" id="finished-adding-work-history-2"
+							       name="finished-adding-work-history"
+							       type="radio" value="no">
+							<label class="govuk-label govuk-radios__label" for="finished-adding-work-history-2">
 								No
 							</label>
 						</div>
@@ -192,7 +243,7 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 				</fieldset>
 			</div>
 			<button class="govuk-button" data-module="govuk-button" name="completed-work-history"
-					value="completed-work-history" type="submit">
+			        value="completed-work-history" type="submit">
 				Continue
 			</button>
 		</form>

@@ -606,27 +606,13 @@ router.post(
   }
 );
 
-// Do you have any work history
-router.post(
-  "/prototype-3/work-history/work-history-in-education-1",
-  function (req, res) {
-    let haveWorkHistory = req.session.data["have-work-history"];
-
-    if (haveWorkHistory === "yes") {
-      res.redirect("/prototype-3/work-history/work-history-in-education-1");
-    } else {
-      res.redirect("/prototype-3/task-list");
-    }
-  }
-);
 
 // Add a second work history example
-router.post(
-  "/prototype-3/work-history/work-history-in-education-2",
+router.post("/work-history",
   function (req, res) {
-    let addAnotherWorkplace = req.session.data["add-another-workplace"];
+    let finishedAddingWorkHistory = req.session.data["finished-adding-work-history"];
 
-    if (addAnotherWorkplace === "yes") {
+    if (finishedAddingWorkHistory === "no") {
       res.redirect("/prototype-3/work-history/work-history-in-education-2");
     } else {
       res.redirect("/prototype-3/task-list");
