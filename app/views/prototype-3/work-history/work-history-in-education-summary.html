@@ -178,14 +178,14 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 
-
 					<!-- Role start date -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Role start date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<span>{{ data['start-date-month'] }} </span> / <span>{{ data['start-date-year'] }}</span> <span>{{ data['start-date-estimate'] }}</span>
+							<span>{{ data['start-date-month'] }} </span> / <span>{{ data['start-date-year'] }}</span>
+							<span>{{ data['start-date-estimate'] }}</span>
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a href="work-history-in-education-1">
@@ -224,15 +224,17 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 					</legend>
 					<div class="govuk-radios" data-module="govuk-radios">
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="finished-adding-work-history" name="finished-adding-work-history"
-								   type="radio" value="yes">
+							<input class="govuk-radios__input" id="finished-adding-work-history"
+							       name="finished-adding-work-history"
+							       type="radio" value="yes">
 							<label class="govuk-label govuk-radios__label" for="finished-adding-work-history">
 								Yes
 							</label>
 						</div>
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="finished-adding-work-history-2" name="finished-adding-work-history"
-								   type="radio" value="no">
+							<input class="govuk-radios__input" id="finished-adding-work-history-2"
+							       name="finished-adding-work-history"
+							       type="radio" value="no">
 							<label class="govuk-label govuk-radios__label" for="finished-adding-work-history-2">
 								No
 							</label>
@@ -241,7 +243,7 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 				</fieldset>
 			</div>
 			<button class="govuk-button" data-module="govuk-button" name="completed-work-history"
-					value="completed-work-history" type="submit">
+			        value="completed-work-history" type="submit">
 				Continue
 			</button>
 		</form>
