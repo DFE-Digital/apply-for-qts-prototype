@@ -13,9 +13,9 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 <script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
 <script>
     openregisterLocationPicker({
-        selectElement: document.getElementById('school-country'),
+        selectElement: document.getElementById('school-2-country'),
         url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
-        defaultValue: '{{ data["school-country"] }}'
+        defaultValue: '{{ data["school-2-country"] }}'
     })
 </script>
 {% endblock %}
@@ -35,10 +35,10 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 		<form class="form" action="work-history-in-education-summary-2" method="post">
 
 			<div class="govuk-form-group">
-				<label class="govuk-label" for="school-name-2">
+				<label class="govuk-label" for="school-2-name">
 					Name of school
 				</label>
-				<input class="govuk-input" id="school-name-2" name="school-name-2" value="{{ data['school-name-2'] }}"
+				<input class="govuk-input" id="school-2-name" name="school-2-name" value="{{ data['school-2-name'] }}"
 					   type="text">
 			</div>
 
