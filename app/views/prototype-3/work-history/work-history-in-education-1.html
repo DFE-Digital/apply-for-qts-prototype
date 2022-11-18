@@ -45,7 +45,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
 			<div class="govuk-form-group">
 				<label class="govuk-label" for="school-city">
-					City
+					City of institution
 				</label>
 				<input class="govuk-input" id="school-city" name="school-city" value="{{ data['school-city'] }}"
 				       type="text">
@@ -60,7 +60,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 			label: {
 			classes: "govuk-label--s, govuk-!-font-weight-regular",
 			isPageHeading: true,
-			text: "Country"
+			text: "Country of institution"
 			},
 			items: countries
 			}) }}
@@ -82,7 +82,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
 			<div class="govuk-form-group">
 				<label class="govuk-label" for="reference-email">
-					Contact email address for this organisation
+					Contact email address for this institution
 				</label>
 				<input class="govuk-input" id="reference-email" name="reference-email"
 				       value="{{ data['reference-email'] }}" type="text">
