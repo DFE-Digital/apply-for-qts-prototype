@@ -43,6 +43,28 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 			</div>
 
 			<div class="govuk-form-group">
+				<label class="govuk-label" for="school-2-city">
+					City
+				</label>
+				<input class="govuk-input" id="school-2-city" name="school-2-city" value="{{ data['school-2-city'] }}"
+				       type="text">
+			</div>
+
+			{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+			{{ govukSelect({
+			id: "school-2-country",
+			name: "school-2-country",
+			classes: "govuk-input--width-10",
+			label: {
+			classes: "govuk-label--s, govuk-!-font-weight-regular",
+			isPageHeading: true,
+			text: "Country"
+			},
+			items: countries
+			}) }}
+
+			<div class="govuk-form-group">
 				<label class="govuk-label" for="job-role">
 					Job title or role
 				</label>
