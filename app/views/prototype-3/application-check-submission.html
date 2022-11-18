@@ -800,6 +800,54 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 
+					<!-- Full or part time -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Role full time or part time
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['full-or-part-time'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">role full time or part time</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Children aged somewhere between 5 and 16 -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Children aged somewhere between 5 and 16
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['age-range'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">children aged somewhere between 5 and 16</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Responsible for at least 4 children -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Responsible for at least 4 children
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['student-number'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">responsible for at least 4 children</span>
+							</a>
+						</dd>
+					</div>
+
 					<!-- Role start date -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -857,10 +905,10 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 							School name
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{ data['school-name-2'] }}
+							{{ data['school-2-name'] }}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a href="work-history/work-history-in-education-2">
+							<a href="work-history-in-education-2">
 								Change
 								<span class="govuk-visually-hidden">school name</span>
 							</a>
@@ -873,12 +921,12 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 							City of institution
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{ data['school-city-2'] }}
+							{{ data['school-2-city'] }}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a href="work-history/work-history-in-education-2">
+							<a href="work-history-in-education-1">
 								Change
-								<span class="govuk-visually-hidden">city of institution</span>
+								<span class="govuk-visually-hidden">school city</span>
 							</a>
 						</dd>
 					</div>
@@ -889,12 +937,12 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 							Country of institution
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{ data['school-country-2'] }}
+							{{ data['school-2-country'] }}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a href="work-history/work-history-in-education-2">
+							<a href="work-history-in-education-1">
 								Change
-								<span class="govuk-visually-hidden">country of institution</span>
+								<span class="govuk-visually-hidden">school country</span>
 							</a>
 						</dd>
 					</div>
@@ -902,15 +950,95 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 					<!-- Job role -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Your job role
+							Job title or role
 						</dt>
 						<dd class="govuk-summary-list__value">
 							{{ data['job-role-2'] }}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a href="work-history/work-history-in-education-2">
+							<a href="work-history-in-education-2">
 								Change
 								<span class="govuk-visually-hidden">your job role</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Contact's full name -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Contact's full name
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['contact-full-name-2'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">contact-full-name</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Contact email address -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Contact email address
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['reference-email-2'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">contact email address</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Full or part time -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Role full time or part time
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['full-or-part-time-2'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">role full time or part time</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Children aged somewhere between 5 and 16 -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Children aged somewhere between 5 and 16
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['age-range-2'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">children aged somewhere between 5 and 16</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Responsible for at least 4 children -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Responsible for at least 4 children
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['student-number-2'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">responsible for at least 4 children</span>
 							</a>
 						</dd>
 					</div>
@@ -921,27 +1049,29 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 							Role start date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<span>{{ data['start-date-month-2'] }} </span> /
-							<span>{{ data['start-date-year-2'] }}</span>
+							<span>{{ data['start-date-2-month'] }} </span> /
+							<span>{{ data['start-date-2-year'] }}</span>
+							<span>{{ data['start-date-2-estimate'] }}</span>
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a href="work-history/work-history-in-education-2">
+							<a href="work-history-in-education-2">
 								Change
 								<span class="govuk-visually-hidden">role start date</span>
 							</a>
 						</dd>
 					</div>
 
-					<!-- Role end date -->
+					<!-- Role start date -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Role end date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<span>{{ data['end-date-month-2'] }} </span> / <span>{{ data['end-date-year-2'] }}</span>
+							<span>{{ data['end-date-2-month'] }} </span> / <span>{{ data['end-date-2-year'] }}</span>
+							<span>{{ data['end-date-2-estimate'] }}</span>
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a href="work-history/work-history-in-education-2">
+							<a href="work-history-in-education-2">
 								Change
 								<span class="govuk-visually-hidden">role end date</span>
 							</a>
