@@ -1,11 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Application complete – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-{% block beforeContent %}
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+	Check answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -17,85 +13,90 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-summary-list__card">
             <div class="govuk-summary-list__card-title-wrapper">
                 <h2 class="govuk-summary-list__card-title">Further information requested</h2>
-                <div class="govuk-summary-list__card-actions">
-                    <!--            <ul class="govuk-summary-list__card-actions-list">-->
-                    <!--              <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">Delete-->
-                    <!--                choice<span class="govuk-visually-hidden"> your eligibility</span> </a></li>-->
-                    <!--              <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
-                    <!--                Withdraw<span class="govuk-visually-hidden"> your eligibility</span> </a></li>-->
-                    <!--            </ul>-->
-                </div>
             </div>
             <div class="govuk-summary-list__card-content">
 
                 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-                    <!-- Country you're recognised as a teacher -->
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Please can you explain the break in your work history between January 2020 and November 2020?
+	                        Did the applicant work at the school for the dates that they told us?
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{ data['question-1-answer'] }}
+                            {{ data['question-dates'] }}
                         </dd>
                         <dd class="govuk-summary-list__actions">
-                            <a href=assessor-question-1>
+                            <a href=question-dates>
                                 Change
-                                <span class="govuk-visually-hidden">answer to Assessor's question</span>
+                                <span class="govuk-visually-hidden">answer to date question</span>
                             </a>
                         </dd>
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Proof of name change
+	                        Was this a full-time role?
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            marriagecertificate.jpg
+	                        {{ data['question-full-time'] }}
                         </dd>
                         <dd class="govuk-summary-list__actions">
-                            <a href="upload-name-change-request">
+                            <a href="question-full-time">
                                 Change
-                                <span class="govuk-visually-hidden">teacher training qualification certificate</span>
+                                <span class="govuk-visually-hidden">answer to full time question</span>
+                            </a>
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+	                        Did the applicant work with children aged between 5 and 16 years?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+	                        {{ data['question-child-age-range'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="question-child-age-range">
+                                Change
+                                <span class="govuk-visually-hidden">answer to child age range question</span>
                             </a>
                         </dd>
                     </div>
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Identity document
+	                        Was the applicant responsible for at least 4 children in this role?
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            passport.jpg
+	                        {{ data['question-child-number'] }}
                         </dd>
                         <dd class="govuk-summary-list__actions">
-                            <a href="upload-identification-request">
+                            <a href="question-child-number">
                                 Change
-                                <span class="govuk-visually-hidden">teacher training qualification certificate</span>
+                                <span class="govuk-visually-hidden">answer to number of children question</span>
                             </a>
                         </dd>
                     </div>
 
-                    <!-- Reference number -->
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Reference number
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            {{ data['reference-number'] }}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                            <a href="question-reference-number">
-                                Change
-                                <span class="govuk-visually-hidden">reference number</span>
-                            </a>
-                        </dd>
-                    </div>
+	                <div class="govuk-summary-list__row">
+		                <dt class="govuk-summary-list__key">
+			                Is there anything else you’d like to tell us about this applicant?
+		                </dt>
+		                <dd class="govuk-summary-list__value">
+			                {{ data['question-other-comments'] }}
+		                </dd>
+		                <dd class="govuk-summary-list__actions">
+			                <a href="question-other-comments">
+				                Change
+				                <span class="govuk-visually-hidden">answer to any other comments question</span>
+			                </a>
+		                </dd>
+	                </div>
                 </dl>
             </div>
         </div>
 
-        <h3 class="govuk-heading-m">Submitting your further information</h3>
-        <p class="govuk-body">By selecting the ‘Submit application button’ you confirm that, to the best of your knowledge, the details you’ve provided are correct.</p>
-        <a class="govuk-button" href="reference-requested-submission-complete">Submit your application</a>
+	    <h3 class="govuk-heading-m">Submitting your response</h3>
+        <p class="govuk-body">By selecting the ‘Submit your response’ button, you confirm that, to the best of your knowledge, the details you’ve provided are correct.</p>
+        <a class="govuk-button" href="reference-requested-submission-complete">Submit your response</a>
     </div>
     {% endblock %}
