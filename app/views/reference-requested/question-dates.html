@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="question-full-time" method="post">
+
+	      <div class="govuk-form-group">
+		      <fieldset class="govuk-fieldset" aria-describedby="question-dates-hint">
+			      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+				      <span class="govuk-caption-xl">Question 1 of 5</span>
+				      <h1 class="govuk-fieldset__heading">
+					      Did the applicant work at the school for the dates they provided?
+				      </h1>
+			      </legend>
+			      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+				      <div class="govuk-radios__item">
+					      <input class="govuk-radios__input" id="question-dates" name="question-dates" type="radio" value="Yes" {{ checked("question-dates", "Yes") }} >
+					      <label class="govuk-label govuk-radios__label" for="question-dates">
+						      Yes
+					      </label>
+				      </div>
+				      <div class="govuk-radios__item">
+					      <input class="govuk-radios__input" id="question-dates-2" name="question-dates" type="radio" value="No" {{ checked("question-dates", "No") }}>
+					      <label class="govuk-label govuk-radios__label" for="question-dates-2">
+						      No
+					      </label>
+				      </div>
+			      </div>
+
+		      </fieldset>
+	      </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
