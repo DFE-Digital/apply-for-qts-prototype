@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="question-child-age-range" method="post">
+
+	      <div class="govuk-form-group">
+		      <fieldset class="govuk-fieldset" aria-describedby="question-full-time-hint">
+			      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+				      <span class="govuk-caption-xl">Question 2 of 5</span>
+				      <h1 class="govuk-fieldset__heading">
+					      Was this a full-time role?
+				      </h1>
+			      </legend>
+			      <div id="question-full-time-hint" class="govuk-hint">
+				      For QTS applications, a full-time role means working at least 4 days per week, for a total of at least 30 hours.
+			      </div>
+			      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+				      <div class="govuk-radios__item">
+					      <input class="govuk-radios__input" id="question-full-time" name="question-full-time" type="radio" value="Yes" {{ checked("question-full-time", "Yes") }}>
+					      <label class="govuk-label govuk-radios__label" for="question-full-time">
+						      Yes
+					      </label>
+				      </div>
+				      <div class="govuk-radios__item">
+					      <input class="govuk-radios__input" id="question-full-time-2" name="question-full-time" type="radio" value="No" {{ checked("question-full-time", "No") }}>
+					      <label class="govuk-label govuk-radios__label" for="question-full-time-2">
+						      No
+					      </label>
+				      </div>
+			      </div>
+
+		      </fieldset>
+	      </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
