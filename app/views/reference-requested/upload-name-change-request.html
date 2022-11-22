@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Document upload required</h1>
+      <h2 class="govuk-heading-m">Reason: The name on the online application form is different from the ID document, but no evidence of change of name was provided.</h2>
+
+      <form class="form" action="upload-name-change" method="post">
+
+        <h3 class="govuk-heading-s">Notes from the assessor</h3>
+
+        {{ govukInsetText({
+        text: "In your original application you told us that your name appears differently on some of your documents, but you did not add upload proof of your change of name."
+        }) }}
+
+        <p>You can upload this document on the next screen.</p>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+          <button href="task-list" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="progress-name-change-document" value="progress-name-change-document" formaction="task-list">
+            Save and come back later
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

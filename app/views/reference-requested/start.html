@@ -1,0 +1,57 @@
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Further information requested start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
+
+
+      <h2 class="govuk-heading-m">We need some more information</h2>
+
+      <p class="govuk-body">The status of your qualified teacher status application is currently:</p>
+
+      <p class="govuk-body">
+        <strong class="govuk-tag govuk-tag--yellow">
+          FURTHER INFORMATION REQUESTED
+        </strong>
+      </p>
+
+      <h3 class="govuk-heading-m">What you need to do</h3>
+
+      <p class="govuk-body">The assessor needs you to provide some additional information so they can continue reviewing your application.</p>
+
+      {{ govukInsetText({
+      text: "You may need to upload 1 or more documents. Make sure any files you upload clearly show the whole document or page, and that any text is easy to read."
+      }) }}
+
+      <p class="govuk-body">You must add all of the requested information, so the assessor can continue reviewing your QTS application.</p>
+      <p class="govuk-body">The next screen will take you to the list of tasks you need to complete.</p>
+
+      {{ govukButton({
+      text: "Start now",
+      href: "task-list",
+      isStartButton: true
+      }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+  </div>
+{% endblock %}

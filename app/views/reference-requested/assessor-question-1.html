@@ -1,0 +1,54 @@
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Further information required</h1>
+      <h2 class="govuk-heading-m">Reason: The information provided on work history is not sufficient to award QTS.</h2>
+
+      <form class="form" action="task-list" method="post">
+
+        <h3 class="govuk-heading-s">Notes from the assessor</h3>
+
+          {{ govukInsetText({
+            text: "Please can you explain the break in your work history between January 2020 and November 2020."
+          }) }}
+
+        <div class="govuk-form-group">
+          <h4 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="question-1-answer">
+            Enter your response
+          </label>
+          </h4>
+          <div id="more-detail-hint" class="govuk-hint">
+            Use the text box below to respond to the assessor’s question.
+          </div>
+          <textarea class="govuk-textarea" id="question-1-answer" name="question-1-answer" value="data{{'question-1-answer'}}" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button" name="completed-assessor-question-1" value="completed-assessor-question-1">
+            Continue
+          </button>
+
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="progress-assessor-question-1" value="progress-assessor-question-1">
+            Save and come back later
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

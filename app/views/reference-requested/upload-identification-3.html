@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Check your uploaded files</h1>
+
+      <h2 class="govuk-heading-m">Files added</h2>
+
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            File 1
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a download href="/" class="govuk-link">passport.jpg</a>
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+            <a class="govuk-link" href="#">
+              Delete<span class="govuk-visually-hidden"> file 1</span>
+            </a>
+
+          </dd>
+
+        </div>
+
+      </dl>
+
+      <form class="form" action="task-list" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "identity-document",
+        name: "identity-document",
+        fieldset: {
+          legend: {
+            text: "Do you need to upload another page?",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "If your ID document has several pages, you can upload them here. Otherwise, select ‘No’ and then ‘Continue’."
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" name="completed-identity-document" value="completed-identity-document">
+            Continue
+          </button>
+          <button formaction="task-list" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="progress-identity-document" value="progress-identity-document">
+            Save and come back later
+          </button>
+        </div>
+
+    </form>
+    </div>
+  </div>
+
+{% endblock %}
