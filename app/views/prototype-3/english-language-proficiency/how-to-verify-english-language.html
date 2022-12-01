@@ -27,7 +27,7 @@ Verify your English language proficiency? – {{ serviceName }} – GOV.UK Proto
 					<div class="govuk-radios" data-module="govuk-radios">
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="verify-english-proficiency"
-							       name="verify-english-proficiency" type="radio" value="upload-method-of-instruction">
+							       name="verify-english-proficiency" type="radio" value="upload-method-of-instruction" {{ checked("verify-english-proficiency", "I’ll upload the Method of instruction (MOI) from my university degree.") }}>
 							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency">
 								I’ll upload the Method of instruction (MOI) from my university degree.
 							</label>
@@ -35,7 +35,7 @@ Verify your English language proficiency? – {{ serviceName }} – GOV.UK Proto
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="verify-english-proficiency-2"
 							       name="verify-english-proficiency" type="radio"
-							       value="upload-proficiency-certificate">
+							       value="I’ll provide my English language proficiency test details." {{ checked("verify-english-proficiency", "I’ll provide my English language proficiency test details.") }}>
 							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency-2">
 								I’ll provide my English language proficiency test details.
 							</label>
@@ -43,7 +43,9 @@ Verify your English language proficiency? – {{ serviceName }} – GOV.UK Proto
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="verify-english-proficiency-3"
 							       name="verify-english-proficiency" type="radio"
-							       value="supplied-passport-from-exempt-country">
+							       value="I’ve already uploaded a passport that proves I was born in or hold citizenship of an
+								exempt country." {{ checked("verify-english-proficiency", "I’ve already uploaded a passport that proves I was born in or hold citizenship of an
+							exempt country.") }}>
 							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency-3">
 								I’ve already uploaded a passport that proves I was born in or hold citizenship of an
 								exempt country.
@@ -52,7 +54,7 @@ Verify your English language proficiency? – {{ serviceName }} – GOV.UK Proto
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="verify-english-proficiency-4"
 							       name="verify-english-proficiency" type="radio"
-							       value="supplied-university-transcript-from-exempt-country">
+							       value="I’ve already uploaded the transcript of a university degree from an exempt country." {{ checked("verify-english-proficiency", "I’ve already uploaded the transcript of a university degree from an exempt country.") }}>
 							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency-4">
 								I’ve already uploaded the transcript of a university degree from an exempt country.
 							</label>
