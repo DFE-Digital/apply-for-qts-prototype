@@ -29,34 +29,32 @@ Work experience – {{ serviceName }} prototype
 			items: [
 			{
 			value: "less-than-1-year",
-			text: "Less than 1 school year",
-			checked: checked("work-experience", "Less than 1 year")
+			text: "Under 9 months",
+			checked: checked("work-experience", "Under 9 months")
 			},
 			{
 			value: "between-1-and-2-years",
-			text: "1 to 2 school years",
-			checked: checked("work-experience", "1 year or more, but under 2 years")
+			html: "9 months &#8211; 20 months",
+			checked: checked("work-experience", "9 months &#8211; 20 months")
 			},
 			{
 			value: "more-than-2-years",
-			text: "More than 2 school years",
-			checked: checked("work-experience", "2 years or more")
+			text: "More than 20 months",
+			checked: checked("work-experience", "More than 20 months")
 			}
 
 			]
 			}) }}
 
+			<p>We’ll ask for email addresses for contacts who can verify your work history (in English). If you’re successful, we’ll contact them before awarding QTS.</p>
+
 			{% from "govuk/components/details/macro.njk" import govukDetails %}
 
 			{{ govukDetails({
 			summaryText: "How to calculate your work experience",
-			html: "<p>Our definition of a ‘school year’ is at least 9 months of time spent teaching. This can include scheduled school holiday periods, but cannot include any other time you’ve spent away from teaching.</p>
-
+			html: "<p>We need to know how long you’ve spent actively teaching. This can include scheduled school holiday periods, but cannot include any other time you’ve spent away from teaching.</p>
 			<p>To work out your experience, add up the time you’ve spent employed as a teacher, including any scheduled school holidays.</p>
-
-			<p>If you have between 1 and 2 academic years of experience, you may still be awarded QTS, but you’ll need to complete a 2-year ‘statutory induction’ period as a newly qualified teacher.</p>
-
-			<p>We’ll ask you to provide a contact name and email address to verify your work history. If you’re successful, we’ll contact them before awarding QTS.</p>"
+			<p>If you have 9 months or more (this is equivalent to 1 academic year) but less than 20 months (this is equivalent to 2 academic years), you may still be awarded QTS, but you’ll need to complete a 2-year ‘statutory induction’ period as a newly qualified teacher.</p>"
 			}) }}
 
 			<button class="govuk-button" data-module="govuk-button">Continue</button>
