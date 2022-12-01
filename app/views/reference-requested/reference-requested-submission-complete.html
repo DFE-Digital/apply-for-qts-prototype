@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Submitted successfully – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+	          You’ve successfully submitted your response
+          </h1>
+        </div>
+	    <h3 class="govuk-heading-m">Thank you for submitting your response.</h3>
+
+        <p class="govuk-body">The QTS assessor will now review your response and continue their review of the applicant.</p>
+
+        <p class="govuk-body">You do not need to do anything else. You can now close this page.</p>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
