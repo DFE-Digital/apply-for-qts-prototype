@@ -587,7 +587,34 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 			</div>
 			<div class="govuk-summary-list__card-content">
 				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Were you born in or hold citizenship of any of the countries below?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['exempt-country-citizenship'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="english-language-proficiency/question-born-citizenship">
+								Change
+								<span class="govuk-visually-hidden">citizenship of exempt country</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Was your teaching qualification or university degree taught in any of the following countries?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['exempt-country-qualification'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="english-language-proficiency/question-born-citizenship">
+								Change
+								<span class="govuk-visually-hidden">qualification from exempt country</span>
+							</a>
+						</dd>
+					</div>
 					{% if data['verify-english-proficiency'] == "upload-method-of-instruction" %}
 					<!-- Method of instruction -->
 					<div class="govuk-summary-list__row">
