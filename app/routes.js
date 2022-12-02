@@ -505,6 +505,32 @@ router.post(
   }
 );
 
+// Verify English - Qualification from exempt country
+router.post("/exempt-country-citizenship", function (req, res) {
+    let exemptCountryCitizenship = req.session.data["exempt-country-citizenship"];
+
+    if (exemptCountryCitizenship === "No") {
+        res.redirect(
+            "/prototype-3/english-language-proficiency/question-qualification-country"
+        );
+    } else {
+        res.redirect("/prototype-3/task-list");
+    }
+});
+
+// Verify English - Qualification from exempt country
+router.post("/exempt-country-qualification", function (req, res) {
+    let exemptCountryQualification = req.session.data["exempt-country-qualification"];
+
+    if (exemptCountryQualification === "No") {
+        res.redirect(
+            "/prototype-3/english-language-proficiency/how-to-verify-english-language"
+        );
+    } else {
+        res.redirect("/prototype-3/task-list");
+    }
+});
+
 // Verify English language proficiency
 router.post("/verify-english-proficiency", function (req, res) {
   let verifyEnglishProficiency = req.session.data["verify-english-proficiency"];
@@ -513,12 +539,8 @@ router.post("/verify-english-proficiency", function (req, res) {
     res.redirect(
       "/prototype-3/english-language-proficiency/upload-method-of-instruction"
     );
-  } else if (verifyEnglishProficiency === "upload-proficiency-certificate") {
-    res.redirect(
-      "/prototype-3/english-language-proficiency/provide-test-details"
-    );
   } else {
-    res.redirect("/prototype-3/task-list");
+    res.redirect("/prototype-3/english-language-proficiency/provide-test-details");
   }
 });
 

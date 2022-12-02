@@ -17,45 +17,33 @@ Verify your English language proficiency? – {{ serviceName }} – GOV.UK Proto
 				<fieldset class="govuk-fieldset" aria-describedby="verify-english-proficiency-hint">
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 						<h1 class="govuk-fieldset__heading">
-							How should we verify your English language proficiency?
+							You need to provide proof of your English language proficiency
 						</h1>
 					</legend>
 					<div id="verify-english-proficiency-hint" class="govuk-hint">
-						Tell us which of the following methods we should use to verify your English language
-						proficiency.
+						There are 2 ways you can do this.
 					</div>
 					<div class="govuk-radios" data-module="govuk-radios">
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="verify-english-proficiency"
-							       name="verify-english-proficiency" type="radio" value="upload-method-of-instruction">
+							       name="verify-english-proficiency" type="radio" value="upload-method-of-instruction" {{ checked("verify-english-proficiency", "I’ll upload the Medium of instruction (MOI) from my university degree.") }}>
 							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency">
-								I’ll upload the Method of instruction (MOI) from my university degree.
+								Upload a document that shows your degree qualification was taught exclusively in the English language.
 							</label>
+							<div id="verify-english-proficiency-hint" class="govuk-hint govuk-radios__hint">
+								This is sometimes called a ‘Medium of instruction’ (MOI) and you can get it by contacting the institution where you studied.
+							</div>
 						</div>
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="verify-english-proficiency-2"
 							       name="verify-english-proficiency" type="radio"
-							       value="upload-proficiency-certificate">
+							       value="I’ll provide my English language proficiency test details." {{ checked("verify-english-proficiency", "I’ll provide my English language proficiency test details.") }}>
 							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency-2">
-								I’ll provide my English language proficiency test details.
+								Upload proof of a Secure English Language Test (SELT) at B2 level, from one of the approved providers.
 							</label>
-						</div>
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="verify-english-proficiency-3"
-							       name="verify-english-proficiency" type="radio"
-							       value="supplied-passport-from-exempt-country">
-							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency-3">
-								I’ve already uploaded a passport that proves I was born in or hold citizenship of an
-								exempt country.
-							</label>
-						</div>
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="verify-english-proficiency-4"
-							       name="verify-english-proficiency" type="radio"
-							       value="supplied-university-transcript-from-exempt-country">
-							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency-4">
-								I’ve already uploaded the transcript of a university degree from an exempt country.
-							</label>
+							<div id="verify-english-proficiency-2-hint" class="govuk-hint govuk-radios__hint">
+								The test must have been taken within the last 2 years. We cannot accept English language tests from a provider that does not appear on the list.
+							</div>
 						</div>
 					</div>
 				</fieldset>
@@ -64,36 +52,13 @@ Verify your English language proficiency? – {{ serviceName }} – GOV.UK Proto
 			<details class="govuk-details" data-module="govuk-details">
 				<summary class="govuk-details__summary">
     				<span class="govuk-details__summary-text">
-      					Which countries are exempt?
+      					About approved providers
     				</span>
 				</summary>
 				<div class="govuk-details__text">
-					<p class="govuk-body">The following countries are exempt from additional English language
-						proficiency requirements:</p>
-					<ul class="govuk-list govuk-list--bullet">
-						<li>Antigua and Barbuda</li>
-						<li>Australia</li>
-						<li>The Bahamas</li>
-						<li>Barbados</li>
-						<li>Belize</li>
-						<li>Canada</li>
-						<li>Dominica</li>
-						<li>Grenada</li>
-						<li>Guyana</li>
-						<li>Jamaica</li>
-						<li>Ireland</li>
-						<li>Malta</li>
-						<li>New Zealand</li>
-						<li>St Kitts and Nevis</li>
-						<li>St Lucia</li>
-						<li>St Vincent and the Grenadines</li>
-						<li>Trinidad and Tobago</li>
-						<li>USA</li>
-						<li>England</li>
-						<li>Scotland</li>
-						<li>Northern Ireland</li>
-						<li>Wales</li>
-					</ul>
+					<p class="govuk-body">To apply for QTS you must use an approved provider. We cannot accept English language tests from a provider that does not appear on the list.
+
+					<p class="govuk-body">See the list of <a href="https://www.gov.uk/guidance/prove-your-english-language-abilities-with-a-secure-english-language-test-selt" class="govuk-link" rel="noreferrer noopener" target="_blank">approved providers (opens in new tab)</a>.</p>
 				</div>
 			</details>
 
