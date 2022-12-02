@@ -57,13 +57,13 @@ Question - Qualification from exempt country – {{ serviceName }} – GOV.UK Pr
 					</div>
 					<div class="govuk-radios" data-module="govuk-radios">
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="exempt-country-qualification" name="exempt-country-qualification" type="radio" value="Yes">
+							<input class="govuk-radios__input" id="exempt-country-qualification" name="exempt-country-qualification" type="radio" value="Yes" {{ checked("exempt-country-qualification", "Yes") }}>
 							<label class="govuk-label govuk-radios__label" for="exempt-country-qualification">
 								Yes
 							</label>
 						</div>
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="exempt-country-qualification-2" name="exempt-country-qualification" type="radio" value="No">
+							<input class="govuk-radios__input" id="exempt-country-qualification-2" name="exempt-country-qualification" type="radio" value="No" {{ checked("exempt-country-qualification", "No") }}>
 							<label class="govuk-label govuk-radios__label" for="exempt-country-qualification-2">
 								No
 							</label>
