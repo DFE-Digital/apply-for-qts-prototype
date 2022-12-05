@@ -750,7 +750,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 					<!-- School city -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							City of institution
+							City
 						</dt>
 						<dd class="govuk-summary-list__value">
 							{{ data['school-city'] }}
@@ -827,54 +827,6 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 
-					<!-- Full or part time -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Role full time or part time
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['full-or-part-time'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">role full time or part time</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- Children aged somewhere between 5 and 16 -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Children aged somewhere between 5 and 16
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['age-range'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">children aged somewhere between 5 and 16</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- Responsible for at least 4 children -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Responsible for at least 4 children
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['student-number'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">responsible for at least 4 children</span>
-							</a>
-						</dd>
-					</div>
-
 					<!-- Role start date -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -910,6 +862,8 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 
 			</div>
 		</div>
+
+		{% if data['school-2-name'] %}
 		<div class="govuk-summary-list__card">
 			<div class="govuk-summary-list__card-title-wrapper">
 				<h2 class="govuk-summary-list__card-title">Previous workplace</h2>
@@ -945,7 +899,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 					<!-- School city -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							City of institution
+							City
 						</dt>
 						<dd class="govuk-summary-list__value">
 							{{ data['school-2-city'] }}
@@ -1022,54 +976,6 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 
-					<!-- Full or part time -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Role full time or part time
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['full-or-part-time-2'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-2">
-								Change
-								<span class="govuk-visually-hidden">role full time or part time</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- Children aged somewhere between 5 and 16 -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Children aged somewhere between 5 and 16
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['age-range-2'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-2">
-								Change
-								<span class="govuk-visually-hidden">children aged somewhere between 5 and 16</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- Responsible for at least 4 children -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Responsible for at least 4 children
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['student-number-2'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-2">
-								Change
-								<span class="govuk-visually-hidden">responsible for at least 4 children</span>
-							</a>
-						</dd>
-					</div>
-
 					<!-- Role start date -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -1108,6 +1014,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 
 			</div>
 		</div>
+		{% endif %}
 
 		<div class="govuk-summary-list__card">
 			<div class="govuk-summary-list__card-title-wrapper">
