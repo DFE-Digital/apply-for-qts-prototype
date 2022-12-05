@@ -73,23 +73,6 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 			</div>
 
 			<div class="govuk-form-group">
-				<label class="govuk-label" for="contact-full-name">
-					Contact's full name
-				</label>
-				<input class="govuk-input" id="contact-full-name" name="contact-full-name" type="text"
-				       spellcheck="false" autocomplete="name" value="{{ data['contact-full-name'] }}">
-			</div>
-
-			<div class="govuk-form-group">
-				<label class="govuk-label" for="reference-email">
-					Contact email address for this institution
-				</label>
-				<input class="govuk-input" id="reference-email" name="reference-email"
-				       value="{{ data['reference-email'] }}" type="text">
-			</div>
-
-
-			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend">
 						Did you work with children aged somewhere between 5 and 16?
@@ -259,6 +242,31 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 					</div>
 				</fieldset>
 			</div>
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+					<h1 class="govuk-fieldset__heading">
+						Who can verify this role?
+					</h1>
+					<div id="event-name-hint" class="govuk-hint">
+						If your application is successful, we’ll contact this person before awarding QTS. It’s important to choose a reliable contact who can provide a reference in English.
+					</div>
+				</legend>
+				<div class="govuk-form-group">
+					<label class="govuk-label" for="contact-full-name">
+						Full name
+					</label>
+					<input class="govuk-input" id="contact-full-name" name="contact-full-name" type="text"
+					       spellcheck="false" autocomplete="name" value="{{ data['contact-full-name'] }}">
+				</div>
+
+				<div class="govuk-form-group">
+					<label class="govuk-label" for="reference-email">
+						Email address
+					</label>
+					<input class="govuk-input" id="reference-email" name="reference-email"
+					       value="{{ data['reference-email'] }}" type="text">
+				</div>
+			</fieldset>
 			<div class="govuk-button-group">
 				<button class="govuk-button" data-module="govuk-button">
 					Continue
