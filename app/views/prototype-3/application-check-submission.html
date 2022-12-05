@@ -795,6 +795,71 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 
+					<!-- Full or part time -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Was this a full-time role (at least 4 days per week, for at least 30 hours)?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['role-1-full-or-part-time'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">role full time or part time</span>
+							</a>
+						</dd>
+					</div>
+
+
+					<!-- 5-16 year olds -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Did you work unsupervised with children aged between 5 and 16 years?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['role-1-age-range'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">role full time or part time</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Planning responsibility -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Were you solely responsible for planning and delivering lessons to at least 4 students at a time?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['role-1-student-number'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">role full time or part time</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Assessment responsibility -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Were you solely responsible for assessing and reporting on the progress of those students?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['role-1-student-assessment'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">role full time or part time</span>
+							</a>
+						</dd>
+					</div>
+
 					<!-- Contact's full name -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -807,6 +872,22 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 							<a href="work-history-in-education-1">
 								Change
 								<span class="govuk-visually-hidden">contact-full-name</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Contacts Job role -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Job title or role
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['contact-1-job-role'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">your job role</span>
 							</a>
 						</dd>
 					</div>
@@ -843,7 +924,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 
-					<!-- Role start date -->
+					<!-- Role end date -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Role end date
@@ -915,7 +996,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 					<!-- School country -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Country of institution
+							Country
 						</dt>
 						<dd class="govuk-summary-list__value">
 							{{ data['school-2-country'] }}
@@ -944,6 +1025,70 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 
+					<!-- Full or part time -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Was this a full-time role (at least 4 days per week, for at least 30 hours)?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['role-2-full-or-part-time'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">role full time or part time</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- 5-16 year olds -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Did you work unsupervised with children aged between 5 and 16 years?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['role-2-age-range'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">role full time or part time</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Planning responsibility -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Were you solely responsible for planning and delivering lessons to at least 4 students at a time?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['role-2-student-number'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">role full time or part time</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Assessment responsibility -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Were you solely responsible for assessing and reporting on the progress of those students?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['role-2-student-assessment'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">role full time or part time</span>
+							</a>
+						</dd>
+					</div>
+
 					<!-- Contact's full name -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -956,6 +1101,22 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 							<a href="work-history-in-education-2">
 								Change
 								<span class="govuk-visually-hidden">contact-full-name</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Contacts Job role -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Job title or role
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['contact-2-job-role'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-2">
+								Change
+								<span class="govuk-visually-hidden">your job role</span>
 							</a>
 						</dd>
 					</div>
