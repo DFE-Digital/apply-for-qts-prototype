@@ -637,7 +637,7 @@ router.post("/work-history-landing",
         if (meetWorkHistoryCriteria === "yes") {
             res.redirect("/prototype-3/work-history/work-history-in-education-1");
         } else {
-            res.redirect("/prototype-3/task-list");
+            res.redirect("/prototype-3/work-history/work-history-rejection");
         }
     }
 );
@@ -646,9 +646,9 @@ router.post("/work-history-landing",
 // Add a second work history example
 router.post("/work-history",
   function (req, res) {
-    let finishedAddingWorkHistory = req.session.data["finished-adding-work-history"];
+    let addAnotherJobRole = req.session.data["add-another-job-role"];
 
-    if (finishedAddingWorkHistory === "no") {
+    if (addAnotherJobRole === "yes") {
       res.redirect("/prototype-3/work-history/work-history-in-education-2");
     } else {
       res.redirect("/prototype-3/task-list");
