@@ -72,6 +72,97 @@
 				<input class="govuk-input" id="job-role-2" name="job-role-2" value="{{ data['job-role-2'] }}" type="text">
 			</div>
 
+			{{ govukRadios({
+			name: "role-2-full-or-part-time",
+			fieldset: {
+			legend: {
+			text: "Was this a full-time role (at least 4 days per week, for at least 30 hours)?"
+			}
+			},
+			items: [{
+			text: "Full time",
+			value: "Full time"
+			}, {
+			text: "Part time",
+			value: "Part time"
+			}]
+			}) }}
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend">
+						Did you work unsupervised with children aged between 5 and 16 years?
+					</legend>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="role-2-age-range-1" name="role-2-age-range" type="radio"
+							       value="Yes">
+							<label class="govuk-label govuk-radios__label" for="role-2-age-range-2">
+								Yes
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="role-2-age-range-2" name="role-2-age-range" type="radio"
+							       value="No">
+							<label class="govuk-label govuk-radios__label" for="role-2-age-range-2">
+								No
+							</label>
+						</div>
+					</div>
+
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend">
+						Were you solely responsible for planning and delivering lessons to at least 4 students at a time?
+					</legend>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="role-2-student-number" name="role-2-student-number" type="radio"
+							       value="Yes">
+							<label class="govuk-label govuk-radios__label" for="role-2-student-number">
+								Yes
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="role-2-student-number-2" name="role-2-student-number"
+							       type="radio" value="No">
+							<label class="govuk-label govuk-radios__label" for="role-2-student-number-2">
+								No
+							</label>
+						</div>
+					</div>
+
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend">
+						Were you solely responsible for assessing and reporting on the progress of those students?
+					</legend>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="role-2-student-assessment" name="role-2-student-assessment" type="radio"
+							       value="Yes">
+							<label class="govuk-label govuk-radios__label" for="role-2-student-assessment">
+								Yes
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="role-2-student-assessment-2" name="role-2-student-assessment"
+							       type="radio" value="No">
+							<label class="govuk-label govuk-radios__label" for="role-2-student-assessment-2">
+								No
+							</label>
+						</div>
+					</div>
+
+				</fieldset>
+			</div>
+
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-2-hint">
 					<legend class="govuk-fieldset__legend">
@@ -208,6 +299,13 @@
 					</label>
 					<input class="govuk-input" id="contact-full-name-2" name="contact-full-name-2" type="text"
 					       spellcheck="false" autocomplete="name" value="{{ data['contact-full-name-2'] }}">
+				</div>
+
+				<div class="govuk-form-group">
+					<label class="govuk-label" for="contact-2-job-role">
+						Job title or role
+					</label>
+					<input class="govuk-input" id="contact-2-job-role" name="contact-2-job-role" value="{{ data['contact-2-job-role'] }}" type="text">
 				</div>
 
 				<div class="govuk-form-group">
