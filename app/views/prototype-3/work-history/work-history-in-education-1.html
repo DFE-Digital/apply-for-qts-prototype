@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+	Work history – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block pageStyles %}
@@ -28,10 +28,10 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<span class="govuk-caption-l">Work history</span>
-		<h1 class="govuk-heading-l">Add a role</h1>
-		<p class="govuk-body">Tell us about the teaching roles you’ve held since becoming recognised as a teacher,
-			beginning with your current or most recent employer.</p>
+		<h1 class="govuk-heading-l">Add your current or most recent role</h1>
+		<p class="govuk-body">Tell us about your current or most recent role.</p>
+
+		<p class="govuk-body">You must provide a name and email address for someone who can verify your work experience.</p>
 
 		<form class="form" action="work-history-in-education-summary" method="post">
 
@@ -45,7 +45,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
 			<div class="govuk-form-group">
 				<label class="govuk-label" for="school-city">
-					City of institution
+					City
 				</label>
 				<input class="govuk-input" id="school-city" name="school-city" value="{{ data['school-city'] }}"
 				       type="text">
@@ -60,7 +60,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 			label: {
 			classes: "govuk-label--s, govuk-!-font-weight-regular",
 			isPageHeading: true,
-			text: "Country of institution"
+			text: "Country"
 			},
 			items: countries
 			}) }}
@@ -70,55 +70,6 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 					Job title or role
 				</label>
 				<input class="govuk-input" id="job-role" name="job-role" value="{{ data['job-role'] }}" type="text">
-			</div>
-
-			<div class="govuk-form-group">
-				<fieldset class="govuk-fieldset">
-					<legend class="govuk-fieldset__legend">
-						Did you work with children aged somewhere between 5 and 16?
-					</legend>
-					<div class="govuk-radios" data-module="govuk-radios">
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="age-range" name="age-range" type="radio" value="Yes">
-							<label class="govuk-label govuk-radios__label" for="age-range">
-								Yes
-							</label>
-						</div>
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="age-range-2" name="age-range" type="radio"
-							       value="No">
-							<label class="govuk-label govuk-radios__label" for="age-range-2">
-								No
-							</label>
-						</div>
-					</div>
-
-				</fieldset>
-			</div>
-
-			<div class="govuk-form-group">
-				<fieldset class="govuk-fieldset">
-					<legend class="govuk-fieldset__legend">
-						Were you responsible for at least 4 children in this role?
-					</legend>
-					<div class="govuk-radios" data-module="govuk-radios">
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="student-number" name="student-number" type="radio"
-							       value="Yes">
-							<label class="govuk-label govuk-radios__label" for="student-number">
-								Yes
-							</label>
-						</div>
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="student-number-2" name="student-number" type="radio"
-							       value="No">
-							<label class="govuk-label govuk-radios__label" for="student-number-2">
-								No
-							</label>
-						</div>
-					</div>
-
-				</fieldset>
 			</div>
 
 			<div class="govuk-form-group">
