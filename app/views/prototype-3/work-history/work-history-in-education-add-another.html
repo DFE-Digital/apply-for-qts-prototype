@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	Add another role – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form class="form" action="/work-history" method="post">
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">
+        Your qualifications
+      </span>
+						<h1 class="govuk-fieldset__heading">
+							Add another role?
+						</h1>
+					</legend>
+					<div id="changed-name-hint" class="govuk-hint">
+						<p class="govuk-body">You must provide evidence to show you have between 9 and 20 months of active teaching experience.</p>
+
+						<p class="govuk-body">If you have more than 20 months, you can tell us about it if you want to.</p>
+
+						<details class="govuk-details" data-module="govuk-details">
+							<summary class="govuk-details__summary">
+	                            <span class="govuk-details__summary-text">
+                                    I do not have more than 9 months of teaching experience
+							    </span>
+							</summary>
+							<div class="govuk-details__text">
+								<p class="govuk-body">QTS requires a minimum of 9 months of active teaching experience. We can keep your application open for <span style="color: #d4351c;">[6 months]</span>, so you can continue later, if you gain enough experience in that time.</p>
+
+								<p class="govuk-body">Alternatively, you can <a href="https://getintoteaching.education.gov.uk/non-uk-teachers/teach-in-england-if-you-trained-overseas" class="govuk-link" rel="noreferrer noopener" target="_blank">explore other ways to teach in England (opens in new tab)</a>.</p>
+
+							</div>
+						</details>
+
+
+					</div>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="add-another-job-role"
+							       name="add-another-job-role" type="radio" value="yes">
+							<label class="govuk-label govuk-radios__label" for="add-another-job-role">
+								Yes
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="add-another-job-role-2"
+							       name="add-another-job-role" type="radio" value="no">
+							<label class="govuk-label govuk-radios__label" for="add-another-job-role-2">
+								No
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button" value="progress" type="submit">
+					Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" name=""
+				        value="progress" formaction="/prototype-3/task-list">
+					Save and come back later
+				</button>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
