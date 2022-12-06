@@ -20,7 +20,7 @@
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-	                        Did the applicant work at the school for the dates that they told us?
+	                        Did the applicant work at the school for the dates they provided?
                         </dt>
                         <dd class="govuk-summary-list__value">
                             {{ data['question-dates'] }}
@@ -49,7 +49,7 @@
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-	                        Did the applicant work with children aged between 5 and 16 years?
+	                        Did the applicant work unsupervised with children aged between 5 and 16 years?
                         </dt>
                         <dd class="govuk-summary-list__value">
 	                        {{ data['question-child-age-range'] }}
@@ -64,7 +64,7 @@
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-	                        Was the applicant responsible for at least 4 children in this role?
+	                        Was the applicant solely responsible for planning, preparing and delivering lessons to at least 4 students at a time?
                         </dt>
                         <dd class="govuk-summary-list__value">
 	                        {{ data['question-child-number'] }}
@@ -76,6 +76,21 @@
                             </a>
                         </dd>
                     </div>
+
+	                <div class="govuk-summary-list__row">
+		                <dt class="govuk-summary-list__key">
+			                Was the applicant solely responsible for assessing and reporting on the progress of the students?
+		                </dt>
+		                <dd class="govuk-summary-list__value">
+			                {{ data['question-student-assessment'] }}
+		                </dd>
+		                <dd class="govuk-summary-list__actions">
+			                <a href=question-dates>
+				                Change
+				                <span class="govuk-visually-hidden">answer responsible for assessments</span>
+			                </a>
+		                </dd>
+	                </div>
 
 	                <div class="govuk-summary-list__row">
 		                <dt class="govuk-summary-list__key">
