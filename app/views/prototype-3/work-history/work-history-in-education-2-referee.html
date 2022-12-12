@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	Work history – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block pageStyles %}
+<link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen"
+      rel="stylesheet">
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
+<script>
+    openregisterLocationPicker({
+        selectElement: document.getElementById('school-country'),
+        url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
+        defaultValue: '{{ data["school-country"] }}'
+    })
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form class="form" action="work-history-in-education-summary-2" method="post">
+
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+					<h1 class="govuk-fieldset__heading">
+						Who should we contact to verify this role?
+					</h1>
+					<div id="referee-name-hint" class="govuk-hint">
+						<p class="govuk-hint">If your application is successful, we’ll contact this person before awarding QTS.</p>
+
+						<p class="govuk-hint">It’s important to choose a reliable contact who can provide a reference in English.</p>
+					</div>
+				</legend>
+				<div class="govuk-form-group">
+					<label class="govuk-label" for="contact-2-full-name">
+						Full name
+					</label>
+					<input class="govuk-input" id="contact-2-full-name" name="contact-2-full-name" type="text"
+					       spellcheck="false" autocomplete="name" value="{{ data['contact-2-full-name'] }}">
+				</div>
+
+				<div class="govuk-form-group">
+					<label class="govuk-label" for="contact-2-job-role">
+						This person's job title
+					</label>
+					<input class="govuk-input" id="contact-2-job-role" name="contact-2-job-role" value="{{ data['contact-2-job-role'] }}" type="text">
+				</div>
+
+				<div class="govuk-form-group">
+					<label class="govuk-label" for="reference-2-email">
+						Email address
+					</label>
+					<input class="govuk-input" id="reference-2-email" name="reference-2-email"
+					       value="{{ data['reference-2-email'] }}" type="text">
+				</div>
+				<details class="govuk-details" data-module="govuk-details">
+					<summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+     Choosing someone to verify this role
+    </span>
+					</summary>
+					<div class="govuk-details__text">
+						<p>Make sure you have an up-to-date email address for the person you choose to verify this role. The reference they provide will be important to your application.</p>
+
+						<p>We’ll ask them to confirm that you worked full time at the school for the period you’ve told us about.</p>
+
+						<p>We’ll also check that you worked unsupervised in planning, preparing and delivering lessons to at least 4 students aged 5-16 at a time, as well as assessing and reporting on their progress.</p>
+					</div>
+				</details>
+			</fieldset>
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" name=""
+				        value="progress" formaction="../task-list">
+					Save and come back later
+				</button>
+			</div>
+		</form>
+
+	</div>
+	<div class="govuk-grid-column-one-third"></div>
+</div>
+
+{% endblock %}
