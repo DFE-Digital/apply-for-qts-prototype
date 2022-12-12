@@ -97,22 +97,6 @@
 				<input class="govuk-input" id="job-role" name="job-role" value="{{ data['job-role'] }}" type="text">
 			</div>
 
-			{{ govukRadios({
-			name: "role-1-full-or-part-time",
-			fieldset: {
-			legend: {
-			text: "Was this a full-time role (at least 4 days per week, for at least 30 hours)?"
-			}
-			},
-			items: [{
-			text: "Yes",
-			value: "Yes"
-			}, {
-			text: "No",
-			value: "No"
-			}]
-			}) }}
-
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 					<legend class="govuk-fieldset__legend">
@@ -186,6 +170,17 @@
 					</div>
 
 				</fieldset>
+			</div>
+
+			<div class="govuk-form-group">
+				<h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="role-1-weekly-hours">
+					Approximately how many hours per week did you work in this role?
+				</label>
+				</h3>
+				<div id="role-1-weekly-hours-hint" class="govuk-hint">
+					In roles where you worked under 30 hours per week we may need to ask for more information when we assess your application.
+				</div>
+				<input class="govuk-input govuk-input--width-2" id="role-1-weekly-hours" name="role-1-weekly-hours" type="text" spellcheck="false" aria-describedby="role-1-weekly-hours-hint" inputmode="numeric">
 			</div>
 
 			<div class="govuk-form-group">
