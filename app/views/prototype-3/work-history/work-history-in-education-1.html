@@ -41,7 +41,7 @@
 
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset" aria-describedby="role-1-meets-requirements-hint">
-					<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 						<h2 class="govuk-fieldset__heading govuk-visually-hidden">
 							Does this role meet ALL these requirements
 						</h2>
@@ -49,7 +49,7 @@
 					<div class="govuk-checkboxes" data-module="govuk-checkboxes">
 						<div class="govuk-checkboxes__item">
 							<input class="govuk-checkboxes__input" id="role-1-meets-requirements" name="role-1-meets-requirements" type="checkbox" value="true">
-							<label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold" for="role-1-meets-requirements">
+							<label class="govuk-label govuk-checkboxes__label govuk-label--s" for="role-1-meets-requirements">
 								The role I’m about to add meets ALL of these requirements.
 							</label>
 						</div>
@@ -58,6 +58,14 @@
 			</div>
 
 			<p class="govuk-body"><a href="work-history-rejection" class="govuk-link govuk-link--no-visited-state">I do not have any roles that meet all of these requirements</a>.</p>
+
+
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+					<h1 class="govuk-fieldset__heading">
+						Where was the role?
+					</h1>
+				</legend>
 
 			<div class="govuk-form-group">
 				<label class="govuk-label" for="school-name">
@@ -89,15 +97,17 @@
 			items: countries
 			}) }}
 
+			</fieldset>
+
 			<div class="govuk-form-group">
-				<label class="govuk-label" for="job-role">
-					Job title or role
+				<label class="govuk-label govuk-label--m" for="job-role">
+					What was the job title or role?
 				</label>
 				<input class="govuk-input" id="job-role" name="job-role" value="{{ data['job-role'] }}" type="text">
 			</div>
 
 			<div class="govuk-form-group">
-				<h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="role-1-weekly-hours">
+				<h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="role-1-weekly-hours">
 					Approximately how many hours per week did you work in this role?
 				</label>
 				</h3>
@@ -109,7 +119,7 @@
 
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
-					<legend class="govuk-fieldset__legend">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 						<h4 class="govuk-fieldset__heading">
 							When did you start this role?
 						</h4>
@@ -155,7 +165,7 @@
 
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset" aria-describedby="still-at-school-hint">
-					<legend class="govuk-fieldset__legend">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 						<h5 class="govuk-fieldset__heading">
 							Are you still employed at this school?
 						</h5>
@@ -180,7 +190,7 @@
 						     id="conditional-still-at-school-2">
 							<div class="govuk-form-group">
 								<fieldset class="govuk-fieldset" role="group" aria-describedby="end-date-hint">
-									<legend class="govuk-fieldset__legend">
+									<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 										<h6 class="govuk-fieldset__heading">
 											Your end date
 										</h6>
