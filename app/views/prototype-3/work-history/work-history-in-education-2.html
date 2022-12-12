@@ -29,9 +29,33 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 		<h1 class="govuk-heading-l">Add another role</h1>
-		<p class="govuk-body">Tell us about your current or most recent role.</p>
+		<p class="govuk-body">Every teaching role you tell us about must meet <strong class="govuk-!-font-weight-bold">ALL</strong> of the following requirements.</p>
+		<ul class="govuk-list govuk-list--bullet">
+			<li>You worked unsupervised with children aged between 5 and 16 years.</li>
+			<li>You were solely responsible for planning, preparing and delivering lessons to at least 4 students at a time.</li>
+			<li>You were solely responsible for assessing and reporting on the progress of those students.</li>
+		</ul>
+		<p class="govuk-body">We cannot consider any teaching roles that do not meet ALL of these requirements.</p>
 
-		<p class="govuk-body">You must provide a name and email address for someone who can verify your work experience.</p>
+		<div class="govuk-form-group">
+			<fieldset class="govuk-fieldset" aria-describedby="role-1-meets-requirements-hint">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+					<h2 class="govuk-fieldset__heading govuk-visually-hidden">
+						Does this role meet ALL these requirements
+					</h2>
+				</legend>
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="role-1-meets-requirements" name="role-1-meets-requirements" type="checkbox" value="true">
+						<label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold" for="role-1-meets-requirements">
+							The role I’m about to add meets ALL of these requirements.
+						</label>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+
+		<p class="govuk-body"><a href="work-history-rejection" class="govuk-link">I do not have any roles that meet all of these requirements</a>.</p>
 
 		<form class="form" action="work-history-in-education-summary-2" method="post">
 
