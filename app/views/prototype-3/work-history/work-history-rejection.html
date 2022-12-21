@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Work history – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block pageStyles %}
+<link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen"
+      rel="stylesheet">
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
+<script>
+    openregisterLocationPicker({
+        selectElement: document.getElementById('school-country'),
+        url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
+        defaultValue: '{{ data["school-country"] }}'
+    })
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l">Your work experience does not meet all of the requirements for QTS</h1>
+		<p class="govuk-body">You can <a href="https://getintoteaching.education.gov.uk/non-uk-teachers/teach-in-england-if-you-trained-overseas" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">explore other ways to teach in England (opens in new tab)</a>.</p>
+
+		<h2 class="govuk-heading-s">Help us to improve this service</h2>
+		<p class="govuk-body">We're always trying to improve this service and boost teacher recruitment from overseas. So we'd like to talk to people about their experience of using this service.</p>
+		<p class="govuk-body">If you’d like to help, please <a href="#" class="govuk-link govuk-link--no-visited-state">complete this short form</a>.</p>
+		<p class="govuk-body">If you match our search criteria, we'll invite you to a research video call.</p>
+	</div>
+	<div class="govuk-grid-column-one-third"></div>
+</div>
+
+{% endblock %}

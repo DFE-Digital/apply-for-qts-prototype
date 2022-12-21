@@ -141,7 +141,7 @@ router.post("/formal-training-answer", function (req, res) {
 });
 
 router.post("/special-educational-needs-answer", function (req, res) {
-  res.redirect("/prototype-1/check-eligibility/question-english-proficiency");
+  res.redirect("/prototype-1/check-eligibility/question-work-experience");
 });
 
 // Run this code when a form is submitted to 'completed-year-answer'
@@ -165,7 +165,6 @@ router.post("/misconduct-answer", function (req, res) {
   var region = req.session.data["region"];
   var formalTraining = req.session.data["formal-training"];
   var workExperience = req.session.data["work-experience"];
-  var englishProficiency = req.session.data["english-proficiency"];
   var specialeducationalNeeds = req.session.data["special-educational-needs"];
   var haveMisconduct = req.session.data["misconduct"];
 
@@ -174,7 +173,6 @@ router.post("/misconduct-answer", function (req, res) {
     formalTraining == "Yes" &&
     specialeducationalNeeds == "Yes" &&
     haveMisconduct == "No" &&
-    englishProficiency == "yes" &&
     workExperience != "less-than-1-year"
   ) {
     if (
@@ -505,6 +503,32 @@ router.post(
   }
 );
 
+// Verify English - Qualification from exempt country
+router.post("/exempt-country-citizenship", function (req, res) {
+    let exemptCountryCitizenship = req.session.data["exempt-country-citizenship"];
+
+    if (exemptCountryCitizenship === "No") {
+        res.redirect(
+            "/prototype-3/english-language-proficiency/question-qualification-country"
+        );
+    } else {
+        res.redirect("/prototype-3/task-list");
+    }
+});
+
+// Verify English - Qualification from exempt country
+router.post("/exempt-country-qualification", function (req, res) {
+    let exemptCountryQualification = req.session.data["exempt-country-qualification"];
+
+    if (exemptCountryQualification === "No") {
+        res.redirect(
+            "/prototype-3/english-language-proficiency/how-to-verify-english-language"
+        );
+    } else {
+        res.redirect("/prototype-3/task-list");
+    }
+});
+
 // Verify English language proficiency
 router.post("/verify-english-proficiency", function (req, res) {
   let verifyEnglishProficiency = req.session.data["verify-english-proficiency"];
@@ -513,12 +537,8 @@ router.post("/verify-english-proficiency", function (req, res) {
     res.redirect(
       "/prototype-3/english-language-proficiency/upload-method-of-instruction"
     );
-  } else if (verifyEnglishProficiency === "upload-proficiency-certificate") {
-    res.redirect(
-      "/prototype-3/english-language-proficiency/provide-test-details"
-    );
   } else {
-    res.redirect("/prototype-3/task-list");
+    res.redirect("/prototype-3/english-language-proficiency/provide-test-details");
   }
 });
 
@@ -606,13 +626,12 @@ router.post(
   }
 );
 
-
 // Add a second work history example
 router.post("/work-history",
   function (req, res) {
-    let finishedAddingWorkHistory = req.session.data["finished-adding-work-history"];
+    let addAnotherJobRole = req.session.data["add-another-job-role"];
 
-    if (finishedAddingWorkHistory === "no") {
+    if (addAnotherJobRole === "yes") {
       res.redirect("/prototype-3/work-history/work-history-in-education-2");
     } else {
       res.redirect("/prototype-3/task-list");

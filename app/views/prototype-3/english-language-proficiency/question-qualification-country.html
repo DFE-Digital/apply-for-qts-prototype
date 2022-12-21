@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question - Qualification from exempt country – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form class="form" action="/exempt-country-qualification" method="post">
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<span class="govuk-caption-xl">Your qualifications</span>
+						<h1 class="govuk-fieldset__heading">
+							Was your teaching qualification or university degree taught in any of the following countries?
+						</h1>
+					</legend>
+					<p class="govuk-body">If your teaching qualification or university degree was taught in any of the following countries, you’re exempt from English language requirements.</p>
+
+					<p class="govuk-body">You’ll need to provide the transcript from the qualification as evidence. You can do this in the ‘Your qualifications’ section of the application form.</p>
+					<div class="govuk-grid-row">
+						<div class="govuk-grid-column-one-half">
+							<ul class="govuk-list govuk-list--bullet">
+								<li>Antigua and Barbuda</li>
+								<li>Australia</li>
+								<li>The Bahamas</li>
+								<li>Barbados</li>
+								<li>Belize</li>
+								<li>Canada</li>
+								<li>Dominica</li>
+								<li>Grenada</li>
+								<li>Guyana</li>
+								<li>Jamaica</li>
+								<li>Ireland</li>
+							</ul>
+						</div>
+						<div class="govuk-grid-column-one-half">
+							<ul class="govuk-list govuk-list--bullet">
+								<li>Malta</li>
+								<li>New Zealand</li>
+								<li>St Kitts and Nevis</li>
+								<li>St Lucia</li>
+								<li>St Vincent and the Grenadines</li>
+								<li>Trinidad and Tobago</li>
+								<li>USA</li>
+								<li>England</li>
+								<li>Scotland</li>
+								<li>Northern Ireland</li>
+								<li>Wales</li>
+							</ul>
+						</div>
+					</div>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="exempt-country-qualification" name="exempt-country-qualification" type="radio" value="Yes" {{ checked("exempt-country-qualification", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="exempt-country-qualification">
+								Yes
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="exempt-country-qualification-2" name="exempt-country-qualification" type="radio" value="No" {{ checked("exempt-country-qualification", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="exempt-country-qualification-2">
+								No, I’ll show my English language ability using another method
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button" name="completed-english-proficiency" value="completed-english-proficiency">
+					Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
+				        name="progress-verify-english-proficiency" value="progress-verify-english-proficiency"
+				        formaction="/prototype-3/task-list">
+					Save and come back later
+				</button>
+			</div>
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
