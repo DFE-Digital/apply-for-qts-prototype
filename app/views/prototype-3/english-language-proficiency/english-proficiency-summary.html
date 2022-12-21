@@ -59,6 +59,22 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 				</dd>
 			</div>
 
+                    <!-- Verification method -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Chosen verification method
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['verify-english-proficiency'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="how-to-verify-english-language">
+                                Change
+                                <span class="govuk-visually-hidden">verification method</span>
+                            </a>
+                        </dd>
+                    </div>
+
 					<!-- Approved provider -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
