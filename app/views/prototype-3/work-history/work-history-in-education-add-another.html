@@ -13,14 +13,25 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 
+        <!-- This needs to be calculated from the hours and date range given in the previous page -->
 		<h1 class="govuk-heading-l">You’ve told us about 7 months of work experience so far</h1>
 
-		<p class="govuk-body">You can add as many roles as you want, but you must show at least 9 months of active teaching experience.</p>
+        <h2 class="govuk-heading-s">How we calculate your work experience</h2>
+        <p class="govuk-body">We use a 30-hour working week to calculate your experience.</p>
+        <p class="govuk-body">If you add a role where you worked <span class="govuk-!-font-weight-bold">under</span> 30 hours per week, we’ll convert the hours you enter into 30-hour weeks. That means the number of months you’ve added so far may be smaller than you expected.</p>
 
-		<ul class="govuk-list govuk-list--bullet">
-			<li>If you have more than 9 months but under 20, you may be awarded QTS, but you’ll need to do a 2-year period of statutory induction.</li>
-			<li>If you have more than 20 months, there’s no need to do an induction period.</li>
-		</ul>
+        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+        {{ govukInsetText({
+        text: "For example, if you tell us about a role where you worked 15 hours per week for 18 months, we’ll convert this to 9 months of 30-hour weeks. We’ll then add this role to your total as 9 months."
+        }) }}
+
+        <h3 class="govuk-heading-s">Adding more roles</h3>
+
+        <p class="govuk-body">You can add as many roles as you want, but you must show at least 9 months of active teaching experience.</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>If you have more than 9 months but under 20, you may be awarded QTS, but you’ll need to do a 2-year period of statutory induction.</li>
+            <li>If you have more than 20 months, there’s no need to do an induction period.</li>
+        </ul>
 
 		<details class="govuk-details" data-module="govuk-details">
 			<summary class="govuk-details__summary">
