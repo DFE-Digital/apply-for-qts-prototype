@@ -198,7 +198,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 					<!-- Teacher training qualification country -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Country of institution
+							Country
 						</dt>
 						<dd class="govuk-summary-list__value">
 							{{ data['qualification-institution-country'] }}
@@ -376,7 +376,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 					<!-- Institution country -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Country of institution
+							Country
 						</dt>
 						<dd class="govuk-summary-list__value">
 							{{ data['degreeInstitutionCountry'] }}
@@ -587,97 +587,106 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 			</div>
 			<div class="govuk-summary-list__card-content">
 				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Were you born in or hold citizenship of any of the countries below?
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['exempt-country-citizenship'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="english-language-proficiency/question-born-citizenship">
-								Change
-								<span class="govuk-visually-hidden">citizenship of exempt country</span>
-							</a>
-						</dd>
-					</div>
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Was your teaching qualification or university degree taught in any of the following countries?
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['exempt-country-qualification'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="english-language-proficiency/question-born-citizenship">
-								Change
-								<span class="govuk-visually-hidden">qualification from exempt country</span>
-							</a>
-						</dd>
-					</div>
-					{% if data['verify-english-proficiency'] == "upload-method-of-instruction" %}
-					<!-- Method of instruction -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Method of instruction
-						</dt>
-						<dd class="govuk-summary-list__value">
-							<a href="#">method-of-instruction.pdf</a>
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="english-language-proficiency/upload-method-of-instruction-3">
-								Change
-								<span class="govuk-visually-hidden">maximum age</span>
-							</a>
-						</dd>
-					</div>
-					{% endif %}
-					{% if data['verify-english-proficiency'] == "upload-proficiency-certificate" %}
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Approved provider
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['approved-provider'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="english-language-proficiency/provide-test-details">
-								Change
-								<span class="govuk-visually-hidden">approved provider</span>
-							</a>
-						</dd>
-					</div>
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Reference number
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['english-proficiency-reference'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="english-language-proficiency/upload-english-proficiency-certificate-3.html">
-								Change
-								<span class="govuk-visually-hidden">maximum age</span>
-							</a>
-						</dd>
-					</div>
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Certificate
-						</dt>
-						<dd class="govuk-summary-list__value">
-							<a href="#">english-proficiency-certificate.pdf</a>
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="english-language-proficiency/upload-english-proficiency-certificate-3">
-								Change
-								<span class="govuk-visually-hidden">maximum age</span>
-							</a>
-						</dd>
-					</div>
-					{% endif %}
+
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Were you born in or hold citizenship of any of the countries below?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['exempt-country-citizenship'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="english-language-proficiency/question-born-citizenship">
+                                Change
+                                <span class="govuk-visually-hidden">citizenship of exempt country</span>
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Was your teaching qualification or university degree taught in any of the following countries?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['exempt-country-qualification'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="english-language-proficiency/question-qualification-country">
+                                Change
+                                <span class="govuk-visually-hidden">qualification from exempt country</span>
+                            </a>
+                        </dd>
+                    </div>
+
+                    <!-- Verification method -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Chosen verification method
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['verify-english-proficiency'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="english-language-proficiency/how-to-verify-english-language">
+                                Change
+                                <span class="govuk-visually-hidden">verification method</span>
+                            </a>
+                        </dd>
+                    </div>
+
+                    {% if data['verify-english-proficiency'] == "upload-method-of-instruction" %}
+                    <!-- Medium of instruction -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Medium of instruction
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <a href="#">method-of-instruction.pdf</a>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="english-language-proficiency/english-language-proficiency/upload-method-of-instruction-3">
+                                Change
+                                <span class="govuk-visually-hidden">maximum age</span>
+                            </a>
+                        </dd>
+                    </div>
+                    {% endif %}
+
+                    {% if data['verify-english-proficiency'] == "I’ll provide my English language proficiency test details." %}
+                    <!-- Approved provider -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Your approved provider
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['approved-provider'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="english-language-proficiency/provide-test-details">
+                                Change
+                                <span class="govuk-visually-hidden">school name</span>
+                            </a>
+                        </dd>
+                    </div>
+                    <!-- Your reference number -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Your reference number
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['english-proficiency-reference'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="english-language-proficiency/supply-provider-reference-number">
+                                Change
+                                <span class="govuk-visually-hidden">school city</span>
+                            </a>
+                        </dd>
+                    </div>
+                    {% endif %}
+
 					{% if data['verify-english-proficiency'] == "supplied-passport-from-exempt-country" %}
-					<!-- Method of instruction -->
+					<!-- Medium of instruction -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Verification method
@@ -694,8 +703,9 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 					{% endif %}
+
 					{% if data['verify-english-proficiency'] == "supplied-university-transcript-from-exempt-country" %}
-					<!-- Method of instruction -->
+					<!-- Medium of instruction -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Verification method
@@ -766,7 +776,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 					<!-- School country -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Country of institution
+							Country
 						</dt>
 						<dd class="govuk-summary-list__value">
 							{{ data['school-country'] }}
@@ -795,67 +805,18 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 
-					<!-- Full or part time -->
+					<!-- Hours worked per week -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Was this a full-time role (at least 4 days per week, for at least 30 hours)?
+							Approximately how many hours per week did you work in this role?
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{ data['role-1-full-or-part-time'] }}
+							{{ data['role-1-weekly-hours'] }}
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a href="work-history-in-education-1">
 								Change
-								<span class="govuk-visually-hidden">role full time or part time</span>
-							</a>
-						</dd>
-					</div>
-
-
-					<!-- 5-16 year olds -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Did you work unsupervised with children aged between 5 and 16 years?
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['role-1-age-range'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">role full time or part time</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- Planning responsibility -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Were you solely responsible for planning and delivering lessons to at least 4 students at a time?
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['role-1-student-number'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">role full time or part time</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- Assessment responsibility -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Were you solely responsible for assessing and reporting on the progress of those students?
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['role-1-student-assessment'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-1">
-								Change
-								<span class="govuk-visually-hidden">role full time or part time</span>
+								<span class="govuk-visually-hidden">how many hours per week did you work in this role</span>
 							</a>
 						</dd>
 					</div>
@@ -1025,66 +986,18 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 						</dd>
 					</div>
 
-					<!-- Full or part time -->
+					<!-- Hours worked per week -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Was this a full-time role (at least 4 days per week, for at least 30 hours)?
+							Approximately how many hours per week did you work in this role?
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{ data['role-2-full-or-part-time'] }}
+							{{ data['role-2-weekly-hours'] }}
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a href="work-history-in-education-2">
 								Change
-								<span class="govuk-visually-hidden">role full time or part time</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- 5-16 year olds -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Did you work unsupervised with children aged between 5 and 16 years?
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['role-2-age-range'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-2">
-								Change
-								<span class="govuk-visually-hidden">role full time or part time</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- Planning responsibility -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Were you solely responsible for planning and delivering lessons to at least 4 students at a time?
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['role-2-student-number'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-2">
-								Change
-								<span class="govuk-visually-hidden">role full time or part time</span>
-							</a>
-						</dd>
-					</div>
-
-					<!-- Assessment responsibility -->
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Were you solely responsible for assessing and reporting on the progress of those students?
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['role-2-student-assessment'] }}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a href="work-history-in-education-2">
-								Change
-								<span class="govuk-visually-hidden">role full time or part time</span>
+								<span class="govuk-visually-hidden">how many hours per week did you work in this role</span>
 							</a>
 						</dd>
 					</div>
@@ -1095,7 +1008,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 							Contact's full name
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{ data['contact-full-name-2'] }}
+							{{ data['contact-2-full-name'] }}
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a href="work-history-in-education-2">
@@ -1127,7 +1040,7 @@ Application complete – {{ serviceName }} – GOV.UK Prototype Kit
 							Contact email address
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{ data['reference-email-2'] }}
+							{{ data['reference-2-email'] }}
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a href="work-history-in-education-2">
