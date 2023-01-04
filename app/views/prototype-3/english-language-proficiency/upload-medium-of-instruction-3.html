@@ -24,7 +24,7 @@ Upload the Medium of instruction (MOI) – {{ serviceName }} – GOV.UK Prototyp
 					File 1
 				</dt>
 				<dd class="govuk-summary-list__value">
-					<a download href="/" class="govuk-link">method-of-instruction.pdf</a>
+					<a download href="/" class="govuk-link">medium-of-instruction.pdf</a>
 				</dd>
 
 				<dd class="govuk-summary-list__actions">
@@ -39,13 +39,13 @@ Upload the Medium of instruction (MOI) – {{ serviceName }} – GOV.UK Prototyp
 
 		</dl>
 
-		<form class="form" action="/upload-method-of-instruction-answer" method="post">
+		<form class="form" action="/upload-medium-of-instruction-answer" method="post">
 			{% from "govuk/components/button/macro.njk" import govukButton %}
 			{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 			{{ govukRadios({
-			idPrefix: "another-method-of-instruction",
-			name: "another-method-of-instruction",
+			idPrefix: "another-medium-of-instruction",
+			name: "another-medium-of-instruction",
 			fieldset: {
 			legend: {
 			text: "Do you need to upload another page?",
