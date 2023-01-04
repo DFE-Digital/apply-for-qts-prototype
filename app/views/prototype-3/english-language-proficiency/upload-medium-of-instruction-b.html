@@ -17,31 +17,28 @@ Upload the Medium of instruction (MOI) – {{ serviceName }} – GOV.UK Prototyp
 		<p class="govuk-body">This document must confirm that the primary language used to teach this degree course was
 			English.</p>
 
-		<form class="form" action="" method="post">
-			<div class="govuk-form-group govuk-form-group--error">
+		<form class="form" action="/prototype-3/task-list" method="post">
+
+			<div class="govuk-form-group">
 				<label class="govuk-label" for="file-upload-1">
 					Select a file to upload
 				</label>
 				<div class="govuk-hint">
 					You can upload your files in PDF, JPG or DOC format. Each file must be no larger than 20MB.
 				</div>
-				<p id="file-upload-1-error" class="govuk-error-message">
-					<span class="govuk-visually-hidden">Error:</span> No file selected
-				</p>
-				<a href="upload-method-of-instruction-b-2" class="govuk-button govuk-button--secondary"
-				   data-module="govuk-button" name="method-of-instruction-file" value="method-of-instruction.pdf">Choose
+				<a href="upload-medium-of-instruction-b-2" class="govuk-button govuk-button--secondary"
+				   data-module="govuk-button" name="medium-of-instruction-file" value="letter-translation.jpg">Choose
 					file</a>
 				<span class="govuk-body" style="position:relative;top:7px">No file uploaded</span>
 			</div>
 
 			<div class="govuk-button-group">
-				<a class="govuk-button" style="text-decoration: none;" href="upload-method-of-instruction-b-error">
+				<a class="govuk-button" style="text-decoration: none;" href="upload-medium-of-instruction-b-error">
 					Upload and continue
 				</a>
 
 				<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
-				        name="method-of-instruction-file"
-				        value="">
+				        name="another-medium-of-instruction" value="progress">
 					Add this later
 				</button>
 

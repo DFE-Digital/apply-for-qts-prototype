@@ -533,9 +533,9 @@ router.post("/exempt-country-qualification", function (req, res) {
 router.post("/verify-english-proficiency", function (req, res) {
   let verifyEnglishProficiency = req.session.data["verify-english-proficiency"];
 
-  if (verifyEnglishProficiency === "upload-method-of-instruction") {
+  if (verifyEnglishProficiency === "upload-medium-of-instruction") {
     res.redirect(
-      "/prototype-3/english-language-proficiency/upload-method-of-instruction"
+      "/prototype-3/english-language-proficiency/upload-medium-of-instruction"
     );
   } else {
     res.redirect("/prototype-3/english-language-proficiency/provide-test-details");
@@ -543,13 +543,13 @@ router.post("/verify-english-proficiency", function (req, res) {
 });
 
 // See if second page required for MOI
-router.post("/upload-method-of-instruction-answer", function (req, res) {
+router.post("/upload-medium-of-instruction-answer", function (req, res) {
   let anotherMethodOfInstruction =
-    req.session.data["another-method-of-instruction"];
+    req.session.data["another-medium-of-instruction"];
 
   if (anotherMethodOfInstruction === "Yes") {
     res.redirect(
-      "/prototype-3/english-language-proficiency/upload-method-of-instruction-b"
+      "/prototype-3/english-language-proficiency/upload-medium-of-instruction-b"
     );
   } else {
     res.redirect("/prototype-3/task-list");
