@@ -1,0 +1,354 @@
+{% extends "layout.html" %}
+
+<!-- Set country for this specific test page -->
+{% set country = "Nigeria" %}
+
+// Import macros
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{% block pageTitle %}
+You might be eligible to apply for QTS – {{ serviceName }} prototype
+{% endblock %}
+
+{% block pageNavigation %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">You’re eligible to apply for qualified teacher status (QTS) in England</h1>
+        <p class="govuk-body">Based on the information you’ve given us you can apply for QTS.</p>
+
+        <h2 class="govuk-heading-m">Preparing to apply</h2>
+        <p class="govuk-body">
+            If you decide to apply, you'll need to provide a range of evidence. We'll ask you to upload some scans,
+            photos, or original files.
+        </p>
+
+        <div class="govuk-inset-text">
+            You may want to spend some time gathering all the documents you need before you begin your application. Once you start your application, we’ll sign you out if you’re inactive for 60 minutes.
+        </div>
+
+        <h2 class="govuk-heading-m">What we’ll ask for</h2>
+        <p class="govuk-body">
+            You’ll need to provide the following evidence when you apply.
+        </p>
+
+		<!-- Start of accordion -->
+		<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+			<div class="govuk-accordion__section ">
+				<div class="govuk-accordion__section-header">
+					<h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          1. Proof of identity
+        </span>
+					</h2>
+				</div>
+				<div id="accordion-default-content-1" class="govuk-accordion__section-content"
+					 aria-labelledby="accordion-default-heading-1">
+					<p class="govuk-body">You must provide either a:</p>
+					<ul class="govuk-list govuk-list--bullet">
+						<li>passport (must not have expired)</li>
+                        <li>birth certificate</li>
+                        <li>national identity card that shows your date of birth and nationality (must not have expired)</li>
+					</ul>
+
+                    {{ govukDetails({
+                    summaryText: "Has your name changed?",
+                    text: "If the name on your proof of identity is different from that on your other documents, you need to provide evidence of your name change (for example, a marriage certificate or name change deed)."
+                    }) }}
+				</div>
+			</div>
+			<div class="govuk-accordion__section ">
+				<div class="govuk-accordion__section-header">
+					<h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+          2. Proof of qualifications
+        </span>
+					</h2>
+				</div>
+				<div id="accordion-default-content-2" class="govuk-accordion__section-content"
+					 aria-labelledby="accordion-default-heading-2">
+
+
+                    <p class="govuk-body">You must hold a teaching qualification that’s equivalent to a UK bachelor degree (‘level 6’) or higher.</p>
+
+                    <p class="govuk-body"><a
+                            href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels">Check you hold a qualification that is equivalent or higher than a level 6</a>.</p>
+
+                    <p class="govuk-body">We'll need to understand how much of your qualification was focussed on developing practical teaching skills.</p>
+
+                    <p class="govuk-body">You’ll need to provide evidence of your teaching qualification:</p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>certificate (this might be your university degree, or other qualification)</li>
+                        <li>transcript (or diploma supplement)</li>
+                    </ul>
+
+                    {{ govukDetails({
+                    summaryText: "What is a transcript?",
+                    text: "A transcript is a document from the institution where you studied. It lists all the modules or subjects you studied in each year, and the marks or grades you were awarded."
+                    }) }}
+
+                    {% if country == 'Nigeria' %}
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text">
+                            <span class="govuk-warning-text__assistive">Warning</span>
+                            We cannot accept the National Certificate in Education (NCE) or the Teachers Certificate Grade II from Nigeria as these do not meet the required level.
+                        </strong>
+                    </div>
+                    {% endif %}
+				</div>
+			</div>
+
+			<!-- English language -->
+			<div class="govuk-accordion__section ">
+				<div class="govuk-accordion__section-header">
+					<h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                            3. Proof of English language ability
+                        </span>
+					</h2>
+				</div>
+				<div id="accordion-default-content-3" class="govuk-accordion__section-content"
+					 aria-labelledby="accordion-default-heading-3">
+
+                    <p class="govuk-body">If you were born or hold citizenship of any of the countries below, you’re exempt from English language requirements. You’ll need to provide your passport or official identification documents for that country as proof.</p>
+
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half-from-desktop">
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>Antigua and Barbuda</li>
+                    <li>Australia</li>
+                    <li>The Bahamas</li>
+                    <li>Barbados</li>
+                    <li>Belize</li>
+                    <li>Canada</li>
+                    <li>Dominica</li>
+                    <li>Grenada</li>
+                    <li>Guyana</li>
+                    <li>Jamaica</li>
+                            <li>Ireland</li>
+                    </ul>
+                    </div>
+                        <div class="govuk-grid-column-one-half-from-desktop">
+                            <ul class="govuk-list govuk-list--bullet">
+                    <li>Malta</li>
+                    <li>New Zealand</li>
+                    <li>St Kitts and Nevis</li>
+                    <li>St Lucia</li>
+                    <li>St Vincent and the Grenadines</li>
+                    <li>Trinidad and Tobago</li>
+                    <li>USA</li>
+                    <li>England</li>
+                    <li>Scotland</li>
+                    <li>Northern Ireland</li>
+                        <li>Wales</li>
+                    </ul>
+                    </div>
+                    </div>
+
+                    <p class="govuk-body">If you were not born or do not hold citizenship from any of the exempt countries listed above, you can provide evidence of your English language ability in any of the following ways:</p>
+
+                    <h3 class="govuk-heading-s">If your teaching qualification or university degree was taught in an exempt country (listed above)</h3>
+
+                    <p class="govuk-body">Upload the transcript from your teaching qualification or university degree (which you can request from the institution where you studied).</p>
+
+                    <h3 class="govuk-heading-s">If your teaching qualification or university degree was taught completely in English, but in a country that’s NOT exempt (not listed above)</h3>
+
+                    <p class="govuk-body">Upload a document that shows your teaching qualification or university degree was taught exclusively in the English language – this is an official document that you can request from the institution where you studied.</p>
+
+                    <h3 class="govuk-heading-s">If you have an approved English language certificate</h3>
+
+                    <p class="govuk-body">You’ll need a Secure English Language Test (SELT) at level B2 of the Common European Framework of Reference for Languages (CEFR) scale. The test must be on the list of approved English language tests and awarded within the last 2 years before the date of your application.</p>
+
+                    <p class="govuk-body">Find an <a
+                            href="https://www.gov.uk/guidance/prove-your-english-language-abilities-with-a-secure-english-language-test-selt"
+                            class="govuk-link">approved test provider</a> if you need to get an English language certificate.</p>
+
+                    <p class="govuk-body">Learn more about <a href="https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-cefr-3.3-common-reference-levels-global-scale" class="govuk-link">level B2 English language</a>.</p>
+
+                    {{ govukDetails({
+                    summaryText: "What if you have more than one nationality?",
+                    html: "<p>If you’re a national of more than 1 country and both are exempt from English language requirements, you can choose which of them you use to apply for QTS. Remember, you must be able to show a passport (or the recognised identity document for that country).</p>
+                    <p>If you hold a second nationality that is not exempt (and you apply for QTS using that nationality) you’ll need to prove your English language proficiency using one of the other methods.</p>"
+                    }) }}
+
+				</div>
+			</div>
+
+			<!-- Work History -->
+			<div class="govuk-accordion__section ">
+				<div class="govuk-accordion__section-header">
+					<h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-4a">
+                            4. Proof of your work history
+                        </span>
+					</h2>
+				</div>
+				<div id="accordion-default-content-4a" class="govuk-accordion__section-content"
+					 aria-labelledby="accordion-default-heading-4a">
+
+					<p class="govuk-body">You need to show you’ve been employed as a teacher in a school for 1 UK school year (9 months of active teaching time) or more.</p>
+					<p class="govuk-body">You’ll need to provide the name and email address of a contact who can confirm that during your professional work experience you:</p>
+
+					<ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+						<li>worked unsupervised with children aged between 5 and 16 years.</li>
+						<li>were solely responsible for planning, preparing and delivering lessons to at least 4 students at a time.</li>
+						<li>were solely responsible for assessing and reporting on the progress of those students.</li>
+					</ul>
+
+					<p class="govuk-body">We’ll contact the references you’ve provided to verify your work history before we award QTS.</p>
+
+                    <!-- Hardcoding for the static page test - Only appears if you answered: '9 months – 20 months' -->
+                    {% set workExperience = "between-1-and-2-years" %}
+                    {% if workExperience == 'between-1-and-2-years' %}
+                    <p class="govuk-body">As a teacher with more than 1 year of professional experience, but less than 2 years, you’ll need to complete a 2-year ‘statutory induction’ period as a newly qualified teacher.</p>
+                    <p class="govuk-body"><a href="https://www.gov.uk/government/publications/induction-for-newly-qualified-teachers-nqts">Learn more about statutory induction periods for newly qualified teachers.</a></p>
+                    {% endif %}
+
+				</div>
+			</div>
+
+
+            <!-- This section contains the variant copy for any countries whereby LOPS is sent directly to the TRA rather than being uploaded by the applicant -->
+			<div class="govuk-accordion__section ">
+				<div class="govuk-accordion__section-header">
+					<h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-5">
+          5. Proof that you&rsquo;re recognised as a teacher
+        </span>
+					</h2>
+				</div>
+				<div id="accordion-default-content-5" class="govuk-accordion__section-content"
+					 aria-labelledby="accordion-default-heading-5">
+
+                    {% if country == 'Nigeria' %}
+                    <p class="govuk-body">We need a document called a Letter of Professional Standing from the Teachers Registration Council of Nigeria (TRCN)</p>
+
+                    <p class="govuk-body">You cannot provide this document yourself –  instead, you must contact The Teachers Registration Council of Nigeria (TRCN) and ask them to send it directly to us at <a href="mailto:QTS.enquiries@education.gov.uk">QTS.enquiries@education.gov.uk</a>.</p>
+                    
+                    <p class="govuk-body">The document must confirm:</p>
+                    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                        <li>that you've completed a teaching qualification/teacher training</li>
+                        <li>that you've successfully completed any period of professional experience comparable to an induction period (if required)</li>
+                        <li>the age ranges and subjects you're qualified to teach</li>
+                    </ul>
+                    <p class="govuk-body">If we do not receive the document within 90 days of the date that you submit your application, we’ll need to close your application.</p>
+                    <p class="govuk-body">You should request your Letter of Professional Standing from The Teachers Registration Council of Nigeria (TRCN) by emailing <a href="mailto:LoPs@trcn.gov.ng">LoPs@trcn.gov.ng</a>). You can only do this after you’ve applied to us for QTS.</p>
+                    <p class="govuk-body">TRCN will require you to pay them a fee of  ₦60,000 and provide copies of your teaching documents. You’ll also need to provide your QTS application reference number as proof that you’ve applied.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    {% else  %}
+                    <p class="govuk-body govuk-!-font-weight-bold">We cannot accept the National Certificate in Education (NCE) or the Teachers Certificate Grade II from Nigeria as these do not meet the required level.</p>
+
+                    <p class="govuk-body">You’ll need to provide a <span style="color: #d4351c">[Letter of Professional Standing]</span>, which you can get by contacting:</p>
+
+                    <p class="govuk-body app-teaching-authority-address">Teachers Registration Board of South Australia (TRBSA)
+                        Level 6,
+                        70 Pirie Street,
+                        Adelaide,
+                        South Australia 5000,
+                        Australia</p>
+
+                    <p class="govuk-body">Email: <a href="mailto:info@trb.sa.edu.au" class="govuk-link"
+                            rel="noreferrer noopener">info@trb.sa.edu.au</a></p>
+                    <p class="govuk-body">Website: <a href="https://www.trb.sa.edu.au" class="govuk-link"
+                            rel="noreferrer noopener" target="_blank">https://www.trb.sa.edu.au</a></p>
+
+                    <p class="govuk-body">In the <span style="color: #d4351c">[document name]</span> the <span style="color: #d4351c">[authority or territory that recognises you as a teacher]</span> must confirm that your authorisation to teach has never been:</p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>suspended</li>
+                        <li>barred</li>
+                        <li>cancelled</li>
+                        <li>revoked</li>
+                        <li>restricted or subject to sanctions</li>
+                    </ul>
+
+                    <p class="govuk-body">This must be dated within 3 months of you applying for QTS.</p>
+                    <p class="govuk-body">As your education department or authority has an online register of teachers, you’ll also need to provide any reference numbers we need to check your record.</p>
+                    {% endif %}
+
+				</div>
+			</div>
+			<div class="govuk-accordion__section ">
+				<div class="govuk-accordion__section-header">
+					<h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-6">
+          6. Certified translations
+        </span>
+					</h2>
+				</div>
+				<div id="accordion-default-content-6" class="govuk-accordion__section-content"
+					 aria-labelledby="accordion-default-heading-6">
+					<p class="govuk-body">If your documents are not written in English, you must provide certified
+						translations (at your own cost) for your:</p>
+					<ul class="govuk-list govuk-list--bullet">
+						<li>qualifications</li>
+						<li>transcripts</li>
+						<li>proof that you’re recognised as a teacher</li>
+					</ul>
+					<p class="govuk-body">You do not need translations for ID or change of name documents.</p>
+
+					<h3 class="govuk-heading-s">About certified translations</h3>
+					<p class="govuk-body">Translations must be completed by a certified translator, who must state (on the document or a separate certification page) that the translation is a true, accurate and correct copy of the original.</p>
+
+					<p class="govuk-body">Each one must include the date of the translation as well as the certified
+						translator’s:</p>
+					<ul class="govuk-list govuk-list--bullet">
+						<li>signature</li>
+						<li>name and contact details</li>
+						<li>official certification seal/stamp or ID number</li>
+					</ul>
+					<h3 class="govuk-heading-s">Finding a certified translator</h3>
+					<p class="govuk-body">We cannot recommend translation providers. You may want to explore translators
+						who are members of the <a href="https://www.iti.org.uk/component/itisearch/?view=translators"
+												  rel="noreferrer noopener" target="_blank">Institute of Translating and
+							Interpretation (opens in a new tab)</a>. Sometimes a university’s language department can
+						also help.</p>
+
+                    <div class="govuk-inset-text">
+                        <p class="govuk-body">New criteria will apply to applications made from 1 February 2023.</p>
+
+                        <p class="govuk-body">If you do not submit your application before this date you’ll need to submit a new application under the <a href="https://www.gov.uk/government/publications/awarding-qualified-teacher-status-to-overseas-teachers/a-fairer-approach-to-awarding-qts-to-overseas-teachers#criteria-for-awarding-qts">new criteria</a>.</p>
+                    </div>
+				</div>
+			</div>
+		</div>
+
+        <p class="govuk-body">Use our new application form to apply for QTS.</p>
+		<a role="button" draggable="false" data-module="govuk-button" class="govuk-button govuk-button--start"
+		   href="/prototype-3/create-account-sign-in">Apply for QTS
+			<svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+				 viewBox="0 0 33 40" focusable="false" aria-hidden="true">
+				<path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"/>
+			</svg>
+		</a>
+
+		<h4 class="govuk-heading-s govuk-!-margin-top-5">Help us to improve this service</h4>
+
+		<p class="govuk-body">We're always trying to improve this service and boost teacher recruitment from overseas. So we'd like to talk to people about their experience of using this service.</p>
+
+		<p class="govuk-body">If you'd like to help, please <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjsMHqaiNP2cUUpmbeOkHRM96afrsj1TmTIEs-k4yit0JqBA/viewform"
+                rel="noreferrer noopener" target="_blank">complete this form</a>.</p>
+        <p class="govuk-body">If you match our search criteria, we'll invite you to take part in research.</p>
+
+	</div>
+</div>
+
+{% endblock %}
