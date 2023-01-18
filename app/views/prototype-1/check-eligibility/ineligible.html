@@ -48,7 +48,7 @@ Not eligible for QTS in England – {{ serviceName }} – GOV.UK Prototype Kit
 			<li>You do not have sufficient work experience as a teacher</li>
 			{% endif %}
 
-			{% if data['misconduct'] != 'No' %}
+			{% if data['misconduct'] == 'Yes' %}
 			<li>To teach in England, you must not have any findings of misconduct or restrictions on your practice.</li>
 			{% endif %}
 		</ul>
