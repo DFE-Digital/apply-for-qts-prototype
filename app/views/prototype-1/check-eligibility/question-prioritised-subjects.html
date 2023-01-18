@@ -1,0 +1,70 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+Prioritised subjects – {{ serviceName }} prototype
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <!-- <h1 class="govuk-heading-xl">Radio Button question</h1> -->
+
+        <form class="form" action="/prioritised-subjects-answer" method="post">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Does your teaching qualification show that you can teach one of the following subjects?
+                        </h1>
+                    </legend>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                            <ul class="govuk-list govuk-list--bullet">
+                                <li>Maths</li>
+                                <li>Science</li>
+                                <li>Biology</li>
+                                <li>Chemistry</li>
+                                <li>Physics</li>
+                                <li>Ancient Greek</li>
+                                <li>Ancient Hebrew</li>
+                                <li>French</li>
+                            </ul>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                            <ul class="govuk-list govuk-list--bullet">
+                                <li>German</li>
+                                <li>Italian</li>
+                                <li>Japanese</li>
+                                <li>Latin</li>
+                                <li>Mandarin</li>
+                                <li>Russian</li>
+                                <li>Spanish</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="prioritised-subjects" name="prioritised-subjects" type="radio" value="yes">
+                            <label class="govuk-label govuk-radios__label" for="prioritised-subjects">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="prioritised-subjects-2" name="prioritised-subjects" type="radio" value="no">
+                            <label class="govuk-label govuk-radios__label" for="prioritised-subjects-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
