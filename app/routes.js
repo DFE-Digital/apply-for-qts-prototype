@@ -141,7 +141,33 @@ router.post("/formal-training-answer", function (req, res) {
 });
 
 router.post("/special-educational-needs-answer", function (req, res) {
-  res.redirect("/prototype-1/check-eligibility/question-work-experience");
+  res.redirect("/prototype-1/check-eligibility/question-prioritised-subjects");
+});
+
+router.post("/prioritised-subjects-answer", function (req, res) {
+    var prioritisedSubjects = req.session.data["prioritised-subjects"];
+
+    // Check whether the variable matches a condition
+    if (prioritisedSubjects == "yes") {
+        // Send user to next page
+        res.redirect("/prototype-1/check-eligibility/question-work-experience");
+    } else {
+        // Send user to ineligible page
+        res.redirect("/prototype-1/check-eligibility/question-prioritised-subjects-percentage");
+    }
+});
+
+router.post("/prioritised-subjects-percentage-answer", function (req, res) {
+    var prioritisedSubjectsPercentage = req.session.data["prioritised-subjects-percentage"];
+
+    // Check whether the variable matches a condition
+    if (prioritisedSubjectsPercentage == "yes") {
+        // Send user to next page
+        res.redirect("/prototype-1/check-eligibility/question-work-experience");
+    } else {
+        // Send user to ineligible page
+        res.redirect("/prototype-1/check-eligibility/ineligible");
+    }
 });
 
 // Run this code when a form is submitted to 'completed-year-answer'
