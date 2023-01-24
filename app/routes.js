@@ -183,12 +183,12 @@ router.post("/misconduct-answer", function (req, res) {
       BUCKET_1_REGIONS.includes(region) ||
       BUCKET_1_COUNTRIES.includes(country)
     ) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-1");
+      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
     } else if (
       BUCKET_2_REGIONS.includes(region) ||
       BUCKET_2_COUNTRIES.includes(country)
     ) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-2");
+      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
     } else if (
       BUCKET_3_REGIONS.includes(region) ||
       BUCKET_3_COUNTRIES.includes(country)
@@ -198,12 +198,12 @@ router.post("/misconduct-answer", function (req, res) {
       BUCKET_4_REGIONS.includes(region) ||
       BUCKET_4_COUNTRIES.includes(country)
     ) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-4");
+      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
     } else if (
       BUCKET_6_REGIONS.includes(region) ||
       BUCKET_6_COUNTRIES.includes(country)
     ) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-6");
+      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
     } else {
       res.redirect("/prototype-1/check-eligibility/eligible");
     }
