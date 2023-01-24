@@ -178,8 +178,8 @@ router.post("/misconduct-answer", function (req, res) {
     haveDegree == "Yes" &&
     formalTraining == "Yes" &&
     specialeducationalNeeds == "Yes" &&
-    haveMisconduct == "No" &&
-    workExperience != "less-than-1-year"
+    workExperience != "less-than-1-year" &&
+    haveMisconduct == "No"
   ) {
     if (
       BUCKET_1_REGIONS.includes(region) ||
