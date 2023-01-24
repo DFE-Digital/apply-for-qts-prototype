@@ -139,6 +139,8 @@ router.post("/region-answer", function (req, res) {
 });
 
 router.post("/formal-training-answer", function (req, res) {
+    // The following countries will have a subject filter at launch within the eligibility checker. Added to test content
+    const SUBJECT_FILTER_COUNTRIES = ['Nigeria', 'Ghana', 'South Africa', 'Zimbabwe', 'India', 'Singapore', 'Jamaica'];
   res.redirect("/prototype-1/check-eligibility/question-degree");
 });
 
