@@ -91,6 +91,8 @@ const REGION_COUNTRIES = [
   "Australia",
   "Belgium",
   "Germany",
+  "Nigeria",
+  "Ghana"
 ];
 
 const REGIONS = BUCKET_1_REGIONS.concat(BUCKET_2_REGIONS)
@@ -137,6 +139,8 @@ router.post("/region-answer", function (req, res) {
 });
 
 router.post("/formal-training-answer", function (req, res) {
+    // The following countries will have a subject filter at launch within the eligibility checker. Added to test content
+    const SUBJECT_FILTER_COUNTRIES = ['Nigeria', 'Ghana', 'South Africa', 'Zimbabwe', 'India', 'Singapore', 'Jamaica'];
   res.redirect("/prototype-1/check-eligibility/question-degree");
 });
 
@@ -145,29 +149,7 @@ router.post("/special-educational-needs-answer", function (req, res) {
 });
 
 router.post("/prioritised-subjects-answer", function (req, res) {
-    var prioritisedSubjects = req.session.data["prioritised-subjects"];
-
-    // Check whether the variable matches a condition
-    if (prioritisedSubjects == "yes") {
-        // Send user to next page
-        res.redirect("/prototype-1/check-eligibility/question-work-experience");
-    } else {
-        // Send user to ineligible page
-        res.redirect("/prototype-1/check-eligibility/question-prioritised-subjects-percentage");
-    }
-});
-
-router.post("/prioritised-subjects-percentage-answer", function (req, res) {
-    var prioritisedSubjectsPercentage = req.session.data["prioritised-subjects-percentage"];
-
-    // Check whether the variable matches a condition
-    if (prioritisedSubjectsPercentage == "yes") {
-        // Send user to next page
-        res.redirect("/prototype-1/check-eligibility/question-work-experience");
-    } else {
-        // Send user to ineligible page
-        res.redirect("/prototype-1/check-eligibility/ineligible");
-    }
+    res.redirect("/prototype-1/check-eligibility/question-work-experience");
 });
 
 // Run this code when a form is submitted to 'completed-year-answer'
@@ -198,19 +180,22 @@ router.post("/misconduct-answer", function (req, res) {
     haveDegree == "Yes" &&
     formalTraining == "Yes" &&
     specialeducationalNeeds == "Yes" &&
-    haveMisconduct == "No" &&
-    workExperience != "less-than-1-year"
+    workExperience != "less-than-1-year" &&
+    haveMisconduct == "No"
   ) {
-    if (
+      // Created a variant for testing Nigerian content only
+      if (country == "Nigeria") {
+          res.redirect("/prototype-1/check-eligibility/summary-page-nigeria");
+      } else if (
       BUCKET_1_REGIONS.includes(region) ||
       BUCKET_1_COUNTRIES.includes(country)
     ) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-1");
+      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
     } else if (
       BUCKET_2_REGIONS.includes(region) ||
       BUCKET_2_COUNTRIES.includes(country)
     ) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-2");
+      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
     } else if (
       BUCKET_3_REGIONS.includes(region) ||
       BUCKET_3_COUNTRIES.includes(country)
@@ -220,12 +205,12 @@ router.post("/misconduct-answer", function (req, res) {
       BUCKET_4_REGIONS.includes(region) ||
       BUCKET_4_COUNTRIES.includes(country)
     ) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-4");
+      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
     } else if (
       BUCKET_6_REGIONS.includes(region) ||
       BUCKET_6_COUNTRIES.includes(country)
     ) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-6");
+      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
     } else {
       res.redirect("/prototype-1/check-eligibility/eligible");
     }
