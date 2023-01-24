@@ -181,7 +181,10 @@ router.post("/misconduct-answer", function (req, res) {
     workExperience != "less-than-1-year" &&
     haveMisconduct == "No"
   ) {
-    if (
+      // Created a variant for testing Nigerian content only
+      if (country == "Nigeria") {
+          res.redirect("/prototype-1/check-eligibility/summary-page-nigeria");
+      } else if (
       BUCKET_1_REGIONS.includes(region) ||
       BUCKET_1_COUNTRIES.includes(country)
     ) {
