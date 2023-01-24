@@ -91,6 +91,8 @@ const REGION_COUNTRIES = [
   "Australia",
   "Belgium",
   "Germany",
+  "Nigeria",
+  "Ghana"
 ];
 
 const REGIONS = BUCKET_1_REGIONS.concat(BUCKET_2_REGIONS)
