@@ -13,35 +13,32 @@ Do you have a teaching qualification? – {{ serviceName }} prototype
 
 		<form class="form" action="/formal-training-answer" method="post">
 
-			{% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-			{{ govukRadios({
-			idPrefix: "formal-training",
-			name: "formal-training",
-			fieldset: {
-			legend: {
-			text: "Do you have a teaching qualification?",
-			isPageHeading: true,
-			classes: "govuk-fieldset__legend--l"
-			}
-			},
-			hint: {
-			text: "To teach in England, you need to be able to show that you have a teaching qualification."
-			},
-			items: [
-			{
-			value: "Yes",
-			text: "Yes",
-			checked: checked("formal-training", "Yes")
-			},
-			{
-			value: "No",
-			text: "No",
-			checked: checked("formal-training", "No")
-			}
-
-			]
-			}) }}
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Do you have a teaching qualification that was completed in {{ data['country'] }}
+                        </h1>
+                    </legend>
+                    <div id="formal-training-hint" class="govuk-hint">
+                        To teach in England, you need to be able to show that you have a teaching qualification.
+                    </div>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="formal-training" name="formal-training" type="radio" value="Yes" {{ checked("formal-training", "Yes") }}>
+                            <label class="govuk-label govuk-radios__label" for="formal-training">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="formal-training-2" name="formal-training" type="radio" value="No"  {{ checked("formal-training", "No") }}>
+                            <label class="govuk-label govuk-radios__label" for="formal-training-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
 
 			<button class="govuk-button" data-module="govuk-button">Continue</button>
 
