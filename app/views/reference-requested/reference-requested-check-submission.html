@@ -1,3 +1,14 @@
+{# Set some defaults for this page #}
+{% set applicantFirstName = 'Carmen' %}
+{% set applicantLastName = 'Gomez' %}
+{% set refereeFullName = 'Fernando Alberti' %}
+{% set refereeJobTitle = 'Headteacher' %}
+{% set schoolName = 'Guadalaviar School' %}
+{% set startDateMonth = '01' %}
+{% set startDateYear = '2020' %}
+{% set endDateMonth = '06' %}
+{% set endDateYear = '2020' %}
+
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -20,10 +31,53 @@
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
+                            Your full name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ refereeFullName }}
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Your job title at <span style="color: #d4351c">{{schoolName}}</span> between <span style="color: #d4351c">{{ startDateMonth }}/{{ startDateYear }}</span> and <span style="color: #d4351c">{{ endDateMonth }}/{{ endDateYear }}</span>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ refereeJobTitle }}
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Are these details correct?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['questionRefereeDetails'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href=question-about-you>
+                                Change
+                                <span class="govuk-visually-hidden">answer to date question</span>
+                            </a>
+                        </dd>
+                    </div>
+
+                    {% if data['refereeDetailsIncorrect'] %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Tell us why these details are not correct
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['refereeDetailsIncorrect'] }}
+                        </dd>
+                    </div>
+                    {% endif %}
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
 	                        Did the applicant work at the school for the dates they provided?
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{ data['question-dates'] }}
+                            {{ data['questionDates'] }}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a href=question-dates>
@@ -32,12 +86,24 @@
                             </a>
                         </dd>
                     </div>
+
+                    {% if data['questionDatesIncorrect'] %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Tell us why you answered ‘No’ to this question.
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['questionDatesIncorrect'] }}
+                        </dd>
+                    </div>
+                    {% endif %}
+
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                             Did the applicant normally work more than 30 hours per week in this role?
                         </dt>
                         <dd class="govuk-summary-list__value">
-	                        {{ data['question-full-time'] }}
+	                        {{ data['questionFullTime'] }}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a href="question-full-time">
@@ -46,13 +112,23 @@
                             </a>
                         </dd>
                     </div>
+                    {% if data['questionFullTimeIncorrect'] %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Tell us why you answered ‘No’ to this question.
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['questionFullTimeIncorrect'] }}
+                        </dd>
+                    </div>
+                    {% endif %}
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
 	                        Did the applicant work unsupervised with children aged between 5 and 16 years?
                         </dt>
                         <dd class="govuk-summary-list__value">
-	                        {{ data['question-child-age-range'] }}
+	                        {{ data['questionChildAgeRange'] }}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a href="question-child-age-range">
@@ -61,13 +137,22 @@
                             </a>
                         </dd>
                     </div>
-
+                    {% if data['questionChildAgeRangeIncorrect'] %}
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-	                        Was the applicant solely responsible for planning, preparing and delivering lessons to at least 4 students at a time?
+                            Tell us why you answered ‘No’ to this question.
                         </dt>
                         <dd class="govuk-summary-list__value">
-	                        {{ data['question-child-number'] }}
+                            {{ data['questionChildAgeRangeIncorrect'] }}
+                        </dd>
+                    </div>
+                    {% endif %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Did the applicant plan, prepare and deliver lessons to at least 4 students without supervision?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+	                        {{ data['questionChildNumber'] }}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a href="question-child-number">
@@ -76,22 +161,88 @@
                             </a>
                         </dd>
                     </div>
-
+                    {% if data['questionChildNumberIncorrect'] %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Tell us why you answered ‘No’ to this question.
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['questionChildNumberIncorrect'] }}
+                        </dd>
+                    </div>
+                    {% endif %}
 	                <div class="govuk-summary-list__row">
 		                <dt class="govuk-summary-list__key">
-			                Was the applicant solely responsible for assessing and reporting on the progress of the students?
+                            Did the applicant assess and report on the progress of those students without supervision?
 		                </dt>
 		                <dd class="govuk-summary-list__value">
-			                {{ data['question-student-assessment'] }}
+			                {{ data['questionStudentAssessment'] }}
 		                </dd>
 		                <dd class="govuk-summary-list__actions">
-			                <a href=question-dates>
+			                <a href=question-student-assessment>
 				                Change
 				                <span class="govuk-visually-hidden">answer responsible for assessments</span>
 			                </a>
 		                </dd>
 	                </div>
-
+                    {% if data['questionStudentAssessmentIncorrect'] %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Tell us why you answered ‘No’ to this question.
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['questionStudentAssessmentIncorrect'] }}
+                        </dd>
+                    </div>
+                    {% endif %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Do you know of any professional misconduct by the applicant, or any disciplinary action taken against them?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['questionApplicantMisconduct'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="question-applicant-misconduct">
+                                Change
+                                <span class="govuk-visually-hidden">answer responsible for assessments</span>
+                            </a>
+                        </dd>
+                    </div>
+                    {% if data['questionApplicantMisconductIncorrect'] %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Tell us why you answered ‘Yes’ to this question.
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['questionStudentAssessmentIncorrect'] }}
+                        </dd>
+                    </div>
+                    {% endif %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Are you satisfied that the applicant is suitable to work with children?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['questionApplicantSuitable'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="question-applicant-suitable">
+                                Change
+                                <span class="govuk-visually-hidden">answer responsible for assessments</span>
+                            </a>
+                        </dd>
+                    </div>
+                    {% if data['questionApplicantSuitableIncorrect'] %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Tell us why you answered ‘No’ to this question.
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['questionApplicantSuitableIncorrect'] }}
+                        </dd>
+                    </div>
+                    {% endif %}
 	                <div class="govuk-summary-list__row">
 		                <dt class="govuk-summary-list__key">
 			                Is there anything else you’d like to tell us about this applicant?

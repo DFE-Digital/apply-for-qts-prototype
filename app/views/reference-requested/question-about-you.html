@@ -1,0 +1,104 @@
+{# Set some defaults for this page #}
+{% set applicantFirstName = 'Carmen' %}
+{% set applicantLastName = 'Gomez' %}
+{% set refereeFullName = 'Fernando Alberti' %}
+{% set refereeJobTitle = 'Headteacher' %}
+{% set schoolName = 'Guadalaviar School' %}
+{% set startDateMonth = '01' %}
+{% set startDateYear = '2020' %}
+{% set endDateMonth = '06' %}
+{% set endDateYear = '2020' %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  About you – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h2 class="govuk-heading-l">About you</h2>
+        <p class="body-text">This screen shows the details that <span style="color: #d4351c">{{ applicantFirstName }} {{ applicantLastName }}</span> has provided about you.
+            Take a moment to check that they’re correct.</p>
+
+        <div class="govuk-summary-list__card">
+            <div class="govuk-summary-list__card-title-wrapper">
+                <h2 class="govuk-summary-list__card-title">About you</h2>
+            </div>
+            <div class="govuk-summary-list__card-content">
+
+                <dl class="govuk-summary-list">
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Your full name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ refereeFullName }}
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Your job title at <span style="color: #d4351c">{{schoolName}}</span> between <span style="color: #d4351c">{{ startDateMonth }}/{{ startDateYear }}</span> and <span style="color: #d4351c">{{ endDateMonth }}/{{ endDateYear }}</span>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ refereeJobTitle }}
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+      <form class="form" action="question-dates" method="post">
+
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+          {% set refereeDetailsIncorrectHtml %}
+
+          {{ govukTextarea({
+          name: "refereeDetailsIncorrect",
+          id: "refereeDetailsIncorrect",
+          label: {
+          text: "Tell us why these details are not correct",
+          classes: "govuk-label--s",
+          isPageHeading: false
+          }
+          }) }}
+
+          {% endset -%}
+
+          {{ govukRadios({
+          name: "questionRefereeDetails",
+          fieldset: {
+          legend: {
+          text: "Are these details correct?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+          }
+          },
+          items: [
+          {
+          value: "Yes",
+          text: "Yes"
+          },
+          {
+          value: "No",
+          text: "No",
+          conditional: {
+          html: refereeDetailsIncorrectHtml
+          }
+          }
+          ]
+          }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
