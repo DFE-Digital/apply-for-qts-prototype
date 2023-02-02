@@ -59,7 +59,7 @@
           {% set refereeDetailsIncorrectHtml %}
 
           {{ govukTextarea({
-          name: "questionRefereeDetails",
+          name: "refereeDetailsIncorrect",
           id: "refereeDetailsIncorrect",
           label: {
           text: "Tell us why these details are not correct",
@@ -75,17 +75,17 @@
           fieldset: {
           legend: {
           text: "Are these details correct?",
-          isPageHeading: true,
+          isPageHeading: false,
           classes: "govuk-fieldset__legend--m"
           }
           },
           items: [
           {
-          value: "yes",
+          value: "Yes",
           text: "Yes"
           },
           {
-          value: "no",
+          value: "No",
           text: "No",
           conditional: {
           html: refereeDetailsIncorrectHtml

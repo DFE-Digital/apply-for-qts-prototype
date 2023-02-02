@@ -10,31 +10,53 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="question-other-comments" method="post">
+      <form class="form" action="question-applicant-misconduct" method="post">
 
 	      <div class="govuk-form-group">
 		      <fieldset class="govuk-fieldset" aria-describedby="question-student-assessment-hint">
 			      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 				      <span class="govuk-caption-l">Question 5 of 7</span>
-				      <h1 class="govuk-fieldset__heading">
-					      Was the applicant solely responsible for assessing and reporting on the progress of the students?
-				      </h1>
 			      </legend>
-			      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-				      <div class="govuk-radios__item">
-					      <input class="govuk-radios__input" id="question-student-assessment" name="question-student-assessment" type="radio" value="Yes" {{ checked("question-student-assessment", "Yes") }}>
-					      <label class="govuk-label govuk-radios__label" for="question-student-assessment">
-						      Yes
-					      </label>
-				      </div>
-				      <div class="govuk-radios__item">
-					      <input class="govuk-radios__input" id="question-student-assessment-2" name="question-student-assessment" type="radio" value="No" {{ checked("question-student-assessment", "No") }}>
-					      <label class="govuk-label govuk-radios__label" for="question-student-assessment-2">
-						      No
-					      </label>
-				      </div>
-			      </div>
+                  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+                  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
+                  {% set questionStudentAssessmentIncorrectHtml %}
+
+                  {{ govukTextarea({
+                  name: "questionStudentAssessmentIncorrect",
+                  id: "questionStudentAssessmentIncorrect",
+                  label: {
+                  text: "Tell us why you answered ‘No’ to this question.",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                  }
+                  }) }}
+
+                  {% endset -%}
+
+                  {{ govukRadios({
+                  name: "questionStudentAssessment",
+                  fieldset: {
+                  legend: {
+                  html: "Was the applicant solely responsible for assessing and reporting on the progress of the students?",
+                  isPageHeading: True,
+                  classes: "govuk-fieldset__legend--l"
+                  }
+                  },
+                  items: [
+                  {
+                  value: "Yes",
+                  text: "Yes"
+                  },
+                  {
+                  value: "No",
+                  text: "No",
+                  conditional: {
+                  html: questionStudentAssessmentIncorrectHtml
+                  }
+                  }
+                  ]
+                  }) }}
 		      </fieldset>
 	      </div>
 

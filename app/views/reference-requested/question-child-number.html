@@ -16,25 +16,48 @@
 		      <fieldset class="govuk-fieldset" aria-describedby="question-child-number-hint">
 			      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 				      <span class="govuk-caption-l">Question 4 of 7</span>
-				      <h1 class="govuk-fieldset__heading">
-                          Did the applicant plan, prepare and deliver lessons to at least 4 students without supervision?
-				      </h1>
 			      </legend>
-			      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-				      <div class="govuk-radios__item">
-					      <input class="govuk-radios__input" id="question-child-number" name="question-child-number" type="radio" value="Yes" {{ checked("question-child-number", "Yes") }}>
-					      <label class="govuk-label govuk-radios__label" for="question-child-number">
-						      Yes
-					      </label>
-				      </div>
-				      <div class="govuk-radios__item">
-					      <input class="govuk-radios__input" id="question-child-number-2" name="question-child-number" type="radio" value="No" {{ checked("question-child-number", "No") }}>
-					      <label class="govuk-label govuk-radios__label" for="question-child-number-2">
-						      No
-					      </label>
-				      </div>
-			      </div>
 
+                  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+                  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+                  {% set questionChildNumberIncorrectHtml %}
+
+                  {{ govukTextarea({
+                  name: "questionChildNumberIncorrect",
+                  id: "questionChildNumberIncorrect",
+                  label: {
+                  text: "Tell us why you answered ‘No’ to this question.",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                  }
+                  }) }}
+
+                  {% endset -%}
+
+                  {{ govukRadios({
+                  name: "questionChildNumber",
+                  fieldset: {
+                  legend: {
+                  html: "Did the applicant plan, prepare and deliver lessons to at least 4 students without supervision?",
+                  isPageHeading: True,
+                  classes: "govuk-fieldset__legend--l"
+                  }
+                  },
+                  items: [
+                  {
+                  value: "Yes",
+                  text: "Yes"
+                  },
+                  {
+                  value: "No",
+                  text: "No",
+                  conditional: {
+                  html: questionChildNumberIncorrectHtml
+                  }
+                  }
+                  ]
+                  }) }}
 		      </fieldset>
 	      </div>
 

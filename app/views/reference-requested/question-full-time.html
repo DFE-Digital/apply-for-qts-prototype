@@ -16,25 +16,49 @@
 		      <fieldset class="govuk-fieldset" aria-describedby="question-full-time-hint">
 			      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 				      <span class="govuk-caption-l">Question 2 of 7</span>
-				      <h1 class="govuk-fieldset__heading">
-                          <!-- The number of hours will be dynamic and taken from the value submitted by the applicant -->
-                          Did the applicant normally work more than <span style="color: #d4351c">[{{ 30 }}]</span> hours per week in this role?
-				      </h1>
 			      </legend>
-			      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-				      <div class="govuk-radios__item">
-					      <input class="govuk-radios__input" id="question-full-time" name="question-full-time" type="radio" value="Yes" {{ checked("question-full-time", "Yes") }}>
-					      <label class="govuk-label govuk-radios__label" for="question-full-time">
-						      Yes
-					      </label>
-				      </div>
-				      <div class="govuk-radios__item">
-					      <input class="govuk-radios__input" id="question-full-time-2" name="question-full-time" type="radio" value="No" {{ checked("question-full-time", "No") }}>
-					      <label class="govuk-label govuk-radios__label" for="question-full-time-2">
-						      No
-					      </label>
-				      </div>
-			      </div>
+
+                  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+                  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+                  {% set questionFullTimeIncorrectHtml %}
+
+
+                  {{ govukTextarea({
+                  name: "questionFullTimeIncorrect",
+                  id: "questionFullTimeIncorrect",
+                  label: {
+                  text: "Tell us why you answered ‘No’ to this question.",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                  }
+                  }) }}
+
+                  {% endset -%}
+
+                  {{ govukRadios({
+                  name: "questionFullTime",
+                  fieldset: {
+                  legend: {
+                  html: "Did the applicant normally work more than [30] hours per week in this role?",
+                  isPageHeading: True,
+                  classes: "govuk-fieldset__legend--l"
+                  }
+                  },
+                  items: [
+                  {
+                  value: "Yes",
+                  text: "Yes"
+                  },
+                  {
+                  value: "No",
+                  text: "No",
+                  conditional: {
+                  html: questionFullTimeIncorrectHtml
+                  }
+                  }
+                  ]
+                  }) }}
 
 		      </fieldset>
 	      </div>

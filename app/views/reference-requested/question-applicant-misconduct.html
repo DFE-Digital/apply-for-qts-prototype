@@ -16,30 +16,48 @@
 		      <fieldset class="govuk-fieldset" aria-describedby="question-applicant-misconduct-hint">
 			      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 				      <span class="govuk-caption-l">Question 6 of 7</span>
-				      <h1 class="govuk-fieldset__heading">
-                          Do you know of any professional misconduct by the applicant, or any disciplinary action taken against them?
-				      </h1>
-                      <!-- Alternative wording from TRA
-                      <h1 class="govuk-fieldset__heading">
-                          Has the teacher been barred or subject to any restrictions on their eligibility to teach children
-                      </h1>
-                      -->
 			      </legend>
-			      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-				      <div class="govuk-radios__item">
-					      <input class="govuk-radios__input" id="question-applicant-misconduct" name="question-applicant-misconduct" type="radio" value="Yes" {{ checked("question-applicant-misconduct", "Yes") }}>
-					      <label class="govuk-label govuk-radios__label" for="question-applicant-misconduct">
-						      Yes
-					      </label>
-				      </div>
-				      <div class="govuk-radios__item">
-					      <input class="govuk-radios__input" id="question-applicant-misconduct-2" name="question-applicant-misconduct" type="radio" value="No" {{ checked("question-applicant-misconduct", "No") }}>
-					      <label class="govuk-label govuk-radios__label" for="question-applicant-misconduct-2">
-						      No
-					      </label>
-				      </div>
-			      </div>
 
+                  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+                  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+                  {% set questionApplicantMisconductIncorrectHtml %}
+
+                  {{ govukTextarea({
+                  name: "questionApplicantMisconductIncorrect",
+                  id: "questionApplicantMisconductIncorrect",
+                  label: {
+                  text: "Tell us why you answered ‘Yes’ to this question.",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                  }
+                  }) }}
+
+                  {% endset -%}
+
+                  {{ govukRadios({
+                  name: "questionApplicantMisconduct",
+                  fieldset: {
+                  legend: {
+                  html: "Do you know of any professional misconduct by the applicant, or any disciplinary action taken against them?",
+                  isPageHeading: True,
+                  classes: "govuk-fieldset__legend--l"
+                  }
+                  },
+                  items: [
+                  {
+                  value: "Yes",
+                  text: "Yes",
+                  conditional: {
+                  html: questionApplicantMisconductIncorrectHtml
+                  }
+                  },
+                  {
+                  value: "No",
+                  text: "No"
+                  }
+                  ]
+                  }) }}
 		      </fieldset>
 	      </div>
 

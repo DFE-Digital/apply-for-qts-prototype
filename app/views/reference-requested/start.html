@@ -31,19 +31,19 @@
 
 	    <h2 class="govuk-heading-m">You’ve been asked to act as a reference</h2>
 
-	    <p class="govuk-body"><span style="color: #d4351c">[Applicant name]</span> is applying for qualified teacher status (QTS) in England.</p>
+	    <p class="govuk-body"><span style="color: #d4351c">{{ applicantFirstName }} {{ applicantLastName }}</span> is applying for qualified teacher status (QTS) in England.</p>
 
 	    <p class="govuk-body">As part of our assessment, we need to understand their work history and experience. They’ve provided your details to help us verify that they worked at:</p>
 
 	    <div class="govuk-inset-text">
-		    <p class="govuk-body"><span style="color: #d4351c">[name of school]</span> from <span style="color: #d4351c">[start date]</span> to <span style="color: #d4351c">[end date]</span>.</p>
+            <p class="govuk-body"><span style="color: #d4351c">{{schoolName}}</span> from <span style="color: #d4351c">{{ startDateMonth }}/{{ startDateYear }}</span> to <span style="color: #d4351c">{{ endDateMonth }}/{{ endDateYear }}</span></p>
 	    </div>
 
       <p class="govuk-body">We need to ask you a few questions about the applicant’s role. It should take no longer than 5 minutes.</p>
 
       {{ govukButton({
       text: "Start now",
-      href: "question-dates",
+      href: "question-about-you",
       isStartButton: true
       }) }}
 
