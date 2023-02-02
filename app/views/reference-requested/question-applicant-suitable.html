@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="question-other-comments" method="post">
+
+	      <div class="govuk-form-group">
+		      <fieldset class="govuk-fieldset" aria-describedby="question-applicant-suitable-hint">
+			      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+				      <span class="govuk-caption-l">Question 6 of 7</span>
+				      <h1 class="govuk-fieldset__heading">
+                          Are you satisfied that the applicant is suitable to work with children?
+				      </h1>
+			      </legend>
+			      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+				      <div class="govuk-radios__item">
+					      <input class="govuk-radios__input" id="question-applicant-suitable" name="question-applicant-suitable" type="radio" value="Yes" {{ checked("question-applicant-suitable", "Yes") }}>
+					      <label class="govuk-label govuk-radios__label" for="question-applicant-suitable">
+						      Yes
+					      </label>
+				      </div>
+				      <div class="govuk-radios__item">
+					      <input class="govuk-radios__input" id="question-applicant-suitable-2" name="question-applicant-suitable" type="radio" value="No" {{ checked("question-applicant-suitable", "No") }}>
+					      <label class="govuk-label govuk-radios__label" for="question-applicant-suitable-2">
+						      No
+					      </label>
+				      </div>
+			      </div>
+
+		      </fieldset>
+	      </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
