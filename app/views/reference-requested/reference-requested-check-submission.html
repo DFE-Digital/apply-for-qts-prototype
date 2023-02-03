@@ -61,6 +61,28 @@
                         </dd>
                     </div>
 
+                    {% if data['refereeDetailsIncorrectName'] %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Your full name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['refereeDetailsIncorrectName'] }}
+                        </dd>
+                    </div>
+                    {% endif %}
+
+                    {% if data['refereeDetailsIncorrectJob'] %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Your job title
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['refereeDetailsIncorrectJob'] }}
+                        </dd>
+                    </div>
+                    {% endif %}
+
                     {% if data['refereeDetailsIncorrect'] %}
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
