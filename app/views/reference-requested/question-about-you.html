@@ -55,18 +55,42 @@
 
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
           {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+
 
           {% set refereeDetailsIncorrectHtml %}
+
+          {{ govukInput({
+          label: {
+          text: "Your full name",
+          classes: "govuk-label--s"
+          },
+          id: "refereeDetailsIncorrectName",
+          name: "refereeDetailsIncorrectName",
+          value: data['refereeDetailsIncorrectName']
+          }) }}
+
+          {{ govukInput({
+          label: {
+          text: "Your job title",
+          classes: "govuk-label--s"
+          },
+          id: "refereeDetailsIncorrectJob",
+          name: "refereeDetailsIncorrectJob",
+          value: data['refereeDetailsIncorrectJob']
+          }) }}
 
           {{ govukTextarea({
           name: "refereeDetailsIncorrect",
           id: "refereeDetailsIncorrect",
+          value: data['refereeDetailsIncorrect'],
           label: {
-          text: "Tell us why these details are not correct",
+          text: "Any other comments",
           classes: "govuk-label--s",
           isPageHeading: false
           }
           }) }}
+
 
           {% endset -%}
 
