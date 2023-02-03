@@ -26,6 +26,7 @@
                   {{ govukTextarea({
                   name: "questionChildNumberIncorrect",
                   id: "questionChildNumberIncorrect",
+                  value: data['questionChildNumberIncorrect'],
                   label: {
                   text: "Tell us why you answered ‘No’ to this question.",
                   classes: "govuk-label--s",
@@ -47,11 +48,13 @@
                   items: [
                   {
                   value: "Yes",
-                  text: "Yes"
+                  text: "Yes",
+                  checked: data['questionChildNumber']
                   },
                   {
                   value: "No",
                   text: "No",
+                  checked: data['questionChildNumber'],
                   conditional: {
                   html: questionChildNumberIncorrectHtml
                   }
