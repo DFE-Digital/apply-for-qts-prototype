@@ -49,11 +49,13 @@
                   items: [
                   {
                   value: "Yes",
-                  text: "Yes"
+                  text: "Yes",
+                  checked: data['questionChildAgeRange']
                   },
                   {
                   value: "No",
                   text: "No",
+                  checked: data['questionChildAgeRange'],
                   conditional: {
                   html: questionChildAgeRangeIncorrectHtml
                   }

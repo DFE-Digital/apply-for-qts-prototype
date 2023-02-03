@@ -106,11 +106,13 @@
           items: [
           {
           value: "Yes",
-          text: "Yes"
+          text: "Yes",
+          checked: data['questionRefereeDetails']
           },
           {
           value: "No",
           text: "No",
+          checked: data['questionRefereeDetails'],
           conditional: {
           html: refereeDetailsIncorrectHtml
           }

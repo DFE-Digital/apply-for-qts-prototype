@@ -48,11 +48,13 @@
                   items: [
                   {
                   value: "Yes",
-                  text: "Yes"
+                  text: "Yes",
+                  checked: data['questionApplicantSuitable']
                   },
                   {
                   value: "No",
                   text: "No",
+                  checked: data['questionApplicantSuitable'],
                   conditional: {
                   html: questionApplicantSuitableIncorrectHtml
                   }
