@@ -51,11 +51,12 @@
                   {
                   value: "Yes",
                   text: "Yes",
-                  checked: data['questionFullTime']
+                  checked: checked("['questionFullTime']", "Yes")
                   },
                   {
                   value: "No",
                   text: "No",
+                  checked: checked("['questionFullTime']", "No"),
                   conditional: {
                   html: questionFullTimeIncorrectHtml
                   }
