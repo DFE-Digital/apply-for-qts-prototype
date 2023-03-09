@@ -1,3 +1,14 @@
+<!-- Some defaults added for user testing -->
+{% set applicantFirstName = 'Carmen' %}
+{% set applicantLastName = 'Gomez' %}
+{% set schoolName = 'Guadalaviar School' %}
+{% set startDateMonth = '01' %}
+{% set startDateYear = '2020' %}
+{% set endDateMonth = '06' %}
+{% set endDateYear = '2020' %}
+{% set referenceDueDate = '9th April 2023' %}
+{% set refereeFullName = 'Joseph Ketegi' %}
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org=/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -8,6 +19,12 @@
     <meta name="viewport" content="width=device-width"/>
     <title>You’ve been asked to act as a reference</title>
     <style type="text/css">
+
+      .variableHighlightColour {
+      <!-- color: #d4351c; -->
+        color: #0b0c0c;
+      }
+
       @media only screen and (min-device-width: 581px) {
         .content {
           width: 580px !important;
@@ -167,27 +184,25 @@
                     <td style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474;">
             <![endif]-->
             <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                Dear <span style="color: #D4351C">[Reference name]</span></p>
+                Dear <span class="variableHighlightColour">{{refereeFullName}}</span></p>
             <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                <strong>We need you to confirm some information about <span
-                        style="color: #D4351C">[Applicant name]</span> as part
+                <strong>We need you to confirm some information about <span class="variableHighlightColour">{{applicantFirstName}} {{applicantLastName}}</span> as part
                     of their application for qualified teacher status (QTS) in
                     England.</strong>
             </p>
             <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                <span style="color: #D4351C">[Applicant name]</span> has given
+                <span class="variableHighlightColour">{{applicantFirstName}} {{applicantLastName}}</span> has given
                 us your name and email address to help us confirm that the
                 information they’ve provided about their work history and
                 experience is accurate. </p>
             <h3 style="margin: 0 0 20px 0; font-size: 19px; font-weight: bold; line-height: 25px; color: #0B0C0C;">
                 About QTS</h3>
             <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                <span style="color: #D4351C">[Applicant name]</span> is <strong style="font-weight: bold">NOT</strong> applying for a job – their QTS application just allows us to assess their qualifications and teaching experience to understand whether they can teach in England.
+                <span class="variableHighlightColour">{{applicantFirstName}} {{applicantLastName}}</span> is <strong style="font-weight: bold">NOT</strong> applying for a job – their QTS application just allows us to assess their qualifications and teaching experience to understand whether they can teach in England.
             <h3 style="margin: 0 0 20px 0; font-size: 19px; font-weight: bold; line-height: 25px; color: #0B0C0C;">
                 What we need you to do</h3>
             <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                Please follow the link below and answer the questions by <span
-                    style="color: #D4351C">[date]</span>.
+                Please follow the link below and answer the questions by <span class="variableHighlightColour">{{ referenceDueDate }}</span>.
             <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
                 <a href="email-magic-link"
                         style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #1D70B8;">https://apply-for-qts-in-england.education.cov.uk/referee/sign-in</a>
