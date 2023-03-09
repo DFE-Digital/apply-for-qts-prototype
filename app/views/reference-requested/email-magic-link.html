@@ -1,3 +1,6 @@
+<!-- Some defaults added for user testing -->
+{% set refereeFullName = 'Joseph Ketegi' %}
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
@@ -9,6 +12,13 @@
     <title>Here's your magic login link</title>
 
     <style type="text/css">
+
+      <!-- Added to quicly show devs and stakeholders the variable content in some of the flows -->
+      .variableHighlightColour {
+      <!-- color: #d4351c; -->
+        color: #0b0c0c;
+      }
+
         @media only screen and (min-device-width: 581px) {
             .content {
                 width: 580px !important;
@@ -139,7 +149,7 @@
             <td style="font-family: Helvetica, Arial, sans-serif; font-=
                     size: 19px; line-height: 1.315789474;">
         <![endif]-->
-        <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Dear <span style="color: #d4351c">[Reference name]</span></p>
+        <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Dear <span class="variableHighlightColour">{{refereeFullName}}</span></p>
             <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Use the link below to provide your reference.</p>
             <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
                 <a style="word-wrap: break-word; color: #1D70B8;" href="start.html">https://apply-for-qts-in-england.education.gov.uk/teacher/magic_link?teacher%5Bemail%5D&amp;teacher%5Bremember_me%5D=&amp;teacher%5Btoken%5D=59Cr6%2BY77edU5G9IrG3PHaEEgc0lz8foIpUPs2cB1ns%3D%3=

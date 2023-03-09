@@ -1,3 +1,10 @@
+<!-- Some defaults added for user testing -->
+{% set schoolName = 'Guadalaviar School' %}
+{% set startDateMonth = '01' %}
+{% set startDateYear = '2020' %}
+{% set endDateMonth = '06' %}
+{% set endDateYear = '2020' %}
+
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -8,7 +15,6 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
 
       <form class="form" action="question-full-time" method="post">
 
@@ -38,7 +44,7 @@
                   name: "questionDates",
                   fieldset: {
                   legend: {
-                  html: "Did the applicant work at [name of school] from [start date] to [end date]? ",
+                  html: "Did the applicant work at Guadalaviar School from 01/2020 to 06/2020? ",
                   isPageHeading: True,
                   classes: "govuk-fieldset__legend--l"
                   }

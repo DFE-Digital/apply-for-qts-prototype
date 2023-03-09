@@ -1,7 +1,7 @@
-{# Set some defaults for this page #}
+<!-- Some defaults added for user testing -->
 {% set applicantFirstName = 'Carmen' %}
 {% set applicantLastName = 'Gomez' %}
-{% set refereeFullName = 'Fernando Alberti' %}
+{% set refereeFullName = 'Joseph Ketengi' %}
 {% set refereeJobTitle = 'Headteacher' %}
 {% set schoolName = 'Guadalaviar School' %}
 {% set startDateMonth = '01' %}
@@ -20,7 +20,7 @@
     <div class="govuk-grid-column-two-thirds">
 
         <h2 class="govuk-heading-l">About you</h2>
-        <p class="body-text">This screen shows the details that <span style="color: #d4351c">{{ applicantFirstName }} {{ applicantLastName }}</span> has provided about you.
+        <p class="body-text">This screen shows the details that <span class="variableHighlightColour">{{ applicantFirstName }} {{ applicantLastName }}</span> has provided about you.
             Take a moment to check that they’re correct.</p>
 
         <div class="govuk-summary-list__card">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Your job title at <span style="color: #d4351c">{{schoolName}}</span> between <span style="color: #d4351c">{{ startDateMonth }}/{{ startDateYear }}</span> and <span style="color: #d4351c">{{ endDateMonth }}/{{ endDateYear }}</span>
+                            Your job title at <span class="variableHighlightColour">{{schoolName}}</span> between <span class="variableHighlightColour">{{ startDateMonth }}/{{ startDateYear }}</span> and <span class="variableHighlightColour">{{ endDateMonth }}/{{ endDateYear }}</span>
                         </dt>
                         <dd class="govuk-summary-list__value">
                             {{ refereeJobTitle }}

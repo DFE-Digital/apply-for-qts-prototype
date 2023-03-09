@@ -6,6 +6,7 @@
 {% set startDateYear = '2020' %}
 {% set endDateMonth = '06' %}
 {% set endDateYear = '2020' %}
+{% set refereeFullName = 'Joseph Ketegi' %}
 
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -31,14 +32,14 @@
 
 	    <h2 class="govuk-heading-m">You’ve been asked to act as a reference</h2>
 
-	    <p class="govuk-body"><span style="color: #d4351c">{{ applicantFirstName }} {{ applicantLastName }}</span> is applying for qualified teacher status (QTS) in England.</p>
+	    <p class="govuk-body"><span class="variableHighlightColour">{{ applicantFirstName }} {{ applicantLastName }}</span> is applying for qualified teacher status (QTS) in England.</p>
 
         <p class="govuk-body">Their application for QTS means we’ll assess their qualifications and teaching experience. It is <strong class="govuk-!-font-weight-bold">NOT</strong> an application for a teaching job – we just need to assess whether they can teach in English schools.</p>
 
         <p class="govuk-body">They’ve provided your details to help us verify that they worked at:</p>
 
 	    <div class="govuk-inset-text">
-            <p class="govuk-body"><span style="color: #d4351c">{{schoolName}}</span> from <span style="color: #d4351c">{{ startDateMonth }}/{{ startDateYear }}</span> to <span style="color: #d4351c">{{ endDateMonth }}/{{ endDateYear }}</span></p>
+            <p class="govuk-body"><span class="variableHighlightColour">{{schoolName}}</span> from <span class="variableHighlightColour">{{ startDateMonth }}/{{ startDateYear }}</span> to <span class="variableHighlightColour">{{ endDateMonth }}/{{ endDateYear }}</span></p>
 	    </div>
 
       <p class="govuk-body">We need to ask you a few questions about the applicant’s role. It should take no longer than 5 minutes.</p>

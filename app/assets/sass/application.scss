@@ -46,3 +46,9 @@ $govuk-assets-path: '/govuk/assets/';
 .app-teaching-authority-address {
   white-space: pre-line;
 }
+
+// Added to quicly show devs and stakeholders the variable content in some of the flows
+.variableHighlightColour {
+  //color: #d4351c;
+  color: #0b0c0c;
+}
