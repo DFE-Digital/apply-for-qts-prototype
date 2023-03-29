@@ -60,7 +60,9 @@
                 <tr>
                     <td>
             <![endif]-->
-            <table role="presentation" width="100%" style="border-collapse: collapse;max-width: 580px;" cellpadding="0" cellspacing="0" border="0" align="center">
+            <table role="presentation" width="100%"
+                   style="border-collapse: collapse;max-width: 580px;"
+                   cellpadding="0" cellspacing="0" border="0" align="center">
                 <tr>
                     <td width="70" bgcolor="#0b0c0c" valign="middle">
                         <a href="https://www.gov.uk"
@@ -101,7 +103,9 @@
     </tr>
 </table>
 <table role="presentation" class="content" align="center"
-       cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;max-width: 580px; width: 100% !important;" width="100%">
+       cellpadding="0" cellspacing="0" border="0"
+       style="border-collapse: collapse;max-width: 580px; width: 100% !important;"
+       width="100%">
     <tr>
         <td width="10" height="10" valign="middle"></td>
         <td>
@@ -146,20 +150,63 @@
                 <tr>
                     <td style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474;">
             <![endif]-->
-            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Dear <span style="color: #d4351c">[applicant name]</span></p>
-            <h3 class="govuk-heading-s" style="margin: 0 0 20px 0; font-size: 24px; line-height: 25px; color: #0B0C0C;">Your QTS application has been declined</h3>
+            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                Dear {{ data['applicant_1'] ['first-name'] }} {{
+                data['applicant_1'] ['last-name'] }}</p>
+            <h3 class="govuk-heading-s"
+                style="margin: 0 0 30px 0; font-size: 24px; color: #0B0C0C;">
+                Your QTS application has been declined</h3>
 
-            <h3 class="govuk-heading-s" style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Your reference number is:</h3>
-            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">HDJ2123F</p>
-            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Thank you for applying for qualified teacher status (QTS) and for your patience while we reviewed your application.</p>
-            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Unfortunately, we’re unable to award QTS status.</p>
+            <h4 class="govuk-heading-s"
+                style="margin: 0 0 20px 0; font-size: 19px; color: #0B0C0C;">
+                Your reference number is:</h4>
 
-            <h4 class="govuk-heading-s" style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Why your QTS application was declined</h4>
-            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">You can sign in to view the reason why your application was declined.</p>
-            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;"><a href="sign-in" class="govuk-link" style="color: #1d70b8;">Sign in to review this decision</a></p>
+            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                HDJ2123F</p>
 
-            <p style="margin: 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Kind regards,</p>
-            <p style="margin: 0 0 20px 0; font-size: 19px; font-weight: bold; line-height: 25px; color: #0B0C0C;">The Teaching Regulation Agency<br>(an executive agency sponsored by the Department for Education, England)</p>
+            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                Thank you for applying for qualified teacher status (QTS) and
+                for your patience while we reviewed your application.</p>
+
+            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                Unfortunately, we’re unable to award QTS status.</p>
+
+            <h3 class="govuk-heading-s"
+                style="margin: 30px 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                Why your QTS application was declined</h3>
+
+            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                You can sign in to view the reason why your application was
+                declined.</p>
+
+            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                <a href="https://apply-for-qts-prototype.herokuapp.com/prototype-3/create-account-sign-in"
+                   style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #1D70B8;">Sign
+                    in to review this decision</a></p>
+
+            <h3 class="govuk-heading-s"
+                style="margin: 30px 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                Help us improve this service</h3>
+            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                We're always trying to improve this service and boost teacher
+                recruitment from overseas. So we'd like to talk to people about
+                their experience of using this service.</p>
+            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                If you'd like to help, please complete this form:</p>
+            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                <a href="https://forms.office.com/e/dTGEjsTN72"
+                   style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #1D70B8;">https://forms.office.com/e/dTGEjsTN72</a>
+            </p>
+
+            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                If you match our search criteria, we'll invite you to take part
+                in research.</p>
+
+            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                Kind regards,</p>
+            <p style="margin: 0 0 20px 0; font-size: 19px; font-weight: bold; line-height: 25px; color: #0B0C0C;">
+                The Teaching Regulation Agency<br>(an executive agency sponsored
+                by the Department for Education, England)</p>
         </td>
     </tr>
 </table>

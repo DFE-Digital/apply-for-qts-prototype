@@ -7,7 +7,7 @@
     <meta content="telephone=no" name="format-detection"/>
     <!-- need to add formatting for real phone numbers -->
     <meta name="viewport" content="width=device-width"/>
-    <title>Your QTS application has been declined</title>
+    <title>Your QTS application was successful</title>
 
     <style type="text/css">
       @media only screen and (min-device-width: 581px) {
@@ -147,7 +147,7 @@
                     <td style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474;">
             <![endif]-->
             <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                Dear <span style="color: #d4351c">[applicant name]</span></p>
+                Dear {{ data['applicant_1'] ['first-name'] }} {{ data['applicant_1'] ['last-name'] }}</p>
             <h3 class="govuk-heading-s" style="margin: 0 0 20px 0; font-size: 24px; line-height: 25px; color: #0B0C0C;">Your QTS application was successful</h3>
 
             <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">We’re pleased to tell you that the assessor has now completed their review of your application and you’ve been awarded qualified teacher status (QTS).</p>
@@ -156,7 +156,7 @@
 
             <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">You can sign in to get your Teacher Reference Number (TRN) and get some guidance about your next steps.</p>
 
-            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;"><a href="sign-in" style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #1D70B8;">Sign in to review this decision</a></p>
+            <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;"><a href="http://www.isc.co.uk" style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #1D70B8;">Sign in to review this decision</a></p>
 
             <p style="margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
                 Kind regards,</p>
