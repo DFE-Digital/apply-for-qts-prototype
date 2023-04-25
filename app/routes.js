@@ -186,31 +186,33 @@ router.post("/misconduct-answer", function (req, res) {
       // Created a variant for testing Nigerian content only
       if (country == "Nigeria") {
           res.redirect("/prototype-1/check-eligibility/summary-page-nigeria");
-      } else if (
+      }
+      // 25/04/2023 - Directing all buckets to the same summary page now as only one variant has been built out in the prototype for testing
+      else if (
       BUCKET_1_REGIONS.includes(region) ||
       BUCKET_1_COUNTRIES.includes(country)
     ) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
+      res.redirect("/prototype-1/check-eligibility/eligible");
     } else if (
       BUCKET_2_REGIONS.includes(region) ||
       BUCKET_2_COUNTRIES.includes(country)
     ) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
+      res.redirect("/prototype-1/check-eligibility/eligible");
     } else if (
       BUCKET_3_REGIONS.includes(region) ||
       BUCKET_3_COUNTRIES.includes(country)
     ) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
+      res.redirect("/prototype-1/check-eligibility/eligible");
     } else if (
       BUCKET_4_REGIONS.includes(region) ||
       BUCKET_4_COUNTRIES.includes(country)
     ) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
+      res.redirect("/prototype-1/check-eligibility/eligible");
     } else if (
       BUCKET_6_REGIONS.includes(region) ||
       BUCKET_6_COUNTRIES.includes(country)
     ) {
-      res.redirect("/prototype-1/check-eligibility/eligible-bucket-3");
+      res.redirect("/prototype-1/check-eligibility/eligible");
     } else {
       res.redirect("/prototype-1/check-eligibility/eligible");
     }
