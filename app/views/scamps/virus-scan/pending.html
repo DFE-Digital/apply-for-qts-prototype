@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  File virus scan pending – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+          We’re checking your file
+      </h1>
+
+      <p>We’re carrying out some checks on the file you’ve uploaded. Once we’ve successfully completed these checks, you’ll be able to preview your file.</p>
+
+      <p><a href="javascript:window.history.back()">Back to application</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    File virus scan suspect – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+          There’s a problem with your file
+      </h1>
+
+      <p>There’s a problem with this file. You’ll need to take another image of the document you want to upload, then try again.</p>
+
+        <p><a href="javascript:window.history.back()">Back to application</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
