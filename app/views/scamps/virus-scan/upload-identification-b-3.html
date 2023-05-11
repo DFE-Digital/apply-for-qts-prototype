@@ -38,12 +38,13 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
 					File 1
-                    <p id="passport-issued-error" class="govuk-error-message">
-                        <span class="govuk-visually-hidden">Error:</span> There was a problem with this file
-                    </p>
 				</dt>
 				<dd class="govuk-summary-list__value">
-					<a download href="/" class="govuk-link">passport.jpg</a>
+                    <!-- Document filename is removed as part of the virus scan so we need to replace with a placeholder -->
+					<a href="/scamps/virus-scan/suspect.html" class="govuk-link">File upload error</a>
+                    <p  class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span> There was a problem with this file
+                    </p>
 				</dd>
 
 				<dd class="govuk-summary-list__actions">
