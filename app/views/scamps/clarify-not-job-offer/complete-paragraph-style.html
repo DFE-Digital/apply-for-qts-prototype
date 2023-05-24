@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Application complete – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+		<div class="govuk-grid-row">
+			<div class="govuk-grid-column-two-thirds">
+				<div class="govuk-panel govuk-panel--confirmation">
+					<h1 class="govuk-panel__title">
+						Application submitted
+					</h1>
+					<div class="govuk-panel__body">
+						Your reference number<br><strong>201893</strong>
+					</div>
+				</div>
+
+				<p class="govuk-body">We’ve received your application for QTS and we’ve sent you a confirmation
+					email.</p>
+
+				<p class="govuk-body">Keep the email safe, as you may need your reference number for future
+					correspondence about your application.</p>
+
+				<h2 class="govuk-heading-m">What happens next</h2>
+
+                <p class="govuk-body">Your application will be entered into a queue and assigned a QTS assessor, which can take several weeks.</p>
+
+                <p class="govuk-body">Once assigned, the assessor will aim to review your application within 1 month. If we need more information, we’ll email you again.</p>
+
+                <p class="govuk-body">We aim to reach a final decision on your application within 80 working days (4 months) of your submission.</p>
+
+                <p class="govuk-body">Having QTS does not guarantee you a job or give you the right to work in England. You’ll still need to have the correct visa or status and apply for jobs directly through UK schools. The Department for Education (DfE) does not employ or recruit teachers.</p>
+                
+				<h3 class="govuk-heading-m">Following the progress of your application</h3>
+				<p class="govuk-body">
+					You can <a href="#" class="govuk-link">sign in to view the progress of your application</a>.
+				</p>
+
+				<h4 class="govuk-heading-s govuk-!-font-weight-regular">If you have any questions, contact:</h4>
+				<p class="govuk-body"><a href="#" class="govuk-link">qts.enquiries@education.gov.uk</a></p>
+
+				<p class="govuk-body">
+					<a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+				</p>
+			</div>
+		</div>
+	</main>
+</div>
+
+{% endblock %}
