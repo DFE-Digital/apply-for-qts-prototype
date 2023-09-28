@@ -1,0 +1,258 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	Work history – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block pageStyles %}
+<link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen"
+      rel="stylesheet">
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
+<script>
+    openregisterLocationPicker({
+        selectElement: document.getElementById('school-2-country'),
+        url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
+        defaultValue: '{{ data["school-2-country"] }}'
+    })
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l">Add another role</h1>
+		<p class="govuk-body">Tell us about the teaching roles you’ve held since completing your teaching qualification.</p>
+		<p class="govuk-body">Every role you add must meet <strong class="govuk-!-font-weight-bold">ALL</strong> of the following requirements.</p>
+		<ul class="govuk-list govuk-list--bullet">
+            <li>You were qualified to teach before starting the role.</li>
+			<li>You worked unsupervised with children aged between 5 and 16 years.</li>
+			<li>You were solely responsible for planning, preparing and delivering lessons to at least 4 students at a time.</li>
+			<li>You were solely responsible for assessing and reporting on the progress of those students.</li>
+		</ul>
+		<p class="govuk-body">We cannot consider any teaching roles that do not meet ALL of these requirements.</p>
+
+		<div class="govuk-form-group">
+			<fieldset class="govuk-fieldset" aria-describedby="role-1-meets-requirements-hint">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+					<h2 class="govuk-fieldset__heading govuk-visually-hidden">
+						Does this role meet ALL these requirements
+					</h2>
+				</legend>
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="role-1-meets-requirements" name="role-1-meets-requirements" type="checkbox" value="true">
+						<label class="govuk-label govuk-checkboxes__label govuk-label--s" for="role-1-meets-requirements">
+							The role I’m about to add meets ALL of these requirements.
+						</label>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+
+		<p class="govuk-body"><a href="work-history-rejection" class="govuk-link govuk-link--no-visited-state">I do not have any roles that meet all of these requirements</a>.</p>
+
+		<form class="form" action="work-history-in-education-2-referee" method="post">
+
+			<fieldset class="govuk-fieldset">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+					<h1 class="govuk-fieldset__heading">
+						Where was the role?
+					</h1>
+				</legend>
+
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="school-2-name">
+					Name of school
+				</label>
+				<input class="govuk-input" id="school-2-name" name="school-2-name" value="{{ data['school-2-name'] }}"
+				       type="text">
+			</div>
+
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="school-2-city">
+					City
+				</label>
+				<input class="govuk-input" id="school-2-city" name="school-2-city" value="{{ data['school-2-city'] }}"
+				       type="text">
+			</div>
+
+			{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+			{{ govukSelect({
+			id: "school-2-country",
+			name: "school-2-country",
+			classes: "govuk-input--width-10",
+			label: {
+			classes: "govuk-label--m, govuk-!-font-weight-regular",
+			isPageHeading: true,
+			text: "Country"
+			},
+			items: countries
+			}) }}
+
+			</fieldset>
+
+			<div class="govuk-form-group">
+				<label class="govuk-label govuk-label--m" for="job-role-2">
+					What was the job title or role?
+				</label>
+				<input class="govuk-input" id="job-role-2" name="job-role-2" value="{{ data['job-role-2'] }}" type="text">
+			</div>
+
+			<div class="govuk-form-group">
+				<h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="role-2-weekly-hours">
+					Approximately how many hours per week did you work in this role?
+				</label>
+				</h2>
+				<div id="role-2-weekly-hours-hint" class="govuk-hint">
+                    This means all the hours you spent working per week for this role (not just the hours you spent teaching students). In roles where you worked under 30 hours per week we may need to ask for more information when we assess your application.
+				</div>
+				<input class="govuk-input govuk-input--width-2" id="role-2-weekly-hours" name="role-2-weekly-hours" type="text" spellcheck="false" aria-describedby="role-2-weekly-hours-hint" inputmode="numeric">
+			</div>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-2-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h3 class="govuk-fieldset__heading">
+							When did you start this role?
+						</h3>
+					</legend>
+					<div id="start-date-2-hint" class="govuk-hint">
+						For example, 3 2020, If you cannot remember the exact month or year, enter an estimate.
+					</div>
+					<div class="govuk-date-input" id="start-date-2">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="start-date-2-month">
+									Month
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
+								       id="start-date-2-month" name="start-date-2-month"
+								       value="{{ data['start-date-2-month'] }}" type="text" inputmode="numeric">
+							</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="start-date-2-year">
+									Year
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
+								       id="start-date-2-year" name="start-date-2-year" value="{{ data['start-date-2-year'] }}"
+								       type="text" inputmode="numeric">
+							</div>
+						</div>
+					</div>
+
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group">
+				<div class="govuk-checkboxes__item">
+					<input class="govuk-checkboxes__input" id="start-date-2-estimate" name="start-date-2-estimate"
+					       type="checkbox" value="estimated">
+					<label class="govuk-label govuk-checkboxes__label" for="start-date-2-estimate">
+						This is an estimate
+					</label>
+				</div>
+			</div>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="still-at-school-2-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h4 class="govuk-fieldset__heading">
+							Are you still employed at this school?
+						</h4>
+					</legend>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="still-at-school-2" name="still-at-school" type="radio"
+							       value="still-at-school-2-yes" data-aria-controls="conditional-still-at-school-2">
+							<label class="govuk-label govuk-radios__label" for="still-at-school-2">
+								Yes
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="still-at-school-2-2" name="still-at-school"
+							       type="radio" value="still-at-school-2-no"
+							       data-aria-controls="conditional-still-at-school-2-2">
+							<label class="govuk-label govuk-radios__label" for="still-at-school-2-2">
+								No
+							</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+						     id="conditional-still-at-school-2-2">
+							<div class="govuk-form-group">
+								<fieldset class="govuk-fieldset" role="group" aria-describedby="end-date-2-hint">
+									<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+										<h5 class="govuk-fieldset__heading">
+											Your end date
+										</h5>
+									</legend>
+									<div id="end-date-2-hint" class="govuk-hint">
+										For example, 3 2020, If you cannot remember the exact month or year, enter an
+										estimate.
+									</div>
+									<div class="govuk-date-input" id="end-date">
+										<div class="govuk-date-input__item">
+											<div class="govuk-form-group">
+												<label class="govuk-label govuk-date-input__label" for="end-date-2-month">
+													Month
+												</label>
+												<input class="govuk-input govuk-date-input__input govuk-input--width-2"
+												       id="end-date-2-month" name="end-date-2-month"
+												       value="{{ data['end-date-2-month'] }}" type="text"
+												       inputmode="numeric">
+											</div>
+										</div>
+										<div class="govuk-date-input__item">
+											<div class="govuk-form-group">
+												<label class="govuk-label govuk-date-input__label" for="end-date-2-year">
+													Year
+												</label>
+												<input class="govuk-input govuk-date-input__input govuk-input--width-4"
+												       id="end-date-2-year" name="end-date-2-year"
+												       value="{{ data['end-date-2-year'] }}" type="text"
+												       inputmode="numeric">
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+							<div class="govuk-form-group">
+								<div class="govuk-checkboxes__item">
+									<input class="govuk-checkboxes__input" id="end-date-2-estimate"
+									       name="end-date-2-estimate" type="checkbox" value="estimated">
+									<label class="govuk-label govuk-checkboxes__label" for="end-date-2-estimate">
+										This is an estimate
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" name=""
+				        value="progress" formaction="../task-list">
+					Save and come back later
+				</button>
+			</div>
+		</form>
+
+	</div>
+	<div class="govuk-grid-column-one-third"></div>
+</div>
+
+{% endblock %}

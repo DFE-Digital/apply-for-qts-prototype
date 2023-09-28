@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-l">Which country are you from?</h1>
+		<form class="form" action="personal-information-summary" method="post">
+
+			{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+			{{ govukSelect({
+			id: "Country you are from",
+			name: "Country you are from",
+			label: {
+			text: "Choose one"
+			},
+			items: [
+			{
+			value: "Australia",
+			text: "Australia",
+			checked: checked("nationality", "Australia")
+			},
+			{
+			value: "Canada",
+			text: "Canada",
+			checked: checked("nationality", "Canada")
+			},
+			{
+			value: "China",
+			text: "China",
+			checked: checked("nationality", "China")
+			},
+			{
+			value: "France",
+			text: "France",
+			checked: checked("nationality", "France")
+			},
+			{
+			value: "Germany",
+			text: "Germany",
+			checked: checked("nationality", "Germany")
+			},
+			{
+			value: "Ghana",
+			text: "Ghana",
+			checked: checked("nationality", "Ghana")
+			},
+			{
+			value: "Greece",
+			text: "Greece",
+			checked: checked("nationality", "Greece")
+			},
+			{
+			value: "India",
+			text: "India",
+			checked: checked("nationality", "India")
+			},
+			{
+			value: "Italy",
+			text: "Italy",
+			checked: checked("nationality", "Italy")
+			},
+			{
+			value: "Jamaica",
+			text: "Jamaica",
+			checked: checked("nationality", "Jamaica")
+
+			},
+			{
+			value: "Malaysia",
+			text: "Malaysia",
+			checked: checked("nationality", "Malaysia")
+			},
+			{
+			value: "Morocco",
+			text: "Morocco",
+			checked: checked("nationality", "Morocco")
+			},
+			{
+			value: "Netherlands",
+			text: "Netherlands",
+			checked: checked("nationality", "Netherlands")
+			},
+			{
+			value: "New Zealand",
+			text: "New Zealand",
+			checked: checked("nationality", "New Zealand")
+			},
+			{
+			value: "Nigeria",
+			text: "Nigeria",
+			checked: checked("nationality", "Nigeria")
+			},
+			{
+			value: "Norway",
+			text: "Norway",
+			checked: checked("nationality", "Norway")
+			},
+			{
+			value: "Pakistan",
+			text: "Pakistan",
+			checked: checked("nationality", "Pakistan")
+			},
+			{
+			value: "Republic of Ireland",
+			text: "Republic of Ireland",
+			checked: checked("nationality", "Republic of Ireland")
+			},
+			{
+			value: "Pakistan",
+			text: "Pakistan",
+			checked: checked("nationality", "Pakistan")
+			},
+			{
+			value: "South Africa",
+			text: "South Africa",
+			checked: checked("nationality", "South Africa")
+			},
+			{
+			value: "Spain",
+			text: "Spain",
+			checked: checked("nationality", "Spain")
+			},
+			{
+			value: "Sweden",
+			text: "Sweden",
+			checked: checked("nationality", "Sweden")
+			},
+			{
+			value: "Tanzania",
+			text: "Tanzania",
+			checked: checked("nationality", "Tanzania")
+			},
+			{
+			value: "United States of America",
+			text: "United States of America",
+			checked: checked("nationality", "United States of America")
+			},
+			{
+			value: "Zimbabwe",
+			text: "Zimbabwe",
+			checked: checked("nationality", "Zimbabwe")
+
+			}
+
+			]
+			}) }}
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

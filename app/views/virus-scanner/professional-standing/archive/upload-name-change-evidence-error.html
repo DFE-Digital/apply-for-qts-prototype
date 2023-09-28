@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-l">Upload a document that shows your change of name</h1>
+		<div id="" class="govuk-hint">
+			For example, a change of name deed, marriage or civil partnership certificate, divorce certificate or decree
+			absolute.
+		</div>
+		<div id="" class="govuk-hint">
+			You can upload a screenshot, a photo, or a scanned copy. File must be in jpeg or PDF format and file size
+			must be 5 mb or less.
+		</div>
+		<form class="form" action="question-nationality" method="post">
+
+			<div class="govuk-form-group govuk-form-group--error">
+				<label class="govuk-label" for="file-upload-1">
+					Select a file to upload
+				</label>
+				<div id="training-certificate-hint" class="govuk-hint">
+					You can upload your files in PDF, JPG or DOC format. Each file must be no larger than 20MB.
+				</div>
+				<p id="file-upload-1-error" class="govuk-error-message">
+					<span class="govuk-visually-hidden">Error:</span> No file selected
+				</p>
+				<a href="upload-name-change-evidence-2.html" class="govuk-button govuk-button--secondary"
+				   data-module="govuk-button" name="degreeCertificate" value="marriage-certificate-scan.jpg">Choose
+					file</a>
+				<span class="govuk-body" style="position:relative;top:7px">no file selected</span>
+			</div>
+
+			<div class="govuk-button-group">
+				<a class="govuk-button" style="text-decoration: none;" href="upload-name-change-evidence-error">
+					Upload and continue
+				</a>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="nameChangeFile"
+				        value="">
+					Add this later
+				</button>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Upload your English language proficiency certificate – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-l">Upload your English language proficiency certificate</h1>
+		<p class="govuk-body">Upload a certificate from a secure English language test (SELT) at level B2 of the Common
+			European Framework of Reference for Languages (CEFR) scale.</p>
+		<p class="govuk-body">The test must be on the list of approved English language tests and awarded within the
+			last 2 years before the date of your application.</p>
+
+		<form class="form" action="/prototype-3/task-list" method="post">
+
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="file-upload-1">
+					Select a file to upload
+				</label>
+				<div class="govuk-hint">
+					You can upload your files in PDF, JPG or DOC format. Each file must be no larger than 20MB.
+				</div>
+				<a href="upload-english-proficiency-certificate-2" class="govuk-button govuk-button--secondary"
+				   data-module="govuk-button"
+				   name="english-proficiency-certificate-file" value="english-proficiency-certificate.pdf">Choose
+					file</a>
+				<span class="govuk-body" style="position:relative;top:7px">english-proficiency-certificate.pdf</span>
+			</div>
+
+			<div class="govuk-button-group">
+				<a class="govuk-button" style="text-decoration: none;" href="upload-english-proficiency-certificate-3">
+					Upload and continue
+				</a>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+				        name="another-english-proficiency-certificate" value="progress">
+					Add this later
+				</button>
+
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

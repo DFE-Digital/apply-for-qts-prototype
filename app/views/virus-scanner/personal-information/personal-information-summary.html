@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
+		<h1 class="govuk-heading-xl">Check your answers</h1>
+		<div class="govuk-summary-list__card">
+			<div class="govuk-summary-list__card-title-wrapper">
+				<h2 class="govuk-summary-list__card-title">Personal information</h2>
+			</div>
+			<div class="govuk-summary-list__card-content">
+				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+					<!-- Given names -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Given names
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['first-name'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="name-and-dob">
+								Change
+								<span class="govuk-visually-hidden">Given names</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Family name -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Family name
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['last-name'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="name-and-dob">
+								Change
+								<span class="govuk-visually-hidden">Family name</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Date of birth -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Date of birth
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<span>{{ data['dob-day'] }} </span> / <span>{{ data['dob-month'] }} </span> / <span>{{ data['dob-year'] }}</span>
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="name-and-dob">
+								Change
+								<span class="govuk-visually-hidden">Date of birth</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Legal name same as identity document? -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Name appears differently on your ID documents or qualifications?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['current-legal-name'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="question-current-legal-name">
+								Change
+								<span class="govuk-visually-hidden">Legal name same as identity document</span>
+							</a>
+						</dd>
+					</div>
+
+					{% if data['current-legal-name'] == "Yes" %}
+					<!-- Alternate Given names -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Alternate given name
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['alternate-first-name'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="question-current-legal-name">
+								Change
+								<span class="govuk-visually-hidden">Alternate given name</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Alternate Family name -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Alternate family name
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['alternate-last-name'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="question-current-legal-name">
+								Change
+								<span class="govuk-visually-hidden">Alternate family name</span>
+							</a>
+						</dd>
+					</div>
+					{% endif %}
+				</dl>
+			</div>
+		</div>
+		<form action="/prototype-3/task-list" method="post" novalidate>
+			<button class="govuk-button" name="completed-personal-details" value="completed-personal-details"
+			        data-module="govuk-button">
+				Continue
+			</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,204 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-l">
+        Teacher training and qualifications
+      </span>
+
+		<h1 class="govuk-heading-xl">Check your answers</h1>
+
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+			<!-- Teacher training qualification -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Title
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['qualification-title'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-title">
+						Change
+						<span class="govuk-visually-hidden">Teacher training qualification title</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification institution -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Institution name
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['qualificationInstitutionName'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-name-qualification-institution">
+						Change
+						<span class="govuk-visually-hidden">Teacher training institution name</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification country -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Country of institution
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['qualification-institution-country'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-country-institution">
+						Change
+						<span class="govuk-visually-hidden">Teacher training country of institution</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification start date -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Start date
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<span>{{ data['qualificationStartDate-month'] }} </span> / <span>{{ data['qualificationStartDate-year'] }}</span>
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-study-period">
+						Change
+						<span class="govuk-visually-hidden">Teacher training qualification start date</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification end date -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Completion date
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<span>{{ data['qualificationEndDate-month'] }} </span> / <span>{{ data['qualificationEndDate-year'] }}</span>
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-study-period">
+						Change
+						<span class="govuk-visually-hidden">Teacher training qualification end date</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification award date -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Certificate date
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<span>{{ data['qualificationAwardDate-month'] }} </span> / <span>{{ data['qualificationAwardDate-year'] }}</span>
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-study-period">
+						Change
+						<span class="govuk-visually-hidden">Teacher training qualification award date</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification age range qualified to teach -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Age range qualified to teach
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<span>{{ data['qualificationAgeRange-from'] }} </span> to <span>{{ data['qualificationAgeRange-to'] }}</span>
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-age-range">
+						Change
+						<span class="govuk-visually-hidden">Age range qualified to teach</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification subjects trained to teach -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Subjects trained to teach
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['qualification-subjects'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-subjects">
+						Change
+						<span class="govuk-visually-hidden">Subjects trained to teach</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Was teacher training a degree? -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					If teacher training qualification is a degree
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['was-teacher-training-a-degree'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-was-it-a-degree">
+						Change
+						<span class="govuk-visually-hidden">If teacher training qualification is a degree</span>
+					</a>
+				</dd>
+			</div>
+		</dl>
+
+		{% from "govuk/components/button/macro.njk" import govukButton %}
+		{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+		<form action="/prototype-3/task-list" method="post" novalidate>
+
+			{{ govukRadios({
+			idPrefix: "completed-qualification-details",
+			name: "completed-qualification-details",
+			fieldset: {
+			legend: {
+			text: "Have you completed this section?",
+			isPageHeading: false,
+			classes: "govuk-fieldset__legend--m"
+			}
+			},
+			items: [
+			{
+			value: "yes",
+			text: "Yes"
+			},
+			{
+			value: "no",
+			text: "No, I will come back to it later"
+			}
+			]
+			}) }}
+
+			{{ govukButton({
+			text: "Continue"
+			}) }}
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

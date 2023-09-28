@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Verify your English language proficiency? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form class="form" action="english-proficiency-summary" method="post">
+
+			<!-- Conditional content dependent on the option checked on the previous page -->
+			<!-- Option - IELTS SELT Consortium -->
+			{% if data['approved-provider'] == "IELTS SELT Consortium" %}
+			<h1 class="govuk-heading-l">English language proficiency – IELTS SELT Consortium</h1>
+			<p class="govuk-body">For IELTS SELT Consortium, B2 level requires a score of at least 5.5 in all 4 disciplines (reading, writing, listening and speaking).</p>
+			<div class="govuk-form-group">
+				<h2 class="govuk-label-wrapper">
+					<label class="govuk-label govuk-label--s" for="english-proficiency-reference">
+						Enter your Test Report Form Number
+					</label>
+				</h2>
+				<div class="govuk-hint">
+					Your Test Report Form Number is 15-18 digits long.
+				</div>
+				<input class="govuk-input" id="english-proficiency-reference" name="english-proficiency-reference"
+				       type="text">
+			</div>
+
+			<!-- Option - LanguageCert -->
+			{% elseif data['approved-provider'] == "LanguageCert" %}
+			<h1 class="govuk-heading-l">English language proficiency – LanguageCert</h1>
+			<p class="govuk-body">For LanguageCert, B2 level requires a score of at least 33/50 in all 4 disciplines (reading, writing, listening and speaking).</p>
+			<div class="govuk-form-group">
+				<h2 class="govuk-label-wrapper">
+					<label class="govuk-label govuk-label--s" for="english-proficiency-reference">
+						Enter your Unique Reference Number
+					</label>
+				</h2>
+				<div class="govuk-hint">
+					Your Unique Reference Number contains numbers, letters and dashes in this format:<br>PPC/230619/04501/09980013402512496
+				</div>
+				<input class="govuk-input" id="english-proficiency-reference" name="english-proficiency-reference"
+				       type="text">
+			</div>
+
+			<!-- Option - Pearson -->
+			{% elseif data['approved-provider'] == "Pearson" %}
+			<h1 class="govuk-heading-l">English language proficiency – Pearson</h1>
+			<p class="govuk-body">For Pearson, B2 level requires a score of at least 59 in all 4 disciplines (reading, writing, listening and speaking).</p>
+			<div class="govuk-form-group">
+				<h2 class="govuk-label-wrapper">
+					<label class="govuk-label govuk-label--s" for="english-proficiency-reference">
+						Enter your Score Report Code
+					</label>
+				</h2>
+				<div class="govuk-hint">
+					Your Score Report Code is 10 characters long. It may contain both letters and numbers, or just numbers.
+				</div>
+				<input class="govuk-input" id="english-proficiency-reference" name="english-proficiency-reference"
+				       type="text">
+			</div>
+
+			<!-- Option - PSI Services (UK) Ltd -->
+			{% elseif data['approved-provider'] == "PSI Services (UK) Ltd" %}
+			<h1 class="govuk-heading-l">English language proficiency – PSI Services (UK) Ltd</h1>
+			<p class="govuk-body">For PSI Services (UK) Ltd, B2 level requires a pass in all 4 disciplines (reading, writing, listening and speaking).</p>
+			<div class="govuk-form-group">
+				<h2 class="govuk-label-wrapper">
+					<label class="govuk-label govuk-label--s" for="english-proficiency-reference">
+						Enter your Unique Reference Number
+					</label>
+				</h2>
+				<div class="govuk-hint">
+					Your PSI Services (UK) Ltd Unique Reference Number contains numbers, letters and dashes in this format:<br>PSI/280920/YTLQVG2Z/W2N4UVNN
+				</div>
+				<input class="govuk-input" id="english-proficiency-reference" name="english-proficiency-reference"
+				       type="text">
+			</div>
+
+			<!-- Option - Trinity College London -->
+			{% else %}
+			<h1 class="govuk-heading-l">English language proficiency – Trinity College London</h1>
+			<p class="govuk-body">For Trinity College London, B2 level requires a pass in all 4 disciplines (reading, writing, listening and speaking).</p>
+			<div class="govuk-form-group">
+				<h2 class="govuk-label-wrapper">
+					<label class="govuk-label govuk-label--s" for="english-proficiency-reference">
+						Enter your Certificate Number
+					</label>
+				</h2>
+				<div class="govuk-hint">
+					Your Trinity College London Certificate Number contains numbers, letters and special characters in this format:<br>1-630439614:1-123456780
+				</div>
+				<input class="govuk-input" id="english-proficiency-reference" name="english-proficiency-reference"
+				       type="text">
+			</div>
+
+			{% endif %}
+
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">Continue</button>
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
+				        name="progress-verify-english-proficiency" value="progress-verify-english-proficiency"
+				        formaction="/prototype-3/task-list">
+					Save and come back later
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

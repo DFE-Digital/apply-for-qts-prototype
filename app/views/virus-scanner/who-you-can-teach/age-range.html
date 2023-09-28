@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Age range – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form class="form" action="../task-list" method="post">
+			<span class="govuk-caption-l">Who you can teach</span>
+			<h1 class="govuk-heading-l govuk-!-margin-bottom-0">What age range are you qualified to teach?</h1>
+			<div id="event-name-hint" class="govuk-hint govuk-!-margin-bottom-0">
+				Tell us about the age range of the children you’re qualified to teach.
+				for example, from 5 to 11.
+			</div>
+			<div class="govuk-form-group govuk-!-margin-bottom-0">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="age-range-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading govuk-!-display-none">
+							Youngest age you qualified to teach?
+						</h1>
+					</legend>
+					<div class="govuk-date-input" id="age-range-min">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="age-range-min">
+									From
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
+								       id="age-range-min" name="age-range-min" value="{{ data['age-range-min'] }}"
+								       type="text" inputmode="numeric">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="age-range-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h2 class="govuk-fieldset__heading govuk-!-display-none">
+							Oldest age you are qualified to teach?
+						</h2>
+					</legend>
+					<div class="govuk-date-input" id="age-range-max">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="age-range-max">
+									To
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
+								       id="age-range-max" name="age-range-max" value="{{ data['age-range-max'] }}"
+								       type="text" inputmode="numeric">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<details class="govuk-details" data-module="govuk-details">
+				<summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      About age ranges and grades
+    </span>
+				</summary>
+				<div class="govuk-details__text">
+					<p class="govuk-body">Some countries recognise a teacher’s qualifications by the age of the
+						children, while others use
+						the grade or year group the children are in.</p>
+
+					<p class="govuk-body">Sometimes, you might teach children whose age falls outside the range that
+						you’d normally teach.
+						For this question, we just need the approximate age range of the children you’re qualified to
+						teach.</p>
+				</div>
+			</details>
+
+			<button class="govuk-button" data-module="govuk-button" name="completed-age-range"
+			        value="completed-age-range">Continue
+			</button>
+
+	</div>
+</div>
+
+{% endblock %}

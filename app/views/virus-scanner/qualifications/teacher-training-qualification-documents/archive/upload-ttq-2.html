@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+          <span class="govuk-caption-l">
+            Teacher training and qualifications
+          </span>
+		<h1 class="govuk-heading-l">Upload your teacher training certificate and transcript</h1>
+
+		<p class="govuk-body">Your documents must be written in English. If they are not written in English, you will
+			need to upload a
+			certified translation of each.</p>
+
+		<form class="form" action="/prototype-3/task-list" method="post">
+
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="file-upload-1">
+					Select a file to upload
+				</label>
+				<div id="training-certificate-hint" class="govuk-hint">
+					You can upload your files in PDF, JPG or DOC format. Each file must be no larger than 20MB.
+				</div>
+				<a href="upload-ttq-2" class="govuk-button govuk-button--secondary" data-module="govuk-button"
+				   name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
+				<span class="govuk-body" style="position:relative;top:7px">teachertrainingqualification.jpg</span>
+			</div>
+
+			<div class="govuk-button-group">
+				<a class="govuk-button" style="text-decoration: none;" href="upload-ttq-3">
+					Upload and continue
+				</a>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="another-ttq"
+				        value="progress">
+					Add this later
+				</button>
+
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

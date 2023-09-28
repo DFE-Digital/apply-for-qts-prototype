@@ -1,0 +1,268 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        Proof that you're recognised as a teacher
+      </span>
+
+		<h1 class="govuk-heading-l">Upload your written statement</h1>
+
+		<p class="govuk-body">You need to provide a written statement from <span
+				style="color: #D4351C">[Your authority]</span></p>
+
+		<p class="govuk-body">This is called a <span style="color: #D4351C">[Letter of Professional Standing]</span></p>
+
+		<div class="govuk-inset-text">
+			If this document is not written in English, you'll also need to upload a translation.
+		</div>
+
+		<p class="govuk-body">It must confirm:</p>
+		<ul class="govuk-list govuk-list--bullet">
+			<li>that you've completed a teaching qualification/teacher training</li>
+			<li>that you've successfully completed any period of professional experience comparable to an induction
+				period (if required)
+			</li>
+			<li>the age ranges and subjects you're qualified to teach</li>
+			</li>
+		</ul>
+		<p class="govuk-body">This written confirmation must be dated within 3 months of you applying for QTS.</p>
+
+		<details class="govuk-details" data-module="govuk-details">
+			<summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I do not have this yet
+          </span>
+			</summary>
+			<div class="govuk-details__text">
+				If you do not have this yet, you can obtain it by contacting:
+
+				<br><br>
+				{% if data['country-recognised'] == "Nigeria" %}
+
+				Teachers Registration Council of Nigeria (TRCN), 12 Oda Crescent, Off Aminu Kano Crescent, Wuse 2, PMB
+				526, Garki, Abuja, Nigeria
+				Email Dr Jacinta Ogboso-Omotepe on jacyunn@yahoo.com
+
+				{% elseif data['country-recognised'] == "China" %}
+
+				It is understood that Letters of Professional Standing are not issued in China.<br><br>
+				You must arrange for the Principal, Director, or Head of the last school where you taught in China to
+				send you a signed letter of reference that confirms:<br><br>
+				<ul class="govuk-list govuk-list--bullet">
+					<li>the dates and length of your employment</li>
+					<li>that you were not suspended for any disciplinary reason</li>
+					<li>that your conduct was satisfactory</li>
+				</ul>
+				The letter must be dated within the last 3 months.
+				<br><br>
+				You may also write to:<br>
+				Ministry of Education, 35 Damucang hutong, Xidan, Beijing 100816, China.<br>
+
+				{% elseif data['country-recognised'] == "India" %}
+
+				It is understood that Letters of Professional Standing are not issued in India.<br>
+				Instead, you must arrange for the head of the last school where you taught in an elementary or secondary
+				school in India to send you a letter of reference. The letter must be current. It must list the dates
+				and length of your employment as a teacher and say that you were never suspended for any disciplinary
+				reason and that your conduct was satisfactory.<br>
+				The Letter of Professional Standing must be signed by one of the Principal, Director, Headmaster or
+				Headmistress of the school.<br>
+
+				{% elseif data['country-recognised'] == "Jamaica" %}
+
+				Ministry of Education<br>
+				2 National Heroes Circle<br>
+				Kingston 4<br>
+				Jamaica<br>
+
+				{% elseif data['country-recognised'] == "Mexico" %}
+
+				Secretariat for Public Education (Secretaria de Educación Pública), Republic of Argentina No. 28, Centro
+				Historico, Delgación Cuauhtémoc, 06029 México, D.F., Mexico
+				<br><br>
+				Secretaria de Educación Pública, Avenida Insurgentes Sur No. 2387, Delegación Alvaro Obregó, Col San
+				Angel 01000, Mexico
+				<br><br>
+				Subsecretaria de Educación Básica, Viaducto Río de la Piedad N 507, Col. Granjas México, C.P. 08400,
+				D.F., Mexico
+				<br><br>
+				Subsecretaria de Educación Superior, Direccion General de Profesiones y Registro Profesional,
+				Departamento de autorizaciones, Avenida Revolución 1425, Colonia Campestre, Delegacion Alvaro, Obregón,
+				C.P. 01049 Ciudad de Mexico
+
+				{% elseif data['country-recognised'] == "South Africa" %}
+
+				The South African Council for Educators (SACE), Private Bag X127, Centurion 0046, South Africa.
+
+				{% elseif data['country-recognised'] == "Zimbabwe" %}
+
+				Ministry of Education, Sports and Culture, Union Avenue, P. O. Box CY 121, Causeway, HARARE, Zimbabwe
+
+				{% elseif data['country-recognised'] == "Argentina" %}
+
+				<p class="govuk-body">Ministerio de Educación, Ciencia y Tecnología, Pizzurno 935, Capital Federal 1020
+					Buenos Aires,
+					Argentina</p>
+				<p class="govuk-body">Or you can use the contact information for the province in Argentina where you
+					last taught.</p>
+
+				{% elseif data['country-recognised'] == "Ghana" %}
+
+				National Teaching Council (NTC), Education Close Street, Opposite University of Ghana City Campus,
+				Adabraka, Ministry Branch Post Office, P.O. Box MB 247, Accra, Ghana
+
+				{% elseif data['country-recognised'] == "Philippines" %}
+
+				Professional Regulation Commission<br>
+				P. Paredes St<br>
+				Corner Morayta Street Sampaloc<br>
+				P.O. Box 2038<br>
+				Manila, Republic of the Philippines
+
+				{% elseif data['country-recognised'] == null %}
+				<span style="color: #D4351C">[Your authority,<br>
+          Building,<br>
+          Street,<br>
+          County,<br>
+          Post code,<br>
+          Country.<br>
+          <br>
+          sudv@minedu.sk]
+          </span>
+
+				{% endif %}
+			</div>
+		</details>
+
+		<form class="form" action="#" method="post">
+
+			<h2 class="govuk-heading-m">
+				About your document
+			</h2>
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+						<h3 class="govuk-fieldset__heading govuk-!-font-weight-regular">
+							Is your document written in English?
+						</h3>
+					</legend>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="written-in-english" name="written-in-english"
+							       type="radio" value="yes">
+							<label class="govuk-label govuk-radios__label" for="written-in-english">
+								Yes
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="written-in-english-2" name="written-in-english"
+							       type="radio" value="no" checked>
+							<label class="govuk-label govuk-radios__label" for="written-in-english-2">
+								No, I'll upload a translation as well
+							</label>
+						</div>
+					</div>
+
+				</fieldset>
+			</div>
+		</form>
+
+		<form class="form" action="../task-list.html" method="post">
+			<h2 class="govuk-heading-m">
+				Upload your document
+			</h2>
+			<div class="govuk-form-group govuk-!-margin-bottom-1">
+				<label class="govuk-label" for="file-upload-1">
+					Select a file to upload
+				</label>
+				<div class="govuk-hint">
+					You can upload your files in PDF, JPG or DOC format. Each file must be no larger than 20MB.
+				</div>
+				<a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="lopsFile"
+				   value="letterofprofessionalstanding.jpg">Choose file</a>
+				<span class="govuk-body" style="position:relative;top:7px">No file uploaded</span>
+			</div>
+
+			<h4 class="govuk-heading-s govuk-!-margin-bottom-1">
+				Uploaded files
+			</h4>
+			<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key">
+						File 1
+					</dt>
+					<dd class="govuk-summary-list__value">
+						<a download href="#" class="govuk-link">written-statement.pdf</a>
+					</dd>
+
+					<dd class="govuk-summary-list__actions">
+
+						<a class="govuk-link" href="#">
+							Delete<span class="govuk-visually-hidden"> file 1</span>
+						</a>
+
+					</dd>
+
+				</div>
+
+				<!-- <div class="govuk-summary-list__row">
+				  <dt class="govuk-summary-list__key">
+					File 2
+				  </dt>
+				  <dd class="govuk-summary-list__value">
+					<a download href="/" class="govuk-link">receipt2.jpg</a>, 5MB
+				  </dd>
+
+				  <dd class="govuk-summary-list__actions">
+
+					<a class="govuk-link" href="#">
+					  Delete<span class="govuk-visually-hidden"> file 2</span>
+					</a>
+
+				  </dd>
+
+				</div> -->
+
+			</dl>
+
+			<h2 class="govuk-heading-m">
+				Upload your translation
+			</h2>
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="file-upload-1">
+					Select a file to upload
+				</label>
+				<div class="govuk-hint">
+					You can upload your files in PDF, JPG or DOC format. Each file must be no larger than 20MB.
+				</div>
+				<a href="upload-lops-non-english-b.html" class="govuk-button govuk-button--secondary"
+				   data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
+				<span class="govuk-body" style="position:relative;top:7px">No file uploaded</span>
+			</div>
+
+			<div class="govuk-button-group">
+				<a class="govuk-button" style="text-decoration: none;" href="upload-lops-non-english-error">
+					Continue
+				</a>
+
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

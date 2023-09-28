@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form class="form" action="/current-legal-name-answer" method="post">
+
+			{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+			{{ govukRadios({
+			idPrefix: "current-legal-name",
+			name: "current-legal-name",
+			fieldset: {
+			legend: {
+			text: "Is your legal name the same as on the identification document you uploaded?",
+			isPageHeading: true,
+			classes: "govuk-fieldset__legend--l"
+			}
+			},
+			items: [
+			{
+			value: "Yes",
+			text: "Yes",
+			checked: checked("current-legal-name", "Yes")
+			},
+			{
+			value: "No",
+			text: "No",
+			checked: checked("current-legal-name", "No")
+			}
+			]
+			}) }}
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Reference number – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form class="form" action="../task-list" method="post">
+
+			<div class="govuk-form-group">
+
+				{% from "govuk/components/input/macro.njk" import govukInput %}
+
+				{{ govukInput({
+				label: {
+				text: "What is your registration number?",
+				classes: "govuk-label--l",
+				isPageHeading: true
+				},
+				hint: {
+				text: "Your country has an online register of teachers. If you have a reference number, enter it on this
+				screen. If you do not have one, just select ‘Continue’."
+				},
+				id: "reference-number",
+				name: "reference-number",
+				value: data['reference-number']
+				}) }}
+			</div>
+
+			<details class="govuk-details" data-module="govuk-details">
+				<summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      When we might need more information
+    </span>
+				</summary>
+				<div class="govuk-details__text">
+					If we’re unable to find you using your reference number, we may need to contact you for more
+					information as part of your application.
+				</div>
+			</details>
+
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button" name="completed-reference-number"
+				        value="completed-reference-number">
+					Continue
+				</button>
+			</div>
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

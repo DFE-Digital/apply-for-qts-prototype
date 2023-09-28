@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        Teacher training and qualifications
+      </span>
+		<form class="form" action="question-qualification-was-it-a-degree" method="post">
+
+			{% from "govuk/components/input/macro.njk" import govukInput %}
+
+			{{ govukInput({
+			label: {
+			text: "What subjects are you qualified to teach?",
+			classes: "govuk-label--l",
+			isPageHeading: true
+			},
+			hint: {
+			text:"Separate each one with a comma"
+			},
+			id: "qualification-subjects",
+			name: "qualification-subjects",
+			type: "text",
+			spellcheck: false,
+			value: data['qualification-subjects']
+			}) }}
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

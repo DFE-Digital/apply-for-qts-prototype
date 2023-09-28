@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Current legal name – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form class="form" action="personal-information-summary" method="post">
+
+        <span class="govuk-caption-l">
+          About you
+        </span>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="current-legal-name-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">
+							Does your name appear differently on your ID documents or qualifications?
+						</h1>
+					</legend>
+					<div id="current-legal-name-hint" class="govuk-hint">
+						If your name appears differently on your ID documents or qualification certificates, we’ll need
+						to see evidence of your name change.
+					</div>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="current-legal-name" name="current-legal-name"
+							       type="radio" value="Yes" data-aria-controls="conditional-current-legal-name">
+							<label class="govuk-label govuk-radios__label" for="current-legal-name">
+								Yes – I'II upload another document to prove this
+							</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+						     id="conditional-current-legal-name">
+							{% from "govuk/components/input/macro.njk" import govukInput %}
+
+							{{ govukInput({
+							label: {
+							text: "Alternate given names",
+							classes: "govuk-label--s, govuk-!-font-weight-regular",
+							isPageHeading: false
+							},
+							hint: {
+							text: "Enter your full name apart from your family name"
+							},
+							id: "alternate-first-name",
+							name: "alternate-first-name",
+							value: data['alternate-first-name']
+							}) }}
+
+							{{ govukInput({
+							label: {
+							text: "Alternate family name",
+							classes: "govuk-label--s, govuk-!-font-weight-regular",
+							isPageHeading: false
+							},
+							hint: {
+							text: "Enter just your family name"
+							},
+							id: "alternate-last-name",
+							name: "alternate-last-name",
+							value: data['alternate-last-name']
+							}) }}
+
+							<div class="govuk-form-group">
+								<label class="govuk-label" for="file-upload-2">
+									Select a file to upload
+								</label>
+								<div id="training-certificate-hint" class="govuk-hint">
+									You can upload your files in PDF, JPG or DOC format. Each file must be no larger
+									than 20MB.
+								</div>
+								<a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button"
+								   name="idDocument" value="identity-document.pdf">Choose file</a>
+								<span class="govuk-body" style="position:relative;top:7px">No file chosen</span>
+							</div>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="current-legal-name-2" name="current-legal-name"
+							       type="radio" value="No" data-aria-controls="conditional-current-legal-name-2">
+							<label class="govuk-label govuk-radios__label" for="current-legal-name-2">
+								No
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
+				        name="progress-personal-details" value="progress-personal-details"
+				        formaction="/prototype-3/task-list">
+					Save and come back later
+				</button>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,212 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+University degree – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block pageStyles %}
+<link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen"
+      rel="stylesheet">
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
+<script>
+    openregisterLocationPicker({
+        selectElement: document.getElementById('qualification-institution-country'),
+        url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
+        defaultValue: '{{ data["qualification-institution-country"] }}'
+    })
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<span class="govuk-caption-l">Your qualifications</span>
+		<h1 class="govuk-heading-l">Your teaching qualification</h1>
+		<p class="govuk-body">This is the qualification that led to you being recognised as a teacher. It might be part
+			of your university degree course, or it could be a separate qualification.</p>
+
+		<form class="form" action="../teacher-training-qualification-documents/upload-teacher-training-qualification"
+		      method="post">
+
+			<h2 class="govuk-heading-m">Enter the details of your teaching qualification</h2>
+
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="qualification-title">
+					Qualification title
+				</label>
+				<input class="govuk-input" id="qualification-title" name="qualification-title"
+				       value="{{ data['qualification-title'] }}" type="text">
+			</div>
+
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="qualificationInstitutionName">
+					Name of institution
+				</label>
+				<input class="govuk-input" id="qualificationInstitutionName" name="qualificationInstitutionName"
+				       value="{{ data['qualificationInstitutionName'] }}" type="text">
+			</div>
+
+			{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+			{{ govukSelect({
+			id: "qualification-institution-country",
+			name: "qualification-institution-country",
+			classes: "govuk-input--width-10",
+			label: {
+			classes: "govuk-label--s, govuk-!-font-weight-regular",
+			isPageHeading: true,
+			text: "Country of institution"
+			},
+			items: countries
+			}) }}
+
+			<details class="govuk-details" data-module="govuk-details">
+				<summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Is this the same as my university degree?
+            </span>
+				</summary>
+				<div class="govuk-details__text">
+					<p class="govuk-body">Some applicants have a university degree qualification that includes their
+						teaching qualification.</p>
+					<p class="govuk-body">Others have a teaching qualification that’s separate from their degree.</p>
+					<p class="govuk-body">If your qualifications are separate, you’ll need to add your university degree
+						in the next section.</p>
+				</div>
+			</details>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							When did you start your teaching qualification?
+						</h1>
+					</legend>
+					<div id="start-date-hint" class="govuk-hint">
+						For example, 3 2020
+					</div>
+					<div class="govuk-date-input" id="start-date">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="qualificationStartDate-month">
+									Month
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
+								       id="qualificationStartDate-month" name="qualificationStartDate-month"
+								       value="{{ data['qualificationStartDate-month'] }}" type="text"
+								       inputmode="numeric">
+							</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="qualificationStartDate-year">
+									Year
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
+								       id="qualificationStartDate-year" name="qualificationStartDate-year"
+								       value="{{ data['qualificationStartDate-year'] }}" type="text"
+								       inputmode="numeric">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="qualification-end-date-date-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							When did you complete your teaching qualification?
+						</h1>
+					</legend>
+					<div id="start-date-hint" class="govuk-hint">
+						For example, 3 2020
+					</div>
+					<div class="govuk-date-input" id="qualificationAwardDate">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="qualificationEndDate-month">
+									Month
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
+								       id="qualificationEndDate-month" name="qualificationEndDate-month"
+								       value="{{ data['qualificationEndDate-month'] }}" type="text" inputmode="numeric">
+							</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="qualificationEndDate-year">
+									Year
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
+								       id="qualificationEndDate-year" name="qualificationEndDate-year"
+								       value="{{ data['qualificationEndDate-year'] }}" type="text" inputmode="numeric">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="qualificationAwardDate-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							What is the date on your teaching qualification certificate?
+						</h1>
+					</legend>
+					<div id="start-date-hint" class="govuk-hint">
+						For example, 3 2020
+					</div>
+					<div class="govuk-date-input" id="qualification-date">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="qualificationAwardDate-month">
+									Month
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
+								       id="qualificationAwardDate-month" name="qualificationAwardDate-month"
+								       value="{{ data['qualificationAwardDate-month'] }}" type="text"
+								       inputmode="numeric">
+							</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="qualificationAwardDate-year">
+									Year
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
+								       id="qualificationAwardDate-year" name="qualificationAwardDate-year"
+								       value="{{ data['qualificationAwardDate-year'] }}" type="text"
+								       inputmode="numeric">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button" name="progress-qualification-details"
+				        type="submit">Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
+				        name="progress-qualification-details" formaction="/prototype-3/task-list">
+					Save and come back later
+				</button>
+			</div>
+
+		</form>
+
+	</div>
+	<div class="govuk-grid-column-one-third"></div>
+</div>
+
+{% endblock %}

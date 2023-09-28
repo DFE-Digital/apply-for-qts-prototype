@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Verify your English language proficiency? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form class="form" action="/verify-english-proficiency" method="post">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="verify-english-proficiency-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+						<h1 class="govuk-fieldset__heading">
+							You need to provide proof of your English language proficiency
+						</h1>
+					</legend>
+					<div id="verify-english-proficiency-hint" class="govuk-hint">
+						There are 2 ways you can do this.
+					</div>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="verify-english-proficiency"
+							       name="verify-english-proficiency" type="radio" value="upload-medium-of-instruction" {{ checked("verify-english-proficiency", "I’ll upload the Medium of instruction (MOI) from my university degree.") }}>
+							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency">
+								Upload an official document that shows your teaching qualification or university degree was taught exclusively in the English language.
+							</label>
+							<div id="verify-english-proficiency-hint" class="govuk-hint govuk-radios__hint">
+                                This is sometimes called a 'Medium of Instruction' (MOI) and you can request it from the institution where you studied. It must be signed and stamped by them on official headed paper, and it must state that the medium of instruction was English. It must also include your name, degree title and award date.
+							</div>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="verify-english-proficiency-2"
+							       name="verify-english-proficiency" type="radio"
+							       value="I’ll provide my English language proficiency test details." {{ checked("verify-english-proficiency", "I’ll provide my English language proficiency test details.") }}>
+							<label class="govuk-label govuk-radios__label" for="verify-english-proficiency-2">
+								Upload proof of a Secure English Language Test (SELT) at B2 level, from one of the approved providers.
+							</label>
+							<div id="verify-english-proficiency-2-hint" class="govuk-hint govuk-radios__hint">
+								The test must have been taken within the last 2 years. We cannot accept English language tests from a provider that does not appear on the list.
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<details class="govuk-details" data-module="govuk-details">
+				<summary class="govuk-details__summary">
+    				<span class="govuk-details__summary-text">
+      					About approved providers
+    				</span>
+				</summary>
+				<div class="govuk-details__text">
+					<p class="govuk-body">To apply for QTS you must use an approved provider. We cannot accept English language tests from a provider that does not appear on the list.
+
+					<p class="govuk-body">See the list of <a href="/english-language-guidance" class="govuk-link" rel="noreferrer noopener" target="_blank">approved providers (opens in new tab)</a>.</p>
+				</div>
+			</details>
+
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
+				        name="progress-verify-english-proficiency" value="progress-verify-english-proficiency"
+				        formaction="/prototype-3/task-list">
+					Save and come back later
+				</button>
+			</div>
+	</div>
+</div>
+
+{% endblock %}

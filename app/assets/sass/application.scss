@@ -52,3 +52,21 @@ $govuk-assets-path: '/govuk/assets/';
   //color: #d4351c;
   color: #0b0c0c;
 }
+
+// Home Office loading spinner
+.hods-loading-spinner__spinner {
+  margin-left: auto;
+  margin-right: auto;
+  border: 12px solid #dee0e2;
+  border-radius: 50%;
+  border-top-color: #1d70b8;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: hods-loading-spinner-animation 2s linear infinite;
+  animation: hods-loading-spinner-animation 2s linear infinite;
+}
+
+.hods-loading-spinner__content {
+  padding-top: 15px;
+  text-align: center;
+}

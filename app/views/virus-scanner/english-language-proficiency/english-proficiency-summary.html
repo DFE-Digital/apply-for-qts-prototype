@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
+
+		<span class="govuk-caption-l">Your English language proficiency</span>
+		<h1 class="govuk-heading-l">Check your answers</h1>
+
+		<div class="govuk-summary-list__card">
+			<div class="govuk-summary-list__card-title-wrapper">
+				<h2 class="govuk-summary-list__card-title">Your English language proficiency</h2>
+				<div class="govuk-summary-list__card-actions">
+					<!--            <ul class="govuk-summary-list__card-actions-list">-->
+					<!--              <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">Delete-->
+					<!--                choice<span class="govuk-visually-hidden"> your work history</span> </a></li>-->
+					<!--              <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
+					<!--                Withdraw<span class="govuk-visually-hidden"> your work history</span> </a></li>-->
+					<!--            </ul>-->
+				</div>
+			</div>
+			<div class="govuk-summary-list__card-content">
+
+				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+					<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key">
+						Were you born in or hold citizenship of any of the countries below?
+					</dt>
+					<dd class="govuk-summary-list__value">
+						{{ data['exempt-country-citizenship'] }}
+					</dd>
+					<dd class="govuk-summary-list__actions">
+						<a href="english-language-proficiency/question-born-citizenship">
+							Change
+							<span class="govuk-visually-hidden">citizenship of exempt country</span>
+						</a>
+					</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Was your teaching qualification or university degree taught in any of the following countries?
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['exempt-country-qualification'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="english-language-proficiency/question-born-citizenship">
+						Change
+						<span class="govuk-visually-hidden">qualification from exempt country</span>
+					</a>
+				</dd>
+			</div>
+
+                    <!-- Verification method -->
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Chosen verification method
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['verify-english-proficiency'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="how-to-verify-english-language">
+                                Change
+                                <span class="govuk-visually-hidden">verification method</span>
+                            </a>
+                        </dd>
+                    </div>
+
+					<!-- Approved provider -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Your approved provider
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['approved-provider'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="provide-test-details">
+								Change
+								<span class="govuk-visually-hidden">school name</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Your reference number -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Your reference number
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['english-proficiency-reference'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="supply-provider-reference-number">
+								Change
+								<span class="govuk-visually-hidden">school city</span>
+							</a>
+						</dd>
+					</div>
+				</dl>
+			</div>
+		</div>
+
+		<form action="/prototype-3/task-list" method="post" novalidate>
+			<button class="govuk-button" name="completed-english-proficiency" value="completed-english-proficiency"
+			        data-module="govuk-button">
+				Continue
+			</button>
+		</form>
+	</div>
+</div>
+{% endblock %}
