@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">
+        Teacher training and qualifications
+      </span>
+		<h1 class="govuk-heading-l">Period of study</h1>
+		<form class="form" action="degree-summary" method="post">
+			{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+			{{ govukDateInput({
+			id: "degreeStartDate",
+			namePrefix: "degreeStartDate",
+			fieldset: {
+			legend: {
+			text: "What date did you start your undergraduate degree?",
+			isPageHeading: false,
+			classes: "govuk-label govuk-label--m"
+			}
+			},
+			hint: {
+			text: " For example, 9 2007"
+			},
+			items: [
+			{
+			name: "month",
+			classes: "govuk-input--width-2",
+			value: data["degreeStartDate-month"]
+			},
+			{
+			name: "year",
+			classes: "govuk-input--width-4",
+			value: data["degreeStartDate-year"]
+			}
+			]
+			}) }}
+
+			{{ govukDateInput({
+			id: "degreeEndDate",
+			namePrefix: "degreeEndDate",
+			fieldset: {
+			legend: {
+			text: "What date did you complete your undergraduate degree?",
+			isPageHeading: false,
+			classes: "govuk-label govuk-label--m"
+			}
+			},
+			hint: {
+			text: " For example, 7 2010"
+			},
+			items: [
+			{
+			name: "month",
+			classes: "govuk-input--width-2",
+			value: data["degreeEndDate-month"]
+			},
+			{
+			name: "year",
+			classes: "govuk-input--width-4",
+			value: data["degreeEndDate-year"]
+			}
+			]
+			}) }}
+
+			{{ govukDateInput({
+			id: "degreeAwardDate",
+			namePrefix: "degreeAwardDate",
+			fieldset: {
+			legend: {
+			text: "What is the date on your undergraduate degree certificate?",
+			isPageHeading: false,
+			classes: "govuk-label govuk-label--m"
+			}
+			},
+			hint: {
+			text: " For example, 8 2010"
+			},
+			items: [
+			{
+			name: "month",
+			classes: "govuk-input--width-2",
+			value: data["degreeAwardDate-month"]
+			},
+			{
+			name: "year",
+			classes: "govuk-input--width-4",
+			value: data["degreeAwardDate-year"]
+			}
+			]
+			}) }}
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form class="form" action="question-current-legal-name" method="post">
+        <span class="govuk-caption-l">
+          About you
+        </span>
+			<h1 class="govuk-heading-l">
+				Personal information
+			</h1>
+
+			{% from "govuk/components/input/macro.njk" import govukInput %}
+
+			{{ govukInput({
+			label: {
+			text: "Given names",
+			classes: "govuk-label--m",
+			isPageHeading: false
+			},
+			hint: {
+			text: "Enter your full name apart from your family name"
+			},
+			id: "first-name",
+			name: "first-name",
+			value: data['first-name']
+			}) }}
+
+			{{ govukInput({
+			label: {
+			text: "Family name",
+			classes: "govuk-label--m",
+			isPageHeading: false
+			},
+			hint: {
+			text: "Enter just your family name"
+			},
+			id: "last-name",
+			name: "last-name",
+			value: data['last-name']
+			}) }}
+
+			{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+			{{ govukDateInput({
+			id: "dob",
+			namePrefix: "dob",
+			fieldset: {
+			legend: {
+			text: "Date of birth",
+			isPageHeading: false,
+			classes: "govuk-label govuk-label--m"
+			}
+			},
+			hint: {
+			text: "For example, 27 3 1980"
+			},
+			items: [
+			{
+			name: "day",
+			classes: "govuk-input--width-2",
+			value: data["dob-day"]
+			},
+			{
+			name: "month",
+			classes: "govuk-input--width-2",
+			value: data["dob-month"]
+			},
+			{
+			name: "year",
+			classes: "govuk-input--width-4",
+			value: data["dob-year"]
+			}
+			]
+			}) }}
+
+			<details class="govuk-details" data-module="govuk-details">
+				<summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Why do we ask this?
+    </span>
+				</summary>
+				<div class="govuk-details__text">
+					We ask for your date of birth because not all forms of identification include it. It also helps with
+					security in case we need to discuss your application with you.
+				</div>
+			</details>
+
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit"
+				        name="progress-personal-details" value="progress-personal-details"
+				        formaction="/prototype-3/task-list">
+					Save and come back later
+				</button>
+			</div>
+	</div>
+</div>
+
+{% endblock %}

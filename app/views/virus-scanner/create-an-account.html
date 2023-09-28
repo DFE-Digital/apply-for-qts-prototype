@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-xl">Create an account</h1>
+
+		<p class="govuk-body"> Take a look at our <a href="---">privacy policy</a> before creating an account</p>
+
+		<form class="form" action="task-list" method="post">
+
+			{% from "govuk/components/input/macro.njk" import govukInput %}
+
+			{{ govukInput({
+			label: {
+			text: "Email address",
+			classes: "govuk-label--l",
+			isPageHeading: true
+			},
+			hint: {
+			text: "We’ll email you a new sign-in link every time you want to come back to your application"
+			},
+			id: "qualification-institution-country",
+			name: "qualification-institution-country",
+			type: "text",
+			spellcheck: false,
+			value: data['qualification-institution-country']
+			}) }}
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

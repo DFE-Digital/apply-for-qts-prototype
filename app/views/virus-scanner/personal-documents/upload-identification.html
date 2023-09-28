@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-l">Upload a valid identification document</h1>
+
+		<p class="govuk-body">The document must show your date of birth and your nationality. If your ID document has
+			several pages, you can add them on the next screen.</p>
+
+
+		<p class="govuk-body">Acceptable documents include:</p>
+		<ul class="govuk-list govuk-list--bullet">
+			<li>passport
+			<li>driving licence</li>
+			<li>identity card</li>
+			<li>birth certificate</li>
+			</li>
+		</ul>
+		<div id="event-name-hint" class="govuk-hint">
+			If you're uploading an identity card or driving license, you'll need to upload both sides of the card.
+		  </div>
+
+
+		<form class="form" action="upload-loading" method="post">
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="file-upload-1">
+					Select a file to upload
+				</label>
+				<div class="govuk-hint">
+					You can upload your files in PDF, JPG or DOC format. Each file must be no larger than 20MB.
+				</div>
+				<div class="govuk-form-group">
+					<input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+				  </div>
+			</div>
+
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+				        name="another-identification" value="progress">
+					Save and come back later
+				</button>
+
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

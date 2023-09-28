@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Upload teacher training certificate – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form class="form" action="../teacher-training-qualification/teacher-training-qualification-summary"
+		      method="post">
+        <span class="govuk-caption-l">
+          Your qualifications
+        </span>
+			<h1 class="govuk-heading-l">Upload your {{ data['qualificationInstitutionName'] }} teaching qualification
+				transcript
+			</h1>
+			<p class="govuk-body">Upload a transcript of your teaching qualification, issued by the awarding body. If
+				your teaching
+				qualification was completed as part of your degree, you should supply your degree transcript.</p>
+			<h2 class="govuk-heading-m">Upload your transcript</h2>
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="file-upload-1">
+					Select a file to upload
+				</label>
+				<div id="training-certificate-hint" class="govuk-hint">
+					You can upload your files in PDF, JPG or DOC format. Each file must be no larger than 20MB.
+				</div>
+				<a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button"
+				   name="training-certificate" value="teacher_training_certificate.pdf">Choose file</a>
+				<span class="govuk-body" style="position:relative;top:7px">No file chosen</span>
+				<details class="govuk-details" data-module="govuk-details">
+					<summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What is a transcript?
+            </span>
+					</summary>
+					<div class="govuk-details__text">
+						A transcript (or diploma supplement) is a document from the institution where you studied for
+						your degree. It lists all the modules or subjects you studied in each year, and the marks or
+						grades you were awarded.
+					</div>
+				</details>
+			</div>
+
+			<h2 class="govuk-heading-m">
+				About your document
+			</h2>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="written-in-english-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+						<h1 class="govuk-fieldset__heading">
+							Is your document written in English?
+						</h1>
+					</legend>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="written-in-english" name="written-in-english"
+							       type="radio" value="yes" data-aria-controls="conditional-written-in-english">
+							<label class="govuk-label govuk-radios__label" for="written-in-english">
+								Yes
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="written-in-english-2" name="written-in-english"
+							       type="radio" value="no" data-aria-controls="conditional-written-in-english-2"
+							       checked>
+							<label class="govuk-label govuk-radios__label" for="written-in-english-2">
+								No, I'll upload a translation as well
+							</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+						     id="conditional-written-in-english-2">
+							<div class="govuk-form-group">
+								<label class="govuk-label" for="file-upload-2">
+									Upload your teaching qualification transcript translation
+								</label>
+								<div id="event-name-hint" class="govuk-hint">
+									Select a file to upload
+								</div>
+								<div id="training-certificate-hint" class="govuk-hint">
+									You can upload your files in PDF, JPG or DOC format. Each file must be no larger
+									than 20MB.
+								</div>
+								<a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button"
+								   name="lopsFile" value="certificate_translation.pdf">Choose file</a>
+								<span class="govuk-body" style="position:relative;top:7px">teacher_training_transcript-translation.pdf</span>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button" name="teacher-transcript-added" value="progress"
+				        type="submit">
+					Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+				        name="teacher-transcript-added" value="progress" formaction="/prototype-3/task-list">
+					Add this later
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

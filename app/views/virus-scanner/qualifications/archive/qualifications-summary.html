@@ -1,0 +1,380 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
+
+		<h1 class="govuk-heading-xl">Check your answers</h1>
+		{% if data['together-separate'] == "Separate" %}
+		<h2 class="govuk-heading-m">About your degree</h2>
+
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+			<!-- Teacher training qualification subjects trained to teach -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Degree title
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['degreeTitle'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-degree-title">
+						Change
+						<span class="govuk-visually-hidden">Degree Title</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification subjects trained to teach -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Name of institution
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['degreeInstitutionName'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-name-degree-institution">
+						Change
+						<span class="govuk-visually-hidden">Name of institution</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification subjects trained to teach -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Country of institution
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['degreeInstitutionCountry'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-degree-country-institution">
+						Change
+						<span class="govuk-visually-hidden">Country of institution</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification subjects trained to teach -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Degree start date
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<span>{{ data['degreeStartDate-day'] }} </span>
+					<span>{{ data['degreeStartDate-month'] }} </span>
+					<span>{{ data['degreeStartDate-year'] }}</span>
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-degree-study-period">
+						Change
+						<span class="govuk-visually-hidden">Degree start date</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification subjects trained to teach -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Degree end date
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<span>{{ data['degreeEndDate-day'] }} </span>
+					<span>{{ data['degreeEndDate-month'] }} </span>
+					<span>{{ data['degreeEndDate-year'] }}</span>
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-degree-study-period">
+						Change
+						<span class="govuk-visually-hidden">Degree end date</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification subjects trained to teach -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Degree award date
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<span>{{ data['degreeAwardDate-day'] }} </span>
+					<span>{{ data['degreeAwardDate-month'] }} </span>
+					<span>{{ data['degreeAwardDate-year'] }}</span>
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-degree-study-period">
+						Change
+						<span class="govuk-visually-hidden">Degree award date</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification subjects trained to teach -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Degree subjects
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['degreeSubjects'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-degree-subjects">
+						Change
+						<span class="govuk-visually-hidden">Degree subjects</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Degree certificate -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Degree certificate
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['degreeCertificate'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="upload-teacher-degree-certificate-separate">
+						Change
+						<span class="govuk-visually-hidden">Degree certificate</span>
+					</a>
+				</dd>
+			</div>
+		</dl>
+		{% endif %}
+
+		<h2 class="govuk-heading-m">About your teacher training qualification</h2>
+
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+			<!-- Teacher training qualification -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Teacher training qualification title
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['qualification-title'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-title">
+						Change
+						<span class="govuk-visually-hidden">Teacher training qualification title</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification institution -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Teacher training institution name
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['qualificationInstitutionName'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-name-qualification-institution">
+						Change
+						<span class="govuk-visually-hidden">Teacher training institution name</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification country -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Teacher training country of institution
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['qualification-institution-country'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-country-institution">
+						Change
+						<span class="govuk-visually-hidden">Teacher training country of institution</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification start date -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Teacher training qualification start date
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<span>{{ data['qualificationStartDate-day'] }} </span>
+					<span>{{ data['qualificationStartDate-month'] }} </span>
+					<span>{{ data['qualificationStartDate-year'] }}</span>
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-study-period-start">
+						Change
+						<span class="govuk-visually-hidden">Teacher training qualification start date</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification end date -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Teacher training qualification end date
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<span>{{ data['qualificationEndDate-day'] }} </span>
+					<span>{{ data['qualificationEndDate-month'] }} </span>
+					<span>{{ data['qualificationEndDate-year'] }}</span>
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-study-period-end">
+						Change
+						<span class="govuk-visually-hidden">Teacher training qualification end date</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification award date -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Teacher training qualification award date
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<span>{{ data['qualificationAwardDate-day'] }} </span>
+					<span>{{ data['qualificationAwardDate-month'] }} </span>
+					<span>{{ data['qualificationAwardDate-year'] }}</span>
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-date-awarded">
+						Change
+						<span class="govuk-visually-hidden">Teacher training qualification award date</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification age range qualified to teach -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Age range qualified to teach
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['qualification-age-range'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-age-range">
+						Change
+						<span class="govuk-visually-hidden">Age range qualified to teach</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Teacher training qualification subjects trained to teach -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Subjects trained to teach
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['qualification-subjects'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-qualification-age-range">
+						Change
+						<span class="govuk-visually-hidden">Subjects trained to teach</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- teacher qualification certificate -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Teacher qualification certificate
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['qualificationCertificate'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="upload-teacher-qualification">
+						Change
+						<span class="govuk-visually-hidden">Degree certificate</span>
+					</a>
+				</dd>
+			</div>
+			<!-- teacher qualification transcript -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Teacher qualification transcript
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['qualificationTranscript'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="upload-teacher-qualification-transcript">
+						Change
+						<span class="govuk-visually-hidden">Degree certificate</span>
+					</a>
+				</dd>
+			</div>
+			{% if data['together-separate'] == "Together" %}
+			<!-- degree qualification certificate -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Degree certificate
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['degreeCertificateTogether'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="upload-teacher-degree-certificate">
+						Change
+						<span class="govuk-visually-hidden">Degree certificate</span>
+					</a>
+				</dd>
+			</div>
+			{% endif %}
+
+		</dl>
+
+		{% from "govuk/components/button/macro.njk" import govukButton %}
+		{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+		<form action="/prototype-3/task-list" method="post" novalidate>
+
+			{{ govukRadios({
+			idPrefix: "completed-qualifications",
+			name: "completed-qualifications",
+			fieldset: {
+			legend: {
+			text: "Have you completed this section?",
+			isPageHeading: false,
+			classes: "govuk-fieldset__legend--m"
+			}
+			},
+			items: [
+			{
+			value: "yes",
+			text: "Yes, I’ve completed this section"
+			},
+			{
+			value: "no",
+			text: "No, I’ll come back to it later"
+			}
+			]
+			}) }}
+
+			{{ govukButton({
+			text: "Continue"
+			}) }}
+
+		</form>
+
+	</div>
+</div>
+{% endblock %}

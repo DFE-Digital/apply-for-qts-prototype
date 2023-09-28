@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        Teacher training and qualifications
+      </span>
+
+		<h1 class="govuk-heading-l">Check your uploaded files</h1>
+
+		<h2 class="govuk-heading-m">Files added</h2>
+
+		<dl class="govuk-summary-list">
+
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					File 1
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<a download href="/" class="govuk-link">teachertrainingqualification.jpg</a>
+				</dd>
+
+				<dd class="govuk-summary-list__actions">
+
+					<a class="govuk-link" href="#">
+						Delete<span class="govuk-visually-hidden"> file 1</span>
+					</a>
+
+				</dd>
+
+			</div>
+
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					File 2
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<a download href="/" class="govuk-link">translation.jpg</a>
+				</dd>
+
+				<dd class="govuk-summary-list__actions">
+
+					<a class="govuk-link" href="#">
+						Delete<span class="govuk-visually-hidden"> file 2</span>
+					</a>
+
+				</dd>
+
+			</div>
+
+		</dl>
+
+		<form class="form" action="/prototype-3/task-list" method="post">
+			{% from "govuk/components/button/macro.njk" import govukButton %}
+			{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+			{{ govukRadios({
+			idPrefix: "another-ttq",
+			name: "another-ttq",
+			fieldset: {
+			legend: {
+			text: "Do you want to upload another document?",
+			classes: "govuk-fieldset__legend--m"
+			}
+			},
+			hint: {
+			text: " This could be another page of the letter, or a translation if the letter is not in English"
+			},
+			items: [
+			{
+			value: "Yes",
+			text: "Yes"
+			},
+			{
+			value: "No",
+			text: "No"
+			}
+			]
+			}) }}
+
+			{{ govukButton({ text: 'Continue' }) }}
+		</form>
+	</div>
+</div>
+
+{% endblock %}

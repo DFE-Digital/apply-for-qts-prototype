@@ -1,0 +1,204 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
+
+		<h1 class="govuk-heading-l">Check your answers</h1>
+
+		<div class="govuk-summary-list__card">
+			<div class="govuk-summary-list__card-title-wrapper">
+				<h2 class="govuk-summary-list__card-title">Your current or most recent role</h2>
+				<div class="govuk-summary-list__card-actions">
+					<!--            <ul class="govuk-summary-list__card-actions-list">-->
+					<!--              <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">Delete-->
+					<!--                choice<span class="govuk-visually-hidden"> your work history</span> </a></li>-->
+					<!--              <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
+					<!--                Withdraw<span class="govuk-visually-hidden"> your work history</span> </a></li>-->
+					<!--            </ul>-->
+				</div>
+			</div>
+			<div class="govuk-summary-list__card-content">
+
+				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+					<!-- School name -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Name of school
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['school-name'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">school name</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- School city -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							City
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['school-city'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">school city</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- School country -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Country
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['school-country'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">school country</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Job role -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Job title or role
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['job-role'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">your job role</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Hours worked per week -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Approximately how many hours per week did you work in this role?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['role-1-weekly-hours'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">how many hours per week did you work in this role</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Role start date -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Start date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<span>{{ data['start-date-month'] }} </span> / <span>{{ data['start-date-year'] }}</span>
+							<span>{{ data['start-date-estimate'] }}</span>
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">role start date</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Role start date -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							End date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<span>{{ data['end-date-month'] }} </span> / <span>{{ data['end-date-year'] }}</span> <span>{{ data['end-date-estimate'] }}</span>
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">role end date</span>
+							</a>
+						</dd>
+					</div>
+					<!-- Contact's full name -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Full name of person who can verify this role
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['contact-full-name'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">contact-full-name</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Contacts Job role -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							This person's job title
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['contact-1-job-role'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">your job role</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Contact email address -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Email address of person who can verify this role
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['reference-email'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="work-history-in-education-1">
+								Change
+								<span class="govuk-visually-hidden">contact email address</span>
+							</a>
+						</dd>
+					</div>
+				</dl>
+			</div>
+		</div>
+
+		<form action="work-history-in-education-add-another" method="post" novalidate>
+			<button class="govuk-button" data-module="govuk-button" name="completed-work-history"
+			        value="completed-work-history" type="submit">
+				Continue
+			</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

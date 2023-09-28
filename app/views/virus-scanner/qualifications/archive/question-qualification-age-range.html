@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">
+        About your teacher training qualification
+      </span>
+
+		<form class="form" action="question-qualification-subjects" method="post">
+
+			<div class="govuk-date-input" id="passport-issued">
+
+				{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+				{{ govukRadios({
+				idPrefix: "qualification-age-range",
+				name: "qualification-age-range",
+				fieldset: {
+				legend: {
+				text: "What age of schoolchildren are you qualified to teach?",
+				isPageHeading: true,
+				classes: "govuk-fieldset__legend--l"
+				}
+				},
+				items: [
+				{
+				value: "3 to 7",
+				text: "3 to 7",
+				checked: checked("qualification-age-range", "3 to 7")
+				},
+				{
+				value: "5 to 11",
+				text: "5 to 11",
+				checked: checked("qualification-age-range", "5 to 11")
+				},
+				{
+				value: "7 to 11",
+				text: "7 to 11",
+				checked: checked("qualification-age-range", "7 to 11")
+				},
+				{
+				value: "7 to 14(middle years)",
+				text: "7 to 14 (middle years)",
+				checked: checked("qualification-age-range", "7 to 14 (middle years)")
+				},
+				{
+				value: "11 to 16",
+				text: "11 to 16",
+				checked: checked("qualification-age-range", "11 to 16")
+				},
+				{
+				value: "11 to 18",
+				text: "11 to 18",
+				checked: checked("qualification-age-range", "11 to 18")
+				},
+				{
+				value: "14 to 19",
+				text: "14 to 19",
+				checked: checked("qualification-age-range", "14 to 19")
+				},
+				{
+				value: "Other",
+				text: "Other",
+				checked: checked("qualification-age-range", "Other")
+				}
+
+				]
+				}) }}
+
+				<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Providing your written statement – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        Proof that you're recognised as a teacher
+      </span>
+
+		<h1 class="govuk-heading-l">Provide your written statement</h1>
+
+        <p class="govuk-body">We need a document called a <span style="color: #D4351C">[Letter of Professional Standing]</span> from <span style="color: #D4351C">[Your authority]</span>.</p>
+
+        <p class="govuk-body">You cannot send this document yourself – instead, you must contact <span style="color: #D4351C">[Your authority]</span> and ask them to send it directly to us at <span style="color: #D4351C">[Email address]</span>.</p>
+
+        <p class="govuk-body">It must confirm:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>that you've completed a teaching qualification/teacher training</li>
+            <li>that you've successfully completed any period of professional experience comparable to an induction period (if required)</li>
+            <li>the age ranges and subjects you're qualified to teach</li>
+        </ul>
+
+        <form action="/index" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+                        <h2 class="govuk-fieldset__heading">
+                            Check the box below to confirm you understand that it’s your responsibility to request this document.
+                        </h2>
+                    </legend>
+                    <div class="govuk-checkboxes govuk-checkboxes--small"
+                            data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input"
+                                    id="lops-requested-direct"
+                                    name="lops-requested-direct" type="checkbox"
+                                    value="lops-requested-direct">
+                            <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold"
+                                    for="lops-requested-direct">
+                                I understand that it’s my responsibility to request written evidence from <span style="color: #D4351C">[Teaching Authority]</span> to be sent directly to <span style="color: #D4351C">[Email address]</span>
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+
+                <button class="govuk-button govuk-button--secondary"
+                        data-module="govuk-button"
+                        formaction="/index">
+                    Save and come back later
+                </button>
+            </div>
+        </form>
+	</div>
+</div>
+
+{% endblock %}

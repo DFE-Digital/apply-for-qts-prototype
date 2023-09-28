@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">
+        About your degree
+      </span>
+		<h1 class="govuk-heading-l">What dates you studied</h1>
+		<form class="form" action="question-degree-subjects" method="post">
+			{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+			{{ govukDateInput({
+			id: "degreeStartDate",
+			namePrefix: "degreeStartDate",
+			fieldset: {
+			legend: {
+			text: "When did you start your degree?",
+			isPageHeading: false,
+			classes: "govuk-label govuk-label--m"
+			}
+			},
+			hint: {
+			text: "For example, 27 3 2007"
+			},
+			items: [
+			{
+			name: "day",
+			classes: "govuk-input--width-2",
+			value: data["degreeStartDate-day"]
+			},
+			{
+			name: "month",
+			classes: "govuk-input--width-2",
+			value: data["degreeStartDate-month"]
+			},
+			{
+			name: "year",
+			classes: "govuk-input--width-4",
+			value: data["degreeStartDate-year"]
+			}
+			]
+			}) }}
+
+			{{ govukDateInput({
+			id: "degreeEndDate",
+			namePrefix: "degreeEndDate",
+			fieldset: {
+			legend: {
+			text: "When did you finish your degree?",
+			isPageHeading: false,
+			classes: "govuk-label govuk-label--m"
+			}
+			},
+			hint: {
+			text: "For example, 27 3 2007"
+			},
+			items: [
+			{
+			name: "day",
+			classes: "govuk-input--width-2",
+			value: data["degreeEndDate-day"]
+			},
+			{
+			name: "month",
+			classes: "govuk-input--width-2",
+			value: data["degreeEndDate-month"]
+			},
+			{
+			name: "year",
+			classes: "govuk-input--width-4",
+			value: data["degreeEndDate-year"]
+			}
+			]
+			}) }}
+
+			{{ govukDateInput({
+			id: "degreeAwardDate",
+			namePrefix: "degreeAwardDate",
+			fieldset: {
+			legend: {
+			text: "What date were you awarded your degree?",
+			isPageHeading: false,
+			classes: "govuk-label govuk-label--m"
+			}
+			},
+			hint: {
+			text: "For example, 27 3 2007"
+			},
+			items: [
+			{
+			name: "day",
+			classes: "govuk-input--width-2",
+			value: data["degreeAwardDate-day"]
+			},
+			{
+			name: "month",
+			classes: "govuk-input--width-2",
+			value: data["degreeAwardDate-month"]
+			},
+			{
+			name: "year",
+			classes: "govuk-input--width-4",
+			value: data["degreeAwardDate-year"]
+			}
+			]
+			}) }}
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">
+        Teacher training and qualifications
+      </span>
+
+		<form class="form" action="question-qualification-subjects" method="post">
+
+			{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+			{{ govukDateInput({
+			id: "qualificationAgeRange",
+			namePrefix: "qualificationAgeRange",
+			fieldset: {
+			legend: {
+			text: "What age range are you qualified to teach?",
+			isPageHeading: false,
+			classes: "govuk-label govuk-label--l"
+			}
+			},
+			hint: {
+			text: " For example, from 5 to 11"
+			},
+			items: [
+			{
+			name: "from",
+			classes: "govuk-input--width-2",
+			value: data["qualificationAgeRange-from"]
+			},
+			{
+			name: "to",
+			classes: "govuk-input--width-2",
+			value: data["qualificationAgeRange-to"]
+			}
+			]
+			}) }}
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+
+</div>
+
+{% endblock %}

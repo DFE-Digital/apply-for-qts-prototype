@@ -1,0 +1,178 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+       Professional standing
+      </span>
+
+		<h1 class="govuk-heading-l">In which country are you currently recognised as a teacher?</h1>
+		<form class="form" action="/question-country-recognised-answer" method="post">
+
+			{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+			{{ govukSelect({
+			id: "country-recognised",
+			name: "country-recognised",
+			label: {
+			text: "Select a country"
+			},
+			items: [
+			{
+			value: "Argentina",
+			text: "Argentina",
+			checked: checked("country-recognised", "Argentina")
+			},
+			{
+			value: "Australia",
+			text: "Australia",
+			checked: checked("country-recognised", "Australia")
+			},
+			{
+			value: "Canada",
+			text: "Canada",
+			checked: checked("country-recognised", "Canada")
+			},
+			{
+			value: "China",
+			text: "China",
+			checked: checked("country-recognised", "China")
+			},
+			{
+			value: "France",
+			text: "France",
+			checked: checked("country-recognised", "France")
+			},
+			{
+			value: "Germany",
+			text: "Germany",
+			checked: checked("country-recognised", "Germany")
+			},
+			{
+			value: "Ghana",
+			text: "Ghana",
+			checked: checked("country-recognised", "Ghana")
+			},
+			{
+			value: "Greece",
+			text: "Greece",
+			checked: checked("country-recognised", "Greece")
+			},
+			{
+			value: "India",
+			text: "India",
+			checked: checked("country-recognised", "India")
+			},
+			{
+			value: "Italy",
+			text: "Italy",
+			checked: checked("country-recognised", "Italy")
+			},
+			{
+			value: "Jamaica",
+			text: "Jamaica",
+			checked: checked("country-recognised", "Jamaica")
+			},
+			{
+			value: "Malaysia",
+			text: "Malaysia",
+			checked: checked("country-recognised", "Malaysia")
+			},
+			{
+			value: "Mexico",
+			text: "Mexico",
+			checked: checked("country-recognised", "Mexico")
+			},
+			{
+			value: "Morocco",
+			text: "Morocco",
+			checked: checked("country-recognised", "Morocco")
+			},
+			{
+			value: "Netherlands",
+			text: "Netherlands",
+			checked: checked("country-recognised", "Netherlands")
+			},
+			{
+			value: "New Zealand",
+			text: "New Zealand",
+			checked: checked("country-recognised", "New Zealand")
+			},
+			{
+			value: "Nigeria",
+			text: "Nigeria",
+			checked: checked("country-recognised", "Nigeria")
+			},
+			{
+			value: "Norway",
+			text: "Norway",
+			checked: checked("country-recognised", "Norway")
+			},
+			{
+			value: "Pakistan",
+			text: "Pakistan",
+			checked: checked("country-recognised", "Pakistan")
+			},
+			{
+			value: "Philippines",
+			text: "Philippines",
+			checked: checked("country-recognised", "Philippines")
+			},
+			{
+			value: "Republic of Ireland",
+			text: "Republic of Ireland",
+			checked: checked("country-recognised", "Republic of Ireland")
+			},
+			{
+			value: "South Africa",
+			text: "South Africa",
+			checked: checked("country-recognised", "South Africa")
+			},
+			{
+			value: "Spain",
+			text: "Spain",
+			checked: checked("country-recognised", "Spain")
+			},
+			{
+			value: "Sweden",
+			text: "Sweden",
+			checked: checked("country-recognised", "Sweden")
+			},
+			{
+			value: "Tanzania",
+			text: "Tanzania",
+			checked: checked("country-recognised", "Tanzania")
+			},
+			{
+			value: "United States of America",
+			text: "United States of America",
+			checked: checked("country-recognised", "United States of America")
+			},
+			{
+			value: "Zimbabwe",
+			text: "Zimbabwe",
+			checked: checked("country-recognised", "Zimbabwe")
+			}
+
+			]
+			}) }}
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+In which state/territory are you currently recognised as a teacher? – {{ serviceName }} prototype
+{% endblock %}
+
+{% set states = [
+"Victoria",
+"Queensland",
+"Northern Territory",
+"Western Australia",
+"Tasmania",
+"New South Wales",
+"South Australia",
+"Australian Capital Territory"
+]
+%}
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form class="form" action="../task-list.html" method="get">
+
+			{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+			{{ govukRadios({
+			idPrefix: "region",
+			name: "region",
+			fieldset: {
+			legend: {
+			text: "In which state/territory are you currently recognised as a teacher?",
+			isPageHeading: true,
+			classes: "govuk-fieldset__legend--l"
+			}
+			},
+			hint: {
+			text: "Select a state/territory where you are currently recognised as a teacher"
+			},
+			items: states | regionsRadio
+			}) }}
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

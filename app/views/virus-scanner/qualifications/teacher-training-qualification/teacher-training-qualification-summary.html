@@ -1,0 +1,176 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-l">
+        Your qualifications
+      </span>
+
+		<h1 class="govuk-heading-xl">Check your answers</h1>
+
+		<div class="govuk-summary-list__card">
+			<div class="govuk-summary-list__card-title-wrapper">
+				<h2 class="govuk-summary-list__card-title">Your teaching qualification</h2>
+				<div class="govuk-summary-list__card-actions">
+					<!--                    <ul class="govuk-summary-list__card-actions-list">-->
+					<!--                        <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">Delete-->
+					<!--                            choice<span class="govuk-visually-hidden"> your teaching qualification</span> </a></li>-->
+					<!--                        <li class="govuk-summary-list__card-actions-list-item"><a class="govuk-link" href="#">-->
+					<!--                            Withdraw<span class="govuk-visually-hidden"> your teaching qualification</span> </a></li>-->
+					<!--                    </ul>-->
+				</div>
+			</div>
+			<div class="govuk-summary-list__card-content">
+				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+					<!-- Teacher training qualification -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Qualification title
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['qualification-title'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="teacher-training-qualification">
+								Change
+								<span class="govuk-visually-hidden">Teacher training qualification title</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Teacher training qualification institution -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Institution name
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['qualificationInstitutionName'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="teacher-training-qualification">
+								Change
+								<span class="govuk-visually-hidden">Teacher training institution name</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Teacher training qualification country -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Country of institution
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['qualification-institution-country'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="teacher-training-qualification">
+								Change
+								<span class="govuk-visually-hidden">Teacher training country of institution</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Teacher training qualification start date -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Start date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<span>{{ data['qualificationStartDate-month'] }} </span> / <span>{{ data['qualificationStartDate-year'] }}</span>
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="teacher-training-qualification">
+								Change
+								<span class="govuk-visually-hidden">Teacher training qualification start date</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Teacher training qualification end date -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Completion date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<span>{{ data['qualificationEndDate-month'] }} </span> / <span>{{ data['qualificationEndDate-year'] }}</span>
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="teacher-training-qualification">
+								Change
+								<span class="govuk-visually-hidden">Teacher training qualification end date</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Teacher training qualification award date -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Certificate date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<span>{{ data['qualificationAwardDate-month'] }} </span> / <span>{{ data['qualificationAwardDate-year'] }}</span>
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="teacher-training-qualification">
+								Change
+								<span class="govuk-visually-hidden">Teacher training qualification award date</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Teacher training certificate? -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Qualification certificate
+						</dt>
+						<dd class="govuk-summary-list__value">
+							teacher_training_certificate.pdf
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="teacher-training-qualification">
+								Change
+								<span class="govuk-visually-hidden">teacher training qualification certificate</span>
+							</a>
+						</dd>
+					</div>
+
+					<!-- Teacher training transcript -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Qualification transcript
+						</dt>
+						<dd class="govuk-summary-list__value">
+							teacher_training_transcript.pdf
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a href="teacher-training-qualification">
+								Change
+								<span class="govuk-visually-hidden">Teacher training qualification transcript</span>
+							</a>
+						</dd>
+					</div>
+				</dl>
+			</div>
+		</div>
+		<form action="teacher-training-qualification-part-of-degree" method="post" novalidate>
+			<button class="govuk-button" data-module="govuk-button" name="completed-qualification-details"
+			        value="completed-qualification-details">
+				Continue
+			</button>
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

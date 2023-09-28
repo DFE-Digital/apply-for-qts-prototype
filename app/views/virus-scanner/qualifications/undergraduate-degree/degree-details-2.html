@@ -1,0 +1,192 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+University degree – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block pageStyles %}
+<link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen"
+      rel="stylesheet">
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
+<script>
+    openregisterLocationPicker({
+        selectElement: document.getElementById('degreeInstitutionCountry-2'),
+        url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
+        defaultValue: '{{ data["degreeInstitutionCountry-2"] }}'
+    })
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<span class="govuk-caption-l">Your qualifications</span>
+		<h1 class="govuk-heading-l">University degree</h1>
+		<p class="govuk-body-l">Tell us about your university degree qualification. If you have more than one degree
+			qualification, you’ll have the opportunity to add them later.</p>
+
+		<form class="form" action="../undergraduate-degree-documents/upload-degree-certificate" method="post">
+
+			<h2 class="govuk-heading-m">Enter the details of your university degree</h2>
+
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="degreeTitle">
+					University degree title
+				</label>
+				<input class="govuk-input" id="degreeTitle-2" name="degreeTitle-2" value="{{ data['degreeTitle-2'] }}"
+				       type="text">
+			</div>
+
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="degreeInstitutionName-2">
+					Name of institution
+				</label>
+				<input class="govuk-input" id="degreeInstitutionName-2" name="degreeInstitutionName-2"
+				       value="{{ data['degreeInstitutionName-2'] }}" type="text">
+			</div>
+
+			{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+			{{ govukSelect({
+			id: "degreeInstitutionCountry-2",
+			name: "degreeInstitutionCountry-2",
+			classes: "govuk-input--width-10",
+			label: {
+			classes: "govuk-label--s, govuk-!-font-weight-regular",
+			isPageHeading: true,
+			text: "Country of institution"
+			},
+			items: countries
+			}) }}
+
+			<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							When did you start this university degree?
+						</h1>
+					</legend>
+					<div id="start-date-hint" class="govuk-hint">
+						For example, 3 2020
+					</div>
+					<div class="govuk-date-input" id="start-date">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="degreeStartDate-month-2">
+									Month
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
+								       id="degreeStartDate-month-2" name="degreeStartDate-month-2"
+								       value="{{ data['degreeStartDate-month-2'] }}" type="text" inputmode="numeric">
+							</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="degreeStartDate-year-2">
+									Year
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
+								       id="degreeStartDate-year-2" name="degreeStartDate-year-2"
+								       value="{{ data['degreeStartDate-year-2'] }}" type="text" inputmode="numeric">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							When did you complete your university degree?
+						</h1>
+					</legend>
+					<div id="start-date-hint" class="govuk-hint">
+						For example, 3 2020
+					</div>
+					<div class="govuk-date-input" id="start-date">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="degreeEndDate-month-2">
+									Month
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
+								       id="degreeEndDate-month-2" name="degreeEndDate-month-2"
+								       value="{{ data['degreeEndDate-month-2'] }}" type="text" inputmode="numeric">
+							</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="degreeEndDate-year-2">
+									Year
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
+								       id="degreeEndDate-year-2" name="degreeEndDate-year-2"
+								       value="{{ data['degreeEndDate-year-2'] }}" type="text" inputmode="numeric">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							What is the date on your university degree certificate?
+						</h1>
+					</legend>
+					<div id="start-date-hint" class="govuk-hint">
+						For example, 3 2020
+					</div>
+					<div class="govuk-date-input" id="start-date">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="certificateDate-month-2">
+									Month
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2"
+								       id="certificateDate-month-2" name="certificateDate-month-2"
+								       value="{{ data['certificateDate-month-2'] }}" type="text" inputmode="numeric">
+							</div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="certificateDate-year-2">
+									Year
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4"
+								       id="certificateDate-year-2" name="certificateDate-year-2"
+								       value="{{ data['certificateDate-month-2'] }}" type="text" inputmode="numeric">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" name=""
+				        value="progress" formaction="/prototype-3/task-list">
+					Save and come back later
+				</button>
+			</div>
+		</form>
+
+	</div>
+	<div class="govuk-grid-column-one-third"></div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds-from-desktop">
+
+		<h1 class="govuk-heading-xl">Check your answers</h1>
+
+		<h2 class="govuk-heading-m">About your teaching status</h2>
+
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+			<!-- Country recognised asa teacher -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Country recognised as a teacher
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['country-recognised'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-country-recognised">
+						Change
+						<span class="govuk-visually-hidden">Country recognised as a teacher</span>
+					</a>
+				</dd>
+			</div>
+
+			{% if (data['country-recognised'] == "Australia") or (data['country-recognised'] == "USA") or
+			(data['country-recognised'] == "Canada") %}
+
+			<!-- reference number -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Registration number
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['reference-number'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-reference-number.html">
+						Change
+						<span class="govuk-visually-hidden">Registration number</span>
+					</a>
+				</dd>
+			</div>
+
+			{% elseif (data['country-recognised'] == "Nigeria") or (data['country-recognised'] == "China") or
+			(data['country-recognised'] == "India") or (data['country-recognised'] == "Jamaica") or
+			(data['country-recognised'] == "Mexico") or (data['country-recognised'] == "South Africa") or
+			(data['country-recognised'] == "Zimbabwe") or (data['country-recognised'] == "Argentina") or
+			(data['country-recognised'] == "Philippines") or (data['country-recognised'] == "Ghana") %}
+
+			<!-- LOPS -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Letter of professional standing
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['lopsFile'] }}
+					{% if data['lopsFile2'] %}
+					<br>
+					{{ data['lopsFile2'] }}
+					{% endif %}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="upload-lops">
+						Change
+						<span class="govuk-visually-hidden">Letter of professional standing</span>
+					</a>
+					{% if data['lopsFile2'] %}
+					<br>
+					<a href="upload-lops">
+						Change
+						<span class="govuk-visually-hidden">Letter of professional standing</span>
+					</a>
+					{% endif %}
+				</dd>
+			</div>
+
+			{% else %}
+
+			<!-- Are you currently a certified teacher? -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Are you currently a certified teacher?
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['question-certified-teacher'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-certified-teacher">
+						Change
+						<span class="govuk-visually-hidden">Are you currently a certified teacher?</span>
+					</a>
+				</dd>
+			</div>
+
+			<!-- Do you have any sanctions against you? -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Do you have any sanctions against you?
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['question-sanctions'] }}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a href="question-sanctions">
+						Change
+						<span class="govuk-visually-hidden">Do you have any sanctions against you</span>
+					</a>
+				</dd>
+			</div>
+
+			{% endif %}
+		</dl>
+
+		<form action="/prototype-3/task-list" method="post" novalidate>
+			<button class="govuk-button" name="completed-professional-standing" value="completed-professional-standing"
+			        data-module="govuk-button">
+				Continue
+			</button>
+		</form>
+
+	</div>
+</div>
+{% endblock %}

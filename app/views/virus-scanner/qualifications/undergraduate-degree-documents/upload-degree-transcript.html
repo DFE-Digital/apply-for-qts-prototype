@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Upload undergraduate degree documents – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        Your qualifications
+      </span>
+
+		<h1 class="govuk-heading-l">Upload your university degree documents</h1>
+		<p class="govuk-body">Your documents must be written in English. If they are not written in English, you will
+			need to upload a
+			certified translation of each.</p>
+
+		<form class="form" action="upload-degree-transcript-error" method="post">
+			<h2 class="govuk-heading-m">Upload your {{ data['degreeTitle'] }} degree transcript</h2>
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="file-upload-1">
+					Select a file to upload
+				</label>
+				<div id="training-certificate-hint" class="govuk-hint">
+					You can upload your files in PDF, JPG or DOC format. Each file must be no larger than 20MB.
+				</div>
+				<a href="upload-degree-transcript-2" class="govuk-button govuk-button--secondary"
+				   data-module="govuk-button" name="lopsFile" value="letterofprofessionalstanding.jpg">Choose file</a>
+				<span class="govuk-body" style="position:relative;top:7px">No file chosen</span>
+			</div>
+
+			<h2 class="govuk-heading-m">
+				About your document
+			</h2>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="written-in-english-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-font-weight-regular">
+						<h1 class="govuk-fieldset__heading">
+							Is your document written in English?
+						</h1>
+					</legend>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="written-in-english" name="written-in-english"
+							       type="radio" value="yes" data-aria-controls="conditional-written-in-english">
+							<label class="govuk-label govuk-radios__label" for="written-in-english">
+								Yes
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="written-in-english-2" name="written-in-english"
+							       type="radio" value="phone" data-aria-controls="conditional-written-in-english-2">
+							<label class="govuk-label govuk-radios__label" for="written-in-english-2">
+								No, I'll upload a translation as well
+							</label>
+						</div>
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+						     id="conditional-written-in-english-2">
+							<div class="govuk-form-group">
+								<label class="govuk-label" for="file-upload-2">
+									Upload your degree certificate translation
+								</label>
+								<div id="training-certificate-hint" class="govuk-hint">
+									You can upload your files in PDF, JPG or DOC format. Each file must be no larger
+									than 20MB.
+								</div>
+								<a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button"
+								   name="lopsFile" value="certificate_translation.pdf">Choose file</a>
+								<span class="govuk-body" style="position:relative;top:7px">No file chosen</span>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button" name="another-degree" value="progress"
+				        type="submit">
+					Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="" value="progress"
+				        formaction="/prototype-3/task-list">
+					Add this later
+				</button>
+			</div>
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
