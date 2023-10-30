@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-xl">
+			Check if you can apply for qualified teacher status (QTS) in England
+		</h1>
+
+		<h2 class="govuk-heading-m">
+			What this service does
+		</h2>
+
+		<p class="govuk-body">
+			We will assess the qualifications and teaching experience you gained outside England to decide if 
+			we can award you with qualified teacher staus (QTS). The decision we make will only be based on 
+			whether you meet our assessment criteria.
+		</p>
+
+		<h2 class="govuk-heading-m">
+			What QTS is 
+		</h2>
+
+		<p class="govuk-body">
+			Qualified teacher status is a legal requirement to teach in many schools in England. It is a status that most schools prefer their teachers to have. 
+			Find out more about QTS.
+		</p>
+
+		<p class="govuk-body">
+			Having QTS does not guarantee  you a job or give you the right to  work in England. You'll still need to apply for a teaching job seperately  and have the correct  visa or status. 
+		</p>
+
+
+		<h2 class="govuk-heading-m">
+			Who can apply
+		</h2>
+
+		<p>
+			This service is for qualified teachers who were trained to teach outside of England and want to teach in English schools. 
+		</p>
+
+		<ul class="govuk-list govuk-list--bullet">
+			<li>an undergraduate degree equivalent to a UK bachelors degree</li>
+			<li>completed teacher training equivalent to a level 6 qualification (link)</li>
+			<li>qualifications to show you can teach children aged between 5 and 16</li>
+			<li>at least one school year (9 months) of experience employed as a teacher </li>
+			<li>been recognised as a professional teacher in the country where you qualified, and have no conditions or restrictions on your teaching practice</li>
+		</ul>
+
+
+		<p>
+			Depending on the country that you trained to teach in, you may be required to have:
+		</p>
+
+		<ul class="govuk-list govuk-list--bullet">
+			<li>qualifications to show you can teach children aged between 11 and 16 </li>
+			<li>a teaching specialism in a subject that we have a shortage of teachers for</li>
+		</ul>
+
+
+		<p>
+			If you trained in England or Wales, or have not yet qualified, learn more about other routes to getting QTS. 
+		</p>
+
+        <div class="govuk-warning-text govuk-!-margin-bottom-3">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                The Department for Education (DfE) does not employ teachers directly. To find a teaching job, you must <a class="govuk-link" href="https://getintoteaching.education.gov.uk/non-uk-teachers/teach-in-england-if-you-trained-overseas/#find-a-teaching-job">apply to individual schools in England.</a>
+            </strong>
+        </div>
+
+
+		<a role="button" draggable="false"
+		   class="govuk-button govuk-button--start govuk-!-margin-top-1 govuk-!-margin-bottom-4"
+		   data-module="govuk-button" href="create-account-sign-in">Check if you can apply
+			<svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+				 viewBox="0 0 33 40" focusable="false" aria-hidden="true">
+				<path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"/>
+			</svg>
+		</a>
+
+		<p class="govuk-body">If you’ve already started your application using this service, you can <a
+			href="/prototype-3/create-account-sign-in">sign in to continue working on it</a>.</p>
+	</div>
+</div>
+{% endblock %}

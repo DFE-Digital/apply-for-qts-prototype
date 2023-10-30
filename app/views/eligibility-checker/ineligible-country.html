@@ -1,0 +1,53 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+Where are you currently recognised as a teacher? – {{ serviceName }} prototype
+{% endblock %}
+
+{% block pageStyles %}
+<link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen"
+      rel="stylesheet">
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
+<script>
+    openregisterLocationPicker({
+        selectElement: document.getElementById('country'),
+        url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
+        defaultValue: '{{ data["country"] }}'
+    })
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		
+			
+			<h1 class="govuk-heading-xl">
+				You are not eligible to apply
+			</h1>
+
+
+			<p>
+				If you are recognised as a teacher in Malaysia you are not currently eligible to use this service.
+			</p>
+
+			<p>
+				You can also:
+			</p>
+
+			<ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-4" >
+				<li><a href="///">apply for QTS using alternative routes</a></li>
+				<li><a href="///">learn more about teaching in England</a></li>
+				<li><a href="///">learn more about the new QTS regulations</a></li>
+			</ul>
+
+
+
+	</div>
+</div>
+
+{% endblock %}

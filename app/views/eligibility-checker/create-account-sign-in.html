@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Create account or sign in – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form class="form" action="/create-account-sign-in-answer" method="post">
+			<fieldset class="govuk-fieldset" data-module="clear-hidden">
+				<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+					<h1 class="govuk-fieldset__heading">
+						Check if you can apply for qualified teacher status (QTS) in England
+					</h1>
+				</legend>
+				<div class="govuk-form-group">
+					<fieldset class="govuk-fieldset">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							Have you used the service before?
+						</legend>
+						<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="has-account" name="has-account" type="radio"
+								       value="yes" aria-controls="conditional-has-account" aria-expanded="true">
+								<label class="govuk-label govuk-radios__label" for="has-account">
+									Yes
+								</label>
+							</div>
+							<div class="govuk-radios__conditional" id="conditional-has-account">
+								<div class="govuk-form-group">
+									<label class="govuk-label govuk-label--s" for="account-email">
+										Email address
+									</label>
+									<div id="account-email-hint" class="govuk-hint">
+										Enter the email address you used to register, and we will send you a link to
+										sign in.
+									</div>
+
+									<input class="govuk-input govuk-!-width-two-thirds" id="account-email"
+									       name="account[email]" type="email" aria-describedby="account-email-hint"
+									       autocomplete="email" spellcheck="false">
+								</div>
+							</div>
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="has-account-2" name="has-account" type="radio"
+								       value="no">
+								<label class="govuk-label govuk-radios__label" for="has-account-2">
+									No
+								</label>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<button class="govuk-button" data-module="govuk-button">
+					Continue
+				</button>
+			</fieldset>
+	</div>
+</div>
+
+{% endblock %}
