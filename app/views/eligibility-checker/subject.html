@@ -1,0 +1,52 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+Where are you currently recognised as a teacher? – {{ serviceName }} prototype
+{% endblock %}
+
+{% block pageStyles %}
+<link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen"
+      rel="stylesheet">
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
+<script>
+    openregisterLocationPicker({
+        selectElement: document.getElementById('country'),
+        url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
+        defaultValue: '{{ data["country"] }}'
+    })
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form class="form" action="../task-list" method="get">
+			{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+			{{ govukSelect({
+			id: "country",
+			name: "country",
+			classes: "govuk-input--width-10",
+			label: {
+			classes: "govuk-label--xl",
+			isPageHeading: true,
+			text: "In which country are you currently recognised as a teacher?"
+			},
+			hint: {
+			text: "This means you have all the qualifications needed to teach in a state school. You'll need to provide
+			evidence of this if you apply for QTS."
+			},
+			items: countries
+			}) }}
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
