@@ -648,4 +648,29 @@ router.post("/work-history",
   }
 );
 
+// Choose country for UR
+router.post("/test-start", function (req, res) {
+  let ECcountrySelect = req.session.data["ECcountrySelect"];
+
+  if (ECcountrySelect == "Ghana") {
+    res.redirect("/eligibility-checker/start");
+  } 
+  else if (ECcountrySelect == "Nigeria") {
+    res.redirect("/eligibility-checker/start");
+  } 
+  else if (ECcountrySelect == "South Africa") {
+    res.redirect("/eligibility-checker/start");
+  } 
+  else if (ECcountrySelect == "Hong Kong") {
+    res.redirect("/eligibility-checker/start");
+  } 
+  else if (ECcountrySelect == "India") {
+    res.redirect("/eligibility-checker/start");
+  } 
+  
+  else {
+    res.redirect("/eligibility-checker/start");
+  }
+});
+
 module.exports = router;
