@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Pause – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list.html",
+text: "Home"
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    
+    <h1 class="govuk-heading-xl">
+        Screen index
+    </h1>
+
+     
+       
+      <table class="govuk-table">
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header app-custom-class">Link</th>
+            <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-two-thirds">Description</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <p><a href="test-start">Research setup</a></p>
+            </td>
+            <td class="govuk-table__cell">
+              <p>Initial page where applicants can pick their country.</p>
+              <p>This dynamically updates some content on the detailed end page.</p>
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <p><a href="start">New start page</a></p>
+            </td>
+            <td class="govuk-table__cell">
+              <p>The redesigned start page of the service</p>
+            </td>
+          </tr>
+
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <p><a href="end-simple">New end page</a></p>
+            </td>
+            <td class="govuk-table__cell">
+              <p>The end page of the service. This is where the user lands if they are eligible for QTS.</p>
+            </td>
+          </tr>
+
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <p><a href="end-detailed">Detailed guidance page</a></p>
+            </td>
+            <td class="govuk-table__cell">
+              <p>The redesigned guidance page.</p>
+            </td>
+          </tr>
+
+
+        </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
