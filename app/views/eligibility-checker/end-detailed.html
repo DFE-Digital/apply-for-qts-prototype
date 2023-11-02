@@ -70,7 +70,7 @@
 			  </span>
 			</summary>
 			<div class="govuk-details__text">
-				A document that lists all the modules or subjects you studied in each year, and the grades you were awarded. Note that you must have completed all of your teaching qualification in [Ghana].
+				A document that lists all the modules or subjects you studied in each year, and the grades you were awarded. Note that you must have completed all of your teaching qualification in {{ data['ECcountrySelect'] or "Ghana" }}.
 			</div>
 		  </details>
 
@@ -206,11 +206,11 @@
 			We’ll contact the references you’ve provided to verify your work history before we award QTS.	
 		</p>
 
-
+		<form action="not-in-prototype">
 		<button class="govuk-button" data-module="govuk-button">
 			Apply for QTS
 		  </button>
-
+		</form>
 	</div>
 </div>
 {% endblock %}
