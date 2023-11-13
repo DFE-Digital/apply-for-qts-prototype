@@ -667,10 +667,30 @@ router.post("/test-start", function (req, res) {
   else if (ECcountrySelect == "India") {
     res.redirect("/eligibility-checker/start");
   } 
+  else if (ECcountrySelect == "USA") {
+    res.redirect("/eligibility-checker/start");
+  } 
+  else if (ECcountrySelect == "Canada") {
+    res.redirect("/eligibility-checker/start");
+  } 
   
   else {
     res.redirect("/eligibility-checker/start");
   }
 });
+
+
+// Subject question design 2
+router.post("/subject-not-in-list",
+  function (req, res) {
+    let notOnList = req.session.data["subject-list"];
+
+    if (notOnList === "yes") {
+      res.redirect("/eligibility-checker/end-simple");
+    } else {
+      res.redirect("eligibility-checker/kick-out");
+    }
+  }
+);
 
 module.exports = router;

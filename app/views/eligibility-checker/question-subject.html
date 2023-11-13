@@ -1,0 +1,123 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+Where are you currently recognised as a teacher? – {{ serviceName }} prototype
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		
+
+			<h1 class="govuk-heading-xl">What subject does your teaching qualification or degree enable you to teach?</h1>
+
+			<p>
+			We can only accept teachers who are qualified to teach one of the following subjects.
+			</p>
+
+			
+<div class="govuk-form-group">
+	<label class="govuk-label govuk-label--s" for="sort">
+		Search for your subject:
+	</label>
+	<select class="govuk-select" id="appointment-type-fltr" name="appointment-type-fltr"> 
+		<option value="">Select subject</option>
+		<option value="Maths">Maths</option>
+		
+		<option value="Science">Science</option>
+
+		<option value="Biology">Biology</option>
+		
+		<option value="Chemistry">Chemistry</option>
+		
+		<option value="Physics">Physics</option>
+		
+		<option value="French">French</option>
+		
+		<option value="German">German</option>
+		
+		<option value="Italian">Italian</option>
+		
+		<option value="Japanese">Japanese</option>
+		
+		<option value="Latin">Latin</option>
+		
+		<option value="Mandarin">Mandarin</option>
+		
+		<option value="Russian">Russian</option>
+		
+		<option value="Spanish">Spanish</option>
+
+		<option value="not-on-list">My subject is not on the list</option>
+		
+		
+		</select>
+</div>
+
+
+<form action="/subject-not-in-list" method="post" novalidate>
+	<div class="govuk-form-group">
+		<fieldset class="govuk-fieldset">
+			<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+				<h2 class="govuk-fieldset__heading">
+					Did your teaching qualification or degree have modules/units that focused on any of the subjects listed?
+				</h2>
+			</legend>
+			<div class="govuk-radios" data-module="govuk-radios">
+				<div class="govuk-radios__item">
+					<input class="govuk-radios__input"
+						   id="subject-list1"
+						   name="subject-list"
+						   type="radio"
+						   value="yes">
+					<label class="govuk-label govuk-radios__label"
+						   for="subject-list1">
+						Yes
+					</label>
+				</div>
+				<div class="govuk-radios__item">
+					<input class="govuk-radios__input"
+						   id="subject-list2"
+						   name="subject-list"
+						   type="radio"
+						   value="no">
+					<label class="govuk-label govuk-radios__label"
+						   for="subject-list2">
+						No
+					</label>
+				</div>
+			</div>
+		</fieldset>
+	</div>
+
+
+
+	<div class="govuk-button-group">
+		<button class="govuk-button" data-module="govuk-button">
+			Continue
+		</button>
+		<a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+	</div>
+</form>
+
+			
+
+	</div>
+</div>
+
+{% endblock %}
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+accessibleAutocomplete.enhanceSelectElement({
+selectElement: document.querySelector('#appointment-type-fltr'),
+showAllValues: true,
+defaultValue: '',
+autoselect: true,
+confirmOnBlur: false,
+})
+</script>
+
+{% endblock %}
