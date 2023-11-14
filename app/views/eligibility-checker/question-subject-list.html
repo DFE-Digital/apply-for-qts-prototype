@@ -53,77 +53,41 @@ Where are you currently recognised as a teacher? – {{ serviceName }} prototype
 			<form action="/review-verification-responses:qualifications" method="get">
 				<div class="govuk-form-group">
 					<fieldset class="govuk-fieldset" aria-describedby="reviewed-ectis-response-hint">
-						<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-							<h1 class="govuk-fieldset__heading">
-								Have you received a response about this qualification?
-							</h1>
-						</legend>
 						<div class="govuk-radios" data-module="govuk-radios">
 							<div class="govuk-radios__item">
 								<input class="govuk-radios__input" id="reviewed-ectis-response" name="reviewed-ectis-response" type="radio" value="email" data-aria-controls="conditional-reviewed-ectis-response">
 								<label class="govuk-label govuk-radios__label" for="reviewed-ectis-response">
-									Yes
+									Yes, my certificate specifically names one of these subjects
 								</label>
 							</div>
-							<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reviewed-ectis-response">
-								<div class="govuk-form-group">
-											<fieldset class="govuk-fieldset" aria-describedby="is-qualification-valid-hint">
-												<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-													Does the response show that the qualification is legitimate?
-												</legend>
-												<div class="govuk-radios" data-module="govuk-radios">
-													<div class="govuk-radios__item">
-														<input class="govuk-radios__input" id="is-qualification-valid" name="is-qualification-valid" type="radio" value="text" data-aria-controls="conditional-is-qualification-valid">
-														<label class="govuk-label govuk-radios__label" for="is-qualification-valid">
-															Yes
-														</label>
-													</div>
-													<div class="govuk-radios__item">
-														<input class="govuk-radios__input" id="is-qualification-valid-2" name="is-qualification-valid" type="radio" value="text" data-aria-controls="conditional-is-qualification-valid-2">
-														<label class="govuk-label govuk-radios__label" for="is-qualification-valid-2">
-															No
-														</label>
-													</div>
-													<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-is-qualification-valid-2">
-														<div class="govuk-form-group">
-															<h1 class="govuk-label-wrapper">
-																<label class="govuk-label govuk-label--s govuk-!-font-weight-regular" for="invalidReason">
-																	Briefly explain why you selected ‘No’
-																</label>
-															</h1>
-															<textarea class="govuk-textarea" id="invalidReason" name="invalidReason" rows="5" aria-describedby="invalidReason"></textarea>
-														</div>
-													</div>
-												</div>
-											</fieldset>
-										</div>
-							</div>
+
+					
 							<div class="govuk-radios__item">
 								<input class="govuk-radios__input" id="reviewed-ectis-response-2" name="reviewed-ectis-response" type="radio" value="phone" data-aria-controls="conditional-reviewed-ectis-response-2">
 								<label class="govuk-label govuk-radios__label" for="reviewed-ectis-response-2">
-									No
+									No, the subjects listed are not named on my certificate.
 								</label>
 							</div>
 							<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reviewed-ectis-response-2">
 								<div class="govuk-form-group">
 									<fieldset class="govuk-fieldset">
 										<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-											Do you want to mark this qualification as ‘Rejected’?
+											Did your teaching qualification or degree have modules/units that focused on any of the subjects listed?
 										</legend>
 										<div id="changed-name-hint" class="govuk-hint">
-											You cannot award or decline until every qualification is either ‘Accepted’ or ‘Rejected’.
+											If you're unsure, review your degree or teaching qualification transcript
 										</div>
 										<div class="govuk-radios" data-module="govuk-radios">
 											<div class="govuk-radios__item">
 												<input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
 												<label class="govuk-label govuk-radios__label" for="where-do-you-live">
-													Yes, mark as ‘Rejected’
+													Yes
 												</label>
 											</div>
 											<div class="govuk-radios__item">
 												<input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
 												<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-													No, allow more time for a response
+													No
 												</label>
 											</div>
 										</div>
@@ -135,33 +99,6 @@ Where are you currently recognised as a teacher? – {{ serviceName }} prototype
 					</fieldset>
 				</div>
 
-
-
-
-			<div class="govuk-form-group">
-				<fieldset class="govuk-fieldset">
-				  
-				 
-				  <div class="govuk-radios" data-module="govuk-radios">
-					<div class="govuk-radios__item">
-					  <input class="govuk-radios__input" id="subject-question" name="subject-question" type="radio" value="yes">
-					  <label class="govuk-label govuk-radios__label" for="subject-question">
-						Yes, my certificate specifically names one of these subjects
-					  </label>
-					</div>
-					
-					
-					<div class="govuk-radios__item">
-					  <input class="govuk-radios__input" id="subject-question-2" name="subject-question" type="radio" value="no">
-					  <label class="govuk-label govuk-radios__label" for="subject-question-2">
-						No, the subjects listed are not named on my certificate.
-					  </label>
-					</div>
-					
-					
-			
-			</div>
-			</fieldset>
 
 
 
