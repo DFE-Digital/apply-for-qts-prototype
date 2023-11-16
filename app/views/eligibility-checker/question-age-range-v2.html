@@ -1,0 +1,78 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+Where are you currently recognised as a teacher? – {{ serviceName }} prototype
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		
+
+			<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What age range are you qualified to teach?</h1>
+
+			<div id="more-detail-hint" class="govuk-hint govuk-!-padding-bottom-3">
+				For example: children from 5 to 11 years old.
+			  </div>
+			
+			  <div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+				  
+				  <div class="govuk-radios" data-module="govuk-radios">
+					<div class="govuk-radios__item">
+					  <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+					  <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+						5 to 16
+					  </label>
+					</div>
+					<div class="govuk-radios__item">
+					  <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+					  <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+						11 to 16
+					  </label>
+					</div>
+					
+					<div class="govuk-radios__divider">or</div>
+
+					<div class="govuk-radios__item">
+					  <input class="govuk-radios__input" id="whereDoYouLive-6" name="whereDoYouLive" type="radio" value="abroad">
+					  <label class="govuk-label govuk-radios__label" for="whereDoYouLive-6">
+						I am qualified to teach a different age range
+					  </label>
+					</div>
+				  </div>
+				</fieldset>
+			  </div>
+
+
+
+
+	<div class="govuk-button-group">
+		<button class="govuk-button" data-module="govuk-button">
+			Continue
+		</button>
+		<a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+	</div>
+</form>
+
+			
+
+	</div>
+</div>
+
+{% endblock %}
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+accessibleAutocomplete.enhanceSelectElement({
+selectElement: document.querySelector('#appointment-type-fltr'),
+showAllValues: true,
+defaultValue: '',
+autoselect: true,
+confirmOnBlur: false,
+})
+</script>
+
+{% endblock %}

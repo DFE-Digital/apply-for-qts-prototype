@@ -1,0 +1,127 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+Where are you currently recognised as a teacher? – {{ serviceName }} prototype
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		
+
+			<h1 class="govuk-heading-xl">Are you qualified to teach one of these subjects?</h1>
+
+			<p>
+				Check your teaching qualification certificate or university degree certificate. Does it state that you’re qualified to teach one of the following subjects?
+			</p>
+
+			<p>
+				<i>Note: One of your certificates must specifically mention one of these subjects as shown on the list.</i>
+			</p>
+
+			<div class="govuk-grid-row">
+				<div class="govuk-grid-column-one-third">
+					<h3 class="govuk-heading-s">Sciences</h3>
+					<ul class="govuk-list govuk-list--bullet">
+						<li>Maths</li>
+						<li>Science</li>
+						<li>Biology</li>
+						<li>Chemistry</li>
+						<li>Physics</li>
+					</ul>
+				</div>
+				<div class="govuk-grid-column-one-third">
+					<h3 class="govuk-heading-s">Languages</h3>
+					<ul class="govuk-list govuk-list--bullet">
+						<li>French</li>
+						<li>German</li>
+						<li>Italian</li>
+						<li>Japanese</li>
+						<li>Mandarin</li>
+						<li>Russian</li>
+						<li>Spanish</li>
+					</ul>
+				</div>
+				<div class="govuk-grid-column-one-third">
+					<h3 class="govuk-heading-s">Classics</h3>
+					<ul class="govuk-list govuk-list--bullet">
+						<li>Latin</li>
+
+					</ul>
+				</div>
+			</div>
+
+			<p class="govuk-body">
+				We cannot accept similar or related subjects, for example, economics instead of maths, agricultural science instead of biology, or engineering instead of physics.
+			</p>
+
+
+			<form action="/review-verification-responses:qualifications" method="get">
+				<div class="govuk-form-group">
+					<fieldset class="govuk-fieldset" aria-describedby="reviewed-ectis-response-hint">
+						<div class="govuk-radios" data-module="govuk-radios">
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="reviewed-ectis-response" name="reviewed-ectis-response" type="radio" value="email" data-aria-controls="conditional-reviewed-ectis-response">
+								<label class="govuk-label govuk-radios__label" for="reviewed-ectis-response">
+									Yes, my certificate specifically names one of these subjects
+								</label>
+							</div>
+
+					
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="reviewed-ectis-response-2" name="reviewed-ectis-response" type="radio" value="phone" data-aria-controls="conditional-reviewed-ectis-response-2">
+								<label class="govuk-label govuk-radios__label" for="reviewed-ectis-response-2">
+									No, the subjects listed are not named on my certificate.
+								</label>
+							</div>
+							<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reviewed-ectis-response-2">
+								<div class="govuk-form-group">
+									<fieldset class="govuk-fieldset">
+										<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+											Did your teaching qualification or degree have modules/units that focused on any of the subjects listed?
+										</legend>
+										<div id="changed-name-hint" class="govuk-hint">
+											If you're unsure, review your degree or teaching qualification transcript
+										</div>
+										<div class="govuk-radios" data-module="govuk-radios">
+											<div class="govuk-radios__item">
+												<input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+												<label class="govuk-label govuk-radios__label" for="where-do-you-live">
+													Yes
+												</label>
+											</div>
+											<div class="govuk-radios__item">
+												<input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+												<label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+													No
+												</label>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+	
+							</div>
+						</div>
+					</fieldset>
+				</div>
+
+
+
+
+	<div class="govuk-button-group">
+		<button class="govuk-button" data-module="govuk-button">
+			Continue
+		</button>
+		<a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+	</div>
+</form>
+
+			
+
+	</div>
+</div>
+
+{% endblock %}
+
