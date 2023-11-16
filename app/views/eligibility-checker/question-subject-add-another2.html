@@ -1,0 +1,190 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+Where are you currently recognised as a teacher? – {{ serviceName }} prototype
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		
+
+			<h1 class="govuk-heading-xl">What subjects are you qualified to teach?</h1>
+
+			<p>
+			We can only accept teachers who are qualified to teach one of the following subjects.
+			</p>
+
+			<details class="govuk-details" data-module="govuk-details">
+				<summary class="govuk-details__summary">
+				  <span class="govuk-details__summary-text">
+					Show subjects
+				  </span>
+				</summary>
+
+
+				<div class="govuk-details__text">
+			<div class="govuk-grid-row">
+				<div class="govuk-grid-column-one-half">
+					<ul class="govuk-list govuk-list--bullet">
+						<li>Maths</li>
+						<li>Science</li>
+						<li>Biology</li>
+						<li>Chemistry</li>
+						<li>Physics</li>
+						<li>French</li>
+						<li>German</li>
+					</ul>
+				</div>
+				<div class="govuk-grid-column-one-half">
+					<ul class="govuk-list govuk-list--bullet">
+						<li>Italian</li>
+						<li>Japanese</li>
+						<li>Latin</li>
+						<li>Mandarin</li>
+						<li>Russian</li>
+						<li>Spanish</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</details>
+
+			<p>
+				Enter up to 3 subjects:
+				</p>
+			
+<div class="govuk-form-group">
+	<label class="govuk-label govuk-label--s" for="sort">
+		Subject 1
+	</label>
+	<select class="govuk-select" id="appointment-type-fltr" name="appointment-type-fltr"> 
+		<option value="">Select subject</option>
+		<option value="Maths">Maths</option>
+		
+		<option value="Science">Science</option>
+
+		<option value="Biology">Biology</option>
+		
+		<option value="Chemistry">Chemistry</option>
+		
+		<option value="Physics">Physics</option>
+		
+		<option value="French">French</option>
+		
+		<option value="German">German</option>
+		
+		<option value="Italian">Italian</option>
+		
+		<option value="Japanese">Japanese</option>
+		
+		<option value="Latin">Latin</option>
+		
+		<option value="Mandarin">Mandarin</option>
+		
+		<option value="Russian">Russian</option>
+		
+		<option value="Spanish">Spanish</option>
+
+		<option value="not-on-list">My subject is not on the list</option>
+		
+		
+		</select>
+</div>
+
+
+
+  <div class="govuk-form-group">
+	<label class="govuk-label govuk-label--s" for="sort">
+		Subject 2
+	</label>
+	<select class="govuk-select" id="subject-fltr" name="subject-fltr"> 
+		<option value="">Select subject</option>
+		<option value="Maths">Maths</option>
+		
+		<option value="Science">Science</option>
+
+		<option value="Biology">Biology</option>
+		
+		<option value="Chemistry">Chemistry</option>
+		
+		<option value="Physics">Physics</option>
+		
+		<option value="French">French</option>
+		
+		<option value="German">German</option>
+		
+		<option value="Italian">Italian</option>
+		
+		<option value="Japanese">Japanese</option>
+		
+		<option value="Latin">Latin</option>
+		
+		<option value="Mandarin">Mandarin</option>
+		
+		<option value="Russian">Russian</option>
+		
+		<option value="Spanish">Spanish</option>
+
+		<option value="not-on-list">My subject is not on the list</option>
+		
+		
+		</select>
+</div>
+<div class="govuk-button-group">
+<div class="moj-button-action">
+
+	<button class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">
+	  Add another subject
+	</button>
+
+  </div>
+
+  <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+	Delete subject
+  </button>
+</div>
+<div class="govuk-!-padding-top-6"></div>
+
+
+	<div class="govuk-button-group">
+		<button class="govuk-button" data-module="govuk-button">
+			Continue
+		</button>
+		<a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+	</div>
+</form>
+
+			
+
+	</div>
+</div>
+
+{% endblock %}
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+accessibleAutocomplete.enhanceSelectElement({
+selectElement: document.querySelector('#appointment-type-fltr'),
+showAllValues: true,
+defaultValue: '',
+autoselect: true,
+confirmOnBlur: false,
+})
+</script>
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+accessibleAutocomplete.enhanceSelectElement({
+selectElement: document.querySelector('#subject-fltr'),
+showAllValues: true,
+defaultValue: '',
+autoselect: true,
+confirmOnBlur: false,
+})
+</script>
+
+
+{% endblock %}

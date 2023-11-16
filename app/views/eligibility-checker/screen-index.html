@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Pause – {{ serviceName }} – GOV.UK Prototype Kit
+Screen index – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -87,11 +87,27 @@ text: "Sign out"
               <p>The redesigned guidance page.</p>
             </td>
           </tr>
+        </tbody>
+        </table>
+     
 
+
+        <h2 class="govuk-heading-m govuk-!-padding-bottom-1 govuk-!-padding-top-3">
+          Subject question
+      </h2>
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header app-custom-class">Link</th>
+              <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-two-thirds">Description</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-              <p><a href="question-subject">Subject question (autocomplete)</a></p>
+              <p><a href="question-subject">Autocomplete search</a></p>
             </td>
             <td class="govuk-table__cell">
               <p>Autocomplete design</p>
@@ -110,7 +126,7 @@ text: "Sign out"
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-              <p><a href="question-subject-dropdown">Subject question (dropdown)</a></p>
+              <p><a href="question-subject-dropdown">Dropdown</a></p>
             </td>
             <td class="govuk-table__cell">
               <p>Dropdown design</p>
@@ -120,15 +136,66 @@ text: "Sign out"
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-              <p><a href="question-subject-list">Subject question (list)</a></p>
+              <p><a href="question-subject-list">List</a></p>
             </td>
             <td class="govuk-table__cell">
               <p>List of subjects design</p>
             </td>
           </tr>
 
-         
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <p><a href="question-subject-add-another">Add another (search)</a></p>
+            </td>
+            <td class="govuk-table__cell">
+              <p>Subject question with 'add another' component</p>
+            </td>
+          </tr>
 
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <p><a href="question-subject-3">Autocomplete: 3 subjects</a></p>
+            </td>
+            <td class="govuk-table__cell">
+              <p>Subject question with 3 stacked autocomplete searches</p>
+            </td>
+          </tr>
+        </tbody>
+        </table>
+
+
+        <h2 class="govuk-heading-m govuk-!-padding-bottom-1 govuk-!-padding-top-3">
+         Age range question
+      </h2>
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header app-custom-class">Link</th>
+              <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-two-thirds">Description</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <p><a href="question-age-range">V1 (input fields)</a></p>
+            </td>
+            <td class="govuk-table__cell">
+              <p>Version with two input fields for age range.</p>
+            
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <p><a href="question-age-range-v2">V2 (radios)</a></p>
+            </td>
+            <td class="govuk-table__cell">
+              <p>Age range selection with radio buttons</p>
+            </td>
+          </tr>
         </tbody>
         </table>
     </div>
