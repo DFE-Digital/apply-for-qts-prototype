@@ -1,0 +1,54 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+Where are you currently recognised as a teacher? – {{ serviceName }} prototype
+{% endblock %}
+
+{% block pageStyles %}
+<link href="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.css" media="screen"
+      rel="stylesheet">
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/govuk-country-and-territory-autocomplete/location-autocomplete.min.js"></script>
+<script>
+    openregisterLocationPicker({
+        selectElement: document.getElementById('country'),
+        url: '/public/govuk-country-and-territory-autocomplete/location-autocomplete-graph.json',
+        defaultValue: '{{ data["country"] }}'
+    })
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		
+			
+			<h1 class="govuk-heading-xl">
+				You are not eligible to apply for QTS in England
+			</h1>
+
+
+			<p>
+				We need more information about your teaching qualification. 
+			</p>
+
+			<p>
+				You'll need your teaching qualification transcript to find out if you're eligible to apply for QTS.
+			</p>
+
+			{{ govukDetails({
+				summaryText: "What is a transcript?",
+				text: "A transcript is a document that lists all the modules or subjects you studied in each year of your qualification, and the marks or grades you were awarded."
+			  }) }}
+		
+
+			
+
+
+	</div>
+</div>
+
+{% endblock %}

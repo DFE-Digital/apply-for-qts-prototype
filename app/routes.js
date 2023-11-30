@@ -715,6 +715,33 @@ router.post("/teaching-qual-focus",
 );
 
 
+// Policy-led design - teaching qual percent question
+router.post("/policy-teaching-qual-percentage",
+  function (req, res) {
+    let policyPercentage = req.session.data["policy-teaching-qual-percentage"];
+
+    if (policyPercentage == "less-than-25") 
+    {
+      res.redirect("/eligibility-checker/policy-led/question-degree");
+    } 
+    else if (policyPercentage == "25-to-50")
+    {
+      res.redirect("/eligibility-checker/policy-led/question-age-range");
+    } 
+
+    else if (policyPercentage == "more-than-50")
+    {
+      res.redirect("/eligibility-checker/policy-led/question-age-range");
+    } 
+    else if (policyPercentage == "none")
+    {
+      res.redirect("/eligibility-checker/policy-led/ineligible-teaching-qual");
+    } 
+  }
+);
+
+
+
 // subject picker
 router.post("/get-subject", function (req, res) {
   let subjectSelect = req.session.data["subject-select"];

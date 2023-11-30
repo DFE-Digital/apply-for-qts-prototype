@@ -21,6 +21,7 @@
 
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
+		<form action="/policy-teaching-qual-percentage" method="post" novalidate>
 		
 
 			<h1 class="govuk-heading-xl">How much of your teaching qualification focused on teaching {{ data['subject-select'] }}?</h1>
@@ -34,8 +35,8 @@
 			</p>
 
 			{{ govukRadios({
-				idPrefix: "Degree",
-				name: "Degree",
+				idPrefix: "policy-teaching-qual-percentage",
+				name: "policy-teaching-qual-percentage",
 				fieldset: {
 				},
 				
@@ -60,6 +61,10 @@
 				]
 				}) }}
 	
+				<p class="govuk-body">
+					During the application process all qualifications will be assessed to make sure they meet the subject criteria.
+				</p>
+
 				{{ govukDetails({
 					summaryText: "What is a transcript?",
 					text: "A transcript is a document that lists all the modules or subjects you studied in each year of your qualification, and the marks or grades you were awarded."
