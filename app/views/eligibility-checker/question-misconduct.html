@@ -1,0 +1,53 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+Is your employment record as a teacher free of sanctions? – {{ serviceName }} prototype
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<!-- <h1 class="govuk-heading-xl">Radio Button question</h1> -->
+
+		<form class="form" action="/misconduct-answer" method="post">
+
+			{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+			{{ govukRadios({
+			idPrefix: "misconduct",
+			name: "misconduct",
+			fieldset: {
+			legend: {
+			text: "Do you have any sanctions or restrictions on your employment record?",
+			isPageHeading: true,
+			classes: "govuk-fieldset__legend--l" }
+			},
+			hint: {
+			text: "To teach in England, your record must be free of any sanctions, restrictions, penalties or instances
+			of misconduct."
+			},
+			items: [
+			{
+			value: "Yes",
+			text: "Yes",
+			checked: checked("misconduct", "Yes")
+			},
+			{
+			value: "No",
+			text: "No",
+			checked: checked("misconduct", "No")
+			}
+
+			]
+			}) }}
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

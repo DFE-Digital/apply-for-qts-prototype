@@ -1,0 +1,46 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+Work experience – {{ serviceName }} prototype
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form class="form" action="question-misconduct" method="post">
+
+
+		<h1 class="govuk-heading-xl">How long have you been employed as recognised teacher?</h1>
+		
+		<div class="govuk-inset-text">
+			You’ll need to complete a 2-year ‘statutory induction’ period as a newly qualified teacher if you’re awarded QTS and have between 9 and 20 months of teaching experience. This statutory induction is not required if you have more than 20 months experience.
+		  </div>
+
+		<p>You'll need to provide references from your places of employment (in English) so we can verify your work history.</p>
+
+			
+
+			{{ govukDetails({
+			summaryText: "How to calculate your work experience",
+			html: "<p>Add up the months you’ve spent employed as a teacher. This should include school holidays but not include any other time spent away from teaching.</p>"
+			}) }}
+			
+		<div class="govuk-form-group">
+			<label class="govuk-label" for="width-2">
+			  Years working as recognised teacher
+			</label>
+			<input class="govuk-input govuk-input--width-2" id="width-2" name="width2" type="text">
+		  </div>
+
+			
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

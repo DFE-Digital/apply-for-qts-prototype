@@ -1,0 +1,64 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+Work experience – {{ serviceName }} prototype
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form class="form" action="question-misconduct" method="post">
+
+
+			{{ govukRadios({
+			idPrefix: "work-experience",
+			name: "work-experience",
+			fieldset: {
+			legend: {
+			text: "How long have you been employed as a recognised teacher?",
+			isPageHeading: true,
+			classes: "govuk-fieldset__legend--l"
+			}
+			},
+			hint: {
+			text: "You can include teaching experience from any country gained after you became qualified."
+			},
+			items: [
+			{
+			value: "less-than-1-year",
+			text: "Under 9 months",
+			checked: checked("work-experience", "Under 9 months")
+			},
+			{
+			value: "between-1-and-2-years",
+			html: "9 months &#8211; 20 months",
+			checked: checked("work-experience", "9 months &#8211; 20 months")
+			},
+			{
+			value: "more-than-2-years",
+			text: "More than 20 months",
+			checked: checked("work-experience", "More than 20 months")
+			}
+
+			]
+			}) }}
+
+			<p>You'll need to provide references from your places of employment (in English) so we can verify your work history.</p>
+
+			
+
+			{{ govukDetails({
+			summaryText: "How to calculate your work experience",
+			html: "<p>Add up the months you’ve spent employed as a teacher. This should include school holidays but not include any other time spent away from teaching.</p>"
+			}) }}
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

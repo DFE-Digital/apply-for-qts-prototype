@@ -693,4 +693,167 @@ router.post("/subject-not-in-list",
   }
 );
 
+
+// Policy-led design
+router.post("/teaching-qual-focus",
+  function (req, res) {
+    let focus = req.session.data["teaching-qual-focus"];
+
+    if (focus === "qual-title") 
+    {
+      res.redirect("/eligibility-checker/policy-led/question-age-range");
+    } 
+    else if (focus == "part-focus")
+    {
+      res.redirect("/eligibility-checker/policy-led/select-subject");
+    } 
+
+    else {
+      res.redirect("/eligibility-checker/policy-led/question-degree");
+    }
+  }
+);
+
+
+// subject picker
+router.post("/get-subject", function (req, res) {
+  let subjectSelect = req.session.data["subject-select"];
+
+  if (subjectSelect == "maths") {
+    res.redirect("/eligibility-checker/policy-led/subject-percentage");
+  }
+  
+  else if (subjectSelect == "science") {
+    res.redirect("/eligibility-checker/policy-led/subject-percentage");
+  }
+
+  else if (subjectSelect == "biology") {
+    res.redirect("/eligibility-checker/policy-led/subject-percentage");
+  }
+
+  else if (subjectSelect == "chemistry") {
+    res.redirect("/eligibility-checker/policy-led/subject-percentage");
+  }
+
+  else if (subjectSelect == "physics") {
+    res.redirect("/eligibility-checker/policy-led/subject-percentage");
+  }
+
+  else if (subjectSelect == "French") {
+    res.redirect("/eligibility-checker/policy-led/subject-percentage");
+  }
+
+  else if (subjectSelect == "German") {
+    res.redirect("/eligibility-checker/policy-led/subject-percentage");
+  }
+
+  else if (subjectSelect == "Italian") {
+    res.redirect("/eligibility-checker/policy-led/subject-percentage");
+  }
+
+
+  else if (subjectSelect == "Japanese") {
+    res.redirect("/eligibility-checker/policy-led/subject-percentage");
+  }
+
+  else if (subjectSelect == "Latin") {
+    res.redirect("/eligibility-checker/policy-led/subject-percentage");
+  }
+
+  else if (subjectSelect == "Mandarin") {
+    res.redirect("/eligibility-checker/policy-led/subject-percentage");
+  }
+
+  else if (subjectSelect == "Russian") {
+    res.redirect("/eligibility-checker/policy-led/subject-percentage");
+  }
+
+  else if (subjectSelect == "not-on-list") {
+    res.redirect("/eligibility-checker/start");
+  }
+
+  else {
+    res.redirect("/eligibility-checker/start");
+  }
+});
+
+// subject picker UNI DEGREE
+router.post("/get-subject-uni", function (req, res) {
+  let subjectSelectUni = req.session.data["subject-select-uni"];
+
+  if (subjectSelectUni == "maths") {
+    res.redirect("/eligibility-checker/policy-led/subject-calculator-uni");
+  }
+  
+  else if (subjectSelectUni == "science") {
+    res.redirect("/eligibility-checker/policy-led/subject-calculator-uni");
+  }
+
+  else if (subjectSelectUni == "biology") {
+    res.redirect("/eligibility-checker/policy-led/subject-calculator-uni");
+  }
+
+  else if (subjectSelectUni == "chemistry") {
+    res.redirect("/eligibility-checker/policy-led/subject-calculator-uni");
+  }
+
+  else if (subjectSelectUni == "physics") {
+    res.redirect("/eligibility-checker/policy-led/subject-calculator-uni");
+  }
+
+  else if (subjectSelectUni == "French") {
+    res.redirect("/eligibility-checker/policy-led/ssubject-calculator-uni");
+  }
+
+  else if (subjectSelectUni == "German") {
+    res.redirect("/eligibility-checker/policy-led/subject-calculator-uni");
+  }
+
+  else if (subjectSelectUni == "Italian") {
+    res.redirect("/eligibility-checker/policy-led/subject-calculator-uni");
+  }
+
+
+  else if (subjectSelectUni == "Japanese") {
+    res.redirect("/eligibility-checker/policy-led/subject-calculator-uni");
+  }
+
+  else if (subjectSelectUni == "Latin") {
+    res.redirect("/eligibility-checker/policy-led/subject-calculator-uni");
+  }
+
+  else if (subjectSelectUni == "Mandarin") {
+    res.redirect("/eligibility-checker/policy-led/subject-calculator-uni");
+  }
+
+  else if (subjectSelectUni == "Russian") {
+    res.redirect("/eligibility-checker/policy-led/ssubject-calculator-uni");
+  }
+
+  else if (subjectSelectUni == "not-on-list") {
+    res.redirect("/eligibility-checker/policy-led/ineligible-uni-degree");
+  }
+
+  else {
+    res.redirect("/eligibility-checker/policy-led/ineligible-uni-degree");
+  }
+});
+
+// Policy-led design uni degree question
+router.post("/policy-uni",
+  function (req, res) {
+    let uniDegree = req.session.data["policy-uni"];
+
+    if (uniDegree == "no") 
+    {
+      res.redirect("/eligibility-checker/policy-led/ineligible-uni-degree");
+    } 
+    else (uniDegree == "yes")
+    {
+      res.redirect("/eligibility-checker/policy-led/select-subject-uni-degree");
+    } 
+
+  }
+);
+
 module.exports = router;
