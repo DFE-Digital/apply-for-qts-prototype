@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+	<p class="govuk-phase-banner__content">
+	  <strong class="govuk-tag govuk-phase-banner__content__tag">
+		Prototype
+	  </strong>
+	  <span class="govuk-phase-banner__text">
+		This is a prototype of a new service.  <a class="govuk-link" href="subject-calculator">Change view</a>.
+	  </span>
+	</p>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		
+
+			<h1 class="govuk-heading-xl">How much of your teaching qualification focused on teaching {{ data['subject-select'] }}?</h1>
+
+			<p>
+				Check your teaching qualification transcript to calculate what percentage of modules/units focused on {{ data['subject-select'] }}.
+			</p>
+
+			<p>
+				Choose one of the following:
+			</p>
+
+			{{ govukRadios({
+				idPrefix: "Degree",
+				name: "Degree",
+				fieldset: {
+				},
+				
+				items: [
+				{
+				value: "less-than-25",
+				text: "Less than 25%"
+				},
+				{
+				value: "25-to-50",
+				text: "Between 25% to 50%"
+				},
+				{
+					value: "more-than-50",
+					text: "More than 50%"
+					},
+				{
+					value: "none",
+					text: "I do not have my teaching qualification transcript"
+				}
+	
+				]
+				}) }}
+	
+				{{ govukDetails({
+					summaryText: "What is a transcript?",
+					text: "A transcript is a document that lists all the modules or subjects you studied in each year of your qualification, and the marks or grades you were awarded."
+				  }) }}
+
+			
+
+
+	<div class="govuk-button-group">
+		<button class="govuk-button" data-module="govuk-button">
+			Continue
+		</button>
+		<a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+	</div>
+</form>
+
+			
+
+	</div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,61 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+Work experience – {{ serviceName }} prototype
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form class="form" action="question-misconduct" method="post">
+
+
+		<h1 class="govuk-heading-xl">How long have you been employed as recognised teacher?</h1>
+
+		<div class="govuk-form-group">
+			<fieldset class="govuk-fieldset" role="group">
+				<div class="govuk-date-input" id="passport-issued">
+					<div class="govuk-date-input__item">
+					  <div class="govuk-form-group">
+						<label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+						  Years
+						</label>
+						<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+					  </div>
+					</div>
+					<div class="govuk-date-input__item">
+					  <div class="govuk-form-group">
+						<label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+						  Months
+						</label>
+						<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+					  </div>
+					</div>
+		</fieldset>
+		  </div>
+		
+		
+
+		<p>You'll need to provide references from your places of employment (in English) so we can verify your work history.</p>
+
+			
+
+			{{ govukDetails({
+			summaryText: "How to calculate your work experience",
+			html: "<p>Add up the months you’ve spent employed as a teacher. This should include school holidays but not include any other time spent away from teaching.</p>"
+			}) }}
+			
+		
+
+			
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

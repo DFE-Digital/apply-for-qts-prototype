@@ -1,0 +1,52 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+Do you have a degree? – {{ serviceName }} prototype
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<!-- <h1 class="govuk-heading-xl">Radio Button question</h1> -->
+
+		<form class="form" action="/degree-answer" method="post">
+
+			
+			{{ govukRadios({
+			idPrefix: "Degree",
+			name: "Degree",
+			fieldset: {
+			legend: {
+			text: "Do you have a teaching qualification?",
+			isPageHeading: true,
+			classes: "govuk-fieldset__legend--l"
+			}
+			},
+			
+			items: [
+			{
+			value: "Yes",
+			text: "Yes",
+			checked: checked("Degree", "Yes")
+			},
+			{
+			value: "No",
+			text: "No",
+			checked: checked("Degree", "No")
+			}
+
+			]
+			}) }}
+
+			
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
