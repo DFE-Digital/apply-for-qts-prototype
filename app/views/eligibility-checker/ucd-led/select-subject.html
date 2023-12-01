@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Where are you currently recognised as a teacher? – {{ serviceName }} prototype
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+	<p class="govuk-phase-banner__content">
+	  <strong class="govuk-tag govuk-phase-banner__content__tag">
+		Prototype
+	  </strong>
+	  <span class="govuk-phase-banner__text">
+		This is a prototype of a new service. Some parts may not work yet. <a class="govuk-link" href="start-alt">Change view</a>.
+	  </span>
+	</p>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		
+
+			<h1 class="govuk-heading-xl">Which subject did part of your teaching qualification focus on?</h1>
+
+			<p>
+				Select the subject that your teaching qualification focused on the most.
+			</p>
+
+<form action="/get-subject" method="post" novalidate>
+<div class="govuk-form-group">
+	<label class="govuk-label govuk-label--s" for="sort">
+		Search for your subject:
+	</label>
+	<select class="govuk-select" id="subject-select" name="subject-select"> 
+		<option value="">Select subject</option>
+		<option value="no-teaching-qual">I do not have a teaching qualification</option>
+		<option value="no-focus">My teaching qualification did not focus on any of these subjects</option>
+		<option value="maths">Maths</option>
+		
+		<option value="science">Science</option>
+
+		<option value="biology">Biology</option>
+		
+		<option value="chemistry">Chemistry</option>
+		
+		<option value="physics">Physics</option>
+		
+		<option value="French">French</option>
+		
+		<option value="German">German</option>
+		
+		<option value="Italian">Italian</option>
+		
+		<option value="Japanese">Japanese</option>
+		
+		<option value="Latin">Latin</option>
+		
+		<option value="Mandarin">Mandarin</option>
+		
+		<option value="Russian">Russian</option>
+		
+		<option value="Spanish">Spanish</option>
+
+		<option value="not-on-list">My subject is not on the list</option>
+		
+		
+		</select>
+</div>
+
+
+
+
+
+
+	<div class="govuk-button-group">
+		<button class="govuk-button" data-module="govuk-button">
+			Continue
+		</button>
+		<a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+	</div>
+</form>
+
+			
+
+	</div>
+</div>
+
+{% endblock %}
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+accessibleAutocomplete.enhanceSelectElement({
+selectElement: document.querySelector('#subject-select'),
+showAllValues: true,
+defaultValue: '',
+autoselect: true,
+confirmOnBlur: false,
+})
+</script>
+
+{% endblock %}
