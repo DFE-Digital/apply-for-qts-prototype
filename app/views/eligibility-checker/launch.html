@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form action="/scenario-picker" method="post" novalidate>
+
+		<h1 class="govuk-heading-xl">
+			Research set up
+		</h1>
+
+		<h2 class="govuk-heading-m">
+			Please wait for the researcher to select the scenario.
+		</h2>
+
+		
+
+		{{ govukRadios({
+			name: "scenario-selection",
+			fieldset: {
+			},
+			items: [
+			  {
+				value: "policy",
+				text: "Scenario 1"
+			  },
+			  {
+				value: "ucd",
+				text: "Scenario 2"
+			  }
+			]
+		  }) }}
+
+
+		  {{ govukButton({
+			text: "Continue"
+		  }) }}
+		
+		</form>
+	</div>
+</div>
+{% endblock %}

@@ -22,77 +22,68 @@
 
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		
+		<form action="/policy-teaching-calc" method="post" novalidate>
 
-	<h1 class="govuk-heading-xl">How much of your teaching qualification focused on teaching {{ data['subject-select'] or 'Subject' }}?</h1>
+			<h1 class="govuk-heading-xl">How much of your teaching qualification focused on teaching {{ data['subject-select'] or 'Subject' }}?</h1>
 
-		<p>
-		Go through your teaching qualification transcript and add up the:
-		</p>
-
+			<p>
+				Go through your teaching qualification transcript and add up the:
+			</p>
 
 			<ul class="govuk-list govuk-list--bullet">
-				<li>total number of modules/units</li>
-				<li>number of modules/units that focused on {{ data['subject-select'] or 'Subject' }}</li>
-				
-			  </ul>
+				<li>total number of modules</li>
+				<li>number of modules that focused on {{ data['subject-select'] or 'Subject' }}</li>
+			</ul>
 
-	<h2 class="govuk-heading-s">Enter totals</h1>
-			
+			<h2 class="govuk-heading-s">Enter totals</h1>
 
-<div class="govuk-form-group">
-	<label class="govuk-label" for="width-2">
-	  Total number of modules/units
-	</label>
-	<input class="govuk-input govuk-input--width-2" id="width-2" name="width2" type="text">
-  </div>	
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="width-2">
+					Total number of modules
+				</label>
+				<input class="govuk-input govuk-input--width-2" id="calc" name="calc" type="number">
+			</div>	
 
 
-  <div class="govuk-form-group">
-	<label class="govuk-label" for="width-2">
-		Number of modules/units that focused on  {{ data['subject-select'] or 'Subject' }}
-	</label>
-	<input class="govuk-input govuk-input--width-2" id="width-2" name="width2" type="text">
-  </div>
-
-
-  <!-- checkbox -->
-  <div class="govuk-form-group">
-	<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-	  <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
-		<div class="govuk-checkboxes__item">
-		  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-		  <label class="govuk-label govuk-checkboxes__label" for="waste">
-			I do not have my teaching qualification transcript
-		  </label>
-		</div>
-		</div>
-		</fieldset>
-		</div>
-
-		<p class="govuk-body govuk-!-padding-top-2">
-			During the application process all qualifications will be assessed to make sure they meet the subject criteria.
-		</p>
-
-
-		<details class="govuk-details" data-module="govuk-details">
-			<summary class="govuk-details__summary">
-			  <span class="govuk-details__summary-text">
-				What is a transcript?
-			  </span>
-			</summary>
-			<div class="govuk-details__text">
-				A transcript is a document that lists all the modules or subjects you studied in each year of your qualification, and the marks or grades you were awarded. 
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="width-2">
+					Number of modules that focused on  {{ data['subject-select'] or 'Subject' }}
+				</label>
+				<input class="govuk-input govuk-input--width-2" id="calc-2" name="calc2" type="number">
 			</div>
-		  </details>
 
-	
+
+			<!-- checkbox -->
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="no-teaching-qual" name="no-teaching-qual" type="checkbox" value="no-teaching-qual">
+							<label class="govuk-label govuk-checkboxes__label" for="no-teaching-qual">
+								I do not have my teaching qualification transcript
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<p class="govuk-body govuk-!-padding-top-2">
+				During the application process all qualifications will be assessed to make sure they meet the subject criteria.
+			</p>
+
+
+			<details class="govuk-details" data-module="govuk-details">
+				<summary class="govuk-details__summary">
+					<span class="govuk-details__summary-text">
+						What is a transcript?
+					</span>
+				</summary>
+				<div class="govuk-details__text">
+					A transcript is a document that lists all the modules or subjects you studied in each year of your qualification, and the marks or grades you were awarded. 
+				</div>
+			</details>
+		</div>
 	</div>
-</div>
-
-
-
-<form action="question-subject-certificate" method="post" novalidate>
 
 	<div class="govuk-button-group">
 		<button class="govuk-button" data-module="govuk-button">
@@ -102,19 +93,5 @@
 	</div>
 </form>
 
-
-
 {% endblock %}
-{% block pageScripts %}
-<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
-<script>
-accessibleAutocomplete.enhanceSelectElement({
-selectElement: document.querySelector('#appointment-type-fltr'),
-showAllValues: true,
-defaultValue: '',
-autoselect: true,
-confirmOnBlur: false,
-})
-</script>
 
-{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+What age range are you qualified to teach? – {{ serviceName }} prototype
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		
+
+			<h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What age range are you qualified to teach?</h1>
+
+			<div id="more-detail-hint" class="govuk-hint govuk-!-padding-bottom-3">
+				For example: children from 5 to 11 years old.
+			  </div>
+			
+			  <div class="govuk-form-group">
+				<label class="govuk-label" for="width-2">
+				  
+				</label>
+				<input class="govuk-input govuk-input--width-2" id="width-2" name="width2" type="text">
+			  </div>
+
+			  <p>
+				to
+			  </p>
+			
+			  <div class="govuk-form-group">
+				<label class="govuk-label" for="width-2">
+				  
+				</label>
+				<input class="govuk-input govuk-input--width-2" id="width-2" name="width2" type="text">
+			  </div>
+
+
+
+
+	<div class="govuk-button-group">
+		<button class="govuk-button" data-module="govuk-button">
+			Continue
+		</button>
+		<a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+	</div>
+</form>
+
+			
+
+	</div>
+</div>
+
+{% endblock %}
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+accessibleAutocomplete.enhanceSelectElement({
+selectElement: document.querySelector('#appointment-type-fltr'),
+showAllValues: true,
+defaultValue: '',
+autoselect: true,
+confirmOnBlur: false,
+})
+</script>
+
+{% endblock %}

@@ -694,7 +694,7 @@ router.post("/subject-not-in-list",
 );
 
 
-// Policy-led design
+// Policy-led design teaching qual
 router.post("/teaching-qual-focus",
   function (req, res) {
     let focus = req.session.data["teaching-qual-focus"];
@@ -713,6 +713,9 @@ router.post("/teaching-qual-focus",
     }
   }
 );
+
+
+
 
 
 // Policy-led design - teaching qual percent question
@@ -736,6 +739,32 @@ router.post("/policy-teaching-qual-percentage",
     else if (policyPercentage == "none")
     {
       res.redirect("/eligibility-checker/policy-led/ineligible-teaching-qual");
+    } 
+  }
+);
+
+
+// Policy-led design - UNI degree percent question
+router.post("/policy-uni-percentage",
+  function (req, res) {
+    let uniPercentage = req.session.data["policy-uni-percentage"];
+
+    if (uniPercentage == "less-than-25") 
+    {
+      res.redirect("/eligibility-checker/policy-led/ineligible-uni-degree");
+    } 
+    else if (uniPercentage == "25-to-50")
+    {
+      res.redirect("/eligibility-checker/policy-led/ineligible-uni-degree");
+    } 
+
+    else if (uniPercentage == "more-than-50")
+    {
+      res.redirect("/eligibility-checker/policy-led/question-age-range");
+    } 
+    else if (uniPercentage == "none")
+    {
+      res.redirect("/eligibility-checker/policy-led/ineligible-uni-degree");
     } 
   }
 );
@@ -796,12 +825,9 @@ router.post("/get-subject", function (req, res) {
   }
 
   else if (subjectSelect == "not-on-list") {
-    res.redirect("/eligibility-checker/start");
+    res.redirect("/eligibility-checker/policy-led/question-degree");
   }
 
-  else {
-    res.redirect("/eligibility-checker/start");
-  }
 });
 
 // subject picker UNI DEGREE
@@ -829,7 +855,7 @@ router.post("/get-subject-uni", function (req, res) {
   }
 
   else if (subjectSelectUni == "French") {
-    res.redirect("/eligibility-checker/policy-led/ssubject-calculator-uni");
+    res.redirect("/eligibility-checker/policy-led/subject-calculator-uni");
   }
 
   else if (subjectSelectUni == "German") {
@@ -879,8 +905,72 @@ router.post("/policy-uni",
     {
       res.redirect("/eligibility-checker/policy-led/select-subject-uni-degree");
     } 
+  });
 
-  }
-);
+  // Policy-led design teaching qual calculator kick out
+    router.post("/policy-teaching-calc",
+    function (req, res) {
+      let tCalc = req.session.data['calc'];
+      let tCalc2 = req.session.data['calc2'];
+
+      if( req.session.data['no-teaching-qual'] == 'no-teaching-qual')
+      {
+        res.redirect('/eligibility-checker/policy-led/ineligible-teaching-qual')
+      }
+
+      if (tCalc >= 20) {
+        res.redirect('/eligibility-checker/policy-led/question-age-range');
+      }    
+
+      else if (tCalc2 >= 20) {
+        res.redirect('/eligibility-checker/policy-led/question-age-range');
+      }  
+
+      else {
+      res.redirect('/eligibility-checker/policy-led/ineligible-teaching-qual')
+      }
+    });      
+    
+    
+      // Policy-led design uni degree calculator kick out
+      router.post("/policy-uni-calc",
+      function (req, res) {
+        let uCalc = req.session.data['uni-calc'];
+        let uCalc2 = req.session.data['uni-calc2'];
+  
+        if( req.session.data['no-degree'] == 'no-degree')
+        {
+          res.redirect('/eligibility-checker/policy-led/ineligible-uni-degree')
+        }
+  
+        if (uCalc >= 30) {
+          res.redirect('/eligibility-checker/policy-led/question-age-range');
+        }    
+  
+        else if (uCalc2 >= 30) {
+          res.redirect('/eligibility-checker/policy-led/question-age-range');
+        }  
+  
+        else {
+        res.redirect('/eligibility-checker/policy-led/ineligible-uni-degree')
+        }
+      });     
+
+      
+      // Launch UR prototype 2
+      router.post("/scenario-picker",
+    function (req, res) {
+      let scenarioSelection = req.session.data["scenario-selection"];
+
+      if (scenarioSelection == "policy") 
+      {
+        res.redirect("/eligibility-checker/policy-led/question-subject-list");
+      } 
+      else (scenarioSelection == "yes")
+      {
+        res.redirect("/eligibility-checker/ucd-led/select-subject");
+      } 
+    });
+
 
 module.exports = router;

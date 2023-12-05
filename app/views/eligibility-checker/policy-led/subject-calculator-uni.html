@@ -23,7 +23,7 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 		
-
+<form action="/policy-uni-calc" method="post" novalidate>
 	<h1 class="govuk-heading-xl">How much of your university degree focused on {{ data['subject-select-uni'] or 'Subject' }}?</h1>
 
 		<p>
@@ -32,8 +32,8 @@
 
 
 			<ul class="govuk-list govuk-list--bullet">
-				<li>total number of modules/units</li>
-				<li>number of modules/units that focused on {{ data['subject-select-uni'] or 'Subject' }}</li>
+				<li>total number of modules</li>
+				<li>number of modules that focused on {{ data['subject-select-uni'] or 'Subject' }}</li>
 				
 			  </ul>
 
@@ -42,33 +42,33 @@
 
 <div class="govuk-form-group">
 	<label class="govuk-label" for="width-2">
-	  Total number of modules/units
+	  Total number of modules
 	</label>
-	<input class="govuk-input govuk-input--width-2" id="width-2" name="width2" type="text">
+	<input class="govuk-input govuk-input--width-2" id="width-2" name="uni-calc" type="text">
   </div>	
 
 
   <div class="govuk-form-group">
 	<label class="govuk-label" for="width-2">
-		Number of modules/units that focused on  {{ data['subject-select-uni'] or 'Subject' }}
+		Number of modules that focused on  {{ data['subject-select-uni'] or 'Subject' }}
 	</label>
-	<input class="govuk-input govuk-input--width-2" id="width-2" name="width2" type="text">
+	<input class="govuk-input govuk-input--width-2" id="width-2" name="uni-calc2" type="text">
   </div>
 
 
   <!-- checkbox -->
   <div class="govuk-form-group">
-	<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-	  <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
-		<div class="govuk-checkboxes__item">
-		  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-		  <label class="govuk-label govuk-checkboxes__label" for="waste">
-			I do not have my teaching qualification transcript
-		  </label>
+	<fieldset class="govuk-fieldset">
+		<div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
+			<div class="govuk-checkboxes__item">
+				<input class="govuk-checkboxes__input" id="no-degree" name="no-degree" type="checkbox" value="no-degree">
+				<label class="govuk-label govuk-checkboxes__label" for="no-degree">
+					I do not have my university degree transcript
+				</label>
+			</div>
 		</div>
-		</div>
-		</fieldset>
-		</div>
+	</fieldset>
+</div>
 
 
 		<p class="govuk-body govuk-body govuk-!-padding-top-2">
@@ -93,7 +93,7 @@
 
 
 
-<form action="question-subject-certificate" method="post" novalidate>
+
 
 	<div class="govuk-button-group">
 		<button class="govuk-button" data-module="govuk-button">
