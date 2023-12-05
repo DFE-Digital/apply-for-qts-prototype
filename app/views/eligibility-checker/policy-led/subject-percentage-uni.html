@@ -21,12 +21,13 @@
 
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
+		<form action="/policy-uni-percentage" method="post" novalidate>
 		
 
 			<h1 class="govuk-heading-xl">How much of your university degree focused on {{ data['subject-select'] }}?</h1>
 
 			<p>
-				Check your teaching qualification transcript to calculate what percentage of modules/units focused on {{ data['subject-select'] }}.
+				Check your teaching qualification transcript to calculate what percentage of modules focused on {{ data['subject-select'] }}.
 			</p>
 
 			<p>
@@ -34,8 +35,8 @@
 			</p>
 
 			{{ govukRadios({
-				idPrefix: "Degree",
-				name: "Degree",
+				idPrefix: "policy-uni-percentage",
+				name: "policy-uni-percentage",
 				fieldset: {
 				},
 				
@@ -54,7 +55,7 @@
 					},
 				{
 					value: "none",
-					text: "I do not have my teaching qualification transcript"
+					text: "I do not know and I do not have my transcript to check"
 				}
 	
 				]
