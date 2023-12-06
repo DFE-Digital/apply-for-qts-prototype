@@ -1,0 +1,51 @@
+{% extends "wizard.html" %}
+
+{% block pageTitle %}
+Are you qualified to teach children who are aged somewhere between 5 and 16 years? – {{ serviceName }} prototype
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form class="form" action="../interstitial" method="post">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Are you qualified to teach children aged 11-16 years?
+                        </h1>
+                    </legend>
+                    
+                    <div id="formal-training-hint" class="govuk-hint">
+                        You must be qualified to teach children aged 11-16 to be eligible for QTS.
+                    </div>
+                    
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="special-educational-needs" name="special-educational-needs" type="radio" value="Yes" >
+                            <label class="govuk-label govuk-radios__label" for="special-educational-needs">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="special-educational-needs-2" name="special-educational-needs" type="radio" value="No" >
+                            <label class="govuk-label govuk-radios__label" for="special-educational-needs-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+			<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
