@@ -1,0 +1,97 @@
+{% extends "wizard.html" %} {% block pageTitle %} Where are you currently
+recognised as a teacher? – {{ serviceName }} prototype {% endblock %} {% block
+content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/ucd-subject-not-in-list" method="post" novalidate>
+    <h1 class="govuk-heading-xl">
+      You have selected "{{ data['subject-select-ucd'] or 'Subject' }}"
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Did your teaching qualification have modules that
+      focused on any of the subjects listed?
+    </h2>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Maths</li>
+          <li>Science</li>
+          <li>Biology</li>
+          <li>Chemistry</li>
+          <li>Physics</li>
+          <li>French</li>
+          <li>German</li>
+        </ul>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Italian</li>
+          <li>Japanese</li>
+          <li>Latin</li>
+          <li>Mandarin</li>
+          <li>Russian</li>
+          <li>Spanish</li>
+        </ul>
+      </div>
+    </div>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input
+              class="govuk-radios__input"
+              id="ucd-subject-list1"
+              name="ucd-subject-list"
+              type="radio"
+              value="yes"
+            />
+            <label class="govuk-label govuk-radios__label" for="ucd-subject-list1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input
+              class="govuk-radios__input"
+              id="ucd-subject-list2"
+              name="ucd-subject-list"
+              type="radio"
+              value="no"
+            />
+            <label class="govuk-label govuk-radios__label" for="ucd-subject-list2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %} {% block pageScripts %}
+<script
+  type="text/javascript"
+  src="/public/javascripts/accessible-autocomplete.min.js"
+></script>
+<script>
+  accessibleAutocomplete.enhanceSelectElement({
+    selectElement: document.querySelector("#appointment-type-fltr"),
+    showAllValues: true,
+    defaultValue: "",
+    autoselect: true,
+    confirmOnBlur: false,
+  });
+</script>
+
+{% endblock %}

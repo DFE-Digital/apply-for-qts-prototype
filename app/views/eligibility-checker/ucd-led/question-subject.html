@@ -1,0 +1,99 @@
+{% extends "wizard.html" %} {% block pageTitle %} What subject did your teaching
+qualification focus on? – {{ serviceName }} prototype {% endblock %} {% block
+content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      What subject did your teaching qualification focus on?
+    </h1>
+
+    <div class="govuk-inset-text">
+      We cannot accept similar or related subjects, for example, economics
+      instead of maths, agricultural science instead of biology or engineering
+      instead of physics.
+    </div>
+    <p>
+      If your subject is not listed, but your teaching qualification focused on
+      another subject from the list, select that one.
+    </p>
+
+    <form action="/get-subject-ucd" method="post" novalidate>
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="sort">
+          Search for your subject:
+        </label>
+        <select
+          class="govuk-select"
+          id="subject-select-ucd"
+          name="subject-select-ucd"
+        >
+          <option value="">Select subject</option>
+
+          <option value="maths">Maths</option>
+
+          <option value="science">Science</option>
+
+          <option value="biology">Biology</option>
+
+          <option value="chemistry">Chemistry</option>
+
+          <option value="physics">Physics</option>
+
+          <option value="French">French</option>
+
+          <option value="German">German</option>
+
+          <option value="Italian">Italian</option>
+
+          <option value="Japanese">Japanese</option>
+
+          <option value="Latin">Latin</option>
+
+          <option value="Mandarin">Mandarin</option>
+
+          <option value="Russian">Russian</option>
+
+          <option value="Spanish">Spanish</option>
+
+          <option value="My subject is not on the list">My subject is not on the list</option>
+
+          <option value="My teaching qualification did not focus on any of these subjects">My teaching qualification did not focus on any of these subjects</option>
+
+          <option value="I do not have a teaching qualification">
+            I do not have a teaching qualification
+          </option>
+        </select>
+      </div>
+
+      <p>
+        During the application process all qualifications will be assessed to
+        make sure they meet the subject criteria.
+      </p>
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %} {% block pageScripts %}
+<script
+  type="text/javascript"
+  src="/public/javascripts/accessible-autocomplete.min.js"
+></script>
+<script>
+  accessibleAutocomplete.enhanceSelectElement({
+    selectElement: document.querySelector("#subject-select-ucd"),
+    showAllValues: true,
+    defaultValue: "",
+    autoselect: true,
+    confirmOnBlur: false,
+  });
+</script>
+
+{% endblock %}
