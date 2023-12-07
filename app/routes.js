@@ -818,7 +818,7 @@ router.post("/policy-teaching-calc", function (req, res) {
   let tCalc2 = req.session.data["calc2"];
 
   if (req.session.data["no-teaching-qual"] == "no-teaching-qual") {
-    res.redirect("/eligibility-checker/policy-led/ineligible-teaching-qual");
+    res.redirect("/eligibility-checker/policy-led/select-subject-uni-degree");
   }
 
   if (tCalc >= 20) {
@@ -826,7 +826,7 @@ router.post("/policy-teaching-calc", function (req, res) {
   } else if (tCalc2 >= 20) {
     res.redirect("/eligibility-checker/policy-led/question-age-range");
   } else {
-    res.redirect("/eligibility-checker/policy-led/ineligible-teaching-qual");
+    res.redirect("/eligibility-checker/policy-led/select-subject-uni-degree");
   }
 });
 
@@ -839,9 +839,9 @@ router.post("/policy-uni-calc", function (req, res) {
     res.redirect("/eligibility-checker/policy-led/ineligible-uni-degree");
   }
 
-  if (uCalc >= 30) {
+  if (uCalc >= 20) {
     res.redirect("/eligibility-checker/policy-led/question-age-range");
-  } else if (uCalc2 >= 30) {
+  } else if (uCalc2 >= 20) {
     res.redirect("/eligibility-checker/policy-led/question-age-range");
   } else {
     res.redirect("/eligibility-checker/policy-led/ineligible-uni-degree");
