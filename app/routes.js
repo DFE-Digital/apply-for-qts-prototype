@@ -713,7 +713,7 @@ router.post("/policy-teaching-qual-percentage", function (req, res) {
   } else if (policyPercentage == "more-than-50") {
     res.redirect("/eligibility-checker/policy-led/question-age-range");
   } else if (policyPercentage == "none") {
-    res.redirect("/eligibility-checker/policy-led/ineligible-teaching-qual");
+    res.redirect("/eligibility-checker/policy-led/question-degree");
   }
 });
 
@@ -760,6 +760,8 @@ router.post("/get-subject", function (req, res) {
     res.redirect("/eligibility-checker/policy-led/subject-percentage");
   } else if (subjectSelect == "Russian") {
     res.redirect("/eligibility-checker/policy-led/subject-percentage");
+  } else if (subjectSelect == "Spanish") {
+    res.redirect("/eligibility-checker/policy-led/subject-percentage");
   } else if (subjectSelect == "not-on-list") {
     res.redirect("/eligibility-checker/policy-led/question-degree");
   }
@@ -793,7 +795,11 @@ router.post("/get-subject-uni", function (req, res) {
     res.redirect("/eligibility-checker/policy-led/subject-calculator-uni");
   } else if (subjectSelectUni == "Russian") {
     res.redirect("/eligibility-checker/policy-led/ssubject-calculator-uni");
-  } else if (subjectSelectUni == "not-on-list") {
+  } 
+  else if (subjectSelectUni == "Spanish") {
+    res.redirect("/eligibility-checker/policy-led/ssubject-calculator-uni");
+  }
+   else if (subjectSelectUni == "not-on-list") {
     res.redirect("/eligibility-checker/policy-led/ineligible-uni-degree");
   } else {
     res.redirect("/eligibility-checker/policy-led/ineligible-uni-degree");
@@ -821,9 +827,9 @@ router.post("/policy-teaching-calc", function (req, res) {
     res.redirect("/eligibility-checker/policy-led/select-subject-uni-degree");
   }
 
-  if (tCalc >= 20) {
+  if (tCalc >= 15) {
     res.redirect("/eligibility-checker/policy-led/question-age-range");
-  } else if (tCalc2 >= 20) {
+  } else if (tCalc2 >= 15) {
     res.redirect("/eligibility-checker/policy-led/question-age-range");
   } else {
     res.redirect("/eligibility-checker/policy-led/select-subject-uni-degree");
@@ -839,9 +845,9 @@ router.post("/policy-uni-calc", function (req, res) {
     res.redirect("/eligibility-checker/policy-led/ineligible-uni-degree");
   }
 
-  if (uCalc >= 20) {
+  if (uCalc >= 15) {
     res.redirect("/eligibility-checker/policy-led/question-age-range");
-  } else if (uCalc2 >= 20) {
+  } else if (uCalc2 >= 15) {
     res.redirect("/eligibility-checker/policy-led/question-age-range");
   } else {
     res.redirect("/eligibility-checker/policy-led/ineligible-uni-degree");
@@ -888,6 +894,10 @@ router.post("/get-subject-ucd", function (req, res) {
     res.redirect("/eligibility-checker/ucd-led/question-age-range");
   } 
   else if (subjectSelectUCD == "Russian") {
+    res.redirect("/eligibility-checker/ucd-led/question-age-range");
+  } 
+
+  else if (subjectSelectUCD == "Spanish") {
     res.redirect("/eligibility-checker/ucd-led/question-age-range");
   } 
   
@@ -946,6 +956,10 @@ router.post("/get-subject-ucd-uni", function (req, res) {
     res.redirect("/eligibility-checker/ucd-led/question-age-range");
   } 
   
+  else if (subjectSelectUCDUni == "Spanish") {
+    res.redirect("/eligibility-checker/ucd-led/question-age-range");
+  } 
+
   else if (subjectSelectUCDUni == "My subject is not on the list") {
     res.redirect("/eligibility-checker/ucd-led/ineligible-uni-degree");
   }
