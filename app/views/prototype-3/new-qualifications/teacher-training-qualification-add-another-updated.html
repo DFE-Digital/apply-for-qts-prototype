@@ -12,38 +12,36 @@ Upload another teacher training qualification – {{ serviceName }} – GOV.UK P
 
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<form class="form"
-		      action="/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another"
-		      method="post">
+
+		<form class="form" action="/prototype-3/qualifications/undergraduate-degree/degree-details-2" method="post">
+
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
 
 					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <span class="govuk-caption-l">
-                Your qualifications
-              </span>
+        Your qualifications
+      </span>
 						<h1 class="govuk-fieldset__heading">
-							Was your teaching qualification part of your bachelor's degree?
+							Add another qualification?
 						</h1>
-						<p></p> 
-
-						
 					</legend>
+					<div id="changed-name-hint" class="govuk-hint">
+						<p class="govuk-body">Do you want to add additional degrees or qualifications related to your teaching career?</p>
+					</div>
 					<div class="govuk-radios" data-module="govuk-radios">
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="was-teacher-training-a-degree"
-							       name="was-teacher-training-a-degree" type="radio" value="yes"
-							       data-aria-controls="conditional-was-teacher-training-a-degree">
-							<label class="govuk-label govuk-radios__label" for="was-teacher-training-a-degree">
-								Yes, my teaching qualification was part of my bachelor's degree
+							<input class="govuk-radios__input" id="add-another-qualification-2"
+							       name="add-another-qualification-2" type="radio" value="yes">
+							<label class="govuk-label govuk-radios__label" for="add-another-qualification-2">
+								Yes
 							</label>
 						</div>
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="was-teacher-training-a-degree-2"
-							       name="was-teacher-training-a-degree" type="radio" value="no"
-							       data-aria-controls="conditional-was-teacher-training-a-degree-2">
-							<label class="govuk-label govuk-radios__label" for="was-teacher-training-a-degree-2">
-								No, I need to add details of my bachelor's degree
+							<input class="govuk-radios__input" id="add-another-qualification-2-2"
+							       name="add-another-qualification-2" type="radio" value="no">
+							<label class="govuk-label govuk-radios__label" for="add-another-qualification-2-2">
+								No
 							</label>
 						</div>
 					</div>
@@ -51,7 +49,7 @@ Upload another teacher training qualification – {{ serviceName }} – GOV.UK P
 			</div>
 
 			<div class="govuk-button-group">
-				<button class="govuk-button" data-module="govuk-button">
+				<button class="govuk-button" data-module="govuk-button" value="progress" type="submit">
 					Continue
 				</button>
 
