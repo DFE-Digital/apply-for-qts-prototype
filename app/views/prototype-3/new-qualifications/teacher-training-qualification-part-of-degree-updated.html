@@ -13,7 +13,7 @@ Upload another teacher training qualification – {{ serviceName }} – GOV.UK P
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 		<form class="form"
-		      action="/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another"
+		      action="/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another-updated"
 		      method="post">
 			<div class="govuk-form-group">
 				<fieldset class="govuk-fieldset">
@@ -23,10 +23,12 @@ Upload another teacher training qualification – {{ serviceName }} – GOV.UK P
                 Your qualifications
               </span>
 						<h1 class="govuk-fieldset__heading">
-							Was your teaching qualification part of your bachelor's degree?
+							Do you need to add a bachelor's degree?
 						</h1>
 						<p></p> 
-
+						<div id="changed-name-hint" class="govuk-hint">
+							<p class="govuk-body">Enter your bachelor's degree if your teaching qualification was separate, for example a master's (post graduate) degree, diploma, or certificate in education.</p>
+						</div>
 						
 					</legend>
 					<div class="govuk-radios" data-module="govuk-radios">
@@ -35,7 +37,7 @@ Upload another teacher training qualification – {{ serviceName }} – GOV.UK P
 							       name="was-teacher-training-a-degree" type="radio" value="yes"
 							       data-aria-controls="conditional-was-teacher-training-a-degree">
 							<label class="govuk-label govuk-radios__label" for="was-teacher-training-a-degree">
-								Yes, my teaching qualification was part of my bachelor's degree
+								Yes, I need to add details of my bachelor's degree
 							</label>
 						</div>
 						<div class="govuk-radios__item">
@@ -43,7 +45,7 @@ Upload another teacher training qualification – {{ serviceName }} – GOV.UK P
 							       name="was-teacher-training-a-degree" type="radio" value="no"
 							       data-aria-controls="conditional-was-teacher-training-a-degree-2">
 							<label class="govuk-label govuk-radios__label" for="was-teacher-training-a-degree-2">
-								No, I need to add details of my bachelor's degree
+								No, I entered my bachelor's degree as my teaching qualification
 							</label>
 						</div>
 					</div>
