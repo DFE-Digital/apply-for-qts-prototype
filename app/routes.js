@@ -998,4 +998,29 @@ router.post("/scenario-picker", function (req, res) {
   }
 });
 
+
+// New quals - Choose country
+router.post("/new-quals-setup", function (req, res) {
+  let ECcountrySelect = req.session.data["NewQualsSelect"];
+
+  if (ECcountrySelect == "Ghana") {
+    res.redirect("/new-qualifications/task-list");
+  } 
+  else if (ECcountrySelect == "Nigeria") {
+    res.redirect("/new-qualifications/task-list");
+  } 
+  else if (ECcountrySelect == "Spain") {
+    res.redirect("/new-qualifications/task-list");
+  } 
+  else if (ECcountrySelect == "USA") {
+    res.redirect("/new-qualifications/task-list");
+  } 
+  else if (ECcountrySelect == "other") {
+    res.redirect("/new-qualifications/task-list");
+  } 
+  else {
+    res.redirect("/new-qualifications/task-list");
+  }
+});
+
 module.exports = router;

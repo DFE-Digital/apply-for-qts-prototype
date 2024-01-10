@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Upload another teacher training qualification – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form class="form"
+		      action="/prototype-3/qualifications/teacher-training-qualification/teacher-training-qualification-add-another-updated"
+		      method="post">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">
+                Your qualifications
+              </span>
+						<h1 class="govuk-fieldset__heading">
+							Do you need to add a bachelor's degree?
+						</h1>
+						<p></p> 
+						<div id="changed-name-hint" class="govuk-hint">
+							<p class="govuk-body">Enter your bachelor's degree if your teaching qualification was separate, for example a master's (post graduate) degree, diploma, or certificate in education.</p>
+						</div>
+						
+					</legend>
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="was-teacher-training-a-degree"
+							       name="was-teacher-training-a-degree" type="radio" value="yes"
+							       data-aria-controls="conditional-was-teacher-training-a-degree">
+							<label class="govuk-label govuk-radios__label" for="was-teacher-training-a-degree">
+								Yes, I need to add details of my bachelor's degree
+							</label>
+						</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="was-teacher-training-a-degree-2"
+							       name="was-teacher-training-a-degree" type="radio" value="no"
+							       data-aria-controls="conditional-was-teacher-training-a-degree-2">
+							<label class="govuk-label govuk-radios__label" for="was-teacher-training-a-degree-2">
+								No, I entered my bachelor's degree as my teaching qualification
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Continue
+				</button>
+
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit" name=""
+				        value="progress" formaction="/prototype-3/task-list">
+					Save and come back later
+				</button>
+			</div>
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
