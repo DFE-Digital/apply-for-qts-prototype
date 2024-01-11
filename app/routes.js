@@ -1001,25 +1001,81 @@ router.post("/scenario-picker", function (req, res) {
 
 // New quals - Choose country
 router.post("/new-quals-setup", function (req, res) {
-  let ECcountrySelect = req.session.data["NewQualsSelect"];
+  let CountrySelect = req.session.data["NewQualsSelect"];
 
-  if (ECcountrySelect == "Ghana") {
+  if (CountrySelect == "Ghana") {
     res.redirect("/new-qualifications/task-list");
   } 
-  else if (ECcountrySelect == "Nigeria") {
+  else if (CountrySelect == "Nigeria") {
     res.redirect("/new-qualifications/task-list");
   } 
-  else if (ECcountrySelect == "Spain") {
+  else if (CountrySelect == "Spain") {
     res.redirect("/new-qualifications/task-list");
   } 
-  else if (ECcountrySelect == "USA") {
+  else if (CountrySelect == "USA") {
     res.redirect("/new-qualifications/task-list");
   } 
-  else if (ECcountrySelect == "other") {
+  else if (CountrySelect == "other") {
     res.redirect("/new-qualifications/task-list");
   } 
   else {
     res.redirect("/new-qualifications/task-list");
+  }
+});
+
+// New quals - upload teaching qual
+router.post("/new-quals-teaching-qual", function (req, res) {
+  let NewQualsTeaching = req.session.data["NewQualsTeaching"];
+
+  if (NewQualsTeaching == "yes") {
+    res.redirect("/new-qualifications/upload-teacher-training-transcript");
+  } 
+
+  else {
+    res.redirect("/new-qualifications/upload-teacher-training-qualification-translation");
+  }
+});
+
+// New quals - upload transcript
+router.post("/new-quals-transcript", function (req, res) {
+  let NewQualsTranscript = req.session.data["NewQualsTranscript"];
+
+  if (NewQualsTranscript == "yes") {
+    res.redirect("/new-qualifications/bachelors-degree-question");
+  } 
+
+  else {
+    res.redirect("/new-qualifications/upload-teacher-training-transcript-translation");
+  }
+});
+
+
+
+// New quals - bachelor
+router.post("/new-quals-bachelor", function (req, res) {
+  let NewQualsBachelor = req.session.data["NewQualsBachelor"];
+
+  if (NewQualsBachelor == "no") {
+    res.redirect("/new-qualifications/teacher-training-qualification-summary");
+  } 
+
+  else {
+    res.redirect("/new-qualifications/bachelors-degree-details");
+  }
+});
+
+
+
+// New quals - add another
+router.post("/new-quals-another", function (req, res) {
+  let NewQualsAnother = req.session.data["NewQualsAnother"];
+
+  if (NewQualsAnother == "yes") {
+    res.redirect("/new-qualifications/additional-qualifications-degree-details");
+  } 
+
+  else {
+    res.redirect("/new-qualifications/teacher-training-qualification-summary");
   }
 });
 
