@@ -35,15 +35,66 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 		<h1 class="govuk-heading-l">Teaching qualification</h1>
 		<p class="govuk-body">Enter the first qualification you have that qualifies you to teach. We accept the following:</p>
 		
-			<ul class="govuk-list govuk-list--bullet">
+
+		<!-- Ghana -->
+		{% if data['NewQualsSelect'] == "Ghana" %}
+		<p class="govuk-body">If you have a bachelor's (undergraduate) and a master's (post graduate) degree, and both qualify you to teach, enter the bachelor's degree here. You can add more degrees later.</p>
+		
+		<p class="govuk-body govuk-!-margin-bottom-6">If your teaching qualification is separate to your bachelor's degree you will need to submit details of your bachelor's degree later in the application.</p>
+
+		<!-- Nigeria -->
+		{% elseif data ['NewQualsSelect'] == "Nigeria" %}
+		<ul class="govuk-list govuk-list--bullet">
+			<li>Bachelor of Education</li>
+			<li>Bachelor of Art/Science (Education)</li>
+			<li>Bachelor of Education: Technical Education</li>
+			<li>Master of Education</li>
+			<li>Post Graduate Diploma in Education (PGDE)</li>
+			<li>Post Graduate Diploma in Technical Education (PGDTE)</li>
+			<li>Professional Diploma in Education (PDE)</li>
+		  </ul>
+
+		<!-- Spain -->
+		{% elseif data ['NewQualsSelect'] == "Spain" %}
+		<ul class="govuk-list govuk-list--bullet">
+			<li>a bachelor's (undergraduate) degree that includes a teaching qualification</li>
+			<li>a teaching qualification that's separate to a bachelor's degree, for example a master's (post graduate) degree, diploma, or certificate in education</li>
+		  </ul>
+
+		  <p class="govuk-body">If you have a bachelor's and a master's degree, and both qualify you to teach, enter the bachelor's degree here. You can add more degrees later.</p>
+		  <p class="govuk-body">If your teaching qualification is separate to your bachelor's degree, it must be equal to a UK 'level 6' or higher. <a href="www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" class="govuk-link">Find out more about qualification levels</a>.</p>
+		  
+		  <p class="govuk-body govuk-!-margin-bottom-6">You will also need to submit details of your bachelor's degree later in the application.</p>
+
+		<!-- USA -->
+		{% elseif data ['NewQualsSelect'] == "USA" %}
+		<ul class="govuk-list govuk-list--bullet">
+			<li>Bachelor of Arts with demonstrated focus on teaching</li>
+			<li>Bachelor of Education/Teaching</li>
+			<li>Bachelor of Science/Arts in Education</li>
+			<li>Master of Education/Teaching</li>
+			<li>Master of Science/Arts in Education</li>
+		  </ul>
+
+		  <p class="govuk-body">If you have a bachelor's and a master's degree, and both qualify you to teach, enter the bachelor's degree here. You can add more degrees later.</p>
+		  <p class="govuk-body">If your teaching qualification is separate to your bachelor's degree, it must be equal to a UK 'level 6' or higher. <a href="www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" class="govuk-link">Find out more about qualification levels</a>.</p>
+		  
+		  <p class="govuk-body govuk-!-margin-bottom-6">You will also need to submit details of your bachelor's degree later in the application.</p>
+		<!-- other -->
+		
+
+		{% elseif data ['NewQualsSelect'] == "other" %}
+		<ul class="govuk-list govuk-list--bullet">
 		  <li>a bachelor's (undergraduate) degree that includes a teaching qualification</li>
 		  <li>a teaching qualification that's separate to a bachelor's degree, for example a master's (post graduate) degree, diploma, or certificate in education</li>
-		</ul>
+		</ul>	
+		
+		{% else %}
 		<p class="govuk-body">If you have a bachelor's and a master's degree, and both qualify you to teach, enter the bachelor's degree here. You can add more degrees later.</p>
 		<p class="govuk-body">If your teaching qualification is separate to your bachelor's degree, it must be equal to a UK 'level 6' or higher. <a href="www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" class="govuk-link">Find out more about qualification levels</a>.</p>
 		
 		<p class="govuk-body govuk-!-margin-bottom-6">You will also need to submit details of your bachelor's degree later in the application.</p>
-		
+		{% endif %}
 		
 
 			<h2 class="govuk-heading-m">Enter your teaching qualification</h2>
