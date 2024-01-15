@@ -13,16 +13,11 @@ Upload teacher training certificate – {{ serviceName }} – GOV.UK Prototype K
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 
-		<form class="form" action="/new-quals-transcript" method="post" novalidate>
+		<form class="form" action="/bachelor-translation-transcript" method="post" novalidate>
         <span class="govuk-caption-l">
           Your qualifications
         </span>
-			<h1 class="govuk-heading-l">Upload your {{ data['qualificationInstitutionName'] }} teaching qualification
-				transcript</h1>
-			<p class="govuk-body">Upload a transcript of your teaching qualification, issued by the awarding body. If
-				your teaching
-				qualification was completed as part of your degree, you should supply your degree transcript.</p>
-			<h2 class="govuk-heading-m">Upload your transcript</h2>
+			<h1 class="govuk-heading-l">Upload your bachelor's degree transcript</h1>
 			<div class="govuk-form-group">
 				<label class="govuk-label" for="file-upload-1">
 					Select a file to upload
@@ -34,21 +29,9 @@ Upload teacher training certificate – {{ serviceName }} – GOV.UK Prototype K
 					id: "file-upload-1",
 					name: "fileUpload1"
 				  }) }}
-
-
-				<details class="govuk-details govuk-!-padding-top-5" data-module="govuk-details">
-					<summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              What is a transcript?
-            </span>
-					</summary>
-					<div class="govuk-details__text">
-						A transcript (or diploma supplement) is a document from the institution where you studied for
-						your degree. It lists all the modules or subjects you studied in each year, and the marks or
-						grades you were awarded.
-					</div>
-				</details>
 			</div>
+
+			
 
 			<h2 class="govuk-heading-m">
 				About your document
@@ -63,35 +46,36 @@ Upload teacher training certificate – {{ serviceName }} – GOV.UK Prototype K
 					</legend>
 					<div class="govuk-radios" data-module="govuk-radios">
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="written-in-english" name="NewQualsTranscript"
+							<input class="govuk-radios__input" id="written-in-english" name="BachelorTranscriptTranslation"
 							       type="radio" value="yes" data-aria-controls="conditional-written-in-english">
 							<label class="govuk-label govuk-radios__label" for="written-in-english">
 								Yes
 							</label>
 						</div>
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="written-in-english-2" name="NewQualsTranscript"
-							       type="radio" value="phone" data-aria-controls="conditional-written-in-english-2">
+							<input class="govuk-radios__input" id="written-in-english-2" name="BachelorTranscriptTranslation"
+							       type="radio" value="no" data-aria-controls="conditional-written-in-english-2">
 							<label class="govuk-label govuk-radios__label" for="written-in-english-2">
 								No, I'll upload a translation as well
 							</label>
 						</div>
 						
-						</div>
-				
+					</div>
 				</fieldset>
 			</div>
+
 			<div class="govuk-button-group">
-				<button class="govuk-button" data-module="govuk-button" name="teacher-transcript-added" value="progress"
-				        type="submit">
+				<button class="govuk-button" data-module="govuk-button" name="training-certificate-added"
+				        value="progress" type="submit">
 					Continue
 				</button>
 
-				<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
-				        name="teacher-transcript-added" value="progress" formaction="task-list">
-					Save and come back later
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="" value="progress"
+				        formaction="task-list">
+						Save and come back later
 				</button>
 			</div>
+
 		</form>
 	</div>
 </div>

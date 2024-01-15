@@ -1062,7 +1062,57 @@ router.post("/new-quals-bachelor", function (req, res) {
   }
 });
 
+// New quals - bachelor add translation
+router.post("/bachelor-translation", function (req, res) {
+  let BachelorTranslation = req.session.data["BachelorTranslation"];
 
+  if (BachelorTranslation == "no") {
+    res.redirect("/new-qualifications/upload-bachelor-translation");
+  } 
+
+  else {
+    res.redirect("/new-qualifications/upload-bachelor-transcript");
+  }
+});
+
+// New quals - bachelor add transcript translation
+router.post("/bachelor-translation-transcript", function (req, res) {
+  let BachelorTranscriptTranslation = req.session.data["BachelorTranscriptTranslation"];
+
+  if (BachelorTranscriptTranslation == "no") {
+    res.redirect("/new-qualifications/upload-bachelor-transcript-translation");
+  } 
+
+  else {
+    res.redirect("/new-qualifications/add-another-qual");
+  }
+});
+
+// New quals - additional translation
+router.post("/additional-translation", function (req, res) {
+  let AdditionalTranslation = req.session.data["AdditionalTranslation"];
+
+  if (AdditionalTranslation == "no") {
+    res.redirect("/new-qualifications/upload-another-translation");
+  } 
+
+  else {
+    res.redirect("/new-qualifications/upload-another-transcript");
+  }
+});
+
+// New quals - another add transcript translation
+router.post("/another-translation-transcript", function (req, res) {
+  let AnotherTranscriptTranslation = req.session.data["AnotherTranscriptTranslation"];
+
+  if (AnotherTranscriptTranslation == "no") {
+    res.redirect("/new-qualifications/upload-another-transcript-translation");
+  } 
+
+  else {
+    res.redirect("/new-qualifications/add-another-qual");
+  }
+});
 
 // New quals - add another
 router.post("/new-quals-another", function (req, res) {
