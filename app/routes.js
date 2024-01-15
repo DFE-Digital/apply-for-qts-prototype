@@ -1018,9 +1018,7 @@ router.post("/new-quals-setup", function (req, res) {
   else if (CountrySelect == "other") {
     res.redirect("/new-qualifications/task-list");
   } 
-  else {
-    res.redirect("/new-qualifications/task-list");
-  }
+  
 });
 
 // New quals - upload teaching qual

@@ -38,6 +38,13 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 
 		<!-- Ghana -->
 		{% if data['NewQualsSelect'] == "Ghana" %}
+		<ul class="govuk-list govuk-list--bullet">
+			<li>Bachelor of Education</li>
+			<li>Master of Education</li>
+			<li>Post Graduate Certificate in Education</li>
+			<li>Post Graduate Diploma in Education </li>
+		  </ul>
+
 		<p class="govuk-body">If you have a bachelor's (undergraduate) and a master's (post graduate) degree, and both qualify you to teach, enter the bachelor's degree here. You can add more degrees later.</p>
 		
 		<p class="govuk-body govuk-!-margin-bottom-6">If your teaching qualification is separate to your bachelor's degree you will need to submit details of your bachelor's degree later in the application.</p>
@@ -53,6 +60,12 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 			<li>Post Graduate Diploma in Technical Education (PGDTE)</li>
 			<li>Professional Diploma in Education (PDE)</li>
 		  </ul>
+		
+		<p>We do not accept the Nigeria Certificate of Education.</p>
+
+		<p class="govuk-body">If you have a bachelor's (undergraduate) and a master's (post graduate) degree, and both qualify you to teach, enter the bachelor's degree here. You can add more degrees later. </p>
+		  <p class="govuk-body govuk-!-margin-bottom-6">If your teaching qualification is separate to your bachelor’s degree you will need to submit details of your bachelor’s degree later in the application.</p>
+		
 
 		<!-- Spain -->
 		{% elseif data ['NewQualsSelect'] == "Spain" %}
@@ -89,7 +102,7 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 		  <li>a teaching qualification that's separate to a bachelor's degree, for example a master's (post graduate) degree, diploma, or certificate in education</li>
 		</ul>	
 		
-		{% else %}
+		
 		<p class="govuk-body">If you have a bachelor's and a master's degree, and both qualify you to teach, enter the bachelor's degree here. You can add more degrees later.</p>
 		<p class="govuk-body">If your teaching qualification is separate to your bachelor's degree, it must be equal to a UK 'level 6' or higher. <a href="www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" class="govuk-link">Find out more about qualification levels</a>.</p>
 		
@@ -213,9 +226,18 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 							When were you awarded this qualification?
 						</h1>
 					</legend>
+					{% if data['NewQualsSelect'] == "Spain" %}
+					<div id="start-date-hint" class="govuk-hint">
+						Enter the month and year on the certificate you received when you were awarded this qualification. You can use your provisional certificate.
+					</div>
+
+					{% elseif data['NewQualsSelect'] == "Ghana" or "Nigeria" or "USA" or "other" %}
 					<div id="start-date-hint" class="govuk-hint">
 						Enter the month and year on the certificate you received when you were awarded this qualification. Do not enter the date of your teaching licence or registration document.
 					</div>
+					
+					{% endif %}
+
 					<div class="govuk-date-input" id="qualification-date">
 						<div class="govuk-date-input__item">
 							<div class="govuk-form-group">
