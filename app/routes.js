@@ -1054,7 +1054,7 @@ router.post("/new-quals-bachelor", function (req, res) {
   let NewQualsBachelor = req.session.data["NewQualsBachelor"];
 
   if (NewQualsBachelor == "no") {
-    res.redirect("/new-qualifications/teacher-training-qualification-summary");
+    res.redirect("/new-qualifications/add-another-qual");
   } 
 
   else {
