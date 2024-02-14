@@ -1,0 +1,163 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Screen index – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+homepageUrl: "/index.html",
+serviceName: "Manage applications for qualified teacher services (QTS)",
+serviceUrl: "/index.html",
+navigation: [
+{
+href: "/application-list.html",
+text: "Home"
+},
+{
+href: "#2",
+text: "Search"
+},
+{
+href: "#3",
+text: "Sign out"
+}
+]
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    
+    <h1 class="govuk-heading-xl">
+        Screen index
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Qualification date question investigation
+    </h2>
+
+    <p>Iteration 1 - January 2024</p>
+
+   
+
+  
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header app-custom-class">Link</th>
+          <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-two-thirds">Description</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="research-setup">Research setup</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>New screen.</p>
+            <p>UR only. Country select affects what will be shown on the new 'Your Teaching qualification' page.</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="task-list">Task list</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>The existing screen.</p>
+            <p>Go to 'Add your teaching qualifications'. All other link will lead to a 'not in prototype' page.</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="teacher-training-qualification">Teaching qualification</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>New screen.</p>
+          </td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="upload-teacher-training-qualification">Upload teaching qualification</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>New screen.</p>
+            <p>The 'two step transcript' design (radios).<br>
+            There is a link in the phase banner that allows you to switch the view to the calculator screen.
+          </p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="upload-teacher-training-transcript">Upload transcript</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>The existing screen.</p>
+          </td>
+        </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="bachelors-degree-question">Bachelor's degree question</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>New screen.</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <p><a href="bachelors-degree-details">Upload bachelor's degree</a></p>
+          </td>
+          <td class="govuk-table__cell">
+            <p>New screen.</p>
+            </td>
+        </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <p><a href="add-another-qual">Add another qualification</a></p>
+              </td>
+              <td class="govuk-table__cell">
+                <p>Updated content.</p>
+               
+              </td>
+            </tr>
+    
+    
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <p><a href="teacher-training-qualification-summary">Summary screen</a></p>
+              </td>
+              <td class="govuk-table__cell">
+                <p>The existing screen.</p>
+              </td>
+            </tr>
+    
+            
+    
+    
+
+      </tbody>
+      </table>
+   
+
+
+      
+
+    
+    </div>
+</div>
+
+{% endblock %}
