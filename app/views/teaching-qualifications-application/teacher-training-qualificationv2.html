@@ -33,7 +33,7 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 
 		<span class="govuk-caption-l">Your qualifications</span>
 		<h1 class="govuk-heading-l">Teaching qualification</h1>
-		<p class="govuk-body">We accept the following teaching qualifications:</p>
+		<p class="govuk-body">You must enter the <strong>first</strong> qualification you have that allows you to teach. We accept the following:</p>
 		
 
 			<ul class="govuk-list govuk-list--bullet">
@@ -41,11 +41,11 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 		  <li>a teaching qualification that's separate to a bachelor's degree, for example a master's (post graduate) degree, diploma, or certificate in education</li>
 		</ul>	
 
-		<p class="govuk-body">If your teaching qualification is separate to your bachelor's degree, it must be equal to a UK 'level 6' or higher. <a href="www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" class="govuk-link">Find out more about qualification levels</a>.</p>
-		<p class="govuk-body">You will also need to submit details of your bachelor's degree later in the application.</p><h2 class="govuk-heading-m">Before you start</h2>
+		<p class="govuk-body">If your teaching qualification is separate to your bachelor's degree, it must be equal to a  <a href="www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" class="govuk-link">UK 'level 6' qualification or higher</a>. You will need to submit details of your bachelor's degree later in the application.</p>
+		<h2 class="govuk-heading-m">More than one teaching qualification</h2>
 
-		<p class="govuk-body">You must enter the <strong>first</strong> qualification you have that allows you to teach</p>
-		<p class="govuk-body">If you have more than one teaching qualification enter the first one you received. For example, if you have a bachelor's and a master's degree, and both allow you to teach, enter the bachelor's here. </p>
+		
+		<p class="govuk-body">If you have more than one teaching qualification enter the first one you received. For example, if you have a bachelor's and a master's degree, and both qualify you to teach, enter the bachelor's here. </p>
 		<p class="govuk-body">You can add more qualifications later.</p>
 		
 		
@@ -58,6 +58,7 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 				<label class="govuk-label" for="qualification-title">
 					Qualification title
 				</label>
+				<p class="govuk-hint">Enter the first qualification you have that qualifies you to teach</p>
 				<input class="govuk-input" id="qualification-title" name="qualification-title"
 				       value="{{ data['qualification-title'] }}" type="text">
 			</div>
@@ -203,7 +204,7 @@ University degree – {{ serviceName }} – GOV.UK Prototype Kit
 					</div>
 				</fieldset>
 			</div>
-
+			<div class="govuk-!-padding-bottom-6"></div>
 			<p class="govuk-body govuk-!-padding-top-3">Confirm this is the first qualification you have that qualifies you to teach. You can add more qualifications later.</p>
 			
 			
